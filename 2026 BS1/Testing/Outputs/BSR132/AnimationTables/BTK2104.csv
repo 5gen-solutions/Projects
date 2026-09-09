@@ -1,0 +1,7 @@
+Name,TypeName,Comment
+sim_AHI_Scale_14,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_15,sim_AHI_Scale,ST-mapped DFB/equip
+sim_BTK2104FQ01_I,EBOOL,Drive prefix
+sim_BTK2104FT01_PV,REAL,BTK2104FT01 engineering PV
+sim_BTK2104LS02_I,EBOOL,Drive prefix
+sim_BTK2104LT01_PV,REAL,BTK2104LT01 engineering PV

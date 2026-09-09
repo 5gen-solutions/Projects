@@ -1,0 +1,37 @@
+Name,TypeName,Comment
+sim_AHI_Scale_66,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_68,sim_AHI_Scale,ST-mapped DFB/equip
+sim_BCV131FIT02FT02_PV,REAL,BCV131FIT02FT02 engineering PV
+sim_BCV131FIT10FT10_PV,REAL,BCV131FIT10FT10 engineering PV
+sim_BCV131FQ02_I,EBOOL,Drive prefix
+sim_BCV131FQ10_I,EBOOL,Drive prefix
+sim_BCV131LCS01STP01_I,EBOOL,Drive prefix
+sim_BCV131LCS01STT01_I,EBOOL,Drive prefix
+sim_BCV131LCS02STP01_I,EBOOL,Drive prefix
+sim_BCV131LCS02STT01_I,EBOOL,Drive prefix
+sim_BCV131LCS03STP01_I,EBOOL,Drive prefix
+sim_BCV131LCS03STT01_I,EBOOL,Drive prefix
+sim_BCV131LCS04STP01_I,EBOOL,Drive prefix
+sim_BCV131LCS04STT01_I,EBOOL,Drive prefix
+sim_BCV131SLC01_PriOKArr,ARRAY[0..3] OF WORD,BCV131SLC1 primary-element healthy words
+sim_BCV131SLC01SY01_I,EBOOL,Drive prefix
+sim_BCV131SLC02_PriOKArr,ARRAY[0..3] OF WORD,BCV131SLC2 primary-element healthy words
+sim_BCV131SLC02SY01_I,EBOOL,Drive prefix
+sim_BCV131SS01_FrqGain,REAL,BCV131SS01 frequency SP gain (Hz per eng unit)
+sim_BCV131SS01_FrqOff,REAL,BCV131SS01 frequency SP offset
+sim_BCV131SS01_I,,Drive prefix
+sim_BCV131SS01_SP,REAL,BCV131SS01 speed-sim engineering setpoint
+sim_BCV131SS01_SpdGain,REAL,BCV131SS01 speed SP gain
+sim_BCV131SS01_SpdOff,REAL,BCV131SS01 speed SP offset
+sim_BCV131SS02_FrqGain,REAL,BCV131SS02 frequency SP gain (Hz per eng unit)
+sim_BCV131SS02_FrqOff,REAL,BCV131SS02 frequency SP offset
+sim_BCV131SS02_I,,Drive prefix
+sim_BCV131SS02_SP,REAL,BCV131SS02 speed-sim engineering setpoint
+sim_BCV131SS02_SpdGain,REAL,BCV131SS02 speed SP gain
+sim_BCV131SS02_SpdOff,REAL,BCV131SS02 speed SP offset
+sim_BCV131SV07_PV,REAL,Drive prefix
+sim_BCV131SY01_I,EBOOL,Drive prefix
+sim_BCV131ZQ01_I,,Drive prefix
+sim_BCV131ZQ02_I,,Drive prefix
+sim_BCV131ZS01_I,EBOOL,Drive prefix
+sim_BCV131ZS02_I,EBOOL,Drive prefix

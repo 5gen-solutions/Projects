@@ -1,0 +1,10 @@
+Name,TypeName,Comment
+sim_AHI_Scale_35,sim_AHI_Scale,ST-mapped DFB/equip
+sim_BAF130HP02FS01_I,EBOOL,Drive prefix
+sim_BAF130HP02LS01_I,EBOOL,Drive prefix
+sim_BAF130HP02PS01_I,EBOOL,Drive prefix
+sim_BAF130HP02PS03_I,EBOOL,Drive prefix
+sim_BAF130HP02PS04_I,EBOOL,Drive prefix
+sim_BAF130HP02PS05_I,EBOOL,Drive prefix
+sim_BAF130HP02PS06_I,EBOOL,Drive prefix
+sim_BAF130HP02TT01_PV,REAL,BAF130HP02TT01 engineering PV

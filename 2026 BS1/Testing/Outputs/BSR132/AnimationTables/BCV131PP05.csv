@@ -1,0 +1,5 @@
+Name,TypeName,Comment
+sim_BCV131PP05CAX01_I,EBOOL,BCV131PP05CAX01 TeSysT contactor aux
+sim_BCV131PP05CB01_I,EBOOL,BCV131PP05CB01 TeSysT CB closed/healthy
+sim_BCV131PP05SY01_I,EBOOL,BCV131PP05SY01 safety interlock
+SIM_TeSysT_21,SIM_TeSysT,ST-mapped DFB/equip

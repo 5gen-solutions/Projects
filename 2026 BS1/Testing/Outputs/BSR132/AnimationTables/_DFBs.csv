@@ -1,0 +1,11 @@
+Name,TypeName,Comment
+SIM_BMEP586x4xRIO_0,SIM_BMEP586x4xRIO,DFB instance
+SIM_FlexiSoft_0,SIM_FlexiSoft,DFB instance
+SIM_FlexiSoft_1,SIM_FlexiSoft,DFB instance
+sim_noc0301_0,sim_noc0301,DFB instance
+sim_noc0301_1,sim_noc0301,DFB instance
+sim_noc0301_2,sim_noc0301,DFB instance
+sim_rex640_0,sim_rex640,DFB instance
+sim_rex640_1,sim_rex640,DFB instance
+sim_rex640_2,sim_rex640,DFB instance
+sim_rex640_3,sim_rex640,DFB instance

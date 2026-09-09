@@ -1,0 +1,6 @@
+Name,TypeName,Comment
+sim_BAF130FN03CAX01_I,EBOOL,BAF130FN03CAX01 TeSysT contactor aux
+sim_BAF130FN03CB01_I,EBOOL,BAF130FN03CB01 TeSysT CB closed/healthy
+sim_BAF130FN03SY01_I,EBOOL,BAF130FN03SY01 — Safety Interlock Relay
+sim_BAF130FN03VDC01_I,EBOOL,Drive prefix
+SIM_TeSysT_6,SIM_TeSysT,ST-mapped DFB/equip

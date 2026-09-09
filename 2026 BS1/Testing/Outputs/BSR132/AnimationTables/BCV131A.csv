@@ -1,0 +1,19 @@
+Name,TypeName,Comment
+sim_AHI_Scale_31,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_32,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_33,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_34,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_35,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_36,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_37,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_38,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_39,sim_AHI_Scale,ST-mapped DFB/equip
+sim_BCV131ARTD01_PV,REAL,BCV131ARTD01 engineering PV
+sim_BCV131ARTD02_PV,REAL,BCV131ARTD02 engineering PV
+sim_BCV131ARTD03_PV,REAL,BCV131ARTD03 engineering PV
+sim_BCV131ARTD04_PV,REAL,BCV131ARTD04 engineering PV
+sim_BCV131ARTD05_PV,REAL,BCV131ARTD05 engineering PV
+sim_BCV131ARTD06_PV,REAL,BCV131ARTD06 engineering PV
+sim_BCV131ARTD07_PV,REAL,BCV131ARTD07 engineering PV
+sim_BCV131ARTD08_PV,REAL,BCV131ARTD08 engineering PV
+sim_BCV131ARTD09_PV,REAL,BCV131ARTD09 engineering PV

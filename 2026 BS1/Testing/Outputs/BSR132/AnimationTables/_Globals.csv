@@ -1,0 +1,6 @@
+Name,TypeName,Comment
+sim_EHC_ScnTm,INT,EHC shared PLC scan time (ms)
+Sim_EquipBlocks,EBOOL,Enable equipment simulation blocks
+sim_init,EBOOL,global/control
+sim_SetHealthy,EBOOL,global/control
+sim_TeSysT_MstIP,IPAddDDT,Shared TeSysT master IP (PLC NOC / EIP)

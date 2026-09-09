@@ -1,0 +1,83 @@
+Name,TypeName,Comment
+sim_AHI_Scale_36,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_43,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_45,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_46,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_47,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_48,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_49,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_50,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_51,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_52,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_53,sim_AHI_Scale,ST-mapped DFB/equip
+sim_BCV130AIT01ZS01_I,EBOOL,Drive prefix
+sim_BCV130BDS01_I,EBOOL,Drive prefix
+sim_BCV130BDS02_I,EBOOL,Drive prefix
+sim_BCV130BDS03_I,EBOOL,Drive prefix
+sim_BCV130BDS04_I,EBOOL,Drive prefix
+sim_BCV130BDS05_I,EBOOL,Drive prefix
+sim_BCV130BDS06_I,EBOOL,Drive prefix
+sim_BCV130BDS07_I,EBOOL,Drive prefix
+sim_BCV130BDS08_I,EBOOL,Drive prefix
+sim_BCV130BRS01_I,EBOOL,Drive prefix
+sim_BCV130BRS02_I,EBOOL,Drive prefix
+sim_BCV130BRS03_I,EBOOL,Drive prefix
+sim_BCV130FT03_PV,REAL,BCV130FT03 engineering PV
+sim_BCV130FT03FQ03_I,EBOOL,Drive prefix
+sim_BCV130FT04_PV,REAL,BCV130FT04 engineering PV
+sim_BCV130FT04FQ04_I,EBOOL,Drive prefix
+sim_BCV130LCS01STP01_I,EBOOL,Drive prefix
+sim_BCV130LCS01STT01_I,EBOOL,Drive prefix
+sim_BCV130LCS01SY01_I,EBOOL,BCV130LCS01SY01 — Emergency Stop Relay
+sim_BCV130LCS02STP01_I,EBOOL,Drive prefix
+sim_BCV130LCS02STT01_I,EBOOL,Drive prefix
+sim_BCV130LCS02SY01_I,EBOOL,BCV130LCS02SY01 — Emergency Stop Relay
+sim_BCV130LCS03SY01_I,EBOOL,BCV130LCS03SY01 — Emergency Stop Relay
+sim_BCV130MD01XS01_I,EBOOL,Drive prefix
+sim_BCV130MD01XS02_I,EBOOL,Drive prefix
+sim_BCV130MD01XS03_I,EBOOL,Drive prefix
+sim_BCV130MD02XS01_I,EBOOL,Drive prefix
+sim_BCV130MD02XS02_I,EBOOL,Drive prefix
+sim_BCV130MD02XS03_I,EBOOL,Drive prefix
+sim_BCV130MT02IS02_I,EBOOL,Drive prefix
+sim_BCV130PWS01_I,EBOOL,BCV130PWS01 — Pullwire Switch 1
+sim_BCV130PWS02_I,EBOOL,BCV130PWS02 — Pullwire Switch 2
+sim_BCV130PWS03_I,EBOOL,BCV130PWS03 — Pullwire Switch 3
+sim_BCV130PWS04_I,EBOOL,BCV130PWS04 — Pullwire Switch 4
+sim_BCV130PWS05_I,EBOOL,BCV130PWS05 — Pullwire Switch 5
+sim_BCV130PWS06_I,EBOOL,BCV130PWS06 — Pullwire Switch 6
+sim_BCV130PWS07_I,EBOOL,BCV130PWS07 — Pullwire Switch 7
+sim_BCV130PWS08_I,EBOOL,BCV130PWS08 — Pullwire Switch 8
+sim_BCV130PWS09_I,EBOOL,BCV130PWS09 — Pullwire Switch 9
+sim_BCV130PWS10_I,EBOOL,BCV130PWS10 — Pullwire Switch 10
+sim_BCV130PWS11_I,EBOOL,BCV130PWS11 — Pullwire Switch 11
+sim_BCV130PWS12_I,EBOOL,BCV130PWS12 — Pullwire Switch 12
+sim_BCV130PWS13_I,EBOOL,BCV130PWS13 — Pullwire Switch 13
+sim_BCV130PWS14_I,EBOOL,BCV130PWS14 — Pullwire Switch 14
+sim_BCV130RTD01_PV,REAL,BCV130RTD01 engineering PV
+sim_BCV130RTD02_PV,REAL,BCV130RTD02 engineering PV
+sim_BCV130RTD03_PV,REAL,BCV130RTD03 engineering PV
+sim_BCV130RTD04_PV,REAL,BCV130RTD04 engineering PV
+sim_BCV130RTD05_PV,REAL,BCV130RTD05 engineering PV
+sim_BCV130RTD06_PV,REAL,BCV130RTD06 engineering PV
+sim_BCV130RTD07_PV,REAL,BCV130RTD07 engineering PV
+sim_BCV130RTD08_PV,REAL,BCV130RTD08 engineering PV
+sim_BCV130RTD09_PV,REAL,BCV130RTD09 engineering PV
+sim_BCV130SS01_FrqGain,REAL,BCV130SS01 frequency SP gain (Hz per eng unit)
+sim_BCV130SS01_FrqOff,REAL,BCV130SS01 frequency SP offset
+sim_BCV130SS01_I,,Drive prefix
+sim_BCV130SS01_SP,REAL,BCV130SS01 speed-sim engineering setpoint
+sim_BCV130SS01_SpdGain,REAL,BCV130SS01 speed SP gain
+sim_BCV130SS01_SpdOff,REAL,BCV130SS01 speed SP offset
+sim_BCV130SV04_PV,REAL,Drive prefix
+sim_BCV130SV05_PV,REAL,Drive prefix
+sim_BCV130SV06_PV,REAL,Drive prefix
+sim_BCV130SV07_PV,REAL,Drive prefix
+sim_BCV130SV08_PV,REAL,Drive prefix
+sim_BCV130SV09_PV,REAL,Drive prefix
+sim_BCV130SY01_I,EBOOL,BCV130SY01 — Safety Interlock Relay
+sim_BCV130ZQ01_I,,Drive prefix
+sim_BCV130ZS01_I,EBOOL,Drive prefix
+sim_BCV130ZS02_I,EBOOL,Drive prefix
+sim_BCV130ZS03_I,EBOOL,Drive prefix
+sim_BCV130ZS04_I,EBOOL,Drive prefix

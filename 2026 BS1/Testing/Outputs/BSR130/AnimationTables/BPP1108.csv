@@ -1,0 +1,8 @@
+Name,TypeName,Comment
+sim_AHI_Scale_60,sim_AHI_Scale,ST-mapped DFB/equip
+sim_BPP1108FS01_I,EBOOL,Drive prefix
+sim_BPP1108LCS01STP01_I,EBOOL,Drive prefix
+sim_BPP1108LCS01STT01_I,EBOOL,Drive prefix
+sim_BPP1108PT01_PV,REAL,BPP1108PT01 engineering PV
+sim_BPP1108THR01_I,EBOOL,Drive prefix
+sim_BPP1108VDC01_I,EBOOL,Drive prefix

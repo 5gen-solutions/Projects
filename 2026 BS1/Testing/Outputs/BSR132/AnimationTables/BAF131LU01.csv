@@ -1,0 +1,18 @@
+Name,TypeName,Comment
+sim_AHI_Scale_3,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_4,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_5,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_6,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_7,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_8,sim_AHI_Scale,ST-mapped DFB/equip
+sim_BAF131LU01FS01FQ01_I,EBOOL,Drive prefix
+sim_BAF131LU01LT01_PV,REAL,BAF131LU01LT01 engineering PV
+sim_BAF131LU01PS01_I,EBOOL,Drive prefix
+sim_BAF131LU01PS02_I,EBOOL,Drive prefix
+sim_BAF131LU01PT01_PV,REAL,BAF131LU01PT01 engineering PV
+sim_BAF131LU01PT02_PV,REAL,BAF131LU01PT02 engineering PV
+sim_BAF131LU01PT03_PV,REAL,BAF131LU01PT03 engineering PV
+sim_BAF131LU01PT04_PV,REAL,BAF131LU01PT04 engineering PV
+sim_BAF131LU01PT05_PV,REAL,BAF131LU01PT05 engineering PV
+sim_BAF131LU01ZS01_I,EBOOL,Drive prefix
+sim_BAF131LU01ZS02_I,EBOOL,Drive prefix

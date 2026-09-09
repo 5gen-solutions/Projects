@@ -1,0 +1,4 @@
+Name,TypeName,Comment
+sim_BCV130CH03BCS01_I,EBOOL,Drive prefix
+sim_BCV130CH03BCS02_I,EBOOL,Drive prefix
+sim_BCV130CH03ZS01_I,EBOOL,Drive prefix

@@ -1,0 +1,17 @@
+Name,TypeName,Comment
+sim_BCV131BK02_FltMod,INT,BCV131BK02 brake fault mode
+sim_BCV131BK02_Prs_PV,REAL,BCV131BK02 brake pressure PV
+sim_BCV131BK02_Rst,EBOOL,BCV131BK02 brake reset
+sim_BCV131BK02LCS01STP01_I,EBOOL,Drive prefix
+sim_BCV131BK02LCS01STT01_I,EBOOL,Drive prefix
+sim_BCV131BK02PS01_I,EBOOL,Drive prefix
+sim_BCV131BK02PS02_I,EBOOL,Drive prefix
+sim_BCV131BK02ZS01A_I,EBOOL,Drive prefix
+sim_BCV131BK02ZS01B_I,EBOOL,Drive prefix
+sim_BCV131BK02ZS02A_I,EBOOL,Drive prefix
+sim_BCV131BK02ZS02B_I,EBOOL,Drive prefix
+sim_BCV131BK02ZS03A_I,EBOOL,Drive prefix
+sim_BCV131BK02ZS03B_I,EBOOL,Drive prefix
+sim_BCV131BK02ZS04A_I,EBOOL,Drive prefix
+sim_BCV131BK02ZS04B_I,EBOOL,Drive prefix
+SIM_Brake_1,SIM_Brake,ST-mapped DFB/equip

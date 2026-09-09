@@ -1,0 +1,6 @@
+Name,TypeName,Comment
+sim_BCV131WN01WE01XS01_I,EBOOL,Drive prefix
+sim_BCV131WN01WE01XS02_I,EBOOL,Drive prefix
+sim_BCV131WN01WE02XS01_I,EBOOL,Drive prefix
+sim_BCV131WN01WE02XS02_I,EBOOL,Drive prefix
+sim_BCV131WN01XS01_I,EBOOL,Drive prefix

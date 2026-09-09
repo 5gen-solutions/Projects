@@ -1,0 +1,15 @@
+Name,TypeName,Comment
+sim_AHI_Scale_22,sim_AHI_Scale,ST-mapped DFB/equip
+sim_BPP2105CB01_I,EBOOL,Drive prefix
+sim_BPP2105FS02_I,EBOOL,Drive prefix
+sim_BPP2105LCS01STP01_I,EBOOL,Drive prefix
+sim_BPP2105LCS01STT01_I,EBOOL,Drive prefix
+sim_BPP2105LOS01_I,EBOOL,Drive prefix
+sim_BPP2105PT02_PV,REAL,BPP2105PT02 engineering PV
+sim_BPP2105THR01_I,EBOOL,Drive prefix
+sim_BPP2105TRP01_I,EBOOL,Drive prefix
+sim_BPP2105TRP01_SetOK,EBOOL,Drive prefix
+sim_BPP2105TRP01_SetOpn,EBOOL,BPP2105TRP01 sim set CB open
+sim_BPP2105TRP01_SetTrp,EBOOL,BPP2105TRP01 sim set tripped
+sim_BPP2105VDC01_I,EBOOL,Drive prefix
+sim_CBSts_7,sim_CBSts,ST-mapped DFB/equip

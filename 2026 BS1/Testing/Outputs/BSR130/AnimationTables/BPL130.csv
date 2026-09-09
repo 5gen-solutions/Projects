@@ -1,0 +1,17 @@
+Name,TypeName,Comment
+Sim_BPL130PLM0_Flt,EBOOL,PLC Ethernet Module Sim Module Not Running Fault
+Sim_BPL130PLM0_LnkFlt,EBOOL,PLC Ethernet Module Sim Set Ethernet Link Not Active
+Sim_BPL130PLM0_Mode,INT,"PLC Ethernet Module Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)"
+sim_BPL130PLM0_Mode,,IO module/DX
+Sim_BPL130PLM3_ComFlt,EBOOL,NPI Hub PLC Ethernet Module Sim Communications Failure
+Sim_BPL130PLM3_Flt,EBOOL,NPI Hub PLC Ethernet Module Sim Module Not Running Fault
+Sim_BPL130PLM3_LnkFlt,EBOOL,NPI Hub PLC Ethernet Module Sim Set Ethernet Link Not Active
+Sim_BPL130PLM3_Mode,INT,"NPI Hub PLC Ethernet Module Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)"
+Sim_BPL130PLM4_ComFlt,EBOOL,NPI Hub PLC Ethernet Module Sim Communications Failure
+Sim_BPL130PLM4_Flt,EBOOL,NPI Hub PLC Ethernet Module Sim Module Not Running Fault
+Sim_BPL130PLM4_LnkFlt,EBOOL,NPI Hub PLC Ethernet Module Sim Set Ethernet Link Not Active
+Sim_BPL130PLM4_Mode,INT,"NPI Hub PLC Ethernet Module Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)"
+Sim_BPL130PLM5_ComFlt,EBOOL,NPI Hub PLC Ethernet Module Sim Communications Failure
+Sim_BPL130PLM5_Flt,EBOOL,NPI Hub PLC Ethernet Module Sim Module Not Running Fault
+Sim_BPL130PLM5_LnkFlt,EBOOL,NPI Hub PLC Ethernet Module Sim Set Ethernet Link Not Active
+Sim_BPL130PLM5_Mode,INT,"NPI Hub PLC Ethernet Module Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)"

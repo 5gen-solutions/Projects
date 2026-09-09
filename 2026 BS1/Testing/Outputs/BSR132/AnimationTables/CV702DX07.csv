@@ -1,0 +1,5 @@
+Name,TypeName,Comment
+SIM_CRA31210_7,SIM_CRA31210,ST-mapped DFB/equip
+Sim_CV702DX07DIO1PLM0_ComFlt,EBOOL,CV702DX07 CRA Comms Module 0 Sim Communications Failure
+Sim_CV702DX07DIO1PLM0_Flt,EBOOL,CV702DX07 CRA Comms Module 0 Sim Module Not Running Fault
+Sim_CV702DX07DIO1PLM0_LnkFlt,EBOOL,CV702DX07 CRA Comms Module 0 Sim Set Ethernet Link Not Active

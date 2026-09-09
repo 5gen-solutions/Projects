@@ -1,0 +1,25 @@
+Name,TypeName,Comment
+sim_AHI_Scale_12,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_13,sim_AHI_Scale,ST-mapped DFB/equip
+sim_BAF130LCS01REV01_I,EBOOL,Drive prefix
+sim_BAF130LCS01STP01_I,EBOOL,Drive prefix
+sim_BAF130LCS01STT01_I,EBOOL,Drive prefix
+sim_BAF130LCS01SY01_I,EBOOL,BAF130LCS01SY01 — Emergency Stop Relay
+sim_BAF130LT01_PV,REAL,BAF130LT01 engineering PV
+sim_BAF130LT02_PV,REAL,BAF130LT02 engineering PV
+sim_BAF130PWS01_I,EBOOL,BAF130PWS01 — Pullwire Switch 1
+sim_BAF130PWS02_I,EBOOL,BAF130PWS02 — Pullwire Switch 2
+sim_BAF130SS01_FrqGain,REAL,BAF130SS01 frequency SP gain (Hz per eng unit)
+sim_BAF130SS01_FrqOff,REAL,BAF130SS01 frequency SP offset
+sim_BAF130SS01_I,,Drive prefix
+sim_BAF130SS01_SP,REAL,BAF130SS01 speed-sim engineering setpoint
+sim_BAF130SS01_SpdGain,REAL,BAF130SS01 speed SP gain
+sim_BAF130SS01_SpdOff,REAL,BAF130SS01 speed SP offset
+sim_BAF130SY01_I,EBOOL,BAF130SY01 — Safety Interlock Relay
+sim_BAF130ZQ01_I,,Drive prefix
+sim_BAF130ZS01_I,EBOOL,Drive prefix
+sim_BAF130ZS02_I,EBOOL,Drive prefix
+sim_BAF130ZS03_I,EBOOL,Drive prefix
+sim_BAF130ZS04_I,EBOOL,Drive prefix
+sim_BAF130ZS05_I,EBOOL,Drive prefix
+sim_BAF130ZS06_I,EBOOL,Drive prefix

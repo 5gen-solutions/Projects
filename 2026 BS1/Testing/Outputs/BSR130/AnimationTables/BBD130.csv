@@ -1,0 +1,7 @@
+Name,TypeName,Comment
+sim_AHI_Scale_14,sim_AHI_Scale,ST-mapped DFB/equip
+sim_AHI_Scale_20,sim_AHI_Scale,ST-mapped DFB/equip
+sim_BBD130FT21_PV,REAL,BBD130FT21 engineering PV
+sim_BBD130FT21FQ21_I,EBOOL,Drive prefix
+sim_BBD130PT20_PV,REAL,BBD130PT20 engineering PV
+sim_BBD130SV13_PV,REAL,Drive prefix
