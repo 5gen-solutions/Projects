@@ -1,0 +1,1643 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<STExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-8-8:3:2" content="Structured source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL131" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<program>
+		<identProgram name="sim_PLC_module" type="section" task="MAST" SectionOrder="4"></identProgram>
+		<STSource>(* Head Rack Modules Simulation
+CRA Modules Simulation *)
+
+IF sim_SetHealthy THEN
+
+	(* =========== HEAD RACK =========== *)
+	(* Set PLC Links Healthy *)
+	sim_BPL131PLM0_Mode := 1;(* set ethernet 1 to active (service port) *)
+	SIM_BMEP586x4xRIO_0 (iMode := Sim_BPL131PLM0_Mode,
+	                     iFlt := Sim_BPL131PLM0_Flt,
+	                     iLnkNotAct := Sim_BPL131PLM0_LnkFlt,
+	                     oInDatDDT =&gt; BMEP58_ECPU_EXT);
+	(* ===== NOC Sim ===== *)
+	IF sim_BPL131PLM3_Mode = 1 THEN(* set ethernet 1 to active (service port) *)
+	sim_noc0301_0 (iMode 	:= sim_BPL131PLM3_Mode,
+               		iFlt 	:= sim_BPL131PLM3_Flt,
+               		iComFlt := sim_BPL131PLM3_ComFlt,
+               		iLnkNotAct := sim_BPL131PLM3_LnkFlt,
+               		oInDatDDT =&gt; PLC_3);		
+	END_IF;
+
+	IF sim_BPL131PLM4_Mode = 1 THEN(* set ethernet 1 to active (service port) *)
+	sim_noc0301_1 (iMode 	:= sim_BPL131PLM4_Mode,
+	               iFlt 	:= sim_BPL131PLM4_Flt,
+	               iComFlt 	:= sim_BPL131PLM4_ComFlt,
+	               iLnkNotAct := sim_BPL131PLM4_LnkFlt,
+	               oInDatDDT =&gt; HMI_4);
+	END_IF;
+
+	sim_BPL131PLM5_Mode := 1;(* set ethernet 1 to active (service port) *)
+	sim_noc0301_2 (iMode := Sim_BPL131PLM5_Mode,
+	               iFlt := Sim_BPL131PLM5_Flt,
+		       iComFlt 	:= sim_BPL131PLM5_ComFlt,
+	               iLnkNotAct := Sim_BPL131PLM5_LnkFlt,
+	               oInDatDDT =&gt; IO_5);
+
+
+	(* =========== BSR131DX01DIO1PLM0 - DROP 1 =========== *)
+	SIM_CRA31210_1 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= sim_BSR131DX01DIO1PLM0_Flt,
+                     iComFlt 	:= sim_BSR131DX01DIO1PLM0_ComFlt,
+                     iLnkNotAct := sim_BSR131DX01DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D01R00S00); 
+
+	(* =========== BTY1502DX02DIO1PLM0 - DROP 2 =========== *)
+	SIM_CRA31210_2 (iMode   := 1,	(* set ethernet 1 to active (service port) *)
+	             iFlt 	:= Sim_BTY1502DX02DIO1PLM0_Flt,
+	             iComFlt 	:= Sim_BTY1502DX02DIO1PLM0_ComFlt,
+	             iLnkNotAct := Sim_BTY1502DX02DIO1PLM0_LnkFlt,
+	             oInDatDDT 	=&gt; D02R00S00); 
+			
+	(* =========== BTY1502DX03DIO1PLM0 - DROP 3 =========== *)
+	SIM_CRA31210_3 (iMode   := 1,	(* set ethernet 1 to active (service port) *)
+	             iFlt 	:= Sim_BTY1502DX03DIO1PLM0_Flt,
+	             iComFlt 	:= Sim_BTY1502DX03DIO1PLM0_ComFlt,
+	             iLnkNotAct := Sim_BTY1502DX03DIO1PLM0_LnkFlt,
+	             oInDatDDT 	=&gt; D03R00S00); 
+
+	(* =========== BTK2101DX04DIO1PLM0 - DROP 4 =========== *)
+	SIM_CRA31210_4 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= sim_BTK2101DX04DIO1PLM0_Flt,
+                     iComFlt 	:= sim_BTK2101DX04DIO1PLM0_ComFlt,
+                     iLnkNotAct := sim_BTK2101DX04DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D04R00S00); 
+end_if;
+</STSource>
+	</program>
+	<dataBlock>
+		<variables name="D02R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="013B023F-937D-458E-A9AF-9AA1E44457E3"></attribute>
+			<attribute name="Owner" value="\2.2\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="Sim_BSR131DX01DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BSR131DX01 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="D03R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="7646AF24-AC13-493E-9AD6-E30820A09E5E"></attribute>
+			<attribute name="Owner" value="\2.3\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="D04R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="43936C7A-14A3-48CB-AA30-D81534DE8D03"></attribute>
+			<attribute name="Owner" value="\2.4\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="sim_SetHealthy" typeName="EBOOL"></variables>
+		<variables name="Sim_BTY1502DX03DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BTY1502DX03 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BPL131PLM5_LnkFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="Sim_BPL131PLM4_LnkFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D01R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="3FE5BCB6-73C8-4825-8F6E-42D1F7C8C17F"></attribute>
+			<attribute name="Owner" value="\2.1\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="Sim_BPL131PLM3_Mode" typeName="INT">
+			<comment>NPI Hub PLC Ethernet Module Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)</comment>
+		</variables>
+		<variables name="Sim_BTY1502DX02DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BTY1502DX02 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BTY1502DX03DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BTY1502DX03 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="Sim_BPL131PLM3_LnkFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="Sim_BPL131PLM5_Flt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="SIM_CRA31210_4" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BTY1502DX02DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BTY1502DX02 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="Sim_BTK2101DX04DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BTK2101DX04 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="Sim_BPL131PLM5_Mode" typeName="INT">
+			<comment>NPI Hub PLC Ethernet Module Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)</comment>
+		</variables>
+		<variables name="SIM_BMEP586x4xRIO_0" typeName="SIM_BMEP586x4xRIO"></variables>
+		<variables name="Sim_BPL131PLM3_Flt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="SIM_CRA31210_3" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BSR131DX01DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BSR131DX01 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BPL131PLM0_LnkFlt" typeName="EBOOL"></variables>
+		<variables name="sim_noc0301_2" typeName="sim_noc0301"></variables>
+		<variables name="Sim_BPL131PLM3_ComFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Internal Communications Failure</comment>
+		</variables>
+		<variables name="SIM_CRA31210_2" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BPL131PLM0_Flt" typeName="EBOOL"></variables>
+		<variables name="BMEP58_ECPU_EXT" typeName="T_BMEP58_ECPU_EXT2">
+			<attribute name="ManagedKey" value="c31e1b27-6a1f-4b3e-b742-d4ba66a0921b"></attribute>
+			<attribute name="Owner" value="BMEP58_ECPU_EXT"></attribute>
+			<attribute name="SubOwner" value="BMEP58_ECPU_EXT"></attribute>
+		</variables>
+		<variables name="Sim_BPL131PLM4_Mode" typeName="INT">
+			<comment>NPI Hub PLC Ethernet Module Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)</comment>
+		</variables>
+		<variables name="HMI_4" typeName="T_BMENOC0301_4">
+			<attribute name="ManagedKey" value="242e7faa-2d2d-496e-b063-0e5ac484c25c"></attribute>
+			<attribute name="Owner" value="HMI_4"></attribute>
+			<attribute name="SubOwner" value="HMI_4"></attribute>
+		</variables>
+		<variables name="Sim_BPL131PLM4_Flt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BPL131PLM5_ComFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Internal Communications Failure</comment>
+		</variables>
+		<variables name="sim_noc0301_0" typeName="sim_noc0301"></variables>
+		<variables name="SIM_CRA31210_1" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BTK2101DX04DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BTK2101DX04 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BSR131DX01DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BSR131DX01 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="IO_5" typeName="T_BMENOC0301_4">
+			<attribute name="ManagedKey" value="cf075fbe-055b-4772-b7e1-5a0742d0385d"></attribute>
+			<attribute name="Owner" value="IO_5"></attribute>
+			<attribute name="SubOwner" value="IO_5"></attribute>
+		</variables>
+		<variables name="sim_noc0301_1" typeName="sim_noc0301"></variables>
+		<variables name="sim_BPL131PLM0_Mode" typeName="INT"></variables>
+		<variables name="Sim_BPL131PLM4_ComFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Internal Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BTY1502DX02DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BTY1502DX02 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BTY1502DX03DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BTY1502DX03 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="PLC_3" typeName="T_BMENOC0301_4">
+			<attribute name="ManagedKey" value="4212e6cd-7f4b-4584-800f-e7da45c80fa0"></attribute>
+			<attribute name="Owner" value="PLC_3"></attribute>
+			<attribute name="SubOwner" value="PLC_3"></attribute>
+		</variables>
+		<variables name="Sim_BTK2101DX04DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BTK2101DX04 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+	</dataBlock>
+	<FBSource nameOfFBType="SIM_CRA31210" version="0.37" dateTime="dt#2026-09-01-11:17:19">
+		<comment>Simulates X80 32 Channel Digital input module statuses</comment>
+		<attribute name="TypeCodeCheckSumString" value="9582"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="165F"></attribute>
+		<inputParameters>
+			<variables name="iMode" typeName="INT">
+				<comment>Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="iFlt" typeName="EBOOL">
+				<comment>Simualte Module Not Running Fault (1= Faulted not running)</comment>
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="iComFlt" typeName="EBOOL">
+				<comment>Simulate Internal Communications Failure from Device DDT (1= Faulted)</comment>
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="iLnkNotAct" typeName="EBOOL">
+				<comment>Simulate Ethernet link active/inactive (0 = Link Active; 1 = Not Link Active)</comment>
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="oInDatDDT" typeName="T_M_CRA_EXT_IN">
+				<comment>Input Status DDT data to status DFB of CRA31210 Module.</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+		</outputParameters>
+		<FBProgram name="sim_CRA31210">
+			<STSource>(* =====Sim X80DDI1602 Module===== 
+Simulates fault conditions of CRA31210 Module.
+- Configuration between Which Ethernet Port Connected.
+- Module Not running Fault
+- Internal Communications Module failure
+- Link active inactive status
+
+
+ -----Inputs----- 
+INPUT		TYPE		DESCRIPTION 
+iMode		INT		Configuration of Ethernet Link (1 or anyINT Default = ETH1 service port; 
+										2   = ETH2 Network Port;
+										3   = ETH3 Network Port)
+iFlt		EBOOL		Simualte Module Not Running Fault (STSDDT.STATE_RUN = 0)
+iComFlt		EBOOL		Simulate Internal Communications Failure from Device DDT
+iLnkNotAct	EBOOL		Simulate Ethernet link active/inactive (0 = Link Active; 1 = Not Link Active)
+
+-----Outputs-----
+OUTPUT 		TYPE 		DESCRIPTION
+oInDatDDT	T_M_CRA_EXT_IN	Input Status DDT data to status DFB of CRA31210 Module.
+
+created: AXY 18/10/2022
+*)
+
+(* =====Set Ethernet Sts Hty===== *)
+CASE iMode OF
+  2: 
+	oInDatDDT.ETH_STATUS.0 := WRITE_INPUT_EBOOL( INP := FALSE);
+	oInDatDDT.ETH_STATUS.1 := WRITE_INPUT_EBOOL( INP := NOT(iLnkNotAct)); (* ETH2 NETWORK PORT MODE *)
+	oInDatDDT.ETH_STATUS.2 := WRITE_INPUT_EBOOL( INP := FALSE);
+  3:
+	oInDatDDT.ETH_STATUS.0 := WRITE_INPUT_EBOOL( INP := FALSE);
+	oInDatDDT.ETH_STATUS.1 := WRITE_INPUT_EBOOL( INP := FALSE); 	   
+	oInDatDDT.ETH_STATUS.2 := WRITE_INPUT_EBOOL( INP := NOT(iLnkNotAct)); (* ETH3 NETWORK PORT MODE *)
+
+ELSE
+	(* Simluate Ethernet Link Fault *)
+	oInDatDDT.ETH_STATUS.0 := WRITE_INPUT_EBOOL( INP := NOT(iLnkNotAct)); (* DEFAULT ETH1 PORT MODE *)
+	oInDatDDT.ETH_STATUS.1 := WRITE_INPUT_EBOOL( INP := FALSE); 
+	oInDatDDT.ETH_STATUS.2 := WRITE_INPUT_EBOOL( INP := FALSE);
+END_CASE;
+
+
+(* =====Fault Mapping===== *)
+(* COMMS FAULT SIM *)
+IF iComFlt THEN 
+	oInDatDDt.DROP_COM_HEALTH:= WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+ELSE
+	oInDatDDT.DROP_COM_HEALTH:= WRITE_INPUT_EBOOL (INP := TRUE);
+END_IF;
+
+(* MODULE FAULT (module not running)*)
+IF iFlt THEN 
+	oInDatDDT.CRA_STATE.1 := WRITE_INPUT_EBOOL (INP := NOT(iFlt));
+	oInDatDDT.CRA_STATE.0 := WRITE_INPUT_EBOOL (INP := NOT(iFlt));
+	oInDatDDT.CRA_STATE.2 := WRITE_INPUT_EBOOL (INP := 0);
+	oInDatDDT.CRA_STATE.3 := WRITE_INPUT_EBOOL (INP := 0);
+	oInDatDDT.CRA_STATE.4 := WRITE_INPUT_EBOOL (INP := 0);
+	oInDatDDT.CRA_STATE.5 := WRITE_INPUT_EBOOL (INP := 0);
+	oInDatDDT.CRA_STATE.6 := WRITE_INPUT_EBOOL (INP := 0);
+	oInDatDDT.CRA_STATE.7 := WRITE_INPUT_EBOOL (INP := 0);
+ELSE (* 2#00000011 = STATE_RUN *)
+	oInDatDDT.CRA_STATE.0 := WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.CRA_STATE.1 := WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.CRA_STATE.2 := WRITE_INPUT_EBOOL (INP := 0);
+	oInDatDDT.CRA_STATE.3 := WRITE_INPUT_EBOOL (INP := 0);
+	oInDatDDT.CRA_STATE.4 := WRITE_INPUT_EBOOL (INP := 0);
+	oInDatDDT.CRA_STATE.5 := WRITE_INPUT_EBOOL (INP := 0);
+	oInDatDDT.CRA_STATE.6 := WRITE_INPUT_EBOOL (INP := 0);
+	oInDatDDT.CRA_STATE.7 := WRITE_INPUT_EBOOL (INP := 0);
+END_IF;
+</STSource>
+		</FBProgram>
+	</FBSource>
+	<FBSource nameOfFBType="SIM_BMEP586x4xRIO" version="0.48" dateTime="dt#2026-09-01-11:40:01">
+		<attribute name="TypeCodeCheckSumString" value="4836"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="A1D6"></attribute>
+		<attribute name="UseNewTplSignAlgo" value="TRUE"></attribute>
+		<inputParameters>
+			<variables name="iMode" typeName="INT">
+				<comment>Configuration of Ethernet Link, default = ETH1 (1=ETH1, 2=ETH2, 3=ET3, 4 = ETH2 ETH3)</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="iFlt" typeName="EBOOL">
+				<comment>Simualte Module Not Running Fault (1= Faulted not running)</comment>
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="iRdnFlt" typeName="EBOOL">
+				<comment>Simulate Internal Communications Failure from Device DDT (1= Faulted)</comment>
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="iLnkNotAct" typeName="EBOOL">
+				<comment>Simulate Ethernet link active/inactive (0 = Link Active; 1 = Not Link Active)</comment>
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="oInDatDDT" typeName="T_BMEP58_ECPU_EXT2">
+				<comment>Input Status DDT data to status DFB of CRA31210 Module.</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+		</outputParameters>
+		<FBProgram name="sim_BMEP586x4xRIO">
+			<STSource>(* =====Sim X80DDI1602 Module===== 
+Simulates fault conditions of CRA31210 Module.
+- Configuration between Which Ethernet Port Connected.
+- Module Not running Fault
+- Internal Communications Module failure
+- Link active inactive status
+
+
+ -----Inputs----- 
+INPUT		TYPE		DESCRIPTION 
+iMode		INT		Configuration of Ethernet Link (1 or anyINT Default = ETH1 service port; 
+										2   = ETH2 Network Port;
+										3   = ETH3 Network Port
+										4   = ETH2 ETH3 Network Ports)
+iFlt		EBOOL		Simualte Module Not Running Fault (STSDDT.STATE_RUN = 0)
+iComFlt		EBOOL		Simulate Internal Communications Failure from Device DDT
+iLnkNotAct	EBOOL		Simulate Ethernet link active/inactive (0 = Link Active; 1 = Not Link Active)
+
+-----Outputs-----
+OUTPUT 		TYPE 		DESCRIPTION
+oInDatDDT	T_M_CRA_EXT_IN	Input Status DDT data to status DFB of CRA31210 Module.
+
+created: AXY 18/10/2022
+updated: AXY 12/05/2023
+*)
+
+(* =====Set Ethernet Sts Hty===== *)
+CASE iMode OF
+  2: 
+	oInDatDDT.ETH_STATUS.0 := WRITE_INPUT_EBOOL( INP := FALSE);
+	oInDatDDT.ETH_STATUS.1 := WRITE_INPUT_EBOOL( INP := NOT(iLnkNotAct)); (* ETH2 NETWORK PORT MODE *)
+	oInDatDDT.ETH_STATUS.2 := WRITE_INPUT_EBOOL( INP := FALSE);
+  3:
+	oInDatDDT.ETH_STATUS.0 := WRITE_INPUT_EBOOL( INP := FALSE);
+	oInDatDDT.ETH_STATUS.1 := WRITE_INPUT_EBOOL( INP := FALSE); 	   
+	oInDatDDT.ETH_STATUS.2 := WRITE_INPUT_EBOOL( INP := NOT(iLnkNotAct)); (* ETH3 NETWORK PORT MODE *)
+
+  4:
+  	oInDatDDT.ETH_STATUS.0 := WRITE_INPUT_EBOOL( INP := FALSE);
+	oInDatDDT.ETH_STATUS.1 := WRITE_INPUT_EBOOL( INP := NOT(iLnkNotAct)); (* ETH2 NETWORK PORT MODE *)
+	oInDatDDT.ETH_STATUS.2 := WRITE_INPUT_EBOOL( INP := NOT(iLnkNotAct)); (* ETH3 NETWORK PORT MODE *)
+
+ELSE
+	(* Simluate Ethernet Link Fault *)
+	oInDatDDT.ETH_STATUS.0 := WRITE_INPUT_EBOOL( INP := NOT(iLnkNotAct)); (* DEFAULT ETH1 PORT MODE *)
+	oInDatDDT.ETH_STATUS.1 := WRITE_INPUT_EBOOL( INP := FALSE); 
+	oInDatDDT.ETH_STATUS.2 := WRITE_INPUT_EBOOL( INP := FALSE);
+END_CASE;
+
+(* =====Default Hty States===== *)
+oInDatDDT.ETH_STATUS.8 := WRITE_INPUT_EBOOL (INP := TRUE); (* NetDiagOK *)
+oInDatDDT.SERVICE_STATUS2.0 := WRITE_INPUT_EBOOL (INP:= TRUE); (* RIOAdrOK *)
+oInDatDDT.SERVICE_STATUS.14 := WRITE_INPUT_EBOOL (INP:= TRUE); (* ServFDR *)
+oInDatDDT.MAIN_IP_ADDRESS_STATUS := WRITE_INPUT_EBOOL (INP:= TRUE); (* Duplicate Ip *)
+
+(* =====Fault Mapping===== *)
+(* Redundancy Error Sim *)
+oInDatDDT.ETH_STATUS.5 := WRITE_INPUT_EBOOL (INP := NOT( iRdnFlt)); (* RdnOK *)
+
+(* ScnOK *)
+oInDatDDT.ETH_STATUS.6 := WRITE_INPUT_EBOOL (INP := Not( iLnkNotAct)); (* ScnOK *)
+
+(* Network Fault *)
+oInDatDDT.ETH_BKP_FAILURE := WRITE_INPUT_EBOOL (INP := NOT(iFlt)); (* BK plane fault *)
+</STSource>
+		</FBProgram>
+	</FBSource>
+	<DDTSource DDTName="T_BMEP58_ECPU_EXT2" version="4.00" dateTime="dt#2021-02-24-10:00:00">
+		<comment>Enhanced Device DDT for embedded M580 DTM (with standalone PLC)</comment>
+		<attribute name="IsTypeLocked" value="TRUE"></attribute>
+		<attribute name="IsDeviceDDT" value="TRUE"></attribute>
+		<attribute name="DeviceDDTKind" value="2#0000_0000"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="76DD"></attribute>
+		<attribute name="IsHSBYExchange" value="FALSE"></attribute>
+		<attribute name="IsTypeHiddenButExported" value="TRUE"></attribute>
+		<structure>
+			<variables name="CRA_CNX_HEALTH" typeName="ARRAY[1..128] OF BYTE">
+				<comment>CRA health (Drop 1 to 128)</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="CRA_SAFE_HEALTH" typeName="ARRAY[1..32] OF BYTE">
+				<comment>Health bits for CRA Safe Task objects</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DID_HEALTH" typeName="ARRAY[1..16] OF WORD">
+				<comment>Health for DIO (New field name)</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="CIxR_OBJ_HEALTH" typeName="ARRAY[1..24] OF WORD">
+				<comment>CIMR/CIDR Object health bits</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_STATUS" typeName="WORD">
+				<comment>Ethernet status</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT1_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet port 1</comment>
+				<attribute name="ExtractBit" value="0"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT2_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet port 2</comment>
+				<attribute name="ExtractBit" value="1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT3_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet port 3</comment>
+				<attribute name="ExtractBit" value="2"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_BKP_PORT_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet backplane port</comment>
+				<attribute name="ExtractBit" value="3"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="HSBY_LINK" typeName="BOOL">
+				<comment>Link up/down for HSBY port</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="4"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="REDUNDANCY_STATUS" typeName="BOOL">
+				<comment>Redundancy status / backup path available (not for Red CRA)</comment>
+				<attribute name="ExtractBit" value="5"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SCANNER_OK" typeName="BOOL">
+				<comment>Scanner OK and scanning at least 1 equipment (if at least 1 equipment configured)</comment>
+				<attribute name="ExtractBit" value="6"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="GLOBAL_STATUS" typeName="BOOL">
+				<comment>0: one or more services not operating normally / 1: all operational</comment>
+				<attribute name="ExtractBit" value="7"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="NETWORK_HEALTH" typeName="BOOL">
+				<comment>1: No traffic overload detected / 0: Traffic overload detected (ex: broadcast storm). Check your network topology and configuration.</comment>
+				<attribute name="ExtractBit" value="8"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SERVICE_STATUS" typeName="WORD">
+				<comment>One bit for each user-observable feature</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="RSTP_SERVICE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="0"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT502_SERVICE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="2"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SNMP_SERVICE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="3"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="MAIN_IP_ADDRESS_STATUS" typeName="BOOL">
+				<comment>Main IP address status (0 in case of duplicate IP or no IP assigned)</comment>
+				<attribute name="ExtractBit" value="4"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_BKP_FAILURE" typeName="BOOL">
+				<comment>Ethernet backplane hardware status (0: failure, 1: OK)</comment>
+				<attribute name="ExtractBit" value="5"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_BKP_ERROR" typeName="BOOL">
+				<comment>Ethernet backplane error (0: error, 1: OK)</comment>
+				<attribute name="ExtractBit" value="6"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="EIP_SCANNER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="7"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="MODBUS_SCANNER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="8"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="WEB_SERVER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="11"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FIRMWARE_UPGRADE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="12"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FTP" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="13"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FDR_SERVER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="14"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="EIP_ADAPTER" typeName="BOOL">
+				<comment>EIP adapter (server) service 0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="15"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SERVICE_STATUS2" typeName="WORD">
+				<comment>One bit for each user-observable feature</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="A_B_IP_ADDRESS_STATUS" typeName="BOOL">
+				<comment>IP address A/B status (0 in case of duplicate IP or no IP assigned)</comment>
+				<attribute name="ExtractBit" value="0"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="LLDP_SERVICE" typeName="BOOL">
+				<comment>LLDP service status</comment>
+				<attribute name="ExtractBit" value="1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="EVENT_LOG_STATUS" typeName="BOOL">
+				<comment>0: event log service not operating normally / 1: event log service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="2"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="LOG_SERVER_NOT_REACHABLE" typeName="BOOL">
+				<comment>1: No acknowledgement received from the syslog server / 0: otherwise</comment>
+				<attribute name="ExtractBit" value="3"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="NTP_SYNC" typeName="BOOL">
+				<comment>1: synchronized to the NTP Server / 0: otherwise</comment>
+				<attribute name="ExtractBit" value="5"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="NTP_SERVICE" typeName="BOOL">
+				<comment>NTP Daemon status - 0=NTP Daemon down / 1= NTP Daemon active</comment>
+				<attribute name="ExtractBit" value="6"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="NTP_QUALITY_WARNING" typeName="BOOL">
+				<comment>1: quality of the clock out of range defined in the configuration / 0: otherwise</comment>
+				<attribute name="ExtractBit" value="7"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_PORT_1_2_STATUS" typeName="BYTE">
+				<comment>Ethernet port 1 and 2 status</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_PORT3_BKP_STATUS" typeName="BYTE">
+				<comment>Ethernet port 3 and backplane port status</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FDR_USAGE" typeName="BYTE">
+				<comment>% of FDR server usage</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="RESERVED1" typeName="BYTE">
+				<comment>Reserved</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="NTP_WITHIN" typeName="UINT">
+				<comment>Estimated accuracy of the clock in millisecond</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="NTP_NB_SERVER_CONNECTED" typeName="UINT">
+				<comment>Number of servers connected</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="RESERVED2" typeName="WORD">
+				<comment>Reserved</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="IN_PACKETS" typeName="UINT">
+				<comment>Number of packets received on interface</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="IN_ERRORS" typeName="UINT">
+				<comment>Number of inbound packets that contain errors</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="OUT_PACKETS" typeName="UINT">
+				<comment>Number of packets sent on interface</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="OUT_ERRORS" typeName="UINT">
+				<comment>Number of outbound packets that contain errors</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="CONF_SIG" typeName="UDINT">
+				<comment>Signature of all files on local module FDR Server</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DROP_HEALTH" typeName="ARRAY[1..64] OF BOOL">
+				<comment>DROP health bits (Drop 1 to 64)</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="RIO_HEALTH" typeName="ARRAY[257..384] OF BOOL">
+				<comment>RIO health bits (1 bit per RIO up to 128)</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="LS_HEALTH" typeName="ARRAY[1..3] OF BOOL">
+				<comment>Local Slave health bits (Local Slave 1 to 3)</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DIO_HEALTH" typeName="ARRAY[513..640] OF BOOL">
+				<comment>DIO health bits (1 bit per DIO up to 128 DIOs)</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH" typeName="ARRAY[0..7] OF WORD">
+				<comment>DIO device health (1 bit per DIO up to 128 DIO)</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DROP_CTRL" typeName="ARRAY[1..64] OF BOOL">
+				<comment>DROP control bits (Drop 1 to 64)</comment>
+			</variables>
+			<variables name="RIO_CTRL" typeName="ARRAY[257..384] OF BOOL">
+				<comment>RIO control bits (1 bit per RIO up to 128)</comment>
+			</variables>
+			<variables name="DIO_CTRL" typeName="ARRAY[513..640] OF BOOL">
+				<comment>DIO control bits (1 bit per DIO up to 128 DIOs)</comment>
+			</variables>
+			<variables name="SERVICE_CMD" typeName="WORD">
+				<comment>bit 0: NTPV4 - command to stop/start the NTP daemon / bit1 -15: reserved for future use</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="NTP_STOP" typeName="BOOL">
+				<comment>1: Stop the NTP daemon / 0: Start the NTP daemon</comment>
+				<attribute name="ExtractBit" value="0"></attribute>
+			</variables>
+			<variables name="RED_PRP_DROP_SWAP" typeName="ARRAY[1..64] OF BOOL">
+				<comment>PRP drop SWAP Command (in case of redundant CRA in the drop). 1 bit per drop, no test of redundancy.</comment>
+			</variables>
+			<variables name="RESERVED3" typeName="ARRAY[1..160] OF BYTE">
+				<comment>RESERVED3</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+		</structure>
+	</DDTSource>
+	<FBSource nameOfFBType="sim_noc0301" version="0.52" dateTime="dt#2024-06-14-16:59:25">
+		<comment>Simulates healthy and  fault conditions of NOC0301 Module.</comment>
+		<attribute name="TypeCodeCheckSumString" value="1AF5"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="BEB7"></attribute>
+		<inputParameters>
+			<variables name="iMode" typeName="INT">
+				<comment>Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="iFlt" typeName="EBOOL">
+				<comment>Simualte Module Not Running Fault (1= Faulted not running)</comment>
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="iComFlt" typeName="EBOOL">
+				<comment>Simulate Internal Communications Failure from Device DDT (1= Faulted)</comment>
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="iLnkNotAct" typeName="EBOOL">
+				<comment>Simulate Ethernet link active/inactive (0 = Link Active; 1 = Not Link Active)</comment>
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="oInDatDDT" typeName="T_BMENOC0301_2">
+				<comment>Input Status DDT data to status DFB of CRA31210 Module.</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+		</outputParameters>
+		<FBProgram name="sim_noc0301">
+			<STSource>(* =====Sim NOC0301 Module===== 
+Simulates fault conditions of NOC0301 Module.
+- Configuration between Which Ethernet Port Connected.
+- Module Not running Fault
+- Internal Communications Module failure
+- Link active inactive status
+
+
+ -----Inputs----- 
+INPUT		TYPE		DESCRIPTION 
+iMode		INT		Configuration of Ethernet Link (1 or anyINT Default = ETH1 service port; 
+										2   = ETH2 Network Port;
+										3   = ETH3 Network Port)
+iFlt		EBOOL		Simualte Module Not Running Fault (STSDDT.STATE_RUN = 0)
+iComFlt		EBOOL		Simulate Internal Communications Failure from Device DDT
+iLnkNotAct	EBOOL		Simulate Ethernet link active/inactive (0 = Link Active; 1 = Not Link Active)
+
+-----Outputs-----
+OUTPUT 		TYPE 		DESCRIPTION
+oInDatDDT	T_M_CRA_EXT_IN	Input Status DDT data to status DFB of NOC0301 Module.
+
+created: AXY 18/10/2022
+*)
+
+(* =====NOC0301 SIMULATION LOGIC===== *)
+(* =====Set Ethernet Sts Hty===== *)
+oInDatDDT.ETH_STATUS.3 := WRITE_INPUT_EBOOL (INP := TRUE); (* ETH BackPlane port active *)
+oInDatDDT.ETH_STATUS.6 := WRITE_INPUT_EBOOL (INP := TRUE); (* IO Set Scanner OK *)
+oInDatDDT.ETH_STATUS.8 := WRITE_INPUT_EBOOL (INP := TRUE); (* Network OK *)
+oInDatDDT.SERVICE_STATUS.5 := WRITE_INPUT_EBOOL (INP := TRUE); (* MODBUS Scanner OK *)
+CASE iMode OF
+  2: 
+
+	oInDatDDT.ETH_STATUS.0 := WRITE_INPUT_EBOOL( INP := FALSE);
+	oInDatDDT.ETH_STATUS.1 := WRITE_INPUT_EBOOL( INP := NOT(iLnkNotAct)); (* ETH2 NETWORK PORT MODE *)
+	oInDatDDT.ETH_STATUS.2 := WRITE_INPUT_EBOOL( INP := FALSE);
+  3:
+	oInDatDDT.ETH_STATUS.0 := WRITE_INPUT_EBOOL( INP := FALSE);
+	oInDatDDT.ETH_STATUS.1 := WRITE_INPUT_EBOOL( INP := FALSE); 	   
+	oInDatDDT.ETH_STATUS.2 := WRITE_INPUT_EBOOL( INP := NOT(iLnkNotAct)); (* ETH3 NETWORK PORT MODE *)
+
+ELSE
+	(* Simluate Ethernet Link Fault *)
+	oInDatDDT.ETH_STATUS.0 := WRITE_INPUT_EBOOL( INP := NOT(iLnkNotAct)); (* DEFAULT ETH1 PORT MODE *)
+	oInDatDDT.ETH_STATUS.1 := WRITE_INPUT_EBOOL( INP := FALSE); 
+	oInDatDDT.ETH_STATUS.2 := WRITE_INPUT_EBOOL( INP := FALSE);
+END_CASE;
+
+
+(* =====Fault Mapping===== *)
+(* COMMS FAULT SIM *)
+
+
+(* MODULE FAULT (module not running)*)
+IF iFlt THEN 
+	oInDatDDT.LS_HEALTH[1]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[2]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[3]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[4]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[5]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[6]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[7]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[8]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[9]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[10]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[11]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[12]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[13]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[14]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[15]:=WRITE_INPUT_EBOOL (INP := FALSE);
+	oInDatDDT.LS_HEALTH[16]:=WRITE_INPUT_EBOOL (INP := FALSE);
+
+ELSE
+	oInDatDDT.LS_HEALTH[1]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[2]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[3]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[4]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[5]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[6]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[7]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[8]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[9]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[10]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[11]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[12]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[13]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[14]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[15]:=WRITE_INPUT_EBOOL (INP := TRUE);
+	oInDatDDT.LS_HEALTH[16]:=WRITE_INPUT_EBOOL (INP := TRUE);
+
+	oInDatDDT.DIO_HEALTH[0]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[1]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[2]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[3]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[4]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[5]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[6]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[7]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[8]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[9]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[10]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[11]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[12]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[13]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[14]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[15]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[16]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[17]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[18]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[19]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[20]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[21]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[22]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[23]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[24]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[25]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[26]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[27]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[28]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[29]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[30]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[31]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[32]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[33]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[34]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[35]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[36]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[37]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[38]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[39]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[40]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[41]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[42]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[43]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[44]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[45]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[46]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[47]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[48]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[49]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[50]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[51]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[52]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[53]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[54]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[55]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[56]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[57]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[58]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[59]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[60]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[61]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[62]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[63]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[64]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[65]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[66]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[67]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[68]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[69]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[70]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[71]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[72]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[73]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[74]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[75]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[76]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[77]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[78]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[79]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[80]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[81]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[82]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[83]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[84]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[85]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[86]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[87]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[88]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[89]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[90]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[91]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[92]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[93]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[94]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[95]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[96]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[97]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[98]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[99]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[100]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[101]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[102]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[103]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[104]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[105]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[106]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[107]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[108]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[109]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[110]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+	oInDatDDT.DIO_HEALTH[111]:=WRITE_INPUT_EBOOL (INP := NOT(iComFlt));
+
+
+END_IF;
+</STSource>
+		</FBProgram>
+	</FBSource>
+	<DDTSource DDTName="T_BMENOC0301_2" version="1.00" dateTime="dt#2024-06-14-16:59:24">
+		<comment>Device DDT For BME NOC Factory Cast</comment>
+		<attribute name="IsTypeLocked" value="TRUE"></attribute>
+		<attribute name="IsDeviceDDT" value="TRUE"></attribute>
+		<attribute name="DeviceDDTKind" value="2#0000_0000"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="9C8E"></attribute>
+		<attribute name="IsHSBYExchange" value="FALSE"></attribute>
+		<attribute name="IsTypeHiddenButExported" value="TRUE"></attribute>
+		<structure>
+			<variables name="ETH_STATUS" typeName="WORD">
+				<comment>Ethernet status</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT1_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet port 1</comment>
+				<attribute name="ExtractBit" value="0"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT2_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet port 2</comment>
+				<attribute name="ExtractBit" value="1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT3_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet port 3</comment>
+				<attribute name="ExtractBit" value="2"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_BKP_PORT_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet backplane port</comment>
+				<attribute name="ExtractBit" value="3"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="HSBY_LINK" typeName="BOOL">
+				<comment>Link up/down for HSBY port</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="4"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="REDUNDANCY_STATUS" typeName="BOOL">
+				<comment>Redundancy status / backup path available</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="5"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SCANNER_OK" typeName="BOOL">
+				<comment>Scanner OK and scanning at least 1 equipment (if at least 1 equipment configured)</comment>
+				<attribute name="ExtractBit" value="6"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="GLOBAL_STATUS" typeName="BOOL">
+				<comment>0: one or more services not operating normally / 1: all operational</comment>
+				<attribute name="ExtractBit" value="7"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="NETWORK_HEALTH" typeName="BOOL">
+				<comment>1: No traffic overload detected / 0: Traffic overload detected (ex: broadcast storm). Check your network topology and configuration.</comment>
+				<attribute name="ExtractBit" value="8"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SERVICE_STATUS" typeName="WORD">
+				<comment>One bit for each user-observable feature</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="RSTP_SERVICE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="0"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT502_SERVICE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="2"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SNMP_SERVICE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="3"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="MAIN_IP_ADDRESS_STATUS" typeName="BOOL">
+				<comment>Main IP address status (0 in case of duplicate IP or no IP assigned)</comment>
+				<attribute name="ExtractBit" value="4"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_BKP_FAILURE" typeName="BOOL">
+				<comment>Ethernet backplane hardware status (0: failure, 1: OK)</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="5"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_BKP_ERROR" typeName="BOOL">
+				<comment>Ethernet backplane error (0: error, 1: OK)</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="6"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="EIP_SCANNER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="7"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="MODBUS_SCANNER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="8"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="NTP_SERVER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="9"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SNTP_CLIENT" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="10"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="WEB_SERVER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="11"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FIRMWARE_UPGRADE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="12"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FTP" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="13"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FDR_SERVER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="14"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="EIP_ADAPTER" typeName="BOOL">
+				<comment>EIP adapter (server) service 0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="15"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SERVICE_STATUS2" typeName="WORD">
+				<comment>One bit for each user-observable feature</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="A_B_IP_ADDRESS_STATUS" typeName="BOOL">
+				<comment>IP address A/B status (0 in case of duplicate IP or no IP assigned)</comment>
+				<attribute name="ExtractBit" value="0"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="LLDP_SERVICE" typeName="BOOL">
+				<comment>LLDP service status</comment>
+				<attribute name="ExtractBit" value="1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="EVENT_LOG_STATUS" typeName="BOOL">
+				<comment>0: event log service not operating normally / 1: event log service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="2"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="LOG_SERVER_NOT_REACHABLE" typeName="BOOL">
+				<comment>1: No acknowledgement received from the syslog server / 0: otherwise</comment>
+				<attribute name="ExtractBit" value="3"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_PORT_1_2_STATUS" typeName="BYTE">
+				<comment>Ethernet port 1 and 2 status</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_PORT3_BKP_STATUS" typeName="BYTE">
+				<comment>Ethernet port 3 and backplane port status</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FIRMWARE_VERSION" typeName="WORD">
+				<comment>MSB=Major Revision, LSB=Minor Revision</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FDR_USAGE" typeName="BYTE">
+				<comment>% of FDR server usage</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="RESERVED" typeName="BYTE">
+				<comment>Hidden - Reserved</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="IN_PACKETS" typeName="UINT">
+				<comment>Number of packets received on interface</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="IN_ERRORS" typeName="UINT">
+				<comment>Number of inbound packets that contain errors</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="OUT_PACKETS" typeName="UINT">
+				<comment>Number of packets sent on interface</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="OUT_ERRORS" typeName="UINT">
+				<comment>Number of outbound packets that contain errors</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="CONF_SIG" typeName="UDINT">
+				<comment>Signature of all files on local module FDR Server</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DID_HEALTH" typeName="T_NOCDIO_HEALTH">
+				<comment>Health for DIO Objects</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="LS_HEALTH" typeName="ARRAY[1..16] OF BOOL">
+				<comment>Local Slave health bits (Local Slave 1 to 16)</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DIO_HEALTH" typeName="ARRAY[0..127] OF BOOL">
+				<comment>DIO health bits (1 bit per DIO up to 128 DIOs. 112 - 127 are reserved for future extension)</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH" typeName="ARRAY[0..7] OF WORD">
+				<comment>DIO device health (1 bit per DIO up to 128 DIO)</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DIO_CTRL" typeName="ARRAY[0..127] OF BOOL">
+				<comment>DIO control bits (1 bit per DIO up to 128 DIOs. 112 - 127 are reserved for future extension)</comment>
+			</variables>
+			<variables name="RESERVED2" typeName="ARRAY[0..7] OF WORD">
+				<comment>Reserved</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+		</structure>
+	</DDTSource>
+	<DDTSource DDTName="T_NOCDIO_HEALTH" version="1.00" dateTime="dt#2013-04-01-00:00:00">
+		<comment>Health of Distributed IO Objects</comment>
+		<attribute name="IsTypeLocked" value="TRUE"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="E6C3"></attribute>
+		<attribute name="IsTypeHiddenButExported" value="TRUE"></attribute>
+		<structure>
+			<variables name="DEVICE_CNX_HEALTH_2_17" typeName="WORD">
+				<comment>Device Connection health bits 2 to 17</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_18_33" typeName="WORD">
+				<comment>Device Connection health bits 18 to 33</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_34_49" typeName="WORD">
+				<comment>Device Connection health bits 34 to 49</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_50_65" typeName="WORD">
+				<comment>Device Connection health bits 50 to 65</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_66_81" typeName="WORD">
+				<comment>Device Connection health bits 66 to 81</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_82_97" typeName="WORD">
+				<comment>Device Connection health bits 82 to 97</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_98_113" typeName="WORD">
+				<comment>Device Connection health bits 98 to 113</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_114_129" typeName="WORD">
+				<comment>Device Connection health bits 114 to 129</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_130_145" typeName="WORD">
+				<comment>Device Connection health bits 130 to 145</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_146_161" typeName="WORD">
+				<comment>Device Connection health bits 146 to 161</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_162_177" typeName="WORD">
+				<comment>Device Connection health bits 162 to 511</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_178_193" typeName="WORD">
+				<comment>Device Connection health bits 178 to 193</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_194_209" typeName="WORD">
+				<comment>Device Connection health bits 194 to 209</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_210_225" typeName="WORD">
+				<comment>Device Connection health bits 210 to 225</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_226_241" typeName="WORD">
+				<comment>Device Connection health bits 226 to 241</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH_242_257" typeName="WORD">
+				<comment>Device Connection health bits 242 to 257</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+		</structure>
+	</DDTSource>
+	<DDTSource DDTName="T_BMENOC0301_4" version="1.00" dateTime="dt#2014-11-05-10:00:00">
+		<comment>Device DDT For BME NOC Factory Cast</comment>
+		<attribute name="IsTypeLocked" value="TRUE"></attribute>
+		<attribute name="IsDeviceDDT" value="TRUE"></attribute>
+		<attribute name="DeviceDDTKind" value="2#0000_0000"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="9C8E"></attribute>
+		<attribute name="IsHSBYExchange" value="FALSE"></attribute>
+		<attribute name="IsTypeHiddenButExported" value="TRUE"></attribute>
+		<structure>
+			<variables name="ETH_STATUS" typeName="WORD">
+				<comment>Ethernet status</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT1_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet port 1</comment>
+				<attribute name="ExtractBit" value="0"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT2_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet port 2</comment>
+				<attribute name="ExtractBit" value="1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT3_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet port 3</comment>
+				<attribute name="ExtractBit" value="2"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_BKP_PORT_LINK" typeName="BOOL">
+				<comment>Link up/down for Ethernet backplane port</comment>
+				<attribute name="ExtractBit" value="3"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="HSBY_LINK" typeName="BOOL">
+				<comment>Link up/down for HSBY port</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="4"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="REDUNDANCY_STATUS" typeName="BOOL">
+				<comment>Redundancy status / backup path available</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="5"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SCANNER_OK" typeName="BOOL">
+				<comment>Scanner OK and scanning at least 1 equipment (if at least 1 equipment configured)</comment>
+				<attribute name="ExtractBit" value="6"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="GLOBAL_STATUS" typeName="BOOL">
+				<comment>0: one or more services not operating normally / 1: all operational</comment>
+				<attribute name="ExtractBit" value="7"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="NETWORK_HEALTH" typeName="BOOL">
+				<comment> 1: No traffic overload detected / 0: Traffic overload detected (ex: broadcast storm). Check your network topology and configuration.</comment>
+				<attribute name="ExtractBit" value="8"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SERVICE_STATUS" typeName="WORD">
+				<comment>One bit for each user-observable feature</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="RSTP_SERVICE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="0"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="PORT502_SERVICE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="2"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SNMP_SERVICE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="3"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="MAIN_IP_ADDRESS_STATUS" typeName="BOOL">
+				<comment>Main IP address status (0 in case of duplicate IP or no IP assigned)</comment>
+				<attribute name="ExtractBit" value="4"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_BKP_FAILURE" typeName="BOOL">
+				<comment>Ethernet backplane hardware status (0: failure, 1: OK)</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="5"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_BKP_ERROR" typeName="BOOL">
+				<comment>Ethernet backplane error (0: error, 1: OK)</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="6"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="EIP_SCANNER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="7"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="MODBUS_SCANNER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="8"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="NTP_SERVER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="9"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SNTP_CLIENT" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="10"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="WEB_SERVER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="11"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FIRMWARE_UPGRADE" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="12"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FTP" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="13"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FDR_SERVER" typeName="BOOL">
+				<comment>0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="14"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="EIP_ADAPTER" typeName="BOOL">
+				<comment>EIP adapter (server) service 0: service not operating normally / 1: service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="15"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="SERVICE_STATUS2" typeName="WORD">
+				<comment>One bit for each user-observable feature</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="A_B_IP_ADDRESS_STATUS" typeName="BOOL">
+				<comment>IP address A/B status (0 in case of duplicate IP or no IP assigned)</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="ExtractBit" value="0"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="LLDP_SERVICE" typeName="BOOL">
+				<comment>LLDP service status</comment>
+				<attribute name="ExtractBit" value="1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="EVENT_LOG_STATUS" typeName="BOOL">
+				<comment>0: event log service not operating normally / 1: event log service operating normally or disabled</comment>
+				<attribute name="ExtractBit" value="2"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="LOG_SERVER_NOT_REACHABLE" typeName="BOOL">
+				<comment>1: No acknowledgement received from the syslog server / 0: otherwise</comment>
+				<attribute name="ExtractBit" value="3"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_PORT_1_2_STATUS" typeName="BYTE">
+				<comment>Ethernet port 1 and 2 status</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="ETH_PORT3_BKP_STATUS" typeName="BYTE">
+				<comment>Ethernet port 3 and backplane port status</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FIRMWARE_VERSION" typeName="WORD">
+				<comment>MSB=Major Revision, LSB=Minor Revision</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="FDR_USAGE" typeName="BYTE">
+				<comment>% of FDR server usage</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="RESERVED" typeName="BYTE">
+				<comment>Hidden - Reserved</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="IN_PACKETS" typeName="UINT">
+				<comment>Number of packets received on interface</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="IN_ERRORS" typeName="UINT">
+				<comment>Number of inbound packets that contain errors</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="OUT_PACKETS" typeName="UINT">
+				<comment>Number of packets sent on interface</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="OUT_ERRORS" typeName="UINT">
+				<comment>Number of outbound packets that contain errors</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="CONF_SIG" typeName="UDINT">
+				<comment>Signature of all files on local module FDR Server</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DID_HEALTH" typeName="T_NOCDIO_HEALTH">
+				<comment>Health for DIO Objects</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="LS_HEALTH" typeName="ARRAY[1..16] OF BOOL">
+				<comment>Local Slave health bits (Local Slave 1 to 16)</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DIO_HEALTH" typeName="ARRAY[0..127] OF BOOL">
+				<comment>DIO health bits (1 bit per DIO up to 128 DIOs. 112 - 127 are reserved for future extension)</comment>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DEVICE_CNX_HEALTH" typeName="ARRAY[0..7] OF WORD">
+				<comment>DIO device health (1 bit per DIO up to 128 DIO)</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+			<variables name="DIO_CTRL" typeName="ARRAY[0..127] OF BOOL">
+				<comment>DIO control bits (1 bit per DIO up to 128 DIOs. 112 - 127 are reserved for future extension)</comment>
+			</variables>
+			<variables name="RESERVED2" typeName="ARRAY[0..7] OF WORD">
+				<comment>Reserved</comment>
+				<attribute name="IsVariableHidden" value="-1"></attribute>
+				<attribute name="RequestAccessRight" value="1"></attribute>
+				<attribute name="InstancesProgramAccessRight" value="1"></attribute>
+			</variables>
+		</structure>
+	</DDTSource>
+</STExchangeFile>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-2-24-12:43:21" content="Function Block source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.63" dateTime="date_and_time#2026-1-8-14:6:2"></contentHeader>
+	<FBSource nameOfFBType="SIM_TeSysT" version="0.07" dateTime="dt#2020-03-20-08:47:35">
+		<comment>Schneider TeSysT Protection Relay Simulation</comment>
+		<attribute name="TypeCodeCheckSumString" value="BCD0"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="32F7"></attribute>
+		<inputParameters>
+			<variables name="iOutDatDDT" typeName="TeSysTRawOutDDT">
+				<comment>DDT of Actual Signal Data to be Written to Unit</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="iMstIPAdr" typeName="IPAddDDT">
+				<comment>Master IP Address of PLC Communications Module</comment>
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="iRun" typeName="INT">
+				<comment>Run Mode - 0=Sim; 1=Stop; 2=Fwd; 3= Rev</comment>
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="iCB01_Opn" typeName="EBOOL">
+				<comment>240VAC Circuit Breaker Open</comment>
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+			<variables name="iVAC01_Off" typeName="EBOOL">
+				<comment>240VAC Supply Fault</comment>
+				<attribute name="PositionPin" value="7"></attribute>
+			</variables>
+			<variables name="iCAX01" typeName="INT">
+				<comment>Contactor - 0=Sim; 1=Off; 2=On</comment>
+				<attribute name="PositionPin" value="8"></attribute>
+			</variables>
+			<variables name="iESS01_Off" typeName="EBOOL">
+				<comment>Safety Circuit Unhealthy</comment>
+				<attribute name="PositionPin" value="9"></attribute>
+			</variables>
+			<variables name="iFltID" typeName="UINT">
+				<comment>TeSysT Fault Code (0=Healthy)</comment>
+				<attribute name="PositionPin" value="10"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="oInDatDDT" typeName="TeSysTRawInDDT">
+				<comment>DDT of Actual Signals Data Read from Unit</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+		</outputParameters>
+		<privateLocalVariables>
+			<variables name="Flt" typeName="EBOOL"></variables>
+			<variables name="IOStatus" typeName="WORD"></variables>
+			<variables name="ExpansionID" typeName="UINT"></variables>
+			<variables name="SystemStatus" typeName="WORD"></variables>
+			<variables name="SystemStatus2" typeName="WORD"></variables>
+			<variables name="FaultCode" typeName="UINT"></variables>
+			<variables name="Ch1" typeName="EBOOL">
+				<comment>415VAC Circuit Breaker</comment>
+			</variables>
+			<variables name="Ch2" typeName="EBOOL">
+				<comment>240VAC Power Healthy</comment>
+			</variables>
+			<variables name="Ch4" typeName="EBOOL">
+				<comment>Safety Circuit Healthy</comment>
+			</variables>
+			<variables name="Ch3" typeName="EBOOL">
+				<comment>Contactor Fwd/Rev Closed</comment>
+			</variables>
+			<variables name="Ch5" typeName="EBOOL"></variables>
+			<variables name="Ch6" typeName="EBOOL">
+				<comment>Mode Remote</comment>
+			</variables>
+			<variables name="Ch7" typeName="EBOOL"></variables>
+			<variables name="Ch8" typeName="EBOOL"></variables>
+			<variables name="Ch9" typeName="EBOOL"></variables>
+			<variables name="Ch10" typeName="EBOOL"></variables>
+			<variables name="Out1" typeName="EBOOL">
+				<comment>Running Forward</comment>
+			</variables>
+			<variables name="Out2" typeName="EBOOL">
+				<comment>Running Reverse</comment>
+			</variables>
+			<variables name="Out3" typeName="EBOOL"></variables>
+			<variables name="Out4" typeName="EBOOL"></variables>
+			<variables name="SystemReady" typeName="EBOOL"></variables>
+			<variables name="SystemOn" typeName="EBOOL"></variables>
+			<variables name="SystemFault" typeName="EBOOL"></variables>
+			<variables name="SystemWarning" typeName="EBOOL"></variables>
+			<variables name="SystemTrip" typeName="EBOOL"></variables>
+			<variables name="ResetAuth" typeName="EBOOL"></variables>
+			<variables name="MotorRun" typeName="EBOOL"></variables>
+			<variables name="PwrRstReq" typeName="EBOOL"></variables>
+			<variables name="Control1" typeName="WORD"></variables>
+			<variables name="Control2" typeName="WORD"></variables>
+			<variables name="FwdStt" typeName="EBOOL"></variables>
+			<variables name="RevStt" typeName="EBOOL"></variables>
+			<variables name="RstReq" typeName="EBOOL"></variables>
+		</privateLocalVariables>
+		<FBProgram name="SIM_TeSysT">
+			<STSource>(* TeSysT Simulation
+
+
+
+Revision History:
+19/03/2020 11:52 - NJA - Initial Creation
+
+
+*)
+
+
+(* Unpack Data *)
+Control1 := BYTE_AS_WORD (LOW	:= iOutDatDDT.Free1[0],
+                          HIGH	:= iOutDatDDT.Free1[1]);
+Control2 := BYTE_AS_WORD (LOW	:= iOutDatDDT.Free1[2],
+                          HIGH	:= iOutDatDDT.Free1[3]);
+
+
+(* Map In Data from Output Block *)
+FwdStt	:= Control1.0;
+RevStt	:= Control1.1;
+RstReq	:= Control1.3;
+
+
+
+(* Reset *)
+IF NOT (iFltID = 0) THEN
+	ResetAuth := 0;
+	Flt := 1;
+	FaultCode := iFltID;
+	CASE iFltID OF
+		4:	PwrRstReq := 1;
+		5:	PwrRstReq := 1;
+		6:	PwrRstReq := 1;
+		23:	PwrRstReq := 1;
+	END_CASE;
+ELSE
+	ResetAuth := 1;
+	IF RstReq THEN
+		Flt := 0;
+		FaultCode := 0;
+		PwrRstReq := 0; (* Do not make life difficult during testing and require a power reset *)
+	END_IF;
+END_IF;
+
+
+
+(* System Statuses *)
+SystemReady	:= NOT Flt;
+SystemOn	:= 1;
+SystemFault	:= Flt;
+SystemWarning	:= 0;
+SystemTrip	:= 0;
+
+
+
+(* Simulate drive Running/Stopped *)
+IF NOT Flt AND FwdStt AND NOT RevStt THEN
+	Out1 := 1;
+	Out2 := 0;
+	MotorRun := 1;
+ELSIF NOT Flt AND FwdStt AND NOT RevStt THEN
+	Out1 := 0;
+	Out2 := 1;
+	MotorRun := 1;
+ELSE
+	Out1 := 0;
+	Out2 := 0;
+	MotorRun := 0;
+END_IF;
+
+
+
+(* Set Digital input statuses based on bucket wiring *)
+Ch1		:= NOT iCB01_Opn;
+Ch2		:= NOT iVAC01_Off;
+Ch3		:= MotorRun; (* Contactor Fwd/Rev Closed *)
+Ch4		:= NOT iESS01_Off;
+Ch6		:= 1; (* Remote Mode *)
+
+
+
+(* Zero Unused Statuses *)
+Ch5		:= 0;
+Ch7		:= 0;
+Ch8		:= 0;
+Ch9		:= 0;
+Ch10		:= 0;
+Out3		:= 0;
+Out4		:= 0;
+
+
+
+(* Map Out Data to Input Block *)
+SystemStatus   := 0;
+SystemStatus.0 := SystemReady;
+SystemStatus.1 := SystemOn;
+SystemStatus.2 := SystemFault;
+SystemStatus.3 := SystemWarning;
+SystemStatus.4 := SystemTrip;
+SystemStatus.5 := ResetAuth;
+SystemStatus.7 := MotorRun;
+
+SystemStatus2   := 0;
+SystemStatus2.2 := PwrRstReq;
+
+ExpansionID := 0;
+
+IOStatus    := 0;
+IOStatus.0  := Ch1;
+IOStatus.1  := Ch2;
+IOStatus.2  := Ch3;
+IOStatus.3  := Ch4;
+IOStatus.4  := Ch5;
+IOStatus.5  := Ch6;	(* Remote Mode *)
+IOStatus.6  := Ch7;
+IOStatus.7  := Ch8;
+IOStatus.8  := Ch9;
+IOStatus.9  := Ch10;
+IOStatus.12 := Out1;	(* Running Forward *)
+IOStatus.13 := Out2;	(* Running Reverse *)
+IOStatus.14 := Out3;
+IOStatus.15 := Out4;
+
+
+
+(* Pack Data *)
+WORD_AS_BYTE(IN		:= SystemStatus,
+             LOW	=&gt; oInDatDDT.Free0[0],
+             HIGH	=&gt; oInDatDDT.Free0[1]);
+
+WORD_AS_BYTE(IN		:= SystemStatus2,
+             LOW	=&gt; oInDatDDT.Free0[2],
+             HIGH	=&gt; oInDatDDT.Free0[3]);
+
+WORD_AS_BYTE(IN		:= UINT_TO_WORD(ExpansionID),
+             LOW	=&gt; oInDatDDT.Free0[4],
+             HIGH	=&gt; oInDatDDT.Free0[5]);
+
+WORD_AS_BYTE(IN		:= IOStatus,
+             LOW	=&gt; oInDatDDT.Free0[6],
+             HIGH	=&gt; oInDatDDT.Free0[7]);
+
+WORD_AS_BYTE(IN		:= UINT_TO_WORD(FaultCode),
+             LOW	=&gt; oInDatDDT.Free0[8],
+             HIGH	=&gt; oInDatDDT.Free0[9]);
+
+(* Master IP Address *)
+oInDatDDT.Free0[18] := INT_TO_BYTE(iMstIPAdr.IP2);
+oInDatDDT.Free0[19] := INT_TO_BYTE(iMstIPAdr.IP1);
+oInDatDDT.Free0[20] := INT_TO_BYTE(iMstIPAdr.IP4);
+oInDatDDT.Free0[21] := INT_TO_BYTE(iMstIPAdr.IP3);
+</STSource>
+		</FBProgram>
+	</FBSource>
+	<DDTSource DDTName="TeSysTRawOutDDT" version="1.03" dateTime="dt#2026-02-06-11:10:07">
+		<comment>TeSysT Raw Output Data</comment>
+		<attribute name="TypeSignatureCheckSumString" value="9CF2"></attribute>
+		<structure>
+			<variables name="Free1" typeName="ARRAY[0..9] OF BYTE">
+				<comment>Unused Variable</comment>
+			</variables>
+		</structure>
+	</DDTSource>
+	<DDTSource DDTName="IPAddDDT" version="0.01" dateTime="dt#2011-02-24-07:46:50">
+		<comment>IP Address, Big Endian, 4 Ints [IP1, IP2, IP3, IP4]</comment>
+		<attribute name="TypeSignatureCheckSumString" value="3D50"></attribute>
+		<structure>
+			<variables name="IP1" typeName="INT">
+				<comment>High Octet [XXX.xxx.xxx.xxx]</comment>
+			</variables>
+			<variables name="IP2" typeName="INT">
+				<comment>Second Octet [xxx.XXX.xxx.xxx]</comment>
+			</variables>
+			<variables name="IP3" typeName="INT">
+				<comment>Third Octet [xxx.xxx.XXX.xxx]</comment>
+			</variables>
+			<variables name="IP4" typeName="INT">
+				<comment>Low Octet [xxx.xxx.xxx.XXX]</comment>
+			</variables>
+		</structure>
+	</DDTSource>
+	<DDTSource DDTName="TeSysTRawInDDT" version="1.02" dateTime="dt#2020-02-17-10:08:08">
+		<comment>TeSysT Raw Input Data</comment>
+		<attribute name="TypeSignatureCheckSumString" value="C97A"></attribute>
+		<structure>
+			<variables name="Free0" typeName="ARRAY[0..79] OF BYTE">
+				<comment>Unused Variable</comment>
+			</variables>
+		</structure>
+	</DDTSource>
+</FBExchangeFile>

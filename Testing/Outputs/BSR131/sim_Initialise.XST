@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<STExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-8-8:5:2" content="Structured source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL131" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<program>
+		<identProgram name="sim_Initialise" type="section" task="MAST" SectionOrder="7"></identProgram>
+		<STSource>IF sim_init THEN
+	sim_init := 0; (* reset initialisation bit *)
+
+
+(* ===========================================
+	Isolators Set Healthy
+============================================== *)
+
+sim_BSR131FIP01IS01_I		:= 1;
+
+(* ===========================================
+	Circuit Breaker Initialisation
+============================================== *)
+
+sim_BSR131BC02VDC02_I :=1;
+sim_BSR131BC02CB02_I :=1;
+sim_BSR131BC02CB03_I :=1;
+sim_BSR131BC02CB04_I :=1;
+sim_BSR131BC02CB05_I :=1;
+sim_BSR131BC02CB06_I :=1;
+sim_BSR131BC02CB07_I :=1;
+sim_BSR131BC02CB08_I :=1;
+sim_BSR131BC02CB09_I :=1;
+sim_BSR131BC02CB10_I :=1;
+sim_BSR131BC02CB11_I :=1;
+sim_BSR131BC02CB12_I :=1;
+
+sim_BSR131UP01DB01R1_I :=1;
+sim_BSR131UP01DB01W1_I :=1;
+sim_BSR131UP01DB01B1_I :=1;
+sim_BSR131UP01DB01R2_I :=1;
+sim_BSR131UP01DB01W2_I :=1;
+sim_BSR131UP01DB01B2_I :=1;
+sim_BSR131UP01DB01R3_I :=1;
+sim_BSR131UP01DB01W3_I :=1;
+sim_BSR131UP01DB01B3_I :=1;
+sim_BSR131UP01DB01R4_I :=1;
+sim_BSR131UP01DB01W4_I :=1;
+sim_BSR131UP01DB01B4_I :=1;
+sim_BSR131UP01DB01R5_I :=1;
+sim_BSR131UP01DB01W5_I :=1;
+
+sim_BSR131DX01VDC01_I :=1;
+sim_BSR131DX01VDC02_I :=1;
+sim_BSR131DX01VDC03_I :=1;
+sim_BSR131DX01VDC04_I :=1;
+sim_BSR131DX01VDC05_I :=1;
+sim_BSR131DX01VDC06_I :=1;
+sim_BSR131DX01VDC07_I :=1;
+
+
+
+(* ---- 415V Incomers ----------------------- *)
+sim_BMC131INC01VDC01_I :=1;
+sim_BMC131INC01CB02_I :=1;
+sim_BMC131INC01TRP02_I :=1;
+sim_BMC131INC01XS02_I :=1;
+sim_BMC131INC01CB03_I :=1;
+sim_BMC131INC01CB04_I :=1;
+sim_BMC131INC01CB05_I :=1;
+sim_BMC131INC01XS03_I :=1;
+sim_BMC131INC01CB06_I :=1;
+sim_BMC131INC01TRP03_I :=0;
+
+sim_BMC131INC02VDC01_I :=1;
+sim_BMC131INC02CB03_I :=1;
+sim_BMC131INC02CB04_I :=1;
+sim_BMC131INC02CB05_I :=1;
+sim_BMC131INC02XS03_I :=1;
+sim_BMC131INC02CB06_I :=1;
+
+sim_BMC131INC03VDC01_I :=1;
+sim_BMC131INC03TRP02_I :=1;
+sim_BMC131INC03CB03_I :=1;
+sim_BMC131INC03CB04_I :=1;
+sim_BMC131INC03CB05_I :=1;
+sim_BMC131INC03CB06_I :=1;
+sim_BMC131INC03CB07_I :=1;
+
+(* ---- 415V Feeders ----------------------- *)
+sim_BPQE2101PN01TRP01_SetOK :=1;
+sim_BPQE2101DB01TRP01_SetOK :=1;
+sim_BSR131BC01TRP01_SetOK :=1;
+sim_BSR131BC02TRP01_SetOK :=1;
+sim_BSR131UP01TRP01_SetOK :=1;
+sim_BSR131AC01TRP01_SetOK :=1;;
+sim_BSR131AC02TRP01_SetOK :=1;
+sim_BSR131DB01TRP01_SetOK :=1;
+sim_BSR131DB02TRP01_SetOK :=1;
+sim_BSR131DB03TRP01_SetOK :=1;
+sim_BPQE2115MC01TRP01_SetOK :=1;
+sim_BMC1311TRP01_SetOK :=1;
+sim_BPP1101TRP01_SetOK :=1;
+sim_BPP1102TRP01_SetOK :=1;
+sim_BPP1103TRP01_SetOK :=1;
+sim_BPP1104TRP01_SetOK :=1;
+sim_BPP1105TRP01_SetOK :=1;
+sim_BPP1106TRP01_SetOK :=1;
+sim_BPP1107TRP01_SetOK :=1;
+sim_BSR131DB04TRP01_SetOK :=1;
+
+(* ===========================================
+	Misc Sub Equipment
+============================================== *)
+
+sim_BSR131UP01XS01_I :=1;
+sim_BSR131UP01SW01_I :=0;
+sim_BSR131UP01ZS01_I :=1;
+
+sim_BSR131FIP01XS03_I :=0;
+sim_BSR131PB01_I :=1;
+sim_BSR131DX01XS01_I :=1;
+sim_BSR131DX01XS02_I :=1;
+sim_BSR131NEP01CB01_I :=1;
+sim_BSR131NEP01CB02_I :=1;
+sim_BSR131FIP01XS01_I :=1;
+sim_BSR131FIP01IS01_I :=1;
+sim_BSR131FIP01XS02_I :=1;
+sim_BSR131PN01TS01_I :=0;
+sim_BSR131PN01TS02_I :=0;
+sim_BSR131PN01PS01_I :=1;
+sim_BSR131PN01XS01_I :=1;
+sim_BSR131PN01XS02_I :=0;
+sim_BSR131PN01XS03_I :=0;
+sim_BSR131PN01XS04_I :=0;
+sim_BSR131DB01XS01_I :=1;
+sim_BSR131UP01DB01XS01_I :=1;
+sim_BSR131PN01XS05_I :=0;
+sim_BSR131PN01XS06_I :=0;
+
+
+(* ---- BTY1502DX02 ----------------------- *)
+sim_BTY1502DX02CB01_I :=1;
+sim_BTY1502DX02VDC01_I :=1;
+sim_BTY1502DX02VDC02_I :=1;
+sim_BTY1502DX02VDC03_I :=1;
+sim_BTY1502DX02VDC04_I :=1;
+sim_BTY1502DX02VDC05_I :=1;
+sim_BTY1502DX02VDC06_I :=1;
+sim_BTY1502DX02VDC07_I :=1;
+sim_BTY1502DX02VDC08_I :=1;
+sim_BTY1502DX02VDC09_I :=1;
+sim_BTY1502DX02VDC10_I :=1;
+sim_BTY1502DX02VDC11_I :=1;
+
+(* ---- BTY1502DX03 ----------------------- *)
+sim_BTY1502DX03CB01_I :=1;
+sim_BTY1502DX03VDC01_I :=1;
+sim_BTY1502DX03VDC02_I :=1;
+sim_BTY1502DX03VDC03_I :=1;
+sim_BTY1502DX03VDC04_I :=1;
+sim_BTY1502DX03VDC05_I :=1;
+sim_BTY1502DX03VDC06_I :=1;
+sim_BTY1502DX03VDC07_I :=1;
+sim_BTY1502DX03VDC08_I :=1;
+
+(* ---- BTK2101DX04 ----------------------- *)
+sim_BTK2101DX04CB01_I :=1;
+sim_BTK2101DX04VDC01_I :=1;
+sim_BTK2101DX04VDC02_I :=1;
+sim_BTK2101DX04VDC03_I :=1;
+sim_BTK2101DX04VDC04_I :=1;
+sim_BTK2101DX04VDC05_I :=1;
+
+
+
+(* ===========================================
+	SAFETY Initialisation
+============================================== *)
+(* ---- Safety Relays ----------------------- *)
+
+sim_BPP1101SYS01_I :=1;
+sim_BPP1102SYS01_I :=1;
+sim_BPP1103SYS01_I :=1;
+sim_BPP1104SYS01_I :=1;
+sim_BPP1105SYS01_I :=1;
+sim_BPP1106SYS01_I :=1;
+sim_BPP1107SYS01_I :=1;
+
+
+(* ===========================================
+	Push Button Set 0
+============================================== *)
+
+sim_BPP1101LCS01STT01_I :=0;
+sim_BPP1101LCS01STP01_I :=0;
+sim_BPP1102LCS02STT01_I :=0;
+sim_BPP1102LCS02STP01_I :=0;
+sim_BPP1103LCS03STT01_I :=0;
+sim_BPP1103LCS03STP01_I :=0;
+sim_BPP1104LCS04STT01_I :=0;
+sim_BPP1104LCS04STP01_I :=0;
+sim_BPP1105LCS05STT01_I :=0;
+sim_BPP1105LCS05STP01_I :=0;
+sim_BPP1106LCS06STT01_I :=0;
+sim_BPP1106LCS06STP01_I :=0;
+sim_BPP1107LCS07STT01_I :=0;
+sim_BPP1107LCS07STP01_I :=0;
+sim_BPP1101LCS01STT01_I :=0;
+sim_BPP1101LCS01STP01_I :=0;
+sim_BSTD1106LCS01STT01_I :=0;
+sim_BSTD1106LCS01STP01_I :=0;
+sim_BSTD1106LCS01STT02_I :=0;
+sim_BSTD1107LCS01STT01_I :=0;
+sim_BSTD1107LCS01STP01_I :=0;
+sim_BSTD1107LCS01STT02_I :=0;
+
+(* ===========================================
+	Misc Field Equipment
+============================================== *)
+(* ---- Thermistors ----------------------- *)
+sim_BPP1101THR01_I :=1;
+sim_BPP1102THR01_I :=1;
+sim_BPP1103THR01_I :=1;
+sim_BPP1104THR01_I :=1;
+sim_BPP1105THR01_I :=1;
+sim_BPP1106THR01_I :=1;
+sim_BPP1107THR01_I :=1;
+
+(* ---- Flow Switches ----------------------- *)
+sim_BPP1101FS09_I :=0;
+sim_BPP1102FS10_I :=0;
+sim_BPP1106FS07_I :=0;
+sim_BPP1107FS08_I :=0;
+
+
+(* ---- Level Switches ----------------------- *)
+sim_BTY1502LS01_I :=1;
+
+(* ---- Valves  ----------------------- *)
+sim_BTY1502FV01ZS01_I :=0;
+sim_BTY1502FV01ZS02_I :=1;
+sim_BTY1502FV01SW01_I :=0;
+sim_BTY1502FV01XS01_I :=0;
+sim_BTY1502FV01CB01_I :=1;
+
+sim_BSTD1106FV03ZS01_I :=0;
+sim_BSTD1106FV03ZS02_I :=1;
+sim_BSTD1106FV03SW01_I :=0;
+sim_BSTD1106FV03XS01_I :=0;
+sim_BSTD1106FV03CB01_I :=1;
+
+sim_BSTD1107FV02ZS01_I :=0;
+sim_BSTD1107FV02ZS02_I :=1;
+sim_BSTD1107FV02SW01_I :=0;
+sim_BSTD1107FV02XS01_I :=0;
+sim_BSTD1107FV02CB01_I :=1;
+
+
+END_IF;
+</STSource>
+	</program>
+	<dataBlock>
+		<variables name="sim_BSR131DX01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC01CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131PN01XS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTK2101DX04VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131PN01XS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DB02TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1106FV03SW01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01W5_I" typeName="EBOOL"></variables>
+		<variables name="sim_init" typeName="EBOOL"></variables>
+		<variables name="sim_BTK2101DX04VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01W3_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX02VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX02VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1107SYS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC01CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1107FV02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC03CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502FV01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DB04TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC01CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01B2_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01B4_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DX01VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DX01VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1101LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01R1_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC02CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131NEP01CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC02CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01R3_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131FIP01IS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131PN01XS05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX03VDC06_I" typeName="BOOL"></variables>
+		<variables name="sim_BSR131BC02CB10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1105LCS05STT01_I" typeName="BOOL"></variables>
+		<variables name="sim_BSTD1106FV03CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX02VDC10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1107LCS07STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DX01VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DB01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC02CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1102LCS02STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1102FS10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131PN01XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1106LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPQE2115MC01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1106LCS06STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1107FS08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DX01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX03VDC08_I" typeName="BOOL"></variables>
+		<variables name="sim_BSR131BC02CB07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1105LCS05STP01_I" typeName="BOOL"></variables>
+		<variables name="sim_BSR131UP01SW01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1106THR01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTK2101DX04VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC02CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1101THR01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX03CB01_I" typeName="BOOL"></variables>
+		<variables name="sim_BTY1502DX02VDC11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX03VDC03_I" typeName="BOOL"></variables>
+		<variables name="sim_BSTD1107LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1107FV02XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1103LCS03STT01_I" typeName="BOOL"></variables>
+		<variables name="sim_BSR131PN01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX03VDC01_I" typeName="BOOL"></variables>
+		<variables name="sim_BSR131UP01DB01W4_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1106LCS06STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01W1_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1311TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC03CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131PN01TS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131AC02TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1103TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502FV01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01W2_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTK2101DX04VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC01TRP03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01R5_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01B3_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC03CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC03CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC02CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC02CB12_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1103LCS03STP01_I" typeName="BOOL"></variables>
+		<variables name="sim_BSTD1106LCS01STT02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX03VDC04_I" typeName="BOOL"></variables>
+		<variables name="sim_BSR131DX01VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1107FV02ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX02VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1101TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502FV01SW01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1107TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX03VDC02_I" typeName="BOOL"></variables>
+		<variables name="sim_BMC131INC02CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1102TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DX01VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPQE2101DB01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC02CB11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC02CB08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131FIP01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1106FS07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX02VDC09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1105TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1106TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC02CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC01TRP02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX03VDC07_I" typeName="BOOL"></variables>
+		<variables name="sim_BSTD1107FV02SW01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1104TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX03VDC05_I" typeName="BOOL"></variables>
+		<variables name="sim_BMC131INC03TRP02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1101LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC02VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1107LCS07STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC01XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC02CB09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131FIP01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502LS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTK2101DX04VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1102THR01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC02TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131FIP01XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502FV01ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01B1_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131PB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1106LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC03CB07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX02VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX02VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1104LCS04STT01_I" typeName="BOOL"></variables>
+		<variables name="sim_BPP1104SYS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1107FV02ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1102LCS02STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC02CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPQE2101PN01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1107LCS01STT02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC01CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC01CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131BC02CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131AC01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502DX02VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131NEP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1107LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1102SYS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1106SYS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1106FV03XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTK2101DX04CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1502FV01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1106FV03ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC03VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1101FS09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131PN01TS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1104LCS04STP01_I" typeName="BOOL"></variables>
+		<variables name="sim_BTY1502DX02VDC08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1106FV03ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DX01VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DX01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DB03TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131PN01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131PN01PS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC131INC02XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1105SYS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1101SYS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1105THR01_I" typeName="BOOL"></variables>
+		<variables name="sim_BMC131INC02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01R2_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131UP01DB01R4_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1103THR01_I" typeName="BOOL"></variables>
+		<variables name="sim_BPP1107THR01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1103SYS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DB01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1104THR01_I" typeName="BOOL"></variables>
+	</dataBlock>
+</STExchangeFile>

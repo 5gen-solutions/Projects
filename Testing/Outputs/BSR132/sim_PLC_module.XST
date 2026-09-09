@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<STExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-8-3:41:13" content="Structured source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL132" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<program>
+		<identProgram name="sim_PLC_module" type="section" task="MAST" SectionOrder="4"></identProgram>
+		<STSource>(* Head Rack Modules Simulation
+CRA Modules Simulation *)
+
+IF sim_SetHealthy THEN
+
+
+	(* =========== HEAD RACK =========== *)
+	(* Set PLC Links Healthy *)
+	sim_BPL132PLM0_Mode := 1;(* set ethernet 1 to active (service port) *)
+	SIM_BMEP586x4xRIO_0 (iMode := Sim_BPL132PLM0_Mode,
+	                     iFlt := Sim_BPL132PLM0_Flt,
+	                     iLnkNotAct := Sim_BPL132PLM0_LnkFlt,
+	                     oInDatDDT =&gt; BMEP58_ECPU_EXT);
+	(* ===== NOC Sim ===== *)
+	IF Sim_BPL132PLM3_Mode = 1 THEN(* set ethernet 1 to active (service port) *)
+	sim_noc0301_0 (iMode 	:= Sim_BPL132PLM3_Mode,
+               		iFlt 	:= Sim_BPL132PLM3_Flt,
+               		iComFlt := Sim_BPL132PLM3_ComFlt,
+               		iLnkNotAct := Sim_BPL132PLM3_LnkFlt,
+               		oInDatDDT =&gt; PLC_3);		
+	END_IF;
+	IF Sim_BPL132PLM4_Mode = 1 THEN(* set ethernet 1 to active (service port) *)
+	sim_noc0301_1 (iMode 	:= Sim_BPL132PLM4_Mode,
+               		iFlt 	:= Sim_BPL132PLM4_Flt,
+               		iComFlt := Sim_BPL132PLM4_ComFlt,
+               		iLnkNotAct := Sim_BPL132PLM4_LnkFlt,
+               		oInDatDDT =&gt; HMI_4);		
+	END_IF;
+	Sim_BPL132PLM5_Mode := 1;(* set ethernet 1 to active (service port) *)
+	sim_noc0301_2 (iMode := Sim_BPL132PLM5_Mode,
+	               iFlt := Sim_BPL132PLM5_Flt,
+		       iComFlt 	:= Sim_BPL132PLM5_ComFlt,
+	               iLnkNotAct := Sim_BPL132PLM5_LnkFlt,
+	               oInDatDDT =&gt; IO_5);
+
+	(* =========== BSR132DX01DIO1PLM0 - DROP 1 =========== *)
+	SIM_CRA31210_1 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= Sim_BSR132DX01DIO1PLM0_Flt,
+                     iComFlt 	:= Sim_BSR132DX01DIO1PLM0_ComFlt,
+                     iLnkNotAct := Sim_BSR132DX01DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D01R00S00); 
+
+	(* =========== BBD131DX03DIO1PLM0 - DROP 3 =========== *)
+	SIM_CRA31210_3 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= Sim_BBD131DX03DIO1PLM0_Flt,
+                     iComFlt 	:= Sim_BBD131DX03DIO1PLM0_ComFlt,
+                     iLnkNotAct := Sim_BBD131DX03DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D03R00S00); 
+
+	(* =========== BBD131DX04DIO1PLM0 - DROP 4 =========== *)
+	SIM_CRA31210_4 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= Sim_BBD131DX04DIO1PLM0_Flt,
+                     iComFlt 	:= Sim_BBD131DX04DIO1PLM0_ComFlt,
+                     iLnkNotAct := Sim_BBD131DX04DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D04R00S00); 
+
+	(* =========== BBD131DX05DIO1PLM0 - DROP 5 =========== *)
+	SIM_CRA31210_5 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= Sim_BBD131DX05DIO1PLM0_Flt,
+                     iComFlt 	:= Sim_BBD131DX05DIO1PLM0_ComFlt,
+                     iLnkNotAct := Sim_BBD131DX05DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D05R00S00); 
+
+	(* =========== BCV131DX06DIO1PLM0 - DROP 6 =========== *)
+	SIM_CRA31210_6 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= Sim_BCV131DX06DIO1PLM0_Flt,
+                     iComFlt 	:= Sim_BCV131DX06DIO1PLM0_ComFlt,
+                     iLnkNotAct := Sim_BCV131DX06DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D06R00S00); 
+
+	(* =========== CV702DX07DIO1PLM0 - DROP 7 =========== *)
+	SIM_CRA31210_7 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= Sim_CV702DX07DIO1PLM0_Flt,
+                     iComFlt 	:= Sim_CV702DX07DIO1PLM0_ComFlt,
+                     iLnkNotAct := Sim_CV702DX07DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D07R00S00); 
+
+	(* =========== BCV131DX08DIO1PLM0 - DROP 8 =========== *)
+	SIM_CRA31210_8 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= Sim_BCV131DX08DIO1PLM0_Flt,
+                     iComFlt 	:= Sim_BCV131DX08DIO1PLM0_ComFlt,
+                     iLnkNotAct := Sim_BCV131DX08DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D08R00S00); 
+
+	(* =========== BCV131DX09DIO1PLM0 - DROP 9 =========== *)
+	SIM_CRA31210_9 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= Sim_BCV131DX09DIO1PLM0_Flt,
+                     iComFlt 	:= Sim_BCV131DX09DIO1PLM0_ComFlt,
+                     iLnkNotAct := Sim_BCV131DX09DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D09R00S00); 
+
+	(* =========== BCV131DX10DIO1PLM0 - DROP 10 =========== *)
+	SIM_CRA31210_10 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= Sim_BCV131DX10DIO1PLM0_Flt,
+                     iComFlt 	:= Sim_BCV131DX10DIO1PLM0_ComFlt,
+                     iLnkNotAct := Sim_BCV131DX10DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D10R00S00); 
+
+	(* =========== BCV131DX11DIO1PLM0 - DROP 11 =========== *)
+	SIM_CRA31210_11 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= Sim_BCV131DX11DIO1PLM0_Flt,
+                     iComFlt 	:= Sim_BCV131DX11DIO1PLM0_ComFlt,
+                     iLnkNotAct := Sim_BCV131DX11DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D11R00S00); 
+
+	(* =========== BCV131DX12DIO1PLM0 - DROP 12 =========== *)
+	SIM_CRA31210_12 (iMode := 1,	(* set ethernet 1 to active (service port) *)
+                     iFlt 	:= Sim_BCV131DX12DIO1PLM0_Flt,
+                     iComFlt 	:= Sim_BCV131DX12DIO1PLM0_ComFlt,
+                     iLnkNotAct := Sim_BCV131DX12DIO1PLM0_LnkFlt,
+                     oInDatDDT 	=&gt; D12R00S00); 
+end_if;
+</STSource>
+	</program>
+	<dataBlock>
+		<variables name="sim_SetHealthy" typeName="EBOOL"></variables>
+		<variables name="Sim_BPL132PLM0_Mode" typeName="INT">
+			<comment>PLC Ethernet Module Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)</comment>
+		</variables>
+		<variables name="Sim_BPL132PLM0_Flt" typeName="EBOOL">
+			<comment>PLC Ethernet Module Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BPL132PLM0_LnkFlt" typeName="EBOOL">
+			<comment>PLC Ethernet Module Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="SIM_BMEP586x4xRIO_0" typeName="SIM_BMEP586x4xRIO"></variables>
+		<variables name="BMEP58_ECPU_EXT" typeName="T_BMEP58_ECPU_EXT2">
+			<attribute name="ManagedKey" value="2C132734-A731-4676-98B3-778E9EC7B96F"></attribute>
+		</variables>
+		<variables name="Sim_BPL132PLM3_Mode" typeName="INT">
+			<comment>NPI Hub PLC Ethernet Module Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)</comment>
+		</variables>
+		<variables name="Sim_BPL132PLM3_Flt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BPL132PLM3_ComFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BPL132PLM3_LnkFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="sim_noc0301_0" typeName="sim_noc0301"></variables>
+		<variables name="PLC_3" typeName="T_BMENOC0301_4">
+			<attribute name="ManagedKey" value="619825AD-13B6-4E83-A3E1-0AD74BAF0A67"></attribute>
+		</variables>
+		<variables name="Sim_BPL132PLM4_Mode" typeName="INT">
+			<comment>NPI Hub PLC Ethernet Module Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)</comment>
+		</variables>
+		<variables name="Sim_BPL132PLM4_Flt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BPL132PLM4_ComFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BPL132PLM4_LnkFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="sim_noc0301_1" typeName="sim_noc0301"></variables>
+		<variables name="HMI_4" typeName="T_BMENOC0301_4">
+			<attribute name="ManagedKey" value="7D8E2822-7800-414A-8502-9FD313DC1A25"></attribute>
+		</variables>
+		<variables name="Sim_BPL132PLM5_Mode" typeName="INT">
+			<comment>NPI Hub PLC Ethernet Module Configuration of Ethernet Link (1=ETH1, 2=ETH2, 3=ET3, default = ETH1)</comment>
+		</variables>
+		<variables name="Sim_BPL132PLM5_Flt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BPL132PLM5_ComFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BPL132PLM5_LnkFlt" typeName="EBOOL">
+			<comment>NPI Hub PLC Ethernet Module Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="sim_noc0301_2" typeName="sim_noc0301"></variables>
+		<variables name="IO_5" typeName="T_BMENOC0301_4">
+			<attribute name="ManagedKey" value="D831918F-093C-4D00-B792-26DA8DC8F0DA"></attribute>
+		</variables>
+		<variables name="SIM_CRA31210_1" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BSR132DX01DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BSR132DX01 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BSR132DX01DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BSR132DX01 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BSR132DX01DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BSR132DX01 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D01R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="3573D4A9-FF97-48A9-9E6C-8B6DB38E06C8"></attribute>
+			<attribute name="Owner" value="\2.1\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="SIM_CRA31210_3" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BBD131DX03DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BBD131DX03 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BBD131DX03DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BBD131DX03 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BBD131DX03DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BBD131DX03 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D03R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="A51C2F17-D9F2-4276-ABF2-3185C1FD5B7A"></attribute>
+			<attribute name="Owner" value="\2.3\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="SIM_CRA31210_4" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BBD131DX04DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BBD131DX04 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BBD131DX04DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BBD131DX04 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BBD131DX04DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BBD131DX04 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D04R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="45F2AD37-5744-44B6-A997-4BF08539CC60"></attribute>
+			<attribute name="Owner" value="\2.4\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="SIM_CRA31210_5" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BBD131DX05DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BBD131DX05 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BBD131DX05DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BBD131DX05 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BBD131DX05DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BBD131DX05 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D05R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="66A7C08A-47E2-4365-89EB-38A3DD4993EB"></attribute>
+			<attribute name="Owner" value="\2.5\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="SIM_CRA31210_6" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BCV131DX06DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BCV131DX06 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BCV131DX06DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BCV131DX06 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BCV131DX06DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BCV131DX06 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D06R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="2B8B146C-7900-457C-BDCD-892DDCC47232"></attribute>
+			<attribute name="Owner" value="\2.6\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="SIM_CRA31210_7" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_CV702DX07DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>CV702DX07 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_CV702DX07DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>CV702DX07 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_CV702DX07DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>CV702DX07 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D07R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="43134D56-2414-4A5F-9497-7A17C842BD90"></attribute>
+			<attribute name="Owner" value="\2.7\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="SIM_CRA31210_8" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BCV131DX08DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BCV131DX08 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BCV131DX08DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BCV131DX08 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BCV131DX08DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BCV131DX08 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D08R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="C6A0EB98-9588-4FAD-BEF6-4EAACDC4348C"></attribute>
+			<attribute name="Owner" value="\2.8\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="SIM_CRA31210_9" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BCV131DX09DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BCV131DX09 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BCV131DX09DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BCV131DX09 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BCV131DX09DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BCV131DX09 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D09R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="31467CED-D5BB-47C5-A400-19BA35136986"></attribute>
+			<attribute name="Owner" value="\2.9\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="SIM_CRA31210_10" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BCV131DX10DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BCV131DX10 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BCV131DX10DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BCV131DX10 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BCV131DX10DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BCV131DX10 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D10R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="2852DB75-16C7-47E5-BC2D-C7F4A248A9CA"></attribute>
+			<attribute name="Owner" value="\2.10\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="SIM_CRA31210_11" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BCV131DX11DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BCV131DX11 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BCV131DX11DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BCV131DX11 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BCV131DX11DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BCV131DX11 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D11R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="96F37EDB-15C4-4095-AEDA-EAEBFF595991"></attribute>
+			<attribute name="Owner" value="\2.11\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+		<variables name="SIM_CRA31210_12" typeName="SIM_CRA31210"></variables>
+		<variables name="Sim_BCV131DX12DIO1PLM0_Flt" typeName="EBOOL">
+			<comment>BCV131DX12 CRA Comms Module 0 Sim Module Not Running Fault</comment>
+		</variables>
+		<variables name="Sim_BCV131DX12DIO1PLM0_ComFlt" typeName="EBOOL">
+			<comment>BCV131DX12 CRA Comms Module 0 Sim Communications Failure</comment>
+		</variables>
+		<variables name="Sim_BCV131DX12DIO1PLM0_LnkFlt" typeName="EBOOL">
+			<comment>BCV131DX12 CRA Comms Module 0 Sim Set Ethernet Link Not Active</comment>
+		</variables>
+		<variables name="D12R00S00" typeName="T_M_CRA_EXT_IN">
+			<attribute name="ManagedKey" value="B1F79216-584A-4D0C-B917-05CC4236E5D7"></attribute>
+			<attribute name="Owner" value="\2.12\0.0"></attribute>
+			<instanceElementDesc name="SOE_UNCERTAIN">
+				<attribute name="TimeStampCapability" value="1"></attribute>
+				<attribute name="TimeStampSource" value="2"></attribute>
+				<attribute name="TimeStampID" value="0"></attribute>
+			</instanceElementDesc>
+		</variables>
+	</dataBlock>
+</STExchangeFile>

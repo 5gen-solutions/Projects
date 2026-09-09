@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-2-24-10:49:51" content="Function Block source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="PLC701" version="0.0.1453" dateTime="date_and_time#2025-7-30-15:12:4"></contentHeader>
+	<FBSource nameOfFBType="sim_X80ART0814" version="0.02" dateTime="dt#2024-02-12-10:19:04">
+		<comment>Simulation X80 BMX ART0814 8 Channel RTD Input Module</comment>
+		<attribute name="TypeCodeCheckSumString" value="0151"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="7BDD"></attribute>
+		<inputParameters>
+			<variables name="iModFlt" typeName="EBOOL">
+				<comment>Simulate Module Fault</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="iCh0Flt" typeName="INT">
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="iCh0PV" typeName="REAL">
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="iCh1Flt" typeName="INT">
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="iCh1PV" typeName="REAL">
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+			<variables name="iCh2Flt" typeName="INT">
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+			<variables name="iCh2PV" typeName="REAL">
+				<attribute name="PositionPin" value="7"></attribute>
+			</variables>
+			<variables name="iCh3Flt" typeName="INT">
+				<attribute name="PositionPin" value="8"></attribute>
+			</variables>
+			<variables name="iCh3PV" typeName="REAL">
+				<attribute name="PositionPin" value="9"></attribute>
+			</variables>
+			<variables name="iCh4Flt" typeName="INT">
+				<attribute name="PositionPin" value="10"></attribute>
+			</variables>
+			<variables name="iCh4PV" typeName="REAL">
+				<attribute name="PositionPin" value="11"></attribute>
+			</variables>
+			<variables name="iCh5Flt" typeName="INT">
+				<attribute name="PositionPin" value="12"></attribute>
+			</variables>
+			<variables name="iCh5PV" typeName="REAL">
+				<attribute name="PositionPin" value="13"></attribute>
+			</variables>
+			<variables name="iCH6Flt" typeName="INT">
+				<attribute name="PositionPin" value="14"></attribute>
+			</variables>
+			<variables name="iCh6PV" typeName="REAL">
+				<attribute name="PositionPin" value="15"></attribute>
+			</variables>
+			<variables name="iCh7Flt" typeName="INT">
+				<attribute name="PositionPin" value="16"></attribute>
+			</variables>
+			<variables name="iCh7PV" typeName="REAL">
+				<attribute name="PositionPin" value="17"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="oStsDDT" typeName="T_U_ANA_TEMP_IN_8">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+		</outputParameters>
+		<privateLocalVariables>
+			<variables name="FltCodeArr" typeName="ARRAY[0..7] OF INT"></variables>
+			<variables name="Code" typeName="INT"></variables>
+			<variables name="i" typeName="INT"></variables>
+		</privateLocalVariables>
+		<FBProgram name="sim_X80ART0814">
+			<STSource>(* Toggle Module Fault *)
+oStsDDT.MOD_FLT.0 			:= WRITE_INPUT_EBOOL (INP := iModFlt );
+oStsDDT.MOD_HEALTH			:= WRITE_INPUT_EBOOL (INP := TRUE ); (* always healthy *)
+
+FltCodeArr[0] := iCh0Flt;
+FltCodeArr[1] := iCh1Flt;
+FltCodeArr[2] := iCh2Flt;
+FltCodeArr[3] := iCh3Flt;
+FltCodeArr[4] := iCh4Flt;
+FltCodeArr[5] := iCh5Flt;
+FltCodeArr[6] := iCh6Flt;
+FltCodeArr[7] := iCh7Flt;
+
+FOR i := 0 TO 7 DO
+	Code := FltCodeArr[i];
+
+CASE Code OF
+	(* ChXRawOK = 0 *)
+	1	:	oStsDDT.ANA_CH_IN[i].CH_HEALTH		:= WRITE_INPUT_EBOOL (INP := FALSE );
+			oStsDDT.ANA_CH_IN[i].FCT_TYPE.0		:= WRITE_INPUT_EBOOL (INP := TRUE );
+			oStsDDT.ANA_CH_IN[i].UPPER_LIMIT	:= WRITE_INPUT_EBOOL (INP := FALSE );
+			oStsDDT.ANA_CH_IN[i].LOWER_LIMIT	:= WRITE_INPUT_EBOOL (INP := FALSE );
+	(* Channel Disabled ChXEn = 0 *)
+	2	:	oStsDDT.ANA_CH_IN[i].CH_HEALTH		:= WRITE_INPUT_EBOOL (INP := FALSE );
+			oStsDDT.ANA_CH_IN[i].FCT_TYPE.0		:= WRITE_INPUT_EBOOL (INP := FALSE );
+			oStsDDT.ANA_CH_IN[i].UPPER_LIMIT	:= WRITE_INPUT_EBOOL (INP := FALSE );
+			oStsDDT.ANA_CH_IN[i].LOWER_LIMIT	:= WRITE_INPUT_EBOOL (INP := FALSE );
+	(* Channel Under Current Warning *)
+	3	:	oStsDDT.ANA_CH_IN[i].CH_HEALTH		:= WRITE_INPUT_EBOOL (INP := FALSE );
+			oStsDDT.ANA_CH_IN[i].FCT_TYPE.0		:= WRITE_INPUT_EBOOL (INP := TRUE );
+			oStsDDT.ANA_CH_IN[i].UPPER_LIMIT	:= WRITE_INPUT_EBOOL (INP := FALSE );
+			oStsDDT.ANA_CH_IN[i].LOWER_LIMIT	:= WRITE_INPUT_EBOOL (INP := TRUE );
+	(* Channel Over Current Warning *)
+	4	:	oStsDDT.ANA_CH_IN[i].CH_HEALTH		:= WRITE_INPUT_EBOOL (INP := FALSE );
+			oStsDDT.ANA_CH_IN[i].FCT_TYPE.0		:= WRITE_INPUT_EBOOL (INP := TRUE );
+			oStsDDT.ANA_CH_IN[i].UPPER_LIMIT	:= WRITE_INPUT_EBOOL (INP := TRUE );
+			oStsDDT.ANA_CH_IN[i].LOWER_LIMIT	:= WRITE_INPUT_EBOOL (INP := FALSE );
+	(* Channel Under Current Fault *)
+	5	:	oStsDDT.ANA_CH_IN[i].CH_HEALTH		:= WRITE_INPUT_EBOOL (INP := FALSE );
+			oStsDDT.ANA_CH_IN[i].FCT_TYPE.0		:= WRITE_INPUT_EBOOL (INP := TRUE );
+			oStsDDT.ANA_CH_IN[i].UPPER_LIMIT	:= WRITE_INPUT_EBOOL (INP := FALSE );
+			oStsDDT.ANA_CH_IN[i].LOWER_LIMIT	:= WRITE_INPUT_EBOOL (INP := TRUE );
+	(* Channel Over Current Fault *)
+	6	:	oStsDDT.ANA_CH_IN[i].CH_HEALTH		:= WRITE_INPUT_EBOOL (INP := FALSE );
+			oStsDDT.ANA_CH_IN[i].FCT_TYPE.0		:= WRITE_INPUT_EBOOL (INP := TRUE );
+			oStsDDT.ANA_CH_IN[i].UPPER_LIMIT	:= WRITE_INPUT_EBOOL (INP := TRUE );
+			oStsDDT.ANA_CH_IN[i].LOWER_LIMIT	:= WRITE_INPUT_EBOOL (INP := FALSE );
+
+
+
+
+  ELSE
+	oStsDDT.ANA_CH_IN[i].CH_HEALTH		:= WRITE_INPUT_EBOOL (INP := TRUE );
+	oStsDDT.ANA_CH_IN[i].FCT_TYPE.0		:= WRITE_INPUT_EBOOL (INP := TRUE );
+	oStsDDT.ANA_CH_IN[i].UPPER_LIMIT	:= WRITE_INPUT_EBOOL (INP := FALSE );
+	oStsDDT.ANA_CH_IN[i].LOWER_LIMIT	:= WRITE_INPUT_EBOOL (INP := FALSE );
+END_CASE;
+
+END_FOR;
+
+(* RTD scaling in card is formatted in 0.1 units, hence x10 here *)
+
+oStsDDT.ANA_CH_IN[0].ANA.TRUE_VALUE := WRITE_INPUT_INT (INP := REAL_TO_INT (iCh0PV * 10.0));
+oStsDDT.ANA_CH_IN[1].ANA.TRUE_VALUE := WRITE_INPUT_INT (INP := REAL_TO_INT (iCh1PV * 10.0));
+oStsDDT.ANA_CH_IN[2].ANA.TRUE_VALUE := WRITE_INPUT_INT (INP := REAL_TO_INT (iCh2PV * 10.0));
+oStsDDT.ANA_CH_IN[3].ANA.TRUE_VALUE := WRITE_INPUT_INT (INP := REAL_TO_INT (iCh3PV * 10.0));
+oStsDDT.ANA_CH_IN[4].ANA.TRUE_VALUE := WRITE_INPUT_INT (INP := REAL_TO_INT (iCh4PV * 10.0));
+oStsDDT.ANA_CH_IN[5].ANA.TRUE_VALUE := WRITE_INPUT_INT (INP := REAL_TO_INT (iCh5PV * 10.0));
+oStsDDT.ANA_CH_IN[6].ANA.TRUE_VALUE := WRITE_INPUT_INT (INP := REAL_TO_INT (iCh6PV * 10.0));
+oStsDDT.ANA_CH_IN[7].ANA.TRUE_VALUE := WRITE_INPUT_INT (INP := REAL_TO_INT (iCh7PV * 10.0));
+</STSource>
+		</FBProgram>
+	</FBSource>
+</FBExchangeFile>

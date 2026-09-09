@@ -1,0 +1,1527 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<STExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-8-9:31:19" content="Structured source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL130" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<program>
+		<identProgram name="sim_Initialise" type="section" task="MAST" SectionOrder="7"></identProgram>
+		<STSource>IF sim_init THEN
+	sim_init := 0; (* reset initialisation bit *)
+
+
+(* ===========================================
+	Isolators Set Healthy
+============================================== *)
+
+sim_BSR130FIP01IS01_I		:=1;
+sim_BDU130RV01LCS01IS01_I		:=1;
+sim_BBD130PP01LCS03IS01_I		:=1;
+sim_BAF130PP05LCS01IS01_I		:=1;
+sim_BCV130PP03LCS01IS01_I		:=1;
+sim_BCV130MA01IS01_I		:=1;
+sim_BCV130MT01IS01_I		:=1;
+sim_BCV130MT02IS02_I		:=1;
+sim_BTN130PP01LCS01IS01_I		:=1;
+
+(* ===========================================
+	Circuit Breaker Initialisation
+============================================== *)
+
+sim_BSR130BC02VDC02_I :=1;
+sim_BSR130BC02CB02_I :=1;
+sim_BSR130BC02CB03_I :=1;
+sim_BSR130BC02CB04_I :=1;
+sim_BSR130BC02CB05_I :=1;
+sim_BSR130BC02CB06_I :=1;
+sim_BSR130BC02CB07_I :=1;
+sim_BSR130BC02CB08_I :=1;
+sim_BSR130BC02CB09_I :=1;
+sim_BSR130BC02CB10_I :=1;
+sim_BSR130BC02CB11_I :=1;
+sim_BSR130BC02CB12_I :=1;
+sim_BSR130NEP01CB01_I :=1;
+sim_BSR130NEP01CB02_I :=1;
+sim_BSR130DX01VDC01_I :=1;
+sim_BSR130DX01VDC02_I :=1;
+sim_BSR130DX01VDC03_I :=1;
+sim_BSR130DX01VDC04_I :=1;
+sim_BSR130DX01VDC05_I :=1;
+sim_BSR130DX01VDC06_I :=1;
+sim_BSR130DX01VDC07_I :=1;
+sim_BSR130DX01VDC08_I :=1;
+sim_BSR130DX01VDC09_I :=1;
+sim_BSR130DX01VDC10_I :=1;
+sim_BSR130DX01VDC11_I :=1;
+sim_BSR130DX01VDC12_I :=1;
+sim_BSR130BC01VDC01_I :=1;
+sim_BSR130BC01CB01_I :=1;
+sim_BSR130BC02VDC01_I :=1;
+sim_BSR130BC02CB01_I :=1;
+sim_BSR130AC01VDC01_I :=1;
+sim_BSR130AC01CB01_I :=1;
+sim_BSR130AC02VDC01_I :=1;
+sim_BSR130AC02CB01_I :=1;
+sim_BSR130UP01VDC01_I :=1;
+sim_BSR130UP01CB01_I :=1;
+sim_BSR130DB01VDC01_I :=1;
+sim_BSR130DB01CB01_I :=1;
+sim_BSR130DB02VDC01_I :=1;
+sim_BSR130DB02CB01_I :=1;
+sim_BSR130DB03VDC01_I :=1;
+sim_BSR130DB03CB01_I :=1;
+sim_BSR130DB04VDC01_I :=1;
+sim_BSR130DB04CB01_I :=1;
+sim_BSR130DB05VDC01_I :=1;
+sim_BSR130DB05CB01_I :=1;
+sim_BCV130WN01PN01VDC01_I :=1;
+sim_BCV130WN01PN01CB01_I :=1;
+sim_BCV130MA01PN01VDC01_I :=1;
+sim_BCV130MA01PN01CB01_I :=1;
+sim_BCV130VS01VDC01_I :=1;
+sim_BCV130VS01CB03_I :=1;
+sim_BCV130VS01CB04_I :=1;
+sim_BCV130VS01CB05_I :=1;
+sim_BCV130VS01CB07_I :=1;
+sim_BSR130DX02VDC01_I :=1;
+sim_BSR130DX02VDC02_I :=1;
+sim_BSR130DX02VDC03_I :=1;
+sim_BSR130DX02VDC04_I :=1;
+sim_BSR130DX02VDC05_I :=1;
+sim_BSR130DX02VDC06_I :=1;
+sim_BSR130DX02VDC07_I :=1;
+sim_BSR130DX02VDC08_I :=1;
+sim_BSR130DX02VDC09_I :=1;
+sim_BSR130DX02VDC10_I :=1;
+sim_BSR130DX02VDC11_I :=1;
+sim_BSR130DX02VDC12_I :=1;
+sim_BCV130PP01VDC01_I :=1;
+sim_BCV131PP04VDC01_I :=1;
+sim_BCV131PP05VDC01_I :=1;
+sim_BCV130PP03VDC01_I :=1;
+sim_BCV130FN01VDC01_I :=1;
+sim_BCV130FN02VDC01_I :=1;
+sim_BCV130PP02VDC01_I :=1;
+sim_BCV130FN03VDC01_I :=1;
+sim_BCV130FN04VDC01_I :=1;
+sim_BCV130MT01EM01VDC01_I :=1;
+sim_BCV130MT01EM02VDC01_I :=1;
+sim_BCV130PP04VDC01_I :=1;
+sim_BBD130DX03CB01_I :=1;
+sim_BBD130DX03VDC01_I :=1;
+sim_BBD130DX03VDC02_I :=1;
+sim_BBD130DX03VDC03_I :=1;
+sim_BBD130DX03VDC04_I :=1;
+sim_BBD130DX03VDC05_I :=1;
+sim_BBD130DX03VDC06_I :=1;
+sim_BBD130DX03VDC07_I :=1;
+sim_BBD130DX03VDC08_I :=1;
+sim_BBD130DX03VDC09_I :=1;
+sim_BBD130DX03VDC10_I :=1;
+sim_BBD130DX03VDC11_I :=1;
+sim_BBD130DX04CB01_I :=1;
+sim_BBD130DX04VDC01_I :=1;
+sim_BBD130DX04VDC02_I :=1;
+sim_BBD130DX04VDC03_I :=1;
+sim_BBD130DX04VDC04_I :=1;
+sim_BBD130DX04VDC05_I :=1;
+sim_BBD130DX04VDC06_I :=1;
+sim_BBD130DX04VDC07_I :=1;
+sim_BBD130DX04VDC08_I :=1;
+sim_BBD130DX04VDC09_I :=1;
+sim_BBD130DX04VDC10_I :=1;
+sim_BBD130DX04VDC11_I :=1;
+sim_BBD130DX05CB01_I :=1;
+sim_BBD130DX05VDC01_I :=1;
+sim_BBD130DX05VDC02_I :=1;
+sim_BBD130DX05VDC03_I :=1;
+sim_BBD130DX05VDC04_I :=1;
+sim_BBD130DX05VDC05_I :=1;
+sim_BBD130DX05VDC06_I :=1;
+sim_BBD130DX05VDC07_I :=1;
+sim_BBD130DX05VDC08_I :=1;
+sim_BBD130DX05VDC09_I :=1;
+sim_BBD130DX05VDC10_I :=1;
+sim_BBD130DX05VDC11_I :=1;
+sim_BBD130DX06CB01_I :=1;
+sim_BBD130DX06VDC01_I :=1;
+sim_BBD130DX06VDC02_I :=1;
+sim_BBD130DX06VDC03_I :=1;
+sim_BBD130DX06VDC04_I :=1;
+sim_BBD130DX06VDC05_I :=1;
+sim_BBD130DX06VDC06_I :=1;
+sim_BBD130DX06VDC07_I :=1;
+sim_BBD130DX06VDC08_I :=1;
+sim_BBD130DX06VDC09_I :=1;
+sim_BBD130DX06VDC10_I :=1;
+sim_BBD130DX06VDC11_I :=1;
+sim_BCV130DX07CB01_I :=1;
+sim_BCV130DX07VDC01_I :=1;
+sim_BCV130DX07VDC02_I :=1;
+sim_BCV130DX07VDC03_I :=1;
+sim_BCV130DX07VDC04_I :=1;
+sim_BCV130DX07VDC05_I :=1;
+sim_BCV130DX07VDC06_I :=1;
+sim_BCV130DX07VDC07_I :=1;
+sim_BCV130DX07VDC08_I :=1;
+sim_BCV130DX07VDC09_I :=1;
+sim_BCV130DX07VDC10_I :=1;
+sim_BCV130DX07VDC11_I :=1;
+sim_BCV130DX07CB02_I :=1;
+sim_BCV130DX08CB01_I :=1;
+sim_BCV130DX08VDC01_I :=1;
+sim_BCV130DX08VDC02_I :=1;
+sim_BCV130DX08VDC03_I :=1;
+sim_BCV130DX08VDC04_I :=1;
+sim_BCV130DX08VDC05_I :=1;
+sim_BCV130DX08VDC06_I :=1;
+sim_BCV130DX08VDC07_I :=1;
+sim_BCV130DX08VDC08_I :=1;
+sim_BCV130DX08VDC09_I :=1;
+sim_BCV130DX08VDC10_I :=1;
+sim_BCV130DX08VDC11_I :=1;
+sim_BCV130MA01CB01_I :=1;
+sim_BCV130MA01CB02_I :=1;
+sim_BCV130MA01CB03_I :=1;
+sim_BCV130MA01CB05_I :=1;
+sim_BCV130DX09CB01_I :=1;
+sim_BCV130DX09VDC01_I :=1;
+sim_BCV130DX09VDC02_I :=1;
+sim_BCV130DX09VDC03_I :=1;
+sim_BCV130DX09VDC04_I :=1;
+sim_BCV130DX09VDC05_I :=1;
+sim_BCV130DX09VDC06_I :=1;
+sim_BCV130DX09VDC07_I :=1;
+sim_BCV130DX09VDC08_I :=1;
+sim_BCV130DX09VDC09_I :=1;
+sim_BCV130DX09VDC10_I :=1;
+sim_BCV130DX09VDC11_I :=1;
+sim_SUB902DX10VDC01_I :=1;
+sim_SUB902DX10VDC02_I :=1;
+sim_SUB902DX10VDC03_I :=1;
+sim_SUB902DX10VDC04_I :=1;
+sim_SUB902DX10VDC05_I :=1;
+sim_SUB902DX10VDC06_I :=1;
+sim_SUB902DX10VDC07_I :=1;
+sim_SUB902DX10VDC08_I :=1;
+sim_SUB902DX10VDC09_I :=1;
+sim_SUB902DX10VDC10_I :=1;
+sim_SUB902DX10VDC11_I :=1;
+sim_SUB902DX10VDC12_I :=1;
+sim_SUB902BC01VDC01_I :=1;
+sim_SUB902BC01CB01_I :=1;
+sim_SUB902BC02VDC01_I :=1;
+sim_SUB902BC02CB01_I :=1;
+sim_SUB902BC02VDC02_I :=1;
+sim_SUB902BC02CB02_I :=1;
+sim_SUB902BC02CB03_I :=1;
+sim_SUB902BC02CB04_I :=1;
+sim_SUB902BC02CB05_I :=1;
+sim_SUB902BC02CB06_I :=1;
+sim_SUB902BC02CB07_I :=1;
+sim_SUB902BC02CB08_I :=1;
+
+
+(* ---- Incomers ----------------------- *)
+sim_BMC1301INC01VDC01_I :=1;
+sim_BMC1301INC01CB02_I :=1;
+sim_BMC1301INC01TRP02_I :=1;
+sim_BMC1301INC01XS02_I :=1;
+sim_BMC1301INC01CB03_I :=1;
+sim_BMC1301INC01CB04_I :=1;
+sim_BMC1301INC01CB05_I :=1;
+sim_BMC1301INC01XS03_I :=1;
+sim_BMC1301INC01CB06_I :=1;
+sim_BMC1302INC01VDC01_I :=1;
+sim_BMC1302INC01CB02_I :=1;
+sim_BMC1302INC01TRP02_I :=1;
+sim_BMC1302INC01XS02_I :=1;
+sim_BMC1302INC01CB03_I :=1;
+sim_BMC1302INC01CB04_I :=1;
+sim_BMC1302INC01CB05_I :=1;
+sim_BMC1302INC01XS03_I :=1;
+sim_BMC1302INC01CB06_I :=1;
+sim_BMC1302INC02VDC01_I :=1;
+sim_BMC1302INC02CB03_I :=1;
+sim_BMC1302INC02CB04_I :=1;
+sim_BMC1302INC02CB05_I :=1;
+sim_BMC1302INC02XS03_I :=1;
+sim_BMC1302INC02CB06_I :=1;
+sim_BMC1302INC03VDC01_I :=1;
+sim_BMC1302INC03TRP02_I :=1;
+sim_BMC1302INC03CB03_I :=1;
+sim_BMC1302INC03CB04_I :=1;
+sim_BMC1302INC03CB05_I :=1;
+sim_BMC1302INC03CB06_I :=1;
+sim_BMC1302INC03CB07_I :=1;
+sim_BMC802INC01VDC01_I :=1;
+sim_BMC802INC01CB02_I :=1;
+sim_BMC802INC01TRP02_I :=1;
+sim_BMC802INC01XS02_I :=1;
+sim_BMC802INC01CB03_I :=1;
+sim_BMC802INC01CB04_I :=1;
+sim_BMC802INC01CB05_I :=1;
+sim_BMC802INC01XS01_I :=1;
+sim_BMC802INC01XS03_I :=1;
+sim_BMC802INC01CB06_I :=1;
+sim_BMC802INC02VDC01_I :=1;
+sim_BMC802INC02TRP02_I :=1;
+sim_BMC802INC02CB03_I :=1;
+sim_BMC802INC02CB04_I :=1;
+sim_BMC802INC02CB05_I :=1;
+sim_BMC802INC02CB06_I :=1;
+sim_BMC802INC02CB07_I :=1;
+
+(* ---- Feeders ----------------------- *)
+sim_BAF130HT01TRP01_SetOK :=1;
+sim_BAF130HT02TRP01_SetOK :=1;
+sim_BDU130CP01TRP01_SetOK :=1;
+sim_BRB131HP01TRP01_SetOK :=1;
+sim_BRB132HP01TRP01_SetOK :=1;
+sim_BJC130HP01PN01TRP01_SetOK :=1;
+sim_BSR130BC01TRP01_SetOK :=1;
+sim_BSR130BC02TRP01_SetOK :=1;
+sim_BSR130AC01TRP01_SetOK :=1;
+sim_BSR130AC02TRP01_SetOK :=1;
+sim_BSR130UP01TRP01_SetOK :=1;
+sim_BSR130DB01TRP01_SetOK :=1;
+sim_BSR130DB02TRP01_SetOK :=1;
+sim_BSR130DB03TRP01_SetOK :=1;
+sim_BSR130DB04TRP01_SetOK :=1;
+sim_BSR130DB05TRP01_SetOK :=1;
+sim_BRB131CC01DB01TRP01_SetOK :=1;
+sim_BCV130WN01PN01TRP01_SetOK :=1;
+sim_BCV130MA01PN01TRP01_SetOK :=1;
+sim_SUB902BC01TRP01_SetOK :=1;
+sim_SUB902BC02TRP01_SetOK :=1;
+sim_SUB902DB01TRP01_SetOK :=1;
+
+(* ===========================================
+	Misc Sub Equipment
+============================================== *)
+
+sim_BSR130UP01XS01_I :=1;
+sim_BSR130UP01SW01_I :=0;
+sim_BSR130UP01ZS01_I :=0;
+sim_BSR130UP01DB01R1_I :=1;
+sim_BSR130UP01DB01W1_I :=1;
+sim_BSR130UP01DB01B1_I :=1;
+sim_BSR130UP01DB01R2_I :=1;
+sim_BSR130UP01DB01W2_I :=1;
+sim_BSR130UP01DB01B2_I :=1;
+sim_BSR130UP01DB01R3_I :=1;
+sim_BSR130UP01DB01W3_I :=1;
+sim_BSR130UP01DB01B3_I :=1;
+sim_BSR130UP01DB01R4_I :=1;
+sim_BSR130UP01DB01W4_I :=1;
+sim_BSR130UP01DB01B4_I :=1;
+sim_BSR130UP01DB01R5_I :=1;
+sim_BSR130UP01DB01W5_I :=1;
+sim_BSR130UP01DB01B5_I :=1;
+sim_BSR130UP01DB01R6_I :=1;
+sim_BSR130UP01DB01W6_I :=1;
+sim_BSR130UP01DB01B6_I :=1;
+sim_BSR130UP01DB01R7_I :=1;
+sim_BSR130UP01DB01W7_I :=1;
+sim_BSR130UP01DB01B7_I :=1;
+sim_BSR130UP01DB01R8_I :=1;
+sim_BSR130UP01DB01W8_I :=1;
+sim_BSR130UP01DB01B8_I :=1;
+sim_BSR130UP01DB01R9_I :=1;
+sim_BSR130UP01DB01W9_I :=1;
+sim_BSR130UP01DB01B9_I :=1;
+sim_BSR130UP01DB01R10_I :=1;
+sim_BSR130UP01DB01W10_I :=1;
+sim_BSR130UP01DB01B10_I :=1;
+sim_BSR130PB01_I :=1;
+sim_BSR130DX01XS01_I :=1;
+sim_BSR130DX01XS02_I :=1;
+sim_BSR130FIP01XS01_I :=1;
+sim_BSR130FIP01XS02_I :=1;
+sim_BSR130PN01TS01_I :=0;
+sim_BSR130PN01TS02_I :=0;
+sim_BSR130PN01PS01_I :=0;
+sim_BSR130PN01XS01_I :=1;
+sim_BSR130PN01XS02_I :=0;
+sim_BSR130PN01XS03_I :=0;
+sim_BSR130PN01XS04_I :=0;
+sim_BSR130PN01XS05_I :=0;
+sim_BSR130PN01XS06_I :=0;
+sim_BSR130PN01XS07_I :=0;
+sim_BSR130DB01XS01_I :=1;
+sim_BSR130UP01DB01XS01_I :=1;
+sim_BSR130FIP01XS03_I :=0;
+sim_BSR130UP01DB01R11_I :=1;
+sim_BSR130UP01DB01W11_I :=1;
+sim_BSR130UP01DB01B11_I :=1;
+sim_BSR130UP01DB01R12_I :=1;
+sim_BSR130UP01DB01W12_I :=1;
+sim_BSR130UP01DB01B12_I :=1;
+sim_BAF130HT01VDC01_I :=1;
+sim_BAF130HT01CB01_I :=1;
+sim_BAF130HT01CAX01_I :=1;
+sim_BAF130HT02VDC01_I :=1;
+sim_BAF130HT02CB01_I :=1;
+sim_BAF130HT02CAX01_I :=1;
+sim_BDU130CP01VDC01_I :=1;
+sim_BDU130CP01CB01_I :=1;
+sim_BRB131HP01VDC01_I :=1;
+sim_BRB131HP01CB01_I :=1;
+sim_BRB132HP01VDC01_I :=1;
+sim_BRB132HP01CB01_I :=1;
+sim_BAF130PP07VDC01_I :=1;
+sim_BAF130PP01VDC01_I :=1;
+sim_BAF130PP02VDC01_I :=1;
+sim_BAF130PP04VDC01_I :=1;
+sim_BAF130FN01VDC01_I :=1;
+sim_BAF130FN02VDC01_I :=1;
+sim_BAF130FN03VDC01_I :=1;
+sim_BAF130PP05VDC01_I :=1;
+sim_BDU130FN01VDC01_I :=1;
+sim_BDU130RV01VDC01_I :=1;
+sim_BVG130DA01VDC01_I :=1;
+sim_BJC130PP01VDC01_I :=1;
+sim_BJC130HP01PN01VDC01_I :=1;
+sim_BJC130HP01PN01CB01_I :=1;
+sim_BJC130VS01VDC01_I :=1;
+sim_BJC130VS01TRP01_I :=0;
+sim_BJC130VS01CB03_I :=1;
+sim_BJC130VS01CB04_I :=1;
+sim_BJC130VS01CB05_I :=1;
+sim_BJC130VS01CB07_I :=1;
+sim_BAF130SY01_I :=1;
+sim_BAF130FNSY01_I :=1;
+sim_BJC130SY01_I :=1;
+sim_BAF130GA01SY01_I :=1;
+sim_BSR130DX02XS01_I :=1;
+sim_BSR130DX02XS02_I :=1;
+sim_BRB131CC01DB01VDC01_I :=1;
+sim_BRB131CC01DB01CB01_I :=1;
+sim_BSB1301VDC01_I :=1;
+sim_BSB1301TRP01_I :=0;
+sim_BSB1301CB03_I :=1;
+sim_BSB1301CB04_I :=1;
+sim_BSB1301CB05_I :=1;
+sim_BSB1301CB07_I :=1;
+sim_BCV130VS01TRP01_I :=0;
+sim_BBD130PP01VDC01_I :=1;
+sim_BTN130PP01VDC01_I :=1;
+sim_BCV131SLC01SY01_I :=1;
+sim_BCV131SY01_I :=1;
+sim_BCV131SLC02SY01_I :=1;
+sim_BCV130SY01_I :=1;
+sim_BCV130DX07SY01_I :=1;
+sim_BCV130DX08SY01_I :=1;
+sim_BCV130DX09SY01_I :=1;
+sim_BCV130MA01SY01_I :=1;
+sim_BCV130MA01SY02_I :=1;
+sim_BCV130GB01SY01_I :=1;
+
+
+(* ===========================================
+	SAFETY Initialisation
+============================================== *)
+(* ---- Safety Relays ----------------------- *)
+
+
+
+(* ===========================================
+	Push Button Set 0
+============================================== *)
+
+sim_BVG130LCS01STT01_I :=0;
+sim_BVG130LCS01STP01_I :=0;
+sim_BAF130HP01LCS02STT01_I :=0;
+sim_BAF130HP01LCS02STP01_I :=0;
+sim_BAF130HP01LCS02STT02_I :=0;
+sim_BAF130HP01LCS02STP02_I :=0;
+sim_BAF130HP01LCS02STT03_I :=0;
+sim_BAF130HP01LCS02STP03_I :=0;
+sim_BAF130LCS01STT01_I :=0;
+sim_BAF130LCS01STP01_I :=0;
+sim_BAF130HP01LCS01STT01_I :=0;
+sim_BAF130HP01LCS01STP01_I :=0;
+sim_BAF130HP01LCS01STT02_I :=0;
+sim_BAF130HP01LCS01STP02_I :=0;
+sim_BAF130LU01LCS01STT01_I :=0;
+sim_BAF130LU01LCS01STP01_I :=0;
+sim_BJC130LCS01STT01_I :=0;
+sim_BJC130LCS01STP01_I :=0;
+sim_BJC130LCS02STT01_I :=0;
+sim_BJC130LCS02STP01_I :=0;
+sim_BJC130LU01LCS01STT01_I :=0;
+sim_BJC130LU01LCS01STP01_I :=0;
+sim_BDU130FN01LCS01STT01_I :=0;
+sim_BDU130FN01LCS01STP01_I :=0;
+sim_BDU130RV01LCS01STT01_I :=0;
+sim_BDU130RV01LCS01STP01_I :=0;
+sim_BBD130PP01LCS03STT01_I :=0;
+sim_BBD130PP01LCS03STP01_I :=0;
+sim_BAF130PP05LCS01STT01_I :=0;
+sim_BAF130PP05LCS01STP01_I :=0;
+sim_BCV130LCS02STT01_I :=0;
+sim_BCV130LCS02STP01_I :=0;
+sim_BCV130PP03LCS01STT01_I :=0;
+sim_BCV130PP03LCS01STP01_I :=0;
+sim_BCV130LCS01STT01_I :=0;
+sim_BCV130LCS01STP01_I :=0;
+sim_BCV130BK01LCS01STT01_I :=0;
+sim_BCV130BK01LCS01STP01_I :=0;
+sim_BCV130FN01LCS01STT01_I :=0;
+sim_BCV130FN01LCS01STP01_I :=0;
+sim_BCV130FN02LCS01STT01_I :=0;
+sim_BCV130FN02LCS01STP01_I :=0;
+sim_BCV130GB01LCS01STT01_I :=0;
+sim_BCV130GB01LCS01STP01_I :=0;
+sim_BTN130PP01LCS01STT01_I :=0;
+sim_BTN130PP01LCS01STP01_I :=0;
+sim_BPP1108LCS01STT01_I :=0;
+sim_BPP1108LCS01STP01_I :=0;
+sim_BPP1109LCS01STT01_I :=0;
+sim_BPP1109LCS01STP01_I :=0;
+sim_BSTD1108LCS01STT01_I :=0;
+sim_BSTD1108LCS01STP01_I :=0;
+sim_BSTD1108LCS01STT02_I :=0;
+
+(* ===========================================
+	Misc Field Equipment
+============================================== *)
+(* ---- Thermistors ----------------------- *)
+sim_BAF130PP01THR01_I :=1;
+sim_BAF130PP02THR01_I :=1;
+sim_BVG130DA01THR01_I :=1;
+sim_BJC130THR01_I :=1;
+sim_BDU130FN01THR01_I :=1;
+sim_BPP1108THR01_I :=1;
+sim_BPP1109THR01_I :=1;
+
+(* ---- Flow Switches ----------------------- *)
+sim_BRB131HP01FS03_I :=1;
+sim_BAF130LU01FS01_I :=0;
+sim_BAF130HP01FS04_I :=1;
+sim_BAF130HP02FS01_I :=1;
+sim_BRB132HP01FS02_I :=1;
+sim_BCV130PP02FS01_I :=1;
+sim_BPP1108FS01_I :=0;
+sim_BPP1109FS02_I :=0;
+
+(* ---- Level Switches ----------------------- *)
+sim_BBN130LS01_I :=1;
+sim_BAF130LU01LS01_I :=0;
+sim_BJC130HP01UE01LS01_I :=0;
+sim_BJC130LU01LS01_I :=0;
+sim_BDU130HOP01LS01_I :=0;
+sim_BDU130HOP01LS02_I :=0;
+sim_BAF130HP02LS01_I :=1;
+sim_BCV130BK01UI01LS01_I :=0;
+sim_BTY1501LS01_I :=0;
+
+(* ---- Valves  ----------------------- *)
+sim_BTY1501FV01SW01_I :=0;
+sim_BTY1501FV01ZS01_I :=0;
+sim_BTY1501FV01ZS02_I :=1;
+sim_BTY1501FV01XS01_I :=0;
+sim_BTY1501FV01CB01_I :=1;
+sim_BSTD1108FV01SW01_I :=0;
+sim_BSTD1108FV01ZS01_I :=0;
+sim_BSTD1108FV01ZS02_I :=1;
+sim_BSTD1108FV01XS01_I :=0;
+sim_BSTD1108FV01CB01_I :=1;
+
+(* ---- Other DI ----------------------- *)
+sim_BRB13xLCS01SY01_I :=1;
+sim_BRB13xLCS02SY02_I :=1;
+sim_BRB131XS01_I :=1;
+sim_BRB131XS02_I :=1;
+sim_BRB131XS03_I :=1;
+sim_BRB131XS04_I :=0;
+sim_BRB131XS05_I :=1;
+sim_BRB131XS06_I :=0;
+sim_BRB131XS07_I :=0;
+sim_BVG130CH01BCS01_I :=1;
+sim_BAF130LCS01REV01_I :=0;
+sim_BAF130LCS01SY01_I :=1;
+sim_BAF130PWS01_I :=1;
+sim_BAF130PWS02_I :=1;
+sim_BAF130CH01BCS01_I :=1;
+sim_BAF130CH02BCS01_I :=1;
+sim_BAF130CH03BCS01_I :=1;
+sim_BAF130HP01LCS01SY01_I :=1;
+sim_BAF130PP01XS01_I :=1;
+sim_BAF130PP02XS02_I :=1;
+sim_BAF130PP04XS03_I :=1;
+sim_BAF130ZS01_I :=1;
+sim_BAF130ZS02_I :=1;
+sim_BAF130ZS03_I :=1;
+sim_BAF130ZS04_I :=1;
+sim_BAF130ZS05_I :=1;
+sim_BAF130ZS06_I :=1;
+sim_BAF130LU01PS01_I :=0;
+sim_BAF130LU01PS02_I :=0;
+sim_BAF130LU01ZS01_I :=0;
+sim_BAF130LU01ZS02_I :=0;
+sim_BVG130ZS01_I :=1;
+sim_BAF130PP01PS06_I :=0;
+sim_BAF130PP01PS07_I :=0;
+sim_BAF130PP02PS06_I :=0;
+sim_BAF130PP02PS07_I :=0;
+sim_BAF130HP01TS01_I :=0;
+sim_BAF130PP01ZS01_I :=1;
+sim_BAF130PP01ZS02_I :=1;
+sim_BAF130PP02ZS01_I :=1;
+sim_BAF130PP02ZS02_I :=1;
+sim_BJC130LCS01SY01_I :=1;
+sim_BJC130LCS02SY01_I :=1;
+sim_BJC130CH02BCS01_I :=1;
+sim_BRB13xLCS03SY03_I :=1;
+sim_BRB13xLCS04SY04_I :=1;
+sim_BJC130HP01PN01SW01_I :=1;
+sim_BJC130HP01PN01CAX01_I :=1;
+sim_BJC130HP01PN01SY01_I :=1;
+sim_BJC130HP01PN01XS01_I :=0;
+sim_BJC130HP01PN01PIT01_I :=0;
+sim_BJC130HP01PDSH01_I :=0;
+sim_BJC130HP01UE01TS01_I :=1;
+sim_BJC130HP01PS01_I :=1;
+sim_BJC130ZS01_I :=1;
+sim_BJC130LU01ZS01_I :=0;
+sim_BJC130LU01ZS02_I :=0;
+sim_BJC130LU01ZS03_I :=0;
+sim_BJC130LU01ZS04_I :=0;
+sim_BJC130LU01ZS05_I :=0;
+sim_BJC130LU01PS01_I :=0;
+sim_BJC130LU01PS02_I :=0;
+sim_BDU130RV01SS01_I :=0;
+sim_BDU130CP01ZS01_I :=1;
+sim_BDU130CP01XS01_I :=1;
+sim_BDU130CP01XS02_I :=1;
+sim_BDU130DY01XS01_I :=1;
+sim_BAF130PP05LCS01SY01_I :=1;
+sim_BAF130HP02PS06_I :=1;
+sim_BAF130HP02PS01_I :=1;
+sim_BAF130HP02PS03_I :=1;
+sim_BAF130HP02PS04_I :=1;
+sim_BAF130HP02PS05_I :=1;
+sim_BAF130GA01LCS01PB01_I :=0;
+sim_BAF130GA01LCS01PB02_I :=0;
+sim_BAF130GA01LCS01SY01_I :=1;
+sim_BAF130GA01ZS01_I :=0;
+sim_BAF130GA01ZS02_I :=1;
+sim_BAF130GA01ZS03_I :=0;
+sim_BAF130GA01ZS04_I :=1;
+sim_BAF130GA01ZS05_I :=0;
+sim_BAF130GA01ZS06_I :=0;
+sim_BAF130GA01ZS07_I :=0;
+sim_BAF130GA01ZS08_I :=0;
+sim_BRB132XS01_I :=1;
+sim_BRB132XS02_I :=1;
+sim_BRB132XS03_I :=1;
+sim_BRB132XS04_I :=0;
+sim_BRB132XS05_I :=1;
+sim_BRB132XS06_I :=0;
+sim_BRB132XS07_I :=0;
+sim_BRB13xLCS05SY05_I :=1;
+sim_BCV130PWS09_I :=1;
+sim_BCV130PWS10_I :=1;
+sim_BCV130PWS11_I :=1;
+sim_BCV130PWS12_I :=1;
+sim_BCV130PWS13_I :=1;
+sim_BCV130PWS14_I :=1;
+sim_BCV130BDS05_I :=1;
+sim_BCV130BDS06_I :=1;
+sim_BCV130BDS07_I :=1;
+sim_BCV130BDS08_I :=1;
+sim_BCV130BRS01_I :=1;
+sim_BCV130BRS02_I :=1;
+sim_BCV130BRS03_I :=1;
+sim_BCV130LCS02SY01_I :=1;
+sim_BCV130LCS03SY01_I :=1;
+sim_BCV130AIT01ZS01_I :=0;
+sim_BCV130MD01XS01_I :=1;
+sim_BCV130MD01XS02_I :=0;
+sim_BCV130MD01XS03_I :=0;
+sim_BCV130PWS05_I :=1;
+sim_BCV130PWS06_I :=1;
+sim_BCV130PWS07_I :=1;
+sim_BCV130PWS08_I :=1;
+sim_BCV130BP02ZS01_I :=0;
+sim_BCV130MD02XS01_I :=1;
+sim_BCV130MD02XS02_I :=0;
+sim_BCV130MD02XS03_I :=0;
+sim_BCV130MA01RLY01_I :=1;
+sim_BCV130MA01CAX01_I :=1;
+sim_BCV130MA01CAX02_I :=1;
+sim_BCV130MA01RLY02_I :=1;
+sim_BCV130MA01RLY03_I :=1;
+sim_BCV130MA01PB01_I :=0;
+sim_BCV130MA01PB02_I :=0;
+sim_BCV130MA01PB03_I :=0;
+sim_BCV130MA01PB04_I :=0;
+sim_BCV130MA01PB05_I :=0;
+sim_BCV130MA01PB06_I :=0;
+sim_BCV130MA01PB07_I :=0;
+sim_BCV130MA01PB08_I :=0;
+sim_BCV130MA01PB09_I :=0;
+sim_BCV130MA01PN01SY01_I :=1;
+sim_BCV130MA01ZS01_I :=0;
+sim_BCV130MA01ZS02_I :=0;
+sim_BCV130MA01ZS03_I :=0;
+sim_BCV130MA01ZS04_I :=0;
+sim_BCV130MA01ZS05_I :=0;
+sim_BCV130MA01ZS06_I :=0;
+sim_BCV130MA01TS01_I :=1;
+sim_BCV130LCS01SY01_I :=1;
+sim_BCV130PWS01_I :=1;
+sim_BCV130PWS02_I :=1;
+sim_BCV130PWS03_I :=1;
+sim_BCV130PWS04_I :=1;
+sim_BCV130ZS01_I :=1;
+sim_BCV130ZS02_I :=1;
+sim_BCV130ZS03_I :=1;
+sim_BCV130ZS04_I :=1;
+sim_BCV130BDS01_I :=1;
+sim_BCV130BDS02_I :=1;
+sim_BCV130BDS03_I :=1;
+sim_BCV130BDS04_I :=1;
+sim_BCV130CH03BCS01_I :=1;
+sim_BCV130CH03BCS02_I :=1;
+sim_BCV130BK01LCS01SY01_I :=1;
+sim_BCV130BK01PS01_I :=0;
+sim_BCV130BK01PS01A_I :=0;
+sim_BCV130BK01ZS01A_I :=0;
+sim_BCV130BK01ZS01B_I :=1;
+sim_BCV130BK01ZS02A_I :=0;
+sim_BCV130BK01ZS02B_I :=1;
+sim_BCV130BK01UI01TS01_I :=0;
+sim_BCV130CH01ZS01_I :=0;
+sim_BCV130CH01ZS02_I :=0;
+sim_BCV130CH03ZS01_I :=0;
+sim_SUB902DX10XS01_I :=1;
+sim_SUB902DX10XS02_I :=1;
+sim_SUB902DX10XS03_I :=1;
+sim_SUB902DX10XS04_I :=1;
+sim_SUB902NEP01CB01_I :=1;
+sim_SUB902NEP01CB02_I :=1;
+sim_SUB902DB01XS01_I :=1;
+sim_BPP1108VDC01_I :=1;
+sim_BPP1109VDC01_I :=1;
+sim_SUB902DB01VDC01_I :=1;
+sim_SUB902DB01CB01_I :=1;
+
+
+(* ===========================================
+	IED / PR-rack Simulation Inputs
+============================================== *)
+
+(* ---- TeSysT ----------------------- *)
+sim_BAF130PP07CB01_I :=1;
+sim_BAF130PP07CAX01_I :=1;
+sim_BAF130PP07SY01_I :=1;
+sim_BAF130PP01CB01_I :=1;
+sim_BAF130PP01CAX01_I :=1;
+sim_BAF130PP01SY01_I :=1;
+sim_BAF130PP01VAC01_I :=1;
+sim_BAF130PP02CB01_I :=1;
+sim_BAF130PP02CAX01_I :=1;
+sim_BAF130PP02SY01_I :=1;
+sim_BAF130PP02VAC01_I :=1;
+sim_BAF130PP04CB01_I :=1;
+sim_BAF130PP04CAX01_I :=1;
+sim_BAF130PP04SY01_I :=1;
+sim_BAF130FN01CB01_I :=1;
+sim_BAF130FN01CAX01_I :=1;
+sim_BAF130FN01SY01_I :=1;
+sim_BAF130FN02CB01_I :=1;
+sim_BAF130FN02CAX01_I :=1;
+sim_BAF130FN02SY01_I :=1;
+sim_BAF130FN03CB01_I :=1;
+sim_BAF130FN03CAX01_I :=1;
+sim_BAF130FN03SY01_I :=1;
+sim_BAF130PP05CB01_I :=1;
+sim_BAF130PP05CAX01_I :=1;
+sim_BAF130PP05SY01_I :=1;
+sim_BDU130FN01CB01_I :=1;
+sim_BDU130FN01CAX01_I :=1;
+sim_BDU130FN01SY01_I :=1;
+sim_BDU130FN01VAC01_I :=1;
+sim_BDU130RV01CB01_I :=1;
+sim_BDU130RV01CAX01_I :=1;
+sim_BDU130RV01SY01_I :=1;
+sim_BVG130DA01CB01_I :=1;
+sim_BVG130DA01CAX01_I :=1;
+sim_BVG130DA01SY01_I :=1;
+sim_BVG130DA01VAC01_I :=1;
+sim_BJC130PP01CB01_I :=1;
+sim_BJC130PP01CAX01_I :=1;
+sim_BJC130PP01SY01_I :=1;
+sim_BTN130PP01CB01_I :=1;
+sim_BTN130PP01CAX01_I :=1;
+sim_BTN130PP01SY01_I :=1;
+sim_BCV130PP01CB01_I :=1;
+sim_BCV130PP01CAX01_I :=1;
+sim_BCV130PP01SY01_I :=1;
+sim_BCV130PP03CB01_I :=1;
+sim_BCV130PP03CAX01_I :=1;
+sim_BCV130PP03SY01_I :=1;
+sim_BCV130PP04CB01_I :=1;
+sim_BCV130PP04CAX01_I :=1;
+sim_BCV130PP04SY01_I :=1;
+sim_BCV130FN01CB01_I :=1;
+sim_BCV130FN01CAX01_I :=1;
+sim_BCV130FN01SY01_I :=1;
+sim_BCV130FN02CB01_I :=1;
+sim_BCV130FN02CAX01_I :=1;
+sim_BCV130FN02SY01_I :=1;
+sim_BCV130PP02CB01_I :=1;
+sim_BCV130PP02CAX01_I :=1;
+sim_BCV130PP02SY01_I :=1;
+sim_BCV130FN03CB01_I :=1;
+sim_BCV130FN03CAX01_I :=1;
+sim_BCV130FN03SY01_I :=1;
+sim_BCV130FN04CB01_I :=1;
+sim_BCV130FN04CAX01_I :=1;
+sim_BCV130FN04SY01_I :=1;
+sim_BCV130MT01EM01CB01_I :=1;
+sim_BCV130MT01EM01CAX01_I :=1;
+sim_BCV130MT01EM01SY01_I :=1;
+sim_BCV130MT01EM02CB01_I :=1;
+sim_BCV130MT01EM02CAX01_I :=1;
+sim_BCV130MT01EM02SY01_I :=1;
+sim_BBD130PP01CB01_I :=1;
+sim_BBD130PP01CAX01_I :=1;
+sim_BBD130PP01SY01_I :=1;
+
+
+END_IF;
+</STSource>
+	</program>
+	<dataBlock>
+		<variables name="sim_init" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130FIP01IS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130RV01LCS01IS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130PP01LCS03IS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP05LCS01IS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP03LCS01IS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01IS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MT01IS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MT02IS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTN130PP01LCS01IS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB12_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130NEP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130NEP01CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01VDC12_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130AC01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130AC01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130AC02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130AC02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB03VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB03CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB04VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB04CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB05VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB05CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130WN01PN01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130WN01PN01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PN01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PN01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130VS01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130VS01CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130VS01CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130VS01CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130VS01CB07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02VDC12_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV131PP04VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV131PP05VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP03VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN03VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN04VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MT01EM01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MT01EM02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP04VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03VDC08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03VDC09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03VDC10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX03VDC11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04VDC08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04VDC09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04VDC10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX04VDC11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05VDC08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05VDC09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05VDC10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX05VDC11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06VDC08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06VDC09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06VDC10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130DX06VDC11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07VDC08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07VDC09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07VDC10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07VDC11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08VDC08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08VDC09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08VDC10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08VDC11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09VDC08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09VDC09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09VDC10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09VDC11_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC05_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC06_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC08_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC09_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC10_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC11_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10VDC12_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC02VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC02CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC02CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC02CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC02CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC02CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC02CB07_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC02CB08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1301INC01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1301INC01CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1301INC01TRP02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1301INC01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1301INC01CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1301INC01CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1301INC01CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1301INC01XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1301INC01CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC01CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC01TRP02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC01CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC01CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC01CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC01XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC01CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC02CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC02CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC02CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC02XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC02CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC03VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC03TRP02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC03CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC03CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC03CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC03CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC1302INC03CB07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC01CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC01TRP02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC01CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC01CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC01CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC01XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC01CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC02TRP02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC02CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC02CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC02CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC02CB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BMC802INC02CB07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HT01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HT02TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130CP01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131HP01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BRB132HP01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01PN01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130BC02TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130AC01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130AC02TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB02TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB03TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB04TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB05TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131CC01DB01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130WN01PN01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PN01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902BC02TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DB01TRP01_SetOK" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01SW01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R1_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W1_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B1_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R2_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W2_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B2_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R3_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W3_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B3_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R4_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W4_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B4_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R5_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W5_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B5_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R6_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W6_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B6_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R7_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W7_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B7_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R8_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W8_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B8_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R9_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W9_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B9_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130PB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130FIP01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130FIP01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130PN01TS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130PN01TS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130PN01PS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130PN01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130PN01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130PN01XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130PN01XS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130PN01XS05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130PN01XS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130PN01XS07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DB01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130FIP01XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01R12_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01W12_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130UP01DB01B12_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HT01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HT01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HT01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HT02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HT02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HT02CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130CP01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130CP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131HP01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131HP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB132HP01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB132HP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP07VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP04VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN02VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN03VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP05VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130FN01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130RV01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BVG130DA01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130PP01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01PN01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01PN01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130VS01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130VS01TRP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130VS01CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130VS01CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130VS01CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130VS01CB07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FNSY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR130DX02XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131CC01DB01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131CC01DB01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSB1301VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSB1301TRP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSB1301CB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSB1301CB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSB1301CB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSB1301CB07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130VS01TRP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130PP01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTN130PP01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV131SLC01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV131SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV131SLC02SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX07SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX08SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130DX09SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01SY02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130GB01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BVG130LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BVG130LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01LCS02STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01LCS02STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01LCS02STT02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01LCS02STP02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01LCS02STT03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01LCS02STP03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01LCS01STT02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01LCS01STP02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LU01LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LU01LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LCS02STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LCS02STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LU01LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LU01LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130FN01LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130FN01LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130RV01LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130RV01LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130PP01LCS03STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130PP01LCS03STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP05LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP05LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130LCS02STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130LCS02STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP03LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP03LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BK01LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BK01LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN01LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN01LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN02LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN02LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130GB01LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130GB01LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTN130PP01LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTN130PP01LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1108LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1108LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1109LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1109LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1108LCS01STT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1108LCS01STP01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1108LCS01STT02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP01THR01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP02THR01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BVG130DA01THR01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130THR01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130FN01THR01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1108THR01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1109THR01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131HP01FS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LU01FS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01FS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP02FS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB132HP01FS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP02FS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1108FS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1109FS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBN130LS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LU01LS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01UE01LS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LU01LS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130HOP01LS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130HOP01LS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP02LS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BK01UI01LS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1501LS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1501FV01SW01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1501FV01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1501FV01ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1501FV01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTY1501FV01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1108FV01SW01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1108FV01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1108FV01ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1108FV01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSTD1108FV01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB13xLCS01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB13xLCS02SY02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131XS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131XS05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131XS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB131XS07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BVG130CH01BCS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LCS01REV01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LCS01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PWS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PWS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130CH01BCS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130CH02BCS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130CH03BCS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01LCS01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP02XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP04XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130ZS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130ZS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130ZS05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130ZS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LU01PS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LU01PS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LU01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130LU01ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BVG130ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP01PS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP01PS07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP02PS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP02PS07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP01TS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP01ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP02ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP02ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LCS01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LCS02SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130CH02BCS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB13xLCS03SY03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB13xLCS04SY04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01PN01SW01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01PN01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01PN01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01PN01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01PN01PIT01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01PDSH01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01UE01TS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130HP01PS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LU01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LU01ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LU01ZS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LU01ZS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LU01ZS05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LU01PS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130LU01PS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130RV01SS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130CP01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130CP01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130CP01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130DY01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP05LCS01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP02PS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP02PS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP02PS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP02PS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130HP02PS05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01LCS01PB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01LCS01PB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01LCS01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01ZS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01ZS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01ZS05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01ZS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01ZS07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130GA01ZS08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB132XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB132XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB132XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB132XS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB132XS05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB132XS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB132XS07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BRB13xLCS05SY05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS10_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS11_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS12_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS13_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS14_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BDS05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BDS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BDS07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BDS08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BRS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BRS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BRS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130LCS02SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130LCS03SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130AIT01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MD01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MD01XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MD01XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BP02ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MD02XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MD02XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MD02XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01RLY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01CAX02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01RLY02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01RLY03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PB03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PB04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PB05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PB06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PB07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PB08_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PB09_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01PN01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01ZS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01ZS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01ZS05_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01ZS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MA01TS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130LCS01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PWS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130ZS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130ZS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BDS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BDS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BDS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BDS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130CH03BCS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130CH03BCS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BK01LCS01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BK01PS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BK01PS01A_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BK01ZS01A_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BK01ZS01B_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BK01ZS02A_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BK01ZS02B_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130BK01UI01TS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130CH01ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130CH01ZS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130CH03ZS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10XS02_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10XS03_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DX10XS04_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902NEP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902NEP01CB02_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DB01XS01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1108VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1109VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DB01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_SUB902DB01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP07CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP07CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP07SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP01VAC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP02CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP02SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP02VAC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP04CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP04CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP04SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN02CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN02SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN03CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN03CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130FN03SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP05CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP05CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BAF130PP05SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130FN01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130FN01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130FN01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130FN01VAC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130RV01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130RV01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BDU130RV01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BVG130DA01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BVG130DA01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BVG130DA01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BVG130DA01VAC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130PP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130PP01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BJC130PP01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTN130PP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTN130PP01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BTN130PP01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP03CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP03CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP03SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP04CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP04CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP04SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN02CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN02SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP02CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130PP02SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN03CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN03CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN03SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN04CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN04CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130FN04SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MT01EM01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MT01EM01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MT01EM01SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MT01EM02CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MT01EM02CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BCV130MT01EM02SY01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130PP01CB01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130PP01CAX01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BBD130PP01SY01_I" typeName="EBOOL"></variables>
+	</dataBlock>
+</STExchangeFile>

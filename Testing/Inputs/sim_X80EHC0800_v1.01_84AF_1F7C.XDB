@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-5-1-15:34:6" content="Function Block source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.167" dateTime="date_and_time#2026-2-26-11:45:54"></contentHeader>
+	<FBSource nameOfFBType="sim_X80EHC0800" version="1.01" dateTime="dt#2026-05-01-15:32:38">
+		<attribute name="TypeCodeCheckSumString" value="1F7C"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="84AF"></attribute>
+		<attribute name="UseNewTplSignAlgo" value="TRUE"></attribute>
+		<inputParameters>
+			<variables name="iEnable" typeName="EBOOL">
+				<comment>Enable Sim Block</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="iFlt" typeName="EBOOL">
+				<comment>Simulate Module Fault</comment>
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+			<variables name="iCh0Flt" typeName="EBOOL">
+				<comment>Simulate Channel 0 Fault</comment>
+				<attribute name="PositionPin" value="3"></attribute>
+			</variables>
+			<variables name="iCh1Flt" typeName="EBOOL">
+				<comment>Simulate Channel 1 Fault</comment>
+				<attribute name="PositionPin" value="4"></attribute>
+			</variables>
+			<variables name="iCh0CntFlt" typeName="EBOOL">
+				<comment>Simulate Channel 0 Count Invalid</comment>
+				<attribute name="PositionPin" value="5"></attribute>
+			</variables>
+			<variables name="iCh1CntFlt" typeName="EBOOL">
+				<comment>Simulate Channel 1 Count Invalid</comment>
+				<attribute name="PositionPin" value="6"></attribute>
+			</variables>
+			<variables name="iCh0SignedCounter" typeName="DINT">
+				<comment>Write to Ch0 Signed Counter Value and DINT</comment>
+				<attribute name="PositionPin" value="29"></attribute>
+			</variables>
+			<variables name="iCh0UnSignedCounter" typeName="DINT">
+				<comment>Write to Ch0 Unsigned Counter Value and UDINT</comment>
+				<attribute name="PositionPin" value="30"></attribute>
+			</variables>
+			<variables name="iCh1SignedCounter" typeName="DINT">
+				<comment>Write to Ch1 Signed Counter Value and DINT</comment>
+				<attribute name="PositionPin" value="31"></attribute>
+			</variables>
+			<variables name="iCh1UnSignedCounter" typeName="DINT">
+				<comment>Write to Ch1 Unsigned Counter Value and UDINT</comment>
+				<attribute name="PositionPin" value="32"></attribute>
+			</variables>
+			<variables name="iPlsDia" typeName="REAL">
+				<comment>Number of Pulses per Revolution</comment>
+				<attribute name="PositionPin" value="12"></attribute>
+			</variables>
+			<variables name="iDia" typeName="REAL">
+				<comment>Diameter (m)</comment>
+				<attribute name="PositionPin" value="11"></attribute>
+			</variables>
+			<variables name="iEngMax" typeName="REAL">
+				<comment>Engineering Units Speed Value at 100% (EU)</comment>
+				<attribute name="PositionPin" value="10"></attribute>
+			</variables>
+			<variables name="iScnTm" typeName="INT">
+				<comment>PLC Scan Time (ms)</comment>
+				<attribute name="PositionPin" value="7"></attribute>
+			</variables>
+			<variables name="iRun" typeName="EBOOL">
+				<comment>Speed Calc Required (Equipment Running)</comment>
+				<attribute name="PositionPin" value="13"></attribute>
+			</variables>
+			<variables name="iRampUpTm" typeName="REAL">
+				<comment>Ramp Up Time from 0 to 100% Speed</comment>
+				<attribute name="PositionPin" value="15"></attribute>
+			</variables>
+			<variables name="iRampDwnTm" typeName="REAL">
+				<comment>Ramp Down Time from 100% to 0% Speed</comment>
+				<attribute name="PositionPin" value="16"></attribute>
+			</variables>
+			<variables name="iRampFstTm" typeName="REAL">
+				<comment>Fast Ramp Down Time</comment>
+				<attribute name="PositionPin" value="17"></attribute>
+			</variables>
+			<variables name="iFstEn" typeName="EBOOL">
+				<comment>Fast Ramp Enabled</comment>
+				<attribute name="PositionPin" value="18"></attribute>
+			</variables>
+			<variables name="iSpdFac" typeName="REAL">
+				<comment>Speed Factor (+ - %)</comment>
+				<attribute name="PositionPin" value="19"></attribute>
+			</variables>
+			<variables name="iSpdOvrSP" typeName="REAL">
+				<comment>Simulation Speed Override (%)</comment>
+				<attribute name="PositionPin" value="20"></attribute>
+			</variables>
+			<variables name="iSpdOvrEn" typeName="EBOOL">
+				<comment>Sim Speed Override Enable Pin</comment>
+				<attribute name="PositionPin" value="21"></attribute>
+			</variables>
+			<variables name="iEng" typeName="BOOL">
+				<comment>Engineering Units (0 = m/s, 1 = rpm)</comment>
+				<attribute name="PositionPin" value="9"></attribute>
+			</variables>
+			<variables name="iCustomMode" typeName="INT">
+				<comment>Default: 0 (Ch0 = Period counter, Ch1 = Modulo Counting). Configure &gt;0 for different modes outsideblock or in sim code</comment>
+				<attribute name="PositionPin" value="8"></attribute>
+			</variables>
+			<variables name="iSpdSP" typeName="REAL">
+				<comment>Speed Setpoint (%)</comment>
+				<attribute name="PositionPin" value="14"></attribute>
+			</variables>
+			<variables name="iFrqSP" typeName="REAL">
+				<comment>Pulse Sequence Frequency (Hz)</comment>
+				<attribute name="PositionPin" value="22"></attribute>
+			</variables>
+			<variables name="iPlsCntRst" typeName="EBOOL">
+				<comment>Pulse Sequence Pulse Count Reset</comment>
+				<attribute name="PositionPin" value="23"></attribute>
+			</variables>
+			<variables name="iCh0InA" typeName="EBOOL">
+				<comment>Ch0 Input A</comment>
+				<attribute name="PositionPin" value="25"></attribute>
+			</variables>
+			<variables name="iCh0InB" typeName="EBOOL">
+				<comment>Ch0 Input B</comment>
+				<attribute name="PositionPin" value="26"></attribute>
+			</variables>
+			<variables name="iCh1InA" typeName="EBOOL">
+				<comment>Ch1 Input A</comment>
+				<attribute name="PositionPin" value="27"></attribute>
+			</variables>
+			<variables name="iCh1InB" typeName="EBOOL">
+				<comment>Ch1 Input B</comment>
+				<attribute name="PositionPin" value="28"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="oDatDDT" typeName="T_M_CPT_STD_IN_8">
+				<comment>Write to Dat DDT</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="oSpd" typeName="REAL">
+				<comment>Calculated Speed (m/s)</comment>
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+		</outputParameters>
+		<privateLocalVariables>
+			<variables name="pi" typeName="REAL">
+				<comment>pi- constant</comment>
+			</variables>
+			<variables name="tabcount" typeName="REAL">
+				<comment>number of speed tabs</comment>
+			</variables>
+			<variables name="RAMP_0" typeName="RAMP"></variables>
+			<variables name="ReqSpd" typeName="REAL">
+				<comment>Required Speed SP</comment>
+			</variables>
+			<variables name="Spd100" typeName="REAL">
+				<comment>Speed at 100% SP m/s or rpm</comment>
+			</variables>
+			<variables name="Frequency" typeName="REAL">
+				<comment>Frequency Output</comment>
+			</variables>
+			<variables name="UpdateTm" typeName="REAL">
+				<comment>Period output</comment>
+			</variables>
+			<variables name="DisPerTab" typeName="REAL">
+				<comment>Distance Per Tab</comment>
+			</variables>
+			<variables name="ScanTotal" typeName="UDINT"></variables>
+			<variables name="SpdCalcOK" typeName="EBOOL"></variables>
+			<variables name="PulseOut" typeName="EBOOL"></variables>
+			<variables name="PulseOnTm" typeName="UDINT"></variables>
+			<variables name="PulseOutTime" typeName="UDINT"></variables>
+			<variables name="PulseMod" typeName="UDINT"></variables>
+			<variables name="PulseCount" typeName="UDINT"></variables>
+			<variables name="PulseUpdate" typeName="UDINT"></variables>
+			<variables name="Circ" typeName="REAL">
+				<comment>Circumference </comment>
+			</variables>
+			<variables name="Ramp_Para" typeName="Para_RAMP"></variables>
+			<variables name="To_ZQ01Cnt" typeName="UDINT"></variables>
+			<variables name="To_PulseDI" typeName="EBOOL"></variables>
+			<variables name="To_USSTm" typeName="UDINT"></variables>
+			<variables name="To_USSFrq" typeName="UDINT"></variables>
+			<variables name="SIM_Random_Number_0" typeName="SIM_Random_Number"></variables>
+			<variables name="Rand_Real_Val" typeName="REAL">
+				<comment>Random Real Value</comment>
+			</variables>
+			<variables name="TmBetPls" typeName="REAL"></variables>
+			<variables name="TmBetPlsUDINT" typeName="UDINT"></variables>
+			<variables name="FrqSP" typeName="REAL"></variables>
+			<variables name="FrqSP_UDINT" typeName="UDINT"></variables>
+			<variables name="PlsOn" typeName="EBOOL"></variables>
+			<variables name="PlsCnt" typeName="UDINT"></variables>
+			<variables name="Period" typeName="TIME"></variables>
+			<variables name="TON_Period" typeName="TON"></variables>
+			<variables name="PeriodTimerReached" typeName="EBOOL"></variables>
+			<variables name="PlsOnTrig" typeName="EBOOL"></variables>
+			<variables name="PlsCntTrig" typeName="EBOOL"></variables>
+			<variables name="R_TRIG_Period" typeName="R_TRIG"></variables>
+			<variables name="TP_PulseGen" typeName="TP"></variables>
+			<variables name="R_TRIG_PlsOn" typeName="R_TRIG"></variables>
+		</privateLocalVariables>
+		<FBProgram name="Sim_Speed">
+			<STSource>(* Simulation DFB for X80_EHC0200In and X80_EHC0200Out High SPeed Counter Blocks
+This Block simulates:
+- DINT and UDINT inputs read back from the high speed counter block
+- Fault Toggling
+- Toggling Channel Inputs
+
+01/05/2026 - BCY: Initial Release, adapted from WR Sim_X80EHC0200 block and modified to suit Frequency mode
+
+*)
+
+(* This section simulates speed for the high speed counter
+
+THE CODE BELOW DIRECTLY WRITES TO iCustomMode = 0, 
+WHERE Channel 0 is set as Frequency Measuring Mode
+      Channel 1 is set as Modulo Loop Counting Mode.
+ *)
+
+IF iEnable THEN
+
+	(* ===== Constants ===== *)
+
+	pi := 3.14159265359;
+	(* to disable DifFlt of DistCheck Block *)
+	SIM_Random_Number_0 (LowerLimit := -1.0,
+	                     UpperLimit := 1.0,
+	                     RandomNumber =&gt; Rand_Real_Val); 
+
+
+
+	tabcount := MAX (IN1 := 1.0 , IN2 := iPlsDia );  (* Protect Div 0 Err *)
+	Ramp_Para.Inc_rate := iRampUpTm;
+	Ramp_Para.Dec_rate := iRampDwnTm;
+
+	IF iFstEn THEN 
+		Ramp_Para.Dec_Rate := iRampFstTm;
+	END_IF;
+
+	(* ===== distance travelled per tab update ===== *)
+	(* Protect Div 0 Err *)
+	IF iDia = 0.0 THEN
+		Circ := 1.0;
+	ELSE
+		Circ := pi*iDia;
+	END_IF;
+	DisPerTab := Circ/tabcount;
+
+
+	(* ===== Speed Units ===== *)
+	IF iEng THEN 
+		Spd100 := iEngMax * Circ /60.0; (* rpm as m/s *)
+	ELSE
+		Spd100 := iEngMax;
+	END_IF;
+
+	(* ===== Speed Ramp ====== *)
+	(* Speed Calc -&gt; update rate between tabs *)
+	IF iSpdOvrEn then 
+		ReqSpd := iSpdOvrSP *Spd100/100.0;	(* Speed Override *)
+	ELSIF iRun THEN
+		ReqSpd := iSpdSp *Spd100/100.0;
+	ELSE 
+		ReqSpd := 0.0;
+	END_IF;
+
+	RAMP_0 (RSP := ReqSpd,
+	        PARA := Ramp_Para,
+	        SP =&gt; oSpd);
+
+	IF oSpd &gt;= 0.04 *Spd100 THEN 
+		TmBetPls := ((DisPerTab/oSpd)*1000.0); (* millisec*)
+		Frequency:= 1.0 / (DisPerTab/oSpd) + Rand_Real_Val; (* sec*)
+		SpdCalcOK:= 1;
+	ELSE
+		TmBetPls := 1.0;
+		UpdateTm :=  0.0;
+		Frequency:= 0.0;
+		SpdCalcOK := 0;
+	END_IF;
+
+	To_USSTm := REAL_TO_UDINT(UpdateTm);
+	To_USSFrq := REAL_TO_UDINT(Frequency);
+	TmBetPlsUDINT := REAL_TO_UDINT(TmBetPls);
+
+
+	(* Distance counter *)
+
+	(* accumulate scan time, reset when pulse detected *)
+
+	IF SpdCalcOK THEN
+		ScanTotal := ScanTotal + INT_TO_UDINT(iScnTm);
+	ELSE
+		ScanTotal := 0;
+	END_IF;
+
+
+		DIVMOD_UDINT (	IN1 	:= (ScanTotal),
+				IN2 	:= TmBetPlsUDINT,
+				DV 	=&gt; PulseUpdate,
+				MD 	=&gt; PulseMod);
+
+
+	PulseOut := 0;
+	IF PulseUpdate &gt; 0 THEN
+		PulseCount := PulseCount + PulseUpdate;
+		PulseOut := 1;
+		ScanTotal := PulseMod;
+	END_IF;
+
+	IF PulseCount &gt;= 9999 THEN (* rollover after 9999 to 0 *)
+		PulseCount := PulseCount - 9999;
+	END_IF;
+	To_ZQ01Cnt := PulseCount; (* pulses counter to ehc output data *)
+
+	(* USS Dig In Status - Assume tab is 10mm window *)
+	IF SpdCalcOK THEN
+		PulseOutTime := REAL_TO_UDINT(0.010 / oSpd * 1000.0);
+		PulseOnTm := PulseOnTm + INT_TO_UDINT(iScnTm);
+	END_IF;
+	IF PulseOut THEN
+		PulseOnTm := 0;
+	END_IF;
+	To_PulseDI := PulseOut OR (To_PulseDI AND PulseOnTm &lt;= PulseOutTime);
+
+END_IF;
+</STSource>
+		</FBProgram>
+		<FBProgram name="PulseSeqGen">
+			<STSource>(*  This section generates step pulses at a settable frequency and counts the number of pulses
+
+THE CODE BELOW DIRECTLY WRITES TO iCustomMode = 1.
+WHERE Channel 0 is set as Frequency Measuring Mode
+      Channel 1 is set as Modulo Loop Counting Mode.
+
+ *)
+
+IF iEnable THEN
+
+	FrqSP := MAX (IN1 := 0.1 , IN2 := iFrqSP );  (* Protect Div 0 Err *)
+
+	FrqSP_UDINT := REAL_TO_UDINT(FrqSP);
+
+	(* Period in milliseconds *)
+	Period := REAL_TO_TIME(1000.0 / FrqSP);
+
+	TON_Period (IN:=(NOT PeriodTimerReached), PT:=Period, Q=&gt;PeriodTimerReached);
+
+	R_TRIG_Period (CLK:=PeriodTimerReached, Q=&gt;PlsOnTrig);
+
+
+	IF iPlsCntRst THEN
+	    PlsCnt := 0;
+	ELSIF PlsOnTrig THEN
+	    PlsCnt := PlsCnt + 1;
+
+	    IF PlsCnt &gt;= 9999 THEN (* rollover after 9999 to 0 *)
+	        PlsCnt := PlsCnt - 9999;
+	    END_IF;
+	END_IF;
+
+ELSE
+
+	PlsCnt := 0;
+
+END_IF;
+</STSource>
+		</FBProgram>
+		<FBProgram name="ModChWrites">
+			<STSource>(* Simulation DFB for X80_EHC0200In and X80_EHC0200Out High SPeed Counter Blocks
+This Block simulates:
+- DINT and UDINT inputs read back from the high speed counter block
+- Fault Toggling
+- Toggling Channel Inputs
+
+AXY 09/02/2023	- initial release
+AXY 08/05/2023	- Added Speed simulation to sim block (adapted from sim_speed)
+
+ *)
+
+
+(* 
+This section of the Code takes values calculated from sim_speed section and outputs them to the correct
+EHC0200 Channel for reading.
+
+Channel Input Simulation, Always Write sim inputs to both Channels, 
+DFB In block will decipher the type of function and filter out DINT/UDINT data read back *)
+
+IF iEnable THEN
+
+	CASE iCustomMode OF
+
+	0:	(* The following is default settings to the BS1 project: 
+		Ch0 = Frequency Measuring Mode (1)
+		Ch1 = Modulo Loop Counting Mode (7) *)
+		oDatDDT.CPT_CH_IN[0].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := 0); 
+		oDatDDT.CPT_CH_IN[0].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP := To_USSFrq);
+
+		oDatDDT.CPT_CH_IN[1].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := 0 );
+		oDatDDT.CPT_CH_IN[1].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP :=  To_ZQ01Cnt);
+
+		(* Channel A/B Input *)
+		oDatDDT.CPT_CH_IN[0].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= To_PulseDI ) ;
+		oDatDDT.CPT_CH_IN[0].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= 0) ;
+
+		oDatDDT.CPT_CH_IN[1].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= To_PulseDI) ;
+		oDatDDT.CPT_CH_IN[1].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= 0) ;
+
+		(* Channel Set Valid *)
+		oDatDDT.CPT_CH_IN[0].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= SpdCalcOK(*TRUE*));
+		oDatDDT.CPT_CH_IN[1].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= SpdCalcOK(*TRUE*));
+
+	1:	(* The following is default settings to the BS1 project: 
+		Ch0 = Frequency Measuring Mode (1)
+		Ch1 = Modulo Loop Counting Mode (7) *)
+		oDatDDT.CPT_CH_IN[0].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := 0); 
+		oDatDDT.CPT_CH_IN[0].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP := FrqSP_UDINT);
+
+		oDatDDT.CPT_CH_IN[1].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := 0 );
+		oDatDDT.CPT_CH_IN[1].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP :=  PlsCnt);
+
+		oDatDDT.CPT_CH_IN[2].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := 0 );
+		oDatDDT.CPT_CH_IN[2].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP :=  FrqSP_UDINT);
+
+		oDatDDT.CPT_CH_IN[3].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := 0 );
+		oDatDDT.CPT_CH_IN[3].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP :=  PlsCnt);
+
+		oDatDDT.CPT_CH_IN[4].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := 0 );
+		oDatDDT.CPT_CH_IN[4].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP :=  FrqSP_UDINT);
+
+		oDatDDT.CPT_CH_IN[5].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := 0 );
+		oDatDDT.CPT_CH_IN[5].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP :=  PlsCnt);
+
+		oDatDDT.CPT_CH_IN[6].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := 0 );
+		oDatDDT.CPT_CH_IN[6].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP :=  FrqSP_UDINT);
+
+		oDatDDT.CPT_CH_IN[7].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := 0 );
+		oDatDDT.CPT_CH_IN[7].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP :=  PlsCnt);
+
+		(* Channel A/B Input *)
+		oDatDDT.CPT_CH_IN[0].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= PlsOnTrig ) ;
+		oDatDDT.CPT_CH_IN[0].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= 0) ;
+
+		oDatDDT.CPT_CH_IN[1].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= PlsOnTrig) ;
+		oDatDDT.CPT_CH_IN[1].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= 0) ;
+
+		oDatDDT.CPT_CH_IN[2].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= PlsOnTrig ) ;
+		oDatDDT.CPT_CH_IN[2].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= 0) ;
+
+		oDatDDT.CPT_CH_IN[3].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= PlsOnTrig) ;
+		oDatDDT.CPT_CH_IN[3].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= 0) ;
+
+		oDatDDT.CPT_CH_IN[4].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= PlsOnTrig ) ;
+		oDatDDT.CPT_CH_IN[4].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= 0) ;
+
+		oDatDDT.CPT_CH_IN[5].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= PlsOnTrig) ;
+		oDatDDT.CPT_CH_IN[5].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= 0) ;
+
+		oDatDDT.CPT_CH_IN[6].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= PlsOnTrig ) ;
+		oDatDDT.CPT_CH_IN[6].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= 0) ;
+
+		oDatDDT.CPT_CH_IN[7].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= PlsOnTrig) ;
+		oDatDDT.CPT_CH_IN[7].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= 0) ;
+
+		(* Channel Set Valid *)
+		oDatDDT.CPT_CH_IN[0].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= NOT(iCh0CntFlt));
+		oDatDDT.CPT_CH_IN[1].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= NOT(iCh1CntFlt));
+		oDatDDT.CPT_CH_IN[2].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= NOT(iCh0CntFlt));
+		oDatDDT.CPT_CH_IN[3].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= NOT(iCh1CntFlt));
+		oDatDDT.CPT_CH_IN[4].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= NOT(iCh0CntFlt));
+		oDatDDT.CPT_CH_IN[5].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= NOT(iCh1CntFlt));
+		oDatDDT.CPT_CH_IN[6].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= NOT(iCh0CntFlt));
+		oDatDDT.CPT_CH_IN[7].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= NOT(iCh1CntFlt));
+
+	(* 2: NOT PROGRAMMED*)
+
+	ELSE(* Custom mode, write directly to iChannel Inputs (without speed calcs) *)
+		(* Logic can be done outside the block, or completed here for different modes *)
+		oDatDDT.CPT_CH_IN[0].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := (iCh0SignedCounter)); 
+		oDatDDT.CPT_CH_IN[0].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP := DINT_TO_UDINT (IN := iCh0UnSignedCounter));
+
+		oDatDDT.CPT_CH_IN[1].COUNTER_CURRENT_VALUE_S 	:= WRITE_INPUT_DINT 	(INP := iCh1SignedCounter );
+		oDatDDT.CPT_CH_IN[1].COUNTER_CURRENT_VALUE_US 	:= WRITE_INPUT_UDINT 	(INP := DINT_TO_UDINT (IN := iCh0UnSignedCounter));
+
+		(* Channel A/B Input *)
+		oDatDDT.CPT_CH_IN[0].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= iCh0InA ) ;
+		oDatDDT.CPT_CH_IN[0].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= iCh0InB) ;
+
+		oDatDDT.CPT_CH_IN[1].ST_INPUT_A	:= WRITE_INPUT_EBOOL( INP:= iCh1InA) ;
+		oDatDDT.CPT_CH_IN[1].ST_INPUT_B	:= WRITE_INPUT_EBOOL( INP:= iCh1InB) ;
+
+		(* Channel Set Valid *)
+		oDatDDT.CPT_CH_IN[0].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= NOT(iCh0CntFlt));
+		oDatDDT.CPT_CH_IN[1].COUNTER_STATUS.3 := WRITE_INPUT_EBOOL (INP:= NOT(iCh1CntFlt));
+
+	END_CASE;
+
+
+	(* ===== Module &amp; Channel Faults ===== *)
+	oDatDDT.MOD_HEALTH		:= WRITE_INPUT_EBOOL (INP:= NOT(iFlt));
+
+	oDatDDT.MOD_FLT.0		:= WRITE_INPUT_EBOOL (INP:= (iFlt));
+							
+	oDatDDT.CPT_CH_IN[0].CH_HEALTH 	:= WRITE_INPUT_EBOOL (INP :=  NOT(iCh0Flt));
+	oDatDDT.CPT_CH_IN[1].CH_HEALTH 	:= WRITE_INPUT_EBOOL (INP :=  NOT(iCh1Flt));
+
+END_IF;
+</STSource>
+		</FBProgram>
+	</FBSource>
+	<FBSource nameOfFBType="SIM_Random_Number" version="0.16" dateTime="dt#2024-02-12-10:19:02">
+		<comment>Version A.02</comment>
+		<attribute name="TypeProtectionLevel" value="2#0000_0000"></attribute>
+		<attribute name="TypeCodeCheckSumString" value="3EC8"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="FB56"></attribute>
+		<inputParameters>
+			<variables name="LowerLimit" typeName="REAL">
+				<comment>The lower limit of the random numbers</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+			<variables name="UpperLimit" typeName="REAL">
+				<comment>The upper limit of the random numbers</comment>
+				<attribute name="PositionPin" value="2"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="RandomNumber" typeName="REAL">
+				<comment>The random number between Lower Limit and Upper Limit</comment>
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+		</outputParameters>
+		<privateLocalVariables>
+			<variables name="ShiftRegister" typeName="UINT">
+				<comment>Shift register used in calculation of pseudo random numbers</comment>
+			</variables>
+			<variables name="InputBit" typeName="BOOL">
+				<comment>Bit to shift into the shift register each iteration</comment>
+			</variables>
+			<variables name="SeedValueFlag" typeName="BOOL">
+				<comment>Capturing first scan</comment>
+			</variables>
+		</privateLocalVariables>
+		<FBProgram name="Main">
+			<FBDSource nbRows="24" nbColumns="36">
+				<networkFBD>
+					<FFBBlock instanceName=".1" typeName="MOVE" additionnalPinNumber="0" enEnO="false" width="7" height="5">
+						<objPosition posX="122" posY="18"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="true"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="SeedValueFlag"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".2" typeName="WORD_TO_BIT" additionnalPinNumber="0" enEnO="false" width="9" height="20">
+						<objPosition posX="18" posY="30"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT0"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT1"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT2"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT3"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT4"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT5"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT6"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT7"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT8"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT9"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT10"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT11"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT12"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT13"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT14"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="BIT15"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".6" typeName="UINT_TO_WORD" additionnalPinNumber="0" enEnO="false" width="10" height="5">
+						<objPosition posX="6" posY="30"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="ShiftRegister"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".7" typeName="XOR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="47" posY="40"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="InputBit"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".9" typeName="OR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="68" posY="54"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".11" typeName="WORD_TO_UINT" additionnalPinNumber="0" enEnO="false" width="10" height="5">
+						<objPosition posX="77" posY="54"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="ShiftRegister"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".12" typeName="BOOL_TO_WORD" additionnalPinNumber="0" enEnO="false" width="10" height="5">
+						<objPosition posX="55" posY="54"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".10" typeName="SUB" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="16" posY="75"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="UpperLimit"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="LowerLimit"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".13" typeName="DIV" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="27" posY="75"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="65536.0"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".14" typeName="ADD" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="53" posY="75"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="LowerLimit"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="RandomNumber"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".15" typeName="MUL" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="40" posY="75"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".16" typeName="UINT_TO_REAL" additionnalPinNumber="0" enEnO="false" width="9" height="5">
+						<objPosition posX="27" posY="82"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN" effectiveParameter="ShiftRegister"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".17" typeName="SEL" additionnalPinNumber="0" enEnO="false" width="7" height="7">
+						<objPosition posX="100" posY="17"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="G" effectiveParameter="SeedValueFlag"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN0"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="ShiftRegister"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="ShiftRegister"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".3" typeName="XOR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="39" posY="45"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".18" typeName="XOR" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="31" posY="49"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".19" typeName="SHL" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="18" posY="56"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="N" effectiveParameter="1"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".4" typeName="FREERUN" additionnalPinNumber="0" enEnO="false" width="7" height="5">
+						<objPosition posX="6" posY="18"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".5" typeName="DINT_TO_UINT" additionnalPinNumber="0" enEnO="false" width="9" height="5">
+						<objPosition posX="85" posY="18"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".8" typeName="ABS" additionnalPinNumber="0" enEnO="false" width="7" height="5">
+						<objPosition posX="20" posY="18"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".20" typeName="DIV" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="45" posY="18"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="2147483648.0"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".21" typeName="DINT_TO_REAL" additionnalPinNumber="0" enEnO="false" width="9" height="5">
+						<objPosition posX="30" posY="18"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".22" typeName="MUL" additionnalPinNumber="0" enEnO="false" width="7" height="6">
+						<objPosition posX="58" posY="18"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN1"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="65535.0"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<FFBBlock instanceName=".23" typeName="REAL_TO_DINT" additionnalPinNumber="0" enEnO="false" width="9" height="5">
+						<objPosition posX="68" posY="18"></objPosition>
+						<descriptionFFB execAfter="">
+							<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+							<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+							<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+							<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+						</descriptionFFB>
+					</FFBBlock>
+					<linkFB>
+						<linkSource parentObjectName=".2" pinName="BIT15">
+							<objPosition posX="26" posY="49"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".18" pinName="IN2">
+							<objPosition posX="31" posY="54"></objPosition>
+						</linkDestination>
+						<gridObjPosition posX="29" posY="49"></gridObjPosition>
+						<gridObjPosition posX="29" posY="54"></gridObjPosition>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".13" pinName="OUT">
+							<objPosition posX="33" posY="79"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".15" pinName="IN1">
+							<objPosition posX="40" posY="79"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".23" pinName="OUT">
+							<objPosition posX="76" posY="22"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".5" pinName="IN">
+							<objPosition posX="85" posY="22"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".15" pinName="OUT">
+							<objPosition posX="46" posY="79"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".14" pinName="IN1">
+							<objPosition posX="53" posY="79"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".21" pinName="OUT">
+							<objPosition posX="38" posY="22"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".20" pinName="IN1">
+							<objPosition posX="45" posY="22"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".6" pinName="OUT">
+							<objPosition posX="15" posY="34"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".19" pinName="IN">
+							<objPosition posX="18" posY="60"></objPosition>
+						</linkDestination>
+						<gridObjPosition posX="17" posY="34"></gridObjPosition>
+						<gridObjPosition posX="17" posY="60"></gridObjPosition>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".19" pinName="OUT">
+							<objPosition posX="24" posY="60"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".9" pinName="IN2">
+							<objPosition posX="68" posY="59"></objPosition>
+						</linkDestination>
+						<gridObjPosition posX="66" posY="60"></gridObjPosition>
+						<gridObjPosition posX="66" posY="59"></gridObjPosition>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".3" pinName="OUT">
+							<objPosition posX="45" posY="49"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".7" pinName="IN2">
+							<objPosition posX="47" posY="45"></objPosition>
+						</linkDestination>
+						<gridObjPosition posX="46" posY="45"></gridObjPosition>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".5" pinName="OUT">
+							<objPosition posX="93" posY="22"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".17" pinName="IN0">
+							<objPosition posX="100" posY="22"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".2" pinName="BIT13">
+							<objPosition posX="26" posY="47"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".18" pinName="IN1">
+							<objPosition posX="31" posY="53"></objPosition>
+						</linkDestination>
+						<gridObjPosition posX="30" posY="47"></gridObjPosition>
+						<gridObjPosition posX="30" posY="53"></gridObjPosition>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".20" pinName="OUT">
+							<objPosition posX="51" posY="22"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".22" pinName="IN1">
+							<objPosition posX="58" posY="22"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".7" pinName="OUT">
+							<objPosition posX="53" posY="44"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".12" pinName="IN">
+							<objPosition posX="55" posY="58"></objPosition>
+						</linkDestination>
+						<gridObjPosition posX="54" posY="58"></gridObjPosition>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".18" pinName="OUT">
+							<objPosition posX="37" posY="53"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".3" pinName="IN2">
+							<objPosition posX="39" posY="50"></objPosition>
+						</linkDestination>
+						<gridObjPosition posX="39" posY="53"></gridObjPosition>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".9" pinName="OUT">
+							<objPosition posX="74" posY="58"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".11" pinName="IN">
+							<objPosition posX="77" posY="58"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".2" pinName="BIT10">
+							<objPosition posX="26" posY="44"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".7" pinName="IN1">
+							<objPosition posX="47" posY="44"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".10" pinName="OUT">
+							<objPosition posX="22" posY="79"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".13" pinName="IN1">
+							<objPosition posX="27" posY="79"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".22" pinName="OUT">
+							<objPosition posX="64" posY="22"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".23" pinName="IN">
+							<objPosition posX="68" posY="22"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".16" pinName="OUT">
+							<objPosition posX="35" posY="86"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".15" pinName="IN2">
+							<objPosition posX="40" posY="80"></objPosition>
+						</linkDestination>
+						<gridObjPosition posX="39" posY="86"></gridObjPosition>
+						<gridObjPosition posX="39" posY="80"></gridObjPosition>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".8" pinName="OUT">
+							<objPosition posX="26" posY="22"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".21" pinName="IN">
+							<objPosition posX="30" posY="22"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".12" pinName="OUT">
+							<objPosition posX="64" posY="58"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".9" pinName="IN1">
+							<objPosition posX="68" posY="58"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".2" pinName="BIT12">
+							<objPosition posX="26" posY="46"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".3" pinName="IN1">
+							<objPosition posX="39" posY="49"></objPosition>
+						</linkDestination>
+						<gridObjPosition posX="33" posY="46"></gridObjPosition>
+						<gridObjPosition posX="33" posY="49"></gridObjPosition>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".6" pinName="OUT">
+							<objPosition posX="15" posY="34"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".2" pinName="IN">
+							<objPosition posX="18" posY="34"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<linkFB>
+						<linkSource parentObjectName=".4" pinName="OUT">
+							<objPosition posX="12" posY="22"></objPosition>
+						</linkSource>
+						<linkDestination parentObjectName=".8" pinName="IN">
+							<objPosition posX="20" posY="22"></objPosition>
+						</linkDestination>
+					</linkFB>
+					<textBox width="12" height="4">Set ShiftRegister "seed" value based on current time
+    <objPosition posX="2" posY="12"></objPosition>
+					</textBox>
+					<textBox width="16" height="4">Only set the Shift Register value on first scan.
+    <objPosition posX="120" posY="13"></objPosition>
+					</textBox>
+					<textBox width="20" height="10">Random Number Generator
+-------------------------------------------
+XOR certain bits in the Shift Register and then shift the register left by 1. Now replace the XORed bit with Bit 0.
+    <objPosition posX="35" posY="28"></objPosition>
+					</textBox>
+					<textBox width="20" height="3">Calculate the Random Number using the Upper and Lower limit to scale the value.
+    <objPosition posX="26" posY="71"></objPosition>
+					</textBox>
+					<textBox width="10" height="6">Added in logic to avoid arithmetic error with UINT datatype overflow
+    <objPosition posX="35" posY="12"></objPosition>
+					</textBox>
+				</networkFBD>
+			</FBDSource>
+		</FBProgram>
+	</FBSource>
+</FBExchangeFile>
