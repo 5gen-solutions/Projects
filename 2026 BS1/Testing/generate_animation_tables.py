@@ -2,12 +2,14 @@
 """
 Generate Control Expert animation-table helper files from sim_* variables.
 
+MAJOR-equipment grouping (coarser): ~10–25 tables per PLC, not one per Drive.
+
 For each PLC (BSR130, BSR132):
   - Collect typed sim_* declarations from XST <variables name= typeName=>
   - Also collect sim_* referenced in ST even if only referenced (skip POU/type names)
-  - Group by equipment (IO-list Drive longest-prefix match, ST comment maps for DFBs,
-    module/DX fall-backs, globals)
-  - Write per-equipment CSV (Name,TypeName,Comment) + TXT (one name per line for paste)
+  - Group by MAJOR equipment / area (fold PP/FN/HP/GA/LU/CH/MT/… under parent;
+    keep BCV131A/B/C when those are distinct conveyors; fold DX/panel/PLC under BSR*)
+  - Write per-major CSV (Name,TypeName,Comment) + TXT (one name per line for paste)
   - Write _All_sim_variables.csv, _index.csv, README.txt
 
 Outputs written to:
@@ -70,6 +72,14 @@ DEVICE_TOKEN_RE = re.compile(
     re.IGNORECASE,
 )
 
+# After a letter-conveyor major (…131A), rest must start with a 2+ letter device code
+DEVICE_PREFIX_RE = re.compile(
+    r"^(PP|FN|HP|GA|LU|CH|HT|BK|BP|GB|MA|MT|VS|SM|DX|WN|CP|DY|RV|DA|CC|DB|"
+    r"AC|BC|UP|PN|FIP|NEP|FV|LS|UI|RTD|EM|INC|FDR|SHMI|HOP|PLM|IT|RT|"
+    r"AFN|BFN|CFN|AVS|BVS|CVS|AGB|BGB|CGB|APP|BPP|CPP)",
+    re.I,
+)
+
 VAR_DECL_RE = re.compile(
     r'<variables\s+name="([^"]+)"\s+typeName="([^"]+)"([^>]*)>(.*?)</variables>',
     re.S | re.I,
@@ -87,7 +97,6 @@ CBSTS_MAP_RE = re.compile(
 AHI_MAP_RE = re.compile(
     r"\(\*\s*([A-Za-z0-9_]+)\s*[—\-–][^*]{0,160}\*\)\s*(sim_AHI_Scale_\d+)"
 )
-# Module card DFBs: comment contains module name
 MODULE_DFB_RE = re.compile(
     r"\(\*\s*[A-Z0-9]+\s*-\s*([A-Za-z0-9_]*(?:DX\d{2}|PLM\d+)[A-Za-z0-9_]*)\s*\*\)\s*"
     r"((?:sim_|SIM_)[A-Za-z0-9_]+)",
@@ -97,7 +106,6 @@ CRA_MAP_RE = re.compile(
     r"\(\*\s*=+\s*([A-Za-z0-9_]+)\s*-\s*DROP[^*]*\*\)\s*(SIM_CRA31210_\d+)",
     re.I,
 )
-# EHC / Brake: look for equipment tags near instance
 EHC_MAP_RE = re.compile(
     r"sim_X80EHC0800_(\d+)\s*\([^)]*?iFlt\s*:=\s*sim_([A-Za-z0-9_]+)_ModFlt",
     re.S | re.I,
@@ -105,7 +113,6 @@ EHC_MAP_RE = re.compile(
 BRAKE_MAP_RE = re.compile(
     r"\(\*\s*([A-Za-z0-9_]+)[^*]*[Bb]rake[^*]*\*\)\s*(SIM_Brake_\d+)",
 )
-# Generic: any (* Equip *) immediately before a SIM_/sim_ instance call
 GENERIC_INST_MAP_RE = re.compile(
     r"\(\*\s*([A-Za-z0-9_]{4,})\b[^*]{0,80}\*\)\s*"
     r"((?:SIM_|sim_|Sim_)[A-Za-z0-9_]*_\d+)\s*\(",
@@ -147,7 +154,6 @@ def load_drives(site: str) -> list[str]:
                 raw = str(row[di]).strip()
                 if not raw:
                     continue
-                # Split weird multi-drive cells
                 if re.search(r"[^A-Za-z0-9_]", raw):
                     for part in re.split(r"[^A-Za-z0-9_]+", raw):
                         if part and len(part) >= 3:
@@ -156,6 +162,134 @@ def load_drives(site: str) -> list[str]:
                     drives.add(raw)
     wb.close()
     return sorted(drives, key=len, reverse=True)
+
+
+def drive_to_major(drive: str, site: str, letter_conveyors: set[str]) -> str | None:
+    """
+    Collapse a Drive / equipment tag to a MAJOR area id.
+    letter_conveyors: exact majors like BCV131A that exist as distinct conveyors.
+    """
+    d = drive.strip()
+    if not d:
+        return None
+    # Junk fragments
+    if re.fullmatch(r"(Spare\d+|EM\d+|PP\d+)", d, re.I):
+        return None
+    # BRB13x / BRB13X common area (not BRB131/132)
+    if re.fullmatch(r"BRB13[Xx]", d):
+        return "BRB13x"
+    # PLC panel / BPL modules → site BSR
+    if re.match(r"^BPL\d+", d, re.I):
+        return site
+    # Letter-conveyor exact (BCV131A) — only if curated
+    up = d.upper()
+    for lc in sorted(letter_conveyors, key=len, reverse=True):
+        if up == lc or up.startswith(lc):
+            rest = up[len(lc) :]
+            if rest == "":
+                return lc
+            # reject …131BK (brake) falsely matching …131B
+            if re.match(r"^[A-Z]\d", rest):
+                continue
+            if DEVICE_PREFIX_RE.match(rest) or re.match(r"^[A-Z]{2,}", rest):
+                return lc
+    # BMC incomers / feeders: BMC1321, BMC1301, BMC1302, BMC802
+    m = re.match(r"^(BMC\d{3,4})", d, re.I)
+    if m:
+        return m.group(1).upper()
+    # Longer plant codes: BPP1108, BSTD1108, BTK2104, BPQE2106, BSB1301, BTY1501, SUB902
+    m = re.match(r"^(BPP|BSTD|BTK|BPQE|BSB|BTY|SUB)(\d{3,4})", d, re.I)
+    if m:
+        return (m.group(1) + m.group(2)).upper()
+    # BRB131 / BRB132
+    m = re.match(r"^(BRB131|BRB132)", d, re.I)
+    if m:
+        return m.group(1).upper()
+    # Product / DFB leftovers BEFORE generic plant-code match
+    # REX → HV incomer major when present, else site PLC
+    if re.match(r"^(REX|REX640)", d, re.I):
+        return "BMC1321" if site == "BSR132" else "BMC1301"
+    if re.match(r"^(BMEP|NOC|FLEXISOFT|CRA312|X80|CV\d)", d, re.I):
+        return site
+    # Standard major: 2–4 letters + 3 digits (BAF130, BCV131, BSR130, …)
+    m = re.match(r"^([A-Z]{2,4}\d{3})", d, re.I)
+    if m:
+        code = m.group(1).upper()
+        # Fold all BSR130* / BSR132* (DX, UP, BC, DB, PN, …) into site PLC table
+        if code in {"BSR130", "BSR132"}:
+            return code
+        # Non-plant product codes that slipped through
+        if re.match(r"^(BMEP|NOC|REX|CV\d)", code, re.I):
+            if code.startswith("REX"):
+                return "BMC1321" if site == "BSR132" else "BMC1301"
+            return site
+        return code
+    # Truncated / odd: BAF13LU01 → BAF131 if site has BAF131
+    m = re.match(r"^([A-Z]{2,4}\d{2})", d, re.I)
+    if m:
+        stub = m.group(1).upper()
+        if stub == "BAF13":
+            return "BAF131" if site == "BSR132" else "BAF130"
+    return d.upper() if len(d) >= 5 else None
+
+
+def discover_letter_conveyors(drives: list[str]) -> set[str]:
+    """Exact drives like BCV131A / BCV131B / BCV131C that are distinct majors."""
+    found: set[str] = set()
+    for d in drives:
+        if re.fullmatch(r"[A-Z]{2,4}\d{3}[ABC]", d, re.I):
+            found.add(d.upper())
+    return found
+
+
+def build_majors(drives: list[str], site: str) -> list[str]:
+    """Curated MAJOR list (longest first) derived from unique plant codes in drives."""
+    letter = discover_letter_conveyors(drives)
+    majors: set[str] = set(letter)
+    for d in drives:
+        maj = drive_to_major(d, site, letter)
+        if maj:
+            majors.add(maj)
+    # Always include site PLC bucket
+    majors.add(site)
+    # Normalize BRB13x
+    if any(m.upper() == "BRB13X" for m in majors):
+        majors.discard("BRB13X")
+        majors.add("BRB13x")
+    return sorted(majors, key=len, reverse=True)
+
+
+def match_major(base: str, majors: list[str], site: str, letter_conveyors: set[str]) -> str | None:
+    """Longest major-prefix match with letter-conveyor guard."""
+    bu = base.upper() if not base.startswith("_") else base
+    # try drive_to_major first (handles BMC / BPP / BPL / BRB13x / truncations)
+    derived = drive_to_major(base, site, letter_conveyors)
+    if derived and derived in {m if m != "BRB13x" else "BRB13x" for m in majors}:
+        # Prefer derived when it is in majors; still allow longer letter match below
+        pass
+    for m in majors:
+        mu = m.upper() if m != "BRB13x" else "BRB13X"
+        bu_cmp = bu
+        if m == "BRB13x" and bu.upper().startswith("BRB13X") and not bu.upper().startswith(
+            ("BRB131", "BRB132")
+        ):
+            return "BRB13x"
+        if bu_cmp == mu or bu_cmp.startswith(mu):
+            rest = bu_cmp[len(mu) :]
+            if rest == "":
+                return m
+            # Letter-conveyor majors: require device-like rest, not single letter+digit (BK)
+            if m in letter_conveyors or (
+                len(m) >= 7 and m[-1] in "ABC" and m[-2].isdigit()
+            ):
+                if re.match(r"^[A-Z]\d", rest):
+                    continue
+                if not (DEVICE_PREFIX_RE.match(rest) or re.match(r"^[A-Z]{2,}", rest)):
+                    continue
+            return m
+    if derived:
+        return derived
+    return None
 
 
 def parse_xst_files(site: str) -> tuple[dict[str, dict], str]:
@@ -170,7 +304,6 @@ def parse_xst_files(site: str) -> tuple[dict[str, dict], str]:
     for path in paths:
         text = path.read_text(encoding="utf-8", errors="replace")
         combined_parts.append(text)
-        # Declarations (XST)
         for m in VAR_DECL_RE.finditer(text):
             name, type_name, _attrs, body = m.group(1), m.group(2), m.group(3), m.group(4)
             if not name.lower().startswith("sim_"):
@@ -187,11 +320,9 @@ def parse_xst_files(site: str) -> tuple[dict[str, dict], str]:
                 entry["comment"] = comment
             entry["sources"].add(path.name)
 
-        # ST references
         for m in SIM_REF_RE.finditer(text):
             name = m.group(1)
             if name in SKIP_REF_NAMES or name.lower() in {s.lower() for s in SKIP_REF_NAMES}:
-                # skip bare type / POU names
                 if name not in vars_map:
                     continue
             entry = vars_map.setdefault(
@@ -200,7 +331,6 @@ def parse_xst_files(site: str) -> tuple[dict[str, dict], str]:
             )
             entry["sources"].add(path.name)
 
-    # Drop undeclared refs that look like type/POU names
     drop = []
     for name, info in vars_map.items():
         if info["declared"]:
@@ -208,9 +338,7 @@ def parse_xst_files(site: str) -> tuple[dict[str, dict], str]:
         if name in SKIP_REF_NAMES or name.lower() in {s.lower() for s in SKIP_REF_NAMES}:
             drop.append(name)
             continue
-        # Undeclared without digits at end and matching known DFB type pattern → skip
         if re.fullmatch(r"[Ss]im_[A-Za-z][A-Za-z0-9]*", name) and not re.search(r"_\d+$", name):
-            # likely a type or POU
             drop.append(name)
     for name in drop:
         vars_map.pop(name, None)
@@ -218,18 +346,26 @@ def parse_xst_files(site: str) -> tuple[dict[str, dict], str]:
     return vars_map, "\n".join(combined_parts)
 
 
-def build_dfb_equipment_maps(combined: str, drives: list[str]) -> dict[str, str]:
-    """Map DFB instance name -> equipment id using ST comments / wiring."""
+def build_dfb_equipment_maps(
+    combined: str,
+    drives: list[str],
+    majors: list[str],
+    site: str,
+    letter_conveyors: set[str],
+) -> dict[str, str]:
+    """Map DFB instance name -> MAJOR equipment id using ST comments / wiring."""
     mapping: dict[str, str] = {}
 
     def resolve_equip(tag: str) -> str:
         tag = tag.strip()
-        # longest drive prefix
         for d in drives:
             if tag == d or tag.startswith(d):
-                return d
-        # strip device tokens
-        return derive_equipment(tag)
+                maj = match_major(d, majors, site, letter_conveyors)
+                return maj or drive_to_major(d, site, letter_conveyors) or d
+        maj = match_major(tag, majors, site, letter_conveyors)
+        if maj:
+            return maj
+        return to_major_fallback(tag, site, letter_conveyors)
 
     for equip, inst in TESYST_MAP_RE.findall(combined):
         mapping[inst] = resolve_equip(equip)
@@ -238,74 +374,104 @@ def build_dfb_equipment_maps(combined: str, drives: list[str]) -> dict[str, str]
     for equip, inst in AHI_MAP_RE.findall(combined):
         mapping[inst] = resolve_equip(equip)
     for mod, inst in MODULE_DFB_RE.findall(combined):
-        # Prefer DX drop as equipment group for IO cards
-        mapping.setdefault(inst, module_group(mod))
+        mapping.setdefault(inst, module_group(mod, site))
     for mod, inst in CRA_MAP_RE.findall(combined):
-        mapping[inst] = module_group(mod)
+        mapping[inst] = module_group(mod, site)
     for _idx, mod in EHC_MAP_RE.findall(combined):
         inst = f"sim_X80EHC0800_{_idx}"
-        # also try SIM_ casing variants later
-        mapping[inst] = module_group(mod)
+        mapping[inst] = module_group(mod, site)
     for equip, inst in BRAKE_MAP_RE.findall(combined):
         mapping[inst] = resolve_equip(equip)
 
-    # Generic comment maps (don't override more specific)
     for equip, inst in GENERIC_INST_MAP_RE.findall(combined):
         if inst in mapping:
             continue
-        # skip section headings / product codes / non-equipment tokens
         if re.match(r"^(BM[A-Z]|Simulation|Master|Enable|Shared)", equip, re.I):
             continue
         if not re.search(r"\d", equip):
             continue
         mapping[inst] = resolve_equip(equip)
 
-    # iModFlt := sim_<MODULE>_ModFlt near instance — authoritative for X80 cards
     modflt_re = re.compile(
         r"((?:sim_|SIM_|Sim_)[A-Za-z0-9_]+)\s*\([^;]{0,400}?iModFlt\s*:=\s*sim_([A-Za-z0-9_]+)_ModFlt",
         re.S | re.I,
     )
     for inst, mod in modflt_re.findall(combined):
-        mapping[inst] = module_group(mod)
+        mapping[inst] = module_group(mod, site)
 
-    # Drop bogus equipment ids
     cleaned = {}
     for inst, equip in mapping.items():
-        if equip.lower() in {"simulation", "bmxddi3202k", "bmxddo1602k", "bmeahi0812",
-                             "bmxart0814", "bmxehc0800"}:
+        if equip.lower() in {
+            "simulation", "bmxddi3202k", "bmxddo1602k", "bmeahi0812",
+            "bmxart0814", "bmxehc0800",
+        }:
             continue
         cleaned[inst] = equip
     return cleaned
 
 
-def module_group(mod: str) -> str:
-    """Group IO module vars under DX drop when possible, else _IO_Modules."""
-    # e.g. BSR130DX01DIO1PLM1 → BSR130DX01
-    m = re.match(r"^([A-Za-z0-9]+DX\d{2})", mod)
+def module_group(mod: str, site: str) -> str:
+    """
+    Fold IO module / DX / PLM vars into major area.
+    BSR130DX01 → BSR130; BBD130DX03 → BBD130; BCV131DX06 → BCV131; else site or _IO_Modules.
+    """
+    # Prefer parent plant code before DX
+    m = re.match(r"^([A-Za-z0-9]+?)DX\d{2}", mod, re.I)
     if m:
-        return m.group(1)
-    m = re.match(r"^([A-Za-z0-9]+(?:PLM\d+)?)", mod)
-    if m and "PLM" in mod:
-        # BPL130PLM0 → BPL130
-        base = re.sub(r"PLM\d+.*$", "", mod)
-        return base or "_IO_Modules"
-    return "_IO_Modules"
+        parent = m.group(1)
+        # Odd / non-plant DX parents (CV702) → site PLC
+        if re.match(r"^(CV\d|BMEP|NOC)", parent, re.I):
+            return site
+        maj = drive_to_major(parent, site, set())
+        if maj:
+            return maj
+        if re.match(r"^BSR\d{3}$", parent, re.I):
+            return parent.upper()
+        return parent.upper()
+    if "PLM" in mod.upper():
+        base = re.sub(r"PLM\d+.*$", "", mod, flags=re.I)
+        if re.match(r"^BPL\d+", base, re.I) or re.match(r"^BSR\d{3}", base, re.I):
+            return site
+        maj = drive_to_major(base, site, set()) if base else None
+        return maj or site
+    return site  # fold unnamed module leftovers into PLC table
 
 
-def derive_equipment(base: str) -> str:
-    """Derive equipment id by stripping trailing device tokens."""
+def to_major_fallback(base: str, site: str, letter_conveyors: set[str]) -> str:
+    maj = drive_to_major(base, site, letter_conveyors)
+    if maj:
+        return maj
+    # strip device tokens then retry
+    name = derive_equipment_raw(base)
+    maj = drive_to_major(name, site, letter_conveyors)
+    if maj:
+        return maj
+    m = re.match(r"^([A-Z]{2,4}\d{3})", name, re.I)
+    if m:
+        code = m.group(1).upper()
+        # Non-plant product / odd codes → site PLC bucket
+        if re.match(r"^(BMEP|NOC|REX|CV\d)", code, re.I):
+            return site
+        return code
+    if re.match(r"^(FLEXISOFT|REX640|NOC030)", name, re.I):
+        return site
+    return "_Ungrouped"
+
+
+def derive_equipment_raw(base: str) -> str:
+    """Derive intermediate equipment id by stripping trailing device tokens (pre-major)."""
     name = base
-    # Module-like
     if re.search(r"DX\d{2}DIO|PLM\d+", name, re.I):
-        return module_group(name)
-
-    # Repeatedly strip trailing tokens / suffixes
+        return name
     changed = True
     while changed and len(name) > 4:
         changed = False
-        # strip _suffix first
-        m = re.search(r"_(I|O|PV|Spd|Gain|SetTrp|Rst|Mode|Flt|ComFlt|LnkFlt|ModFlt|"
-                       r"Grp\d(?:DDI|DDO|flt)?|Ch\d{2}PV)$", name, re.I)
+        m = re.search(
+            r"_(I|O|PV|Spd|Gain|SetTrp|Rst|Mode|Flt|ComFlt|LnkFlt|ModFlt|"
+            r"Grp\d(?:DDI|DDO|flt)?|Ch\d{2}PV)$",
+            name,
+            re.I,
+        )
         if m:
             name = name[: m.start()]
             changed = True
@@ -315,19 +481,15 @@ def derive_equipment(base: str) -> str:
             name = name[: m.start()]
             changed = True
             continue
-        # strip trailing letter+digits device codes like PP07, FN01, HT01 if long enough remains
         m = re.search(r"([A-Z]{1,3}\d{2})$", name, re.I)
         if m and len(name) - len(m.group(1)) >= 6:
-            # only if leftover still looks like equipment (has digits)
             left = name[: m.start()]
             if re.search(r"\d", left):
                 name = left
                 changed = True
                 continue
         break
-
-    name = name.rstrip("_")
-    return name if name else "_Ungrouped"
+    return name.rstrip("_") or "_Ungrouped"
 
 
 def is_global(name: str) -> bool:
@@ -336,16 +498,16 @@ def is_global(name: str) -> bool:
     low = name.lower()
     if low in {g.lower() for g in GLOBAL_EXACT}:
         return True
-    # short control tags
-    if low in {"sim_init", "sim_sethealthy", "sim_equipblocks", "sim_ehc_scntm",
-               "sim_tesyst_mstip", "sim_ftxx_rand"}:
+    if low in {
+        "sim_init", "sim_sethealthy", "sim_equipblocks", "sim_ehc_scntm",
+        "sim_tesyst_mstip", "sim_ftxx_rand",
+    }:
         return True
     return False
 
 
 def is_dfb_instance(type_name: str, name: str) -> bool:
     if not type_name:
-        # heuristic: SIM_TeSysT_0 style
         return bool(re.search(r"_\d+$", name)) and not any(
             name.lower().endswith(s) for s in ("_i", "_o", "_pv")
         )
@@ -361,84 +523,89 @@ def assign_table(
     info: dict,
     drives: list[str],
     dfb_map: dict[str, str],
+    majors: list[str],
+    site: str,
+    letter_conveyors: set[str],
 ) -> tuple[str, str]:
-    """
-    Return (table_name, notes_hint).
-    """
+    """Return (major_table_name, notes_hint)."""
     type_name = info.get("typeName") or ""
     base = strip_sim_prefix(name)
 
     if is_global(name):
         return "_Globals", "global/control"
 
-    # Explicit DFB→equipment map from ST
+    # Explicit DFB→equipment map from ST (already major-resolved)
     if name in dfb_map:
         return sanitize_filename(dfb_map[name]), "ST-mapped DFB/equip"
-    # try case variants
     for k, v in dfb_map.items():
         if k.lower() == name.lower():
             return sanitize_filename(v), "ST-mapped DFB/equip"
 
-    # Longest Drive prefix match
+    # Longest Drive prefix → fold to major
     for d in drives:
         if base == d or base.startswith(d):
-            # Avoid matching when next chars continue an identifier oddly —
-            # require end or non-lowercase continuation (drives are alphanumeric)
             rest = base[len(d) :]
             if rest == "" or rest[0].isalnum() or rest[0] == "_":
-                return sanitize_filename(d), "Drive prefix"
+                maj = match_major(d, majors, site, letter_conveyors)
+                if maj:
+                    return sanitize_filename(maj), "Drive→major"
+                maj = drive_to_major(d, site, letter_conveyors)
+                if maj:
+                    return sanitize_filename(maj), "Drive→major"
 
-    # Module / rack patterns without drive
-    if re.search(r"DX\d{2}|PLM\d+|DDI|DDO|AHI|ART|EHC|CRA|BMEP|noc0301|rex640|FlexiSoft",
-                 name, re.I):
+    # Direct major prefix on tag
+    maj = match_major(base, majors, site, letter_conveyors)
+    if maj:
+        return sanitize_filename(maj), "major prefix"
+
+    # Module / rack patterns
+    if re.search(
+        r"DX\d{2}|PLM\d+|DDI|DDO|AHI|ART|EHC|CRA|BMEP|noc0301|rex640|FlexiSoft",
+        name,
+        re.I,
+    ):
         if is_dfb_instance(type_name, name) or re.search(
             r"ModFlt|Grp\d|Ch\d{2}PV|_Flt|_Mode|_LnkFlt|_ComFlt", name, re.I
         ):
-            grp = module_group(base)
-            if grp == "_IO_Modules" and is_dfb_instance(type_name, name):
-                # unnamed card DFBs
-                return "_DFBs", "DFB instance"
-            return sanitize_filename(grp), "IO module/DX"
+            grp = module_group(base, site)
+            return sanitize_filename(grp), "IO module→major"
 
     if is_dfb_instance(type_name, name):
-        # AHI_Scale / CBSts without map → _DFBs
-        return "_DFBs", "DFB instance"
+        # Unmapped DFB instances → fold into site PLC table (keeps table count low)
+        # unless name itself encodes equipment
+        maj = match_major(base, majors, site, letter_conveyors)
+        if maj:
+            return sanitize_filename(maj), "DFB→major"
+        fb = to_major_fallback(base, site, letter_conveyors)
+        if fb and fb not in {"_Ungrouped", None}:
+            # Product-code majors that aren't real plant areas → site
+            if re.match(r"^(BMEP|NOC|REX|FLEXISOFT|CRA312|X80|CV\d+)", fb, re.I):
+                return site, "DFB→PLC"
+            return sanitize_filename(fb), "DFB→major"
+        return site, "DFB→PLC"
 
-    # Derive from token stripping
-    derived = derive_equipment(base)
-    if derived and derived not in {"_Ungrouped", "_IO_Modules"}:
-        # If leftover ends with a dangling letter (e.g. BAF130P), try drive match on it
-        if re.search(r"\d[A-Za-z]$", derived):
-            for d in drives:
-                if derived.startswith(d) or d.startswith(derived.rstrip("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")):
-                    # prefer full drive if base starts with drive
-                    if base.startswith(d):
-                        return sanitize_filename(d), "derived→Drive"
-            # strip dangling letter
-            derived2 = re.sub(r"[A-Za-z]$", "", derived)
-            if derived2:
-                for d in drives:
-                    if derived2 == d or base.startswith(d):
-                        return sanitize_filename(d), "derived→Drive"
-                derived = derived2
-        return sanitize_filename(derived), "derived"
-    if derived == "_IO_Modules":
-        return "_IO_Modules", "IO module"
+    fb = to_major_fallback(base, site, letter_conveyors)
+    if fb and fb != "_Ungrouped":
+        return sanitize_filename(fb), "derived→major"
 
     return "_Ungrouped", "unmatched"
 
 
 def write_site(site: str) -> dict:
     drives = load_drives(site)
+    letter_conveyors = discover_letter_conveyors(drives)
+    majors = build_majors(drives, site)
     vars_map, combined = parse_xst_files(site)
-    dfb_map = build_dfb_equipment_maps(combined, drives)
+    dfb_map = build_dfb_equipment_maps(combined, drives, majors, site, letter_conveyors)
 
     tables: dict[str, list[dict]] = defaultdict(list)
     notes_by_table: dict[str, set[str]] = defaultdict(set)
 
     for name in sorted(vars_map.keys(), key=lambda s: s.lower()):
         info = vars_map[name]
-        table, hint = assign_table(name, info, drives, dfb_map)
+        table, hint = assign_table(
+            name, info, drives, dfb_map, majors, site, letter_conveyors
+        )
         tables[table].append(
             {
                 "Name": name,
@@ -448,7 +615,6 @@ def write_site(site: str) -> dict:
         )
         notes_by_table[table].add(hint)
 
-    # Sort rows within tables
     for t in tables:
         tables[t].sort(key=lambda r: r["Name"].lower())
 
@@ -461,7 +627,6 @@ def write_site(site: str) -> dict:
             shutil.rmtree(d)
         d.mkdir(parents=True, exist_ok=True)
 
-    # Write per-table files into first dest, then copy tree
     primary = dest_dirs[0]
 
     all_rows = []
@@ -502,17 +667,24 @@ def write_site(site: str) -> dict:
         w.writeheader()
         w.writerows(all_rows)
 
+    major_list = ", ".join(
+        t for t in sorted(tables.keys(), key=lambda s: (s.startswith("_"), s.lower()))
+    )
     readme = f"""Control Expert Animation Table helpers — {site}
 ================================================
 
 Generated by /workspace/testing/generate_animation_tables.py from sim_* variables
 in Outputs/{site}/*.XST (and ST refs) plus Drive names from Inputs/{site}_IO_List.xlsx.
 
+Grouping is MAJOR equipment / area only (coarser than Drive): PP/FN/HP/GA/LU/CH/MT/…
+fold under the parent plant code (e.g. BAF130). Letter conveyors BCV131A/B/C are kept
+as separate majors when present. PLC/DX/panel/common fold under {site}.
+
 How to use in Control Expert
 ----------------------------
 1. Open Data Editor → Animation tables.
-2. Create a new animation table named after the equipment (see _index.csv).
-3. Paste variable names from the matching <EquipmentID>.txt (one name per line).
+2. Create a new animation table named after the major equipment (see _index.csv).
+3. Paste variable names from the matching <MajorID>.txt (one name per line).
    CE has no official CSV import for animation tables; paste is the fastest bulk load.
 4. Optionally Initialize Animation Table on DFB instances (SIM_TeSysT_*, sim_X80*, etc.).
 
@@ -520,24 +692,25 @@ Files
 -----
 - _index.csv              TableName, VariableCount, Notes
 - _All_sim_variables.csv  Flat list of all sim_* with table assignment
-- <EquipmentID>.csv       Name,TypeName,Comment (tracking)
-- <EquipmentID>.txt       One variable name per line (paste into CE)
+- <MajorID>.csv           Name,TypeName,Comment (tracking)
+- <MajorID>.txt           One variable name per line (paste into CE)
 - _Globals.*              sim_init, sim_SetHealthy, Sim_EquipBlocks, etc.
-- _IO_Modules.* / DX*     Rack/module card vars without a clear Drive
-- _DFBs.*                 DFB instances not mapped to a specific drive
 
-Grouping
---------
-1. Longest IO-list Drive prefix match on tag after stripping sim_/Sim_.
-2. ST comment maps for TeSysT / CBSts / AHI_Scale / CRA / X80 cards.
-3. DX drop / PLM module grouping for ModFlt/Grp/ChPV and card DFBs.
-4. Device-token stripping fall-back; leftovers in _Ungrouped / _DFBs.
+Major tables this run
+---------------------
+{major_list}
+
+Grouping rules
+--------------
+1. Strip sim_/Sim_/SIM_; match curated MAJOR list (longest plant code from IO drives).
+2. Heuristic ^([A-Z]{{2,4}}\\d{{3}}) plus BMC#### / BPP#### / letter-conveyor BCV###[ABC].
+3. ST comment maps for TeSysT / CBSts / AHI_Scale / CRA / X80 cards → same major fold.
+4. DX/PLM/BPL module vars → parent major or {site}; leftovers → {site} / _Ungrouped.
 
 Totals for this run: {len(all_rows)} variables across {len(tables)} tables.
 """
     (primary / "README.txt").write_text(readme, encoding="utf-8")
 
-    # Mirror to repo outputs
     for dest in dest_dirs[1:]:
         if dest.exists():
             shutil.rmtree(dest)
@@ -545,13 +718,16 @@ Totals for this run: {len(all_rows)} variables across {len(tables)} tables.
 
     equip_tables = [t for t in tables if not t.startswith("_")]
     special_tables = [t for t in tables if t.startswith("_")]
+    counts = {t: len(tables[t]) for t in sorted(tables.keys())}
     return {
         "site": site,
         "drives": len(drives),
+        "majors_curated": majors,
         "variables": len(all_rows),
         "tables": len(tables),
         "equipment_tables": len(equip_tables),
         "special_tables": len(special_tables),
+        "counts": counts,
         "table_names": sorted(tables.keys()),
         "primary": str(primary),
         "repo": str(dest_dirs[1]),
@@ -561,19 +737,24 @@ Totals for this run: {len(all_rows)} variables across {len(tables)} tables.
 def main() -> None:
     summaries = []
     for site in SITES:
-        print(f"Generating AnimationTables for {site}...")
+        print(f"Generating MAJOR AnimationTables for {site}...")
         summary = write_site(site)
         summaries.append(summary)
         print(
             f"  {summary['variables']} vars → {summary['tables']} tables "
-            f"({summary['equipment_tables']} equipment + {summary['special_tables']} special)"
+            f"({summary['equipment_tables']} major + {summary['special_tables']} special)"
         )
+        for t, c in summary["counts"].items():
+            print(f"    {t}: {c}")
         print(f"  → {summary['primary']}")
         print(f"  → {summary['repo']}")
     print("Done.")
-    # machine-readable summary for parent
     import json
-    print(json.dumps(summaries, indent=2))
+    # drop bulky majors list duplication in json if needed — keep counts
+    slim = []
+    for s in summaries:
+        slim.append({k: v for k, v in s.items() if k != "majors_curated"})
+    print(json.dumps(slim, indent=2))
 
 
 if __name__ == "__main__":

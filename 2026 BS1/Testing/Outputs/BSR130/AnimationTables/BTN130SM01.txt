@@ -1,2 +1,0 @@
-sim_AHI_Scale_41
-sim_BTN130SM01LT01_PV

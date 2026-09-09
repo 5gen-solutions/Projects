@@ -1,6 +1,0 @@
-Name,TypeName,Comment
-sim_BAF130PP07CAX01_I,EBOOL,BAF130PP07CAX01 TeSysT contactor aux
-sim_BAF130PP07CB01_I,EBOOL,BAF130PP07CB01 TeSysT CB closed/healthy
-sim_BAF130PP07SY01_I,EBOOL,BAF130PP07SY01 — Safety Interlock Relay
-sim_BAF130PP07VDC01_I,EBOOL,Drive prefix
-SIM_TeSysT_0,SIM_TeSysT,ST-mapped DFB/equip

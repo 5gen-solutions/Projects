@@ -1,9 +1,0 @@
-Name,TypeName,Comment
-sim_BAF130HT01CAX01_I,EBOOL,Drive prefix
-sim_BAF130HT01CB01_I,EBOOL,Drive prefix
-sim_BAF130HT01TRP01_I,EBOOL,Drive prefix
-sim_BAF130HT01TRP01_SetOK,EBOOL,BAF130HT01TRP01 sim set CB closed/healthy
-sim_BAF130HT01TRP01_SetOpn,EBOOL,BAF130HT01TRP01 sim set CB open
-sim_BAF130HT01TRP01_SetTrp,EBOOL,BAF130HT01TRP01 sim set tripped
-sim_BAF130HT01VDC01_I,EBOOL,Drive prefix
-sim_CBSts_0,sim_CBSts,ST-mapped DFB/equip

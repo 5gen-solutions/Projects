@@ -1,7 +1,0 @@
-Name,TypeName,Comment
-sim_BMC1302INC02CB03_I,EBOOL,Drive prefix
-sim_BMC1302INC02CB04_I,EBOOL,Drive prefix
-sim_BMC1302INC02CB05_I,EBOOL,Drive prefix
-sim_BMC1302INC02CB06_I,EBOOL,Drive prefix
-sim_BMC1302INC02VDC01_I,EBOOL,Drive prefix
-sim_BMC1302INC02XS03_I,EBOOL,Drive prefix

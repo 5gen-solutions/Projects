@@ -3,5 +3,6 @@ sim_AHI_Scale_0,sim_AHI_Scale,ST-mapped DFB/equip
 sim_AHI_Scale_1,sim_AHI_Scale,ST-mapped DFB/equip
 sim_BBN131LIT01_PV,REAL,BBN131LIT01 engineering PV
 sim_BBN131LIT02_PV,REAL,BBN131LIT02 engineering PV
-sim_BBN131LS01_I,EBOOL,Drive prefix
-sim_BBN131LS02_I,EBOOL,Drive prefix
+sim_BBN131LS01_I,EBOOL,Drive→major
+sim_BBN131LS02_I,EBOOL,Drive→major
+sim_BBN131LS0xSY01_I,EBOOL,Drive→major
