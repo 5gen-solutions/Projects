@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:10" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL132" version="0.0.258" dateTime="date_and_time#2026-8-6-9:50:24"></contentHeader>
+	<animationTable name="BPQE2106" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:10" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL132">
+		<elementDescription displayBase="4" name="sim_BPQE2106DB01CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2106DB01TRP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2106DB01TRP01_SetOK"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2106DB01TRP01_SetOpn"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2106DB01TRP01_SetTrp"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2106DB01VDC01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2106PN01CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2106PN01TRP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2106PN01TRP01_SetOK"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2106PN01TRP01_SetOpn"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2106PN01TRP01_SetTrp"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2106PN01VDC01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_CBSts_8"></elementDescription>
+		<elementDescription displayBase="4" name="sim_CBSts_9"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

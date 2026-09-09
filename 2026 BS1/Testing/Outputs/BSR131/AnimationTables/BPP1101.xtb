@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:09" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL131" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<animationTable name="BPP1101" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:09" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL131">
+		<elementDescription displayBase="4" name="sim_BPP1101CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101FQ01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101FQ02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101FS09_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101LCS01STP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101LCS01STT01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101SYS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101THR01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101TRP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101TRP01_SetOK"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101VDC01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101VS01VDC01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101VS01VDC02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101VS01VDC03_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101VS01VDC04_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101VS01VDC05_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101VS01VDC06_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1101VS01VDC07_I"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:10" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL132" version="0.0.258" dateTime="date_and_time#2026-8-6-9:50:24"></contentHeader>
+	<animationTable name="BCV130" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:10" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL132">
+		<elementDescription displayBase="4" name="sim_BCV130PWS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS03_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS04_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS05_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS06_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS07_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS08_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS09_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS10_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS11_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS12_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS13_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BCV130PWS14_I"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

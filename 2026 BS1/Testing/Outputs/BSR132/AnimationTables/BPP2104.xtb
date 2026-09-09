@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:10" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL132" version="0.0.258" dateTime="date_and_time#2026-8-6-9:50:24"></contentHeader>
+	<animationTable name="BPP2104" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:10" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL132">
+		<elementDescription displayBase="4" name="sim_AHI_Scale_20"></elementDescription>
+		<elementDescription displayBase="4" name="sim_AHI_Scale_21"></elementDescription>
+		<elementDescription displayBase="4" name="sim_AHI_Scale_23"></elementDescription>
+		<elementDescription displayBase="4" name="sim_AHI_Scale_24"></elementDescription>
+		<elementDescription displayBase="4" name="sim_AHI_Scale_25"></elementDescription>
+		<elementDescription displayBase="4" name="sim_AHI_Scale_26"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104FIT05FT05_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104FIT06FT06_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104FQ05_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104FQ06_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104FS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104FV01CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104FV01SW01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104FV01XS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104FV01ZS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104FV01ZS02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104FV01ZT01_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104LCS01STP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104LCS01STT01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104LOS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104PIT03PT03_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104PIT04PT04_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104PT01_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104THR01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104TRP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104TRP01_SetOK"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104TRP01_SetOpn"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104TRP01_SetTrp"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP2104VDC01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_CBSts_6"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

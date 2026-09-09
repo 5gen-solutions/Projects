@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-11:37:26" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="PLC703" version="0.0.271" dateTime="date_and_time#2024-10-8-13:14:58"></contentHeader>
+	<animationTable name="Table" location="" version="1.0" dateTime="date_and_time#2026-9-9-11:37:26" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="PLC703">
+		<elementDescription displayBase="4" name="sim_AddOreOnSeg"></elementDescription>
+		<elementDescription displayBase="4" name="Sim_BPS702_FlwDif"></elementDescription>
+		<elementDescription displayBase="4" name="Sim_BPS702_FlwReq"></elementDescription>
+		<elementDescription displayBase="4" name="Sim_BPS702_PressDyn"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPS702DX1CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="Sim_BPS702DX1DIO1PLM0_ComFlt"></elementDescription>
+		<elementDescription displayBase="4" name="Sim_BPS702DX1DIO1PLM0_Flt"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

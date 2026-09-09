@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:09" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL131" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<animationTable name="BPP1104" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:09" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL131">
+		<elementDescription displayBase="4" name="sim_BPP1104CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1104FQ04_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1104FQ05_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1104FQ06_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1104LCS04STP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1104LCS04STT01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1104SYS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1104THR01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1104TRP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1104TRP01_SetOK"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPP1104VDC01_I"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

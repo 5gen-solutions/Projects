@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:09" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL130" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<animationTable name="BBN130" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:09" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL130">
+		<elementDescription displayBase="4" name="sim_AHI_Scale_0"></elementDescription>
+		<elementDescription displayBase="4" name="sim_AHI_Scale_1"></elementDescription>
+		<elementDescription displayBase="4" name="sim_AHI_Scale_2"></elementDescription>
+		<elementDescription displayBase="4" name="sim_AHI_Scale_3"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130LS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130LT01_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130LT02_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV01_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV02_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV03_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV04_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV05_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV06_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV07_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV08_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV09_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV10_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV11_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV12_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130SV14_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130ZT01_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BBN130ZT02_PV"></elementDescription>
+	</animationTable>
+</TABExchangeFile>
