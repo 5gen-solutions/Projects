@@ -1,7 +1,0 @@
-Name,TypeName,Comment
-sim_AHI_Scale_21,sim_AHI_Scale,ST-mapped DFB/equip
-sim_BJC130HP01PDSH01_I,EBOOL,Drive prefix
-sim_BJC130HP01PS01_I,EBOOL,Drive prefix
-sim_BJC130HP01TT01_PV,REAL,BJC130HP01TT01 engineering PV
-sim_BJC130HP01UE01LS01_I,EBOOL,Drive prefix
-sim_BJC130HP01UE01TS01_I,EBOOL,Drive prefix

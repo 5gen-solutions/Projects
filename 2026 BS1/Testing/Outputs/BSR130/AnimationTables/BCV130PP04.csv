@@ -1,8 +1,0 @@
-Name,TypeName,Comment
-sim_AHI_Scale_44,sim_AHI_Scale,ST-mapped DFB/equip
-sim_BCV130PP04CAX01_I,EBOOL,BCV130PP04CAX01 TeSysT contactor aux
-sim_BCV130PP04CB01_I,EBOOL,BCV130PP04CB01 TeSysT CB closed/healthy
-sim_BCV130PP04FT01_PV,REAL,BCV130PP04FT01 engineering PV
-sim_BCV130PP04SY01_I,EBOOL,BCV130PP04SY01 — Safety Interlock Relay
-sim_BCV130PP04VDC01_I,EBOOL,Drive prefix
-SIM_TeSysT_15,SIM_TeSysT,ST-mapped DFB/equip

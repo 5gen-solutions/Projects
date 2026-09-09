@@ -1,8 +1,0 @@
-Name,TypeName,Comment
-sim_BSR132DB04CB01_I,EBOOL,Drive prefix
-sim_BSR132DB04TRP01_I,EBOOL,Drive prefix
-sim_BSR132DB04TRP01_SetOK,EBOOL,Drive prefix
-sim_BSR132DB04TRP01_SetOpn,EBOOL,BSR132DB04TRP01 sim set CB open
-sim_BSR132DB04TRP01_SetTrp,EBOOL,BSR132DB04TRP01 sim set tripped
-sim_BSR132DB04VDC01_I,EBOOL,Drive prefix
-sim_CBSts_18,sim_CBSts,ST-mapped DFB/equip

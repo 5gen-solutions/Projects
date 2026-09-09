@@ -1,117 +1,24 @@
 TableName,VariableCount,Notes
-BAF130,24,Drive prefix; ST-mapped DFB/equip
-BAF130CH01,1,Drive prefix
-BAF130CH02,1,Drive prefix
-BAF130CH03,1,Drive prefix
-BAF130FN,1,Drive prefix
-BAF130FN01,5,Drive prefix; ST-mapped DFB/equip
-BAF130FN02,5,Drive prefix; ST-mapped DFB/equip
-BAF130FN03,5,Drive prefix; ST-mapped DFB/equip
-BAF130GA01,12,Drive prefix
-BAF130HP01,23,Drive prefix; ST-mapped DFB/equip
-BAF130HP02,9,Drive prefix; ST-mapped DFB/equip
-BAF130HT01,8,Drive prefix; ST-mapped DFB/equip
-BAF130HT02,8,Drive prefix; ST-mapped DFB/equip
-BAF130LU01,20,Drive prefix; ST-mapped DFB/equip
-BAF130PP01,12,Drive prefix; ST-mapped DFB/equip
-BAF130PP02,12,Drive prefix; ST-mapped DFB/equip
-BAF130PP04,6,Drive prefix; ST-mapped DFB/equip
-BAF130PP05,9,Drive prefix; ST-mapped DFB/equip
-BAF130PP07,5,Drive prefix; ST-mapped DFB/equip
-BBD130,6,Drive prefix; ST-mapped DFB/equip
-BBD130DX03,36,Drive prefix; ST-mapped DFB/equip
-BBD130DX04,72,Drive prefix; ST-mapped DFB/equip
-BBD130DX05,66,Drive prefix; ST-mapped DFB/equip
-BBD130DX06,46,Drive prefix; ST-mapped DFB/equip
-BBD130PP01,8,Drive prefix; ST-mapped DFB/equip
-BBD130SM01,2,Drive prefix; ST-mapped DFB/equip
-BBN130,22,Drive prefix; ST-mapped DFB/equip
-BCV130,82,Drive prefix; ST-mapped DFB/equip
-BCV130BK01,15,Drive prefix; ST-mapped DFB/equip
-BCV130BP02,1,Drive prefix
-BCV130CH01,2,Drive prefix
-BCV130CH03,3,Drive prefix
-BCV130DX07,38,Drive prefix; ST-mapped DFB/equip
-BCV130DX08,43,Drive prefix; ST-mapped DFB/equip
-BCV130DX09,73,Drive prefix; ST-mapped DFB/equip
-BCV130FN01,7,Drive prefix; ST-mapped DFB/equip
-BCV130FN02,7,Drive prefix; ST-mapped DFB/equip
-BCV130FN03,5,Drive prefix; ST-mapped DFB/equip
-BCV130FN04,5,Drive prefix; ST-mapped DFB/equip
-BCV130GB01,7,Drive prefix; ST-mapped DFB/equip
-BCV130MA01,34,Drive prefix; ST-mapped DFB/equip
-BCV130MA01PN01,8,Drive prefix; ST-mapped DFB/equip
-BCV130MT01,1,Drive prefix
-BCV130MT01EM01,5,Drive prefix; ST-mapped DFB/equip
-BCV130MT01EM02,5,Drive prefix; ST-mapped DFB/equip
-BCV130PP01,5,Drive prefix; ST-mapped DFB/equip
-BCV130PP02,6,Drive prefix; ST-mapped DFB/equip
-BCV130PP03,8,Drive prefix; ST-mapped DFB/equip
-BCV130PP04,7,Drive prefix; ST-mapped DFB/equip
-BCV130SM01,2,Drive prefix; ST-mapped DFB/equip
-BCV130VS01,10,Drive prefix; ST-mapped DFB/equip
-BCV130WN01PN01,7,Drive prefix; ST-mapped DFB/equip
-BCV131,3,Drive prefix
-BCV131PP04,1,Drive prefix
-BCV131PP05,1,Drive prefix
-BDU130,2,Drive prefix; ST-mapped DFB/equip
-BDU130CP01,12,Drive prefix; ST-mapped DFB/equip
-BDU130DY01,1,Drive prefix
-BDU130FN01,9,Drive prefix; ST-mapped DFB/equip
-BDU130HOP01,2,Drive prefix
-BDU130RV01,9,Drive prefix; ST-mapped DFB/equip
-BJC130,28,Drive prefix; ST-mapped DFB/equip
-BJC130HP01,6,Drive prefix; ST-mapped DFB/equip
-BJC130HP01PN01,12,Drive prefix; ST-mapped DFB/equip
-BJC130LU01,22,Drive prefix; ST-mapped DFB/equip
-BJC130PP01,5,Drive prefix; ST-mapped DFB/equip
-BJC130VS01,10,Drive prefix; ST-mapped DFB/equip
-BMC1301INC01,13,Drive prefix; ST-mapped DFB/equip
-BMC1302INC01,13,Drive prefix; ST-mapped DFB/equip
-BMC1302INC02,6,Drive prefix
-BMC1302INC03,11,Drive prefix; ST-mapped DFB/equip
-BMC802INC01,14,Drive prefix; ST-mapped DFB/equip
-BMC802INC02,11,Drive prefix; ST-mapped DFB/equip
-BPL130,16,IO module/DX
-BPP1108,7,Drive prefix; ST-mapped DFB/equip
-BPP1109,7,Drive prefix; ST-mapped DFB/equip
-BRB131,7,Drive prefix
-BRB131CC01DB01,7,Drive prefix; ST-mapped DFB/equip
-BRB131HP01,8,Drive prefix; ST-mapped DFB/equip
-BRB132,7,Drive prefix
-BRB132HP01,8,Drive prefix; ST-mapped DFB/equip
-BRB13x,5,Drive prefix
-BSB1301,10,Drive prefix; ST-mapped DFB/equip
-BSR130,1,Drive prefix
-BSR130AC01,7,Drive prefix; ST-mapped DFB/equip
-BSR130AC02,7,Drive prefix; ST-mapped DFB/equip
-BSR130BC01,7,Drive prefix; ST-mapped DFB/equip
-BSR130BC02,19,Drive prefix; ST-mapped DFB/equip
-BSR130DB01,8,Drive prefix; ST-mapped DFB/equip
-BSR130DB02,7,Drive prefix; ST-mapped DFB/equip
-BSR130DB03,7,Drive prefix; ST-mapped DFB/equip
-BSR130DB04,7,Drive prefix; ST-mapped DFB/equip
-BSR130DB05,7,Drive prefix; ST-mapped DFB/equip
-BSR130DX01,56,Drive prefix; ST-mapped DFB/equip
-BSR130DX02,48,Drive prefix; ST-mapped DFB/equip
-BSR130FIP01,4,Drive prefix
-BSR130NEP01,2,Drive prefix
-BSR130PN01,10,Drive prefix
-BSR130UP01,10,Drive prefix; ST-mapped DFB/equip
-BSR130UP01DB01,37,Drive prefix
-BSTD1108,6,Drive prefix; ST-mapped DFB/equip
-BSTD1108FV01,7,Drive prefix; ST-mapped DFB/equip
-BTN130,2,Drive prefix; ST-mapped DFB/equip
-BTN130PP01,8,Drive prefix; ST-mapped DFB/equip
-BTN130SM01,2,Drive prefix; ST-mapped DFB/equip
-BTY1501,8,Drive prefix; ST-mapped DFB/equip
-BTY1501FV01,7,Drive prefix; ST-mapped DFB/equip
-BVG130,11,Drive prefix
-BVG130DA01,7,Drive prefix; ST-mapped DFB/equip
-SUB902BC01,7,Drive prefix; ST-mapped DFB/equip
-SUB902BC02,15,Drive prefix; ST-mapped DFB/equip
-SUB902DB01,8,Drive prefix; ST-mapped DFB/equip
-SUB902DX10,66,Drive prefix; ST-mapped DFB/equip
-SUB902NEP01,2,Drive prefix
-_DFBs,4,DFB instance
+BAF130,167,Drive→major; ST-mapped DFB/equip
+BBD130,236,Drive→major; ST-mapped DFB/equip
+BBN130,22,Drive→major; ST-mapped DFB/equip
+BCV130,386,Drive→major; ST-mapped DFB/equip
+BCV131,5,Drive→major
+BDU130,35,Drive→major; ST-mapped DFB/equip
+BJC130,83,Drive→major; ST-mapped DFB/equip
+BMC1301,13,Drive→major; ST-mapped DFB/equip
+BMC1302,30,Drive→major; ST-mapped DFB/equip
+BMC802,25,Drive→major; ST-mapped DFB/equip
+BPP1108,7,Drive→major; ST-mapped DFB/equip
+BPP1109,7,Drive→major; ST-mapped DFB/equip
+BRB131,22,Drive→major; ST-mapped DFB/equip
+BRB132,15,Drive→major; ST-mapped DFB/equip
+BRB13x,5,Drive→major
+BSB1301,10,Drive→major; ST-mapped DFB/equip
+BSR130,264,Drive→major; ST-mapped DFB/equip; major prefix
+BSTD1108,13,Drive→major; ST-mapped DFB/equip
+BTN130,12,Drive→major; ST-mapped DFB/equip
+BTY1501,15,Drive→major; ST-mapped DFB/equip
+BVG130,18,Drive→major; ST-mapped DFB/equip
+SUB902,98,Drive→major; ST-mapped DFB/equip
 _Globals,6,global/control

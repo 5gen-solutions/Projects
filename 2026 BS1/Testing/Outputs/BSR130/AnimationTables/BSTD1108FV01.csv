@@ -1,8 +1,0 @@
-Name,TypeName,Comment
-sim_AHI_Scale_63,sim_AHI_Scale,ST-mapped DFB/equip
-sim_BSTD1108FV01CB01_I,EBOOL,Drive prefix
-sim_BSTD1108FV01SW01_I,EBOOL,Drive prefix
-sim_BSTD1108FV01XS01_I,EBOOL,Drive prefix
-sim_BSTD1108FV01ZS01_I,EBOOL,Drive prefix
-sim_BSTD1108FV01ZS02_I,EBOOL,Drive prefix
-sim_BSTD1108FV01ZT01_PV,REAL,BSTD1108FV01ZT01 engineering PV

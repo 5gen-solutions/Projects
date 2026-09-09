@@ -1,25 +1,32 @@
 Name,TypeName,Comment
+sim_AHI_Scale_20,sim_AHI_Scale,ST-mapped DFB/equip
 sim_AHI_Scale_21,sim_AHI_Scale,ST-mapped DFB/equip
 sim_AHI_Scale_23,sim_AHI_Scale,ST-mapped DFB/equip
 sim_AHI_Scale_24,sim_AHI_Scale,ST-mapped DFB/equip
 sim_AHI_Scale_25,sim_AHI_Scale,ST-mapped DFB/equip
 sim_AHI_Scale_26,sim_AHI_Scale,ST-mapped DFB/equip
-sim_BPP2104CB01_I,EBOOL,Drive prefix
+sim_BPP2104CB01_I,EBOOL,Drive→major
 sim_BPP2104FIT05FT05_PV,REAL,BPP2104FIT05FT05 engineering PV
 sim_BPP2104FIT06FT06_PV,REAL,BPP2104FIT06FT06 engineering PV
-sim_BPP2104FQ05_I,EBOOL,Drive prefix
-sim_BPP2104FQ06_I,EBOOL,Drive prefix
-sim_BPP2104FS01_I,EBOOL,Drive prefix
-sim_BPP2104LCS01STP01_I,EBOOL,Drive prefix
-sim_BPP2104LCS01STT01_I,EBOOL,Drive prefix
-sim_BPP2104LOS01_I,EBOOL,Drive prefix
+sim_BPP2104FQ05_I,EBOOL,Drive→major
+sim_BPP2104FQ06_I,EBOOL,Drive→major
+sim_BPP2104FS01_I,EBOOL,Drive→major
+sim_BPP2104FV01CB01_I,EBOOL,Drive→major
+sim_BPP2104FV01SW01_I,EBOOL,Drive→major
+sim_BPP2104FV01XS01_I,EBOOL,Drive→major
+sim_BPP2104FV01ZS01_I,EBOOL,Drive→major
+sim_BPP2104FV01ZS02_I,EBOOL,Drive→major
+sim_BPP2104FV01ZT01_PV,REAL,BPP2104FV01ZT01 engineering PV
+sim_BPP2104LCS01STP01_I,EBOOL,Drive→major
+sim_BPP2104LCS01STT01_I,EBOOL,Drive→major
+sim_BPP2104LOS01_I,EBOOL,Drive→major
 sim_BPP2104PIT03PT03_PV,REAL,BPP2104PIT03PT03 engineering PV
 sim_BPP2104PIT04PT04_PV,REAL,BPP2104PIT04PT04 engineering PV
 sim_BPP2104PT01_PV,REAL,BPP2104PT01 engineering PV
-sim_BPP2104THR01_I,EBOOL,Drive prefix
-sim_BPP2104TRP01_I,EBOOL,Drive prefix
-sim_BPP2104TRP01_SetOK,EBOOL,Drive prefix
+sim_BPP2104THR01_I,EBOOL,Drive→major
+sim_BPP2104TRP01_I,EBOOL,Drive→major
+sim_BPP2104TRP01_SetOK,EBOOL,Drive→major
 sim_BPP2104TRP01_SetOpn,EBOOL,BPP2104TRP01 sim set CB open
 sim_BPP2104TRP01_SetTrp,EBOOL,BPP2104TRP01 sim set tripped
-sim_BPP2104VDC01_I,EBOOL,Drive prefix
+sim_BPP2104VDC01_I,EBOOL,Drive→major
 sim_CBSts_6,sim_CBSts,ST-mapped DFB/equip

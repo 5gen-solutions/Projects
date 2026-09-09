@@ -1,9 +1,0 @@
-Name,TypeName,Comment
-sim_CBSts_29,sim_CBSts,ST-mapped DFB/equip
-sim_SUB902DB01CB01_I,EBOOL,Drive prefix
-sim_SUB902DB01TRP01_I,EBOOL,Drive prefix
-sim_SUB902DB01TRP01_SetOK,EBOOL,SUB902DB01TRP01 sim set CB closed/healthy
-sim_SUB902DB01TRP01_SetOpn,EBOOL,SUB902DB01TRP01 sim set CB open
-sim_SUB902DB01TRP01_SetTrp,EBOOL,SUB902DB01TRP01 sim set tripped
-sim_SUB902DB01VDC01_I,EBOOL,Drive prefix
-sim_SUB902DB01XS01_I,EBOOL,Drive prefix

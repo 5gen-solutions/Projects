@@ -1,4 +1,0 @@
-SIM_BMEP586x4xRIO_0
-sim_noc0301_0
-sim_noc0301_1
-sim_noc0301_2

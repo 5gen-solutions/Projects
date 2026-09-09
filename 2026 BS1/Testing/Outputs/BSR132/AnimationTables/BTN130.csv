@@ -1,4 +1,4 @@
 Name,TypeName,Comment
 sim_AHI_Scale_67,sim_AHI_Scale,ST-mapped DFB/equip
 sim_BTN130FIT01FT01_PV,REAL,BTN130FIT01FT01 engineering PV
-sim_BTN130FQ01_I,EBOOL,Drive prefix
+sim_BTN130FQ01_I,EBOOL,Drive→major

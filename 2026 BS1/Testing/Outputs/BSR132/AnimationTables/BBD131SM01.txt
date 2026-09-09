@@ -1,2 +1,0 @@
-sim_AHI_Scale_9
-sim_BBD131SM01LIT01_PV
