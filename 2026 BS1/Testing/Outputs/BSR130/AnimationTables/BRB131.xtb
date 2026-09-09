@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:09" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL130" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<animationTable name="BRB131" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:09" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL130">
+		<elementDescription displayBase="4" name="sim_BRB131CC01DB01CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131CC01DB01TRP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131CC01DB01TRP01_SetOK"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131CC01DB01TRP01_SetOpn"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131CC01DB01TRP01_SetTrp"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131CC01DB01VDC01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131HP01CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131HP01FS03_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131HP01TRP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131HP01TRP01_SetOK"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131HP01TRP01_SetOpn"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131HP01TRP01_SetTrp"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131HP01VDC01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131XS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131XS02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131XS03_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131XS04_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131XS05_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131XS06_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BRB131XS07_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_CBSts_13"></elementDescription>
+		<elementDescription displayBase="4" name="sim_CBSts_14"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

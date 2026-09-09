@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:09" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL131" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<animationTable name="BTK2101" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:09" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL131">
+		<elementDescription displayBase="4" name="sim_BTK2101DX04CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="Sim_BTK2101DX04DIO1PLM0_ComFlt"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04DIO1PLM0_ComFlt"></elementDescription>
+		<elementDescription displayBase="4" name="Sim_BTK2101DX04DIO1PLM0_Flt"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04DIO1PLM0_Flt"></elementDescription>
+		<elementDescription displayBase="4" name="Sim_BTK2101DX04DIO1PLM0_LnkFlt"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04DIO1PLM0_LnkFlt"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04DIO1PLM1_Grp1flt"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04DIO1PLM1_Grp2DDI"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04DIO1PLM1_Grp2flt"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04DIO1PLM1_ModFlt"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04VDC01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04VDC02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04VDC03_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04VDC04_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04VDC05_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04VDC06_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04VDC07_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04VDC08_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04VDC09_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04VDC10_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101DX04VDC11_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101FIP01IS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101FIP01XS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101FIP01XS02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2101FQ03_I"></elementDescription>
+		<elementDescription displayBase="4" name="SIM_CRA31210_4"></elementDescription>
+		<elementDescription displayBase="4" name="sim_X80DDI3202K_12"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

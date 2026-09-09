@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:09" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL131" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<animationTable name="BSTD1106" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:09" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL131">
+		<elementDescription displayBase="4" name="sim_BSTD1106FQ03_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BSTD1106FV03CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BSTD1106FV03SW01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BSTD1106FV03XS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BSTD1106FV03ZS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BSTD1106FV03ZS02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BSTD1106LCS01STP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BSTD1106LCS01STT01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BSTD1106LCS01STT02_I"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

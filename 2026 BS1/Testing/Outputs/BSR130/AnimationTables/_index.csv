@@ -1,24 +1,24 @@
-TableName,VariableCount,Notes
-BAF130,167,Drive→major; ST-mapped DFB/equip
-BBD130,236,Drive→major; ST-mapped DFB/equip
-BBN130,22,Drive→major; ST-mapped DFB/equip
-BCV130,386,Drive→major; ST-mapped DFB/equip
-BCV131,5,Drive→major
-BDU130,35,Drive→major; ST-mapped DFB/equip
-BJC130,83,Drive→major; ST-mapped DFB/equip
-BMC1301,13,Drive→major; ST-mapped DFB/equip
-BMC1302,30,Drive→major; ST-mapped DFB/equip
-BMC802,25,Drive→major; ST-mapped DFB/equip
-BPP1108,7,Drive→major; ST-mapped DFB/equip
-BPP1109,7,Drive→major; ST-mapped DFB/equip
-BRB131,22,Drive→major; ST-mapped DFB/equip
-BRB132,15,Drive→major; ST-mapped DFB/equip
-BRB13x,5,Drive→major
-BSB1301,10,Drive→major; ST-mapped DFB/equip
-BSR130,264,Drive→major; ST-mapped DFB/equip; major prefix
-BSTD1108,13,Drive→major; ST-mapped DFB/equip
-BTN130,12,Drive→major; ST-mapped DFB/equip
-BTY1501,15,Drive→major; ST-mapped DFB/equip
-BVG130,18,Drive→major; ST-mapped DFB/equip
-SUB902,98,Drive→major; ST-mapped DFB/equip
-_Globals,6,global/control
+TableName,VarCount
+BAF130,167
+BBD130,236
+BBN130,22
+BCV130,386
+BCV131,5
+BDU130,35
+BJC130,83
+BMC1301,13
+BMC1302,30
+BMC802,25
+BPP1108,7
+BPP1109,7
+BRB131,22
+BRB132,15
+BRB13x,5
+BSB1301,10
+BSR130,264
+BSTD1108,13
+BTN130,12
+BTY1501,15
+BVG130,18
+SUB902,98
+_Globals,6

@@ -1,22 +1,22 @@
-TableName,VariableCount,Notes
-BAF130,2,major prefix
-BAF131,89,Drive→major; ST-mapped DFB/equip; major prefix
-BBD131,133,Drive→major; ST-mapped DFB/equip
-BBN131,7,Drive→major; ST-mapped DFB/equip
-BCV130,14,major prefix
-BCV131,313,Drive→major; ST-mapped DFB/equip
-BCV131A,61,Drive→major; ST-mapped DFB/equip
-BCV131B,86,Drive→major; ST-mapped DFB/equip
-BCV131C,61,Drive→major; ST-mapped DFB/equip
-BCV210,1,Drive→major
-BDU131,21,Drive→major; ST-mapped DFB/equip
-BMC1321,142,Drive→major; major prefix
-BMC1322,3,Drive→major
-BPP2104,31,Drive→major; ST-mapped DFB/equip
-BPP2105,14,Drive→major; ST-mapped DFB/equip
-BPQE2106,14,Drive→major; ST-mapped DFB/equip
-BSR132,224,Drive→major; ST-mapped DFB/equip; major prefix
-BTK2104,16,Drive→major; ST-mapped DFB/equip
-BTK2105,13,Drive→major; ST-mapped DFB/equip
-BTN130,3,Drive→major; ST-mapped DFB/equip
-_Globals,5,global/control
+TableName,VarCount
+BAF130,2
+BAF131,89
+BBD131,133
+BBN131,7
+BCV130,14
+BCV131,313
+BCV131A,61
+BCV131B,86
+BCV131C,61
+BCV210,1
+BDU131,21
+BMC1321,142
+BMC1322,3
+BPP2104,31
+BPP2105,14
+BPQE2106,14
+BSR132,224
+BTK2104,16
+BTK2105,13
+BTN130,3
+_Globals,5

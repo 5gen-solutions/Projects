@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """
-Generate Control Expert animation-table helper files from sim_* variables.
+Generate Control Expert Animation Tables as .xtb (TABExchangeFile) from sim_* vars.
 
 MAJOR-equipment grouping (coarser): ~10–25 tables per PLC, not one per Drive.
 
-For each PLC (BSR130, BSR132):
+For each PLC (BSR130, BSR131, BSR132):
   - Collect typed sim_* declarations from XST <variables name= typeName=>
   - Also collect sim_* referenced in ST even if only referenced (skip POU/type names)
   - Group by MAJOR equipment / area (fold PP/FN/HP/GA/LU/CH/MT/… under parent;
     keep BCV131A/B/C when those are distinct conveyors; fold DX/panel/PLC under BSR*)
-  - Write per-major CSV (Name,TypeName,Comment) + TXT (one name per line for paste)
-  - Write _All_sim_variables.csv, _index.csv, README.txt
+  - Write one <MajorID>.xtb TABExchangeFile per major table
+  - Write _index.csv (TableName, VarCount) and README.txt
+
+PouOwner / contentHeader name = BPL130 / BPL131 / BPL132 (from XST contentHeader).
 
 Outputs written to:
   /workspace/testing/Outputs/<PLC>/AnimationTables/
@@ -23,7 +25,9 @@ import csv
 import re
 import shutil
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
+from xml.sax.saxutils import escape
 
 try:
     import openpyxl
@@ -33,8 +37,10 @@ except ImportError:
 ROOT = Path("/workspace/testing")
 INPUTS = ROOT / "Inputs"
 OUTPUTS = ROOT / "Outputs"
-REPO_OUTPUTS = Path("/workspace/Projects-repo/2026 BS1/Testing/Outputs")
-SITES = ("BSR130", "BSR132")
+REPO_TESTING = Path("/workspace/Projects-repo/2026 BS1/Testing")
+REPO_OUTPUTS = REPO_TESTING / "Outputs"
+REPO_INPUTS = REPO_TESTING / "Inputs"
+SITES = ("BSR130", "BSR131", "BSR132")
 
 # Elementary / array types useful in animation tables
 ELEMENTARY_TYPES = {
@@ -216,7 +222,7 @@ def drive_to_major(drive: str, site: str, letter_conveyors: set[str]) -> str | N
     if m:
         code = m.group(1).upper()
         # Fold all BSR130* / BSR132* (DX, UP, BC, DB, PN, …) into site PLC table
-        if code in {"BSR130", "BSR132"}:
+        if code in {"BSR130", "BSR131", "BSR132"}:
             return code
         # Non-plant product codes that slipped through
         if re.match(r"^(BMEP|NOC|REX|CV\d)", code, re.I):
@@ -591,12 +597,98 @@ def assign_table(
     return "_Ungrouped", "unmatched"
 
 
+
+PRODUCT = "Control Expert V16.2 - 250430"
+DTD_VERSION = "41"
+CONTENT_VERSION_DEFAULT = "0.0.202"
+
+
+def site_to_pou(site: str) -> str:
+    """BSR130 → BPL130, etc."""
+    m = re.match(r"^BSR(\d{3})$", site, re.I)
+    if m:
+        return f"BPL{m.group(1)}"
+    return site
+
+
+def parse_content_header(site: str) -> tuple[str, str, str]:
+    """
+    Return (name, version, dateTime) from an XST contentHeader.
+    Prefer sim_Equipment.XST when present, else first *.XST.
+    """
+    out_dir = OUTPUTS / site
+    candidates = []
+    eq = out_dir / "sim_Equipment.XST"
+    if eq.exists():
+        candidates.append(eq)
+    candidates.extend(sorted(p for p in out_dir.glob("*.XST") if p != eq))
+    hdr_re = re.compile(
+        r'<contentHeader\s+name="([^"]+)"\s+version="([^"]+)"\s+dateTime="([^"]+)"',
+        re.I,
+    )
+    for p in candidates:
+        m = hdr_re.search(p.read_text(encoding="utf-8", errors="replace")[:2000])
+        if m:
+            return m.group(1), m.group(2), m.group(3)
+    pou = site_to_pou(site)
+    return pou, CONTENT_VERSION_DEFAULT, ce_datetime_now()
+
+
+def ce_datetime_now() -> str:
+    """Control Expert date_and_time#Y-M-D-H:MM:SS (no zero-pad on M/D)."""
+    now = datetime.now()
+    return (
+        f"date_and_time#{now.year}-{now.month}-{now.day}-"
+        f"{now.hour}:{now.minute:02d}:{now.second:02d}"
+    )
+
+
+def write_xtb(
+    path: Path,
+    table_name: str,
+    var_names: list[str],
+    pou_owner: str,
+    content_version: str,
+    content_dt: str,
+    file_dt: str | None = None,
+) -> None:
+    """Write a TABExchangeFile .xtb matching the sample Inputs/Table.xtb structure."""
+    file_dt = file_dt or ce_datetime_now()
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>',
+        "<TABExchangeFile>",
+        (
+            f'\t<fileHeader company="Schneider Automation" product="{PRODUCT}" '
+            f'dateTime="{file_dt}" content="Animation Table source file" '
+            f'DTDVersion="{DTD_VERSION}"></fileHeader>'
+        ),
+        (
+            f'\t<contentHeader name="{escape(pou_owner)}" version="{escape(content_version)}" '
+            f'dateTime="{content_dt}"></contentHeader>'
+        ),
+        (
+            f'\t<animationTable name="{escape(table_name)}" location="" version="1.0" '
+            f'dateTime="{file_dt}" ExtStringAnim="0" ExtStringAnimLen="100" '
+            f'PouOwner="{escape(pou_owner)}">'
+        ),
+    ]
+    for name in var_names:
+        lines.append(
+            f'\t\t<elementDescription displayBase="4" name="{escape(name)}"></elementDescription>'
+        )
+    lines.append("\t</animationTable>")
+    lines.append("</TABExchangeFile>")
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def write_site(site: str) -> dict:
     drives = load_drives(site)
     letter_conveyors = discover_letter_conveyors(drives)
     majors = build_majors(drives, site)
     vars_map, combined = parse_xst_files(site)
     dfb_map = build_dfb_equipment_maps(combined, drives, majors, site, letter_conveyors)
+    pou_owner, content_version, content_dt = parse_content_header(site)
+    file_dt = ce_datetime_now()
 
     tables: dict[str, list[dict]] = defaultdict(list)
     notes_by_table: dict[str, set[str]] = defaultdict(set)
@@ -634,19 +726,17 @@ def write_site(site: str) -> dict:
 
     for table in sorted(tables.keys(), key=lambda s: (s.startswith("_"), s.lower())):
         rows = tables[table]
-        csv_path = primary / f"{table}.csv"
-        txt_path = primary / f"{table}.txt"
-        with csv_path.open("w", newline="", encoding="utf-8") as f:
-            w = csv.DictWriter(f, fieldnames=["Name", "TypeName", "Comment"])
-            w.writeheader()
-            w.writerows(rows)
-        with txt_path.open("w", encoding="utf-8") as f:
-            for r in rows:
-                f.write(r["Name"] + "\n")
-        notes = "; ".join(sorted(notes_by_table[table]))
-        index_rows.append(
-            {"TableName": table, "VariableCount": len(rows), "Notes": notes}
+        var_names = [r["Name"] for r in rows]
+        write_xtb(
+            primary / f"{table}.xtb",
+            table_name=table,
+            var_names=var_names,
+            pou_owner=pou_owner,
+            content_version=content_version,
+            content_dt=content_dt,
+            file_dt=file_dt,
         )
+        index_rows.append({"TableName": table, "VarCount": len(rows)})
         for r in rows:
             all_rows.append(
                 {
@@ -658,23 +748,26 @@ def write_site(site: str) -> dict:
             )
 
     with (primary / "_index.csv").open("w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["TableName", "VariableCount", "Notes"])
+        w = csv.DictWriter(f, fieldnames=["TableName", "VarCount"])
         w.writeheader()
         w.writerows(index_rows)
-
-    with (primary / "_All_sim_variables.csv").open("w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["TableName", "Name", "TypeName", "Comment"])
-        w.writeheader()
-        w.writerows(all_rows)
 
     major_list = ", ".join(
         t for t in sorted(tables.keys(), key=lambda s: (s.startswith("_"), s.lower()))
     )
-    readme = f"""Control Expert Animation Table helpers — {site}
+    readme = f"""Control Expert Animation Tables (.xtb) — {site}
 ================================================
 
-Generated by /workspace/testing/generate_animation_tables.py from sim_* variables
-in Outputs/{site}/*.XST (and ST refs) plus Drive names from Inputs/{site}_IO_List.xlsx.
+Generated by generate_animation_tables.py from sim_* variables in
+Outputs/{site}/*.XST (and ST refs) plus Drive names from Inputs/{site}_IO_List.xlsx.
+
+Format: TABExchangeFile (Control Expert Animation Table source file), matching
+Inputs/Table.xtb. Each <MajorID>.xtb is importable via Control Expert File → Open /
+animation table exchange.
+
+  contentHeader name / PouOwner = {pou_owner}
+  product = {PRODUCT}
+  DTDVersion = {DTD_VERSION}
 
 Grouping is MAJOR equipment / area only (coarser than Drive): PP/FN/HP/GA/LU/CH/MT/…
 fold under the parent plant code (e.g. BAF130). Letter conveyors BCV131A/B/C are kept
@@ -682,19 +775,17 @@ as separate majors when present. PLC/DX/panel/common fold under {site}.
 
 How to use in Control Expert
 ----------------------------
-1. Open Data Editor → Animation tables.
-2. Create a new animation table named after the major equipment (see _index.csv).
-3. Paste variable names from the matching <MajorID>.txt (one name per line).
-   CE has no official CSV import for animation tables; paste is the fastest bulk load.
+1. Open the project for {pou_owner}.
+2. File → Open (or Animation tables import) each <MajorID>.xtb, or drag into Data Editor.
+3. Tables are named after major equipment (see _index.csv).
 4. Optionally Initialize Animation Table on DFB instances (SIM_TeSysT_*, sim_X80*, etc.).
 
 Files
 -----
-- _index.csv              TableName, VariableCount, Notes
-- _All_sim_variables.csv  Flat list of all sim_* with table assignment
-- <MajorID>.csv           Name,TypeName,Comment (tracking)
-- <MajorID>.txt           One variable name per line (paste into CE)
-- _Globals.*              sim_init, sim_SetHealthy, Sim_EquipBlocks, etc.
+- <MajorID>.xtb   TABExchangeFile animation table (one per major)
+- _index.csv      TableName, VarCount
+- README.txt      This file
+- _Globals.xtb    sim_init, sim_SetHealthy, Sim_EquipBlocks, etc. (when present)
 
 Major tables this run
 ---------------------
@@ -708,6 +799,7 @@ Grouping rules
 4. DX/PLM/BPL module vars → parent major or {site}; leftovers → {site} / _Ungrouped.
 
 Totals for this run: {len(all_rows)} variables across {len(tables)} tables.
+PouOwner={pou_owner} version={content_version}
 """
     (primary / "README.txt").write_text(readme, encoding="utf-8")
 
@@ -721,6 +813,7 @@ Totals for this run: {len(all_rows)} variables across {len(tables)} tables.
     counts = {t: len(tables[t]) for t in sorted(tables.keys())}
     return {
         "site": site,
+        "pou_owner": pou_owner,
         "drives": len(drives),
         "majors_curated": majors,
         "variables": len(all_rows),
@@ -734,23 +827,35 @@ Totals for this run: {len(all_rows)} variables across {len(tables)} tables.
     }
 
 
+
 def main() -> None:
     summaries = []
     for site in SITES:
-        print(f"Generating MAJOR AnimationTables for {site}...")
+        print(f"Generating MAJOR AnimationTables (.xtb) for {site}...")
         summary = write_site(site)
         summaries.append(summary)
         print(
             f"  {summary['variables']} vars → {summary['tables']} tables "
-            f"({summary['equipment_tables']} major + {summary['special_tables']} special)"
+            f"({summary['equipment_tables']} major + {summary['special_tables']} special) "
+            f"PouOwner={summary.get('pou_owner')}"
         )
         for t, c in summary["counts"].items():
             print(f"    {t}: {c}")
         print(f"  → {summary['primary']}")
         print(f"  → {summary['repo']}")
+
+    # Sync sample Table.xtb + this script into Projects-repo Testing tree
+    REPO_INPUTS.mkdir(parents=True, exist_ok=True)
+    sample_src = INPUTS / "Table.xtb"
+    if sample_src.exists():
+        shutil.copy2(sample_src, REPO_INPUTS / "Table.xtb")
+        print(f"Copied sample → {REPO_INPUTS / 'Table.xtb'}")
+    script_src = Path(__file__).resolve()
+    shutil.copy2(script_src, REPO_TESTING / "generate_animation_tables.py")
+    print(f"Copied script → {REPO_TESTING / 'generate_animation_tables.py'}")
+
     print("Done.")
     import json
-    # drop bulky majors list duplication in json if needed — keep counts
     slim = []
     for s in summaries:
         slim.append({k: v for k, v in s.items() if k != "majors_curated"})

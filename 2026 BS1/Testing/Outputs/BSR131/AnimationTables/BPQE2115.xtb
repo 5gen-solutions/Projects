@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:09" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL131" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<animationTable name="BPQE2115" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:09" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL131">
+		<elementDescription displayBase="4" name="sim_BPQE2115MC01CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2115MC01TRP01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2115MC01TRP01_SetOK"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BPQE2115MC01VDC01_I"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

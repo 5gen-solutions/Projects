@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:10" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL132" version="0.0.258" dateTime="date_and_time#2026-8-6-9:50:24"></contentHeader>
+	<animationTable name="BTK2105" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:10" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL132">
+		<elementDescription displayBase="4" name="sim_AHI_Scale_16"></elementDescription>
+		<elementDescription displayBase="4" name="sim_AHI_Scale_17"></elementDescription>
+		<elementDescription displayBase="4" name="sim_AHI_Scale_19"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2105FQ01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2105FT01_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2105FV01CB01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2105FV01SW01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2105FV01XS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2105FV01ZS01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2105FV01ZS02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2105FV01ZT01_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2105LS02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTK2105LT01_PV"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

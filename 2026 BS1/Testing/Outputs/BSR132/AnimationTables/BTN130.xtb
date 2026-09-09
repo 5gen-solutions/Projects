@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:10" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL132" version="0.0.258" dateTime="date_and_time#2026-8-6-9:50:24"></contentHeader>
+	<animationTable name="BTN130" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:10" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL132">
+		<elementDescription displayBase="4" name="sim_AHI_Scale_67"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTN130FIT01FT01_PV"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BTN130FQ01_I"></elementDescription>
+	</animationTable>
+</TABExchangeFile>

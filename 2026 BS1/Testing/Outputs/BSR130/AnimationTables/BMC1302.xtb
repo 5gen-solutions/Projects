@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TABExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-9-3:43:09" content="Animation Table source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BPL130" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<animationTable name="BMC1302" location="" version="1.0" dateTime="date_and_time#2026-9-9-3:43:09" ExtStringAnim="0" ExtStringAnimLen="100" PouOwner="BPL130">
+		<elementDescription displayBase="4" name="sim_BMC1302INC01CB02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC01CB03_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC01CB04_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC01CB05_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC01CB06_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC01TRP02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC01TRP02_SetOK"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC01TRP02_SetOpn"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC01TRP02_SetTrp"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC01VDC01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC01XS02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC01XS03_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC02CB03_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC02CB04_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC02CB05_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC02CB06_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC02VDC01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC02XS03_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC03CB03_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC03CB04_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC03CB05_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC03CB06_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC03CB07_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC03TRP02_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC03TRP02_SetOK"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC03TRP02_SetOpn"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC03TRP02_SetTrp"></elementDescription>
+		<elementDescription displayBase="4" name="sim_BMC1302INC03VDC01_I"></elementDescription>
+		<elementDescription displayBase="4" name="sim_CBSts_10"></elementDescription>
+		<elementDescription displayBase="4" name="sim_CBSts_9"></elementDescription>
+	</animationTable>
+</TABExchangeFile>
