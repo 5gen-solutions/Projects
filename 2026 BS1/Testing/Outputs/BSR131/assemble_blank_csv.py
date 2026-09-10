@@ -1,7 +1,23 @@
 #!/usr/bin/env python3
+"""Assemble blank_variable_comments.csv from part files.
+
+Prefers gzip+base64 parts (blank_variable_comments.part*.b64) if present;
+otherwise concatenates plain CSV row chunks (blank_variable_comments.part*.csv)
+where only part00 includes the header row.
+"""
 import base64, gzip, pathlib
 d = pathlib.Path(__file__).resolve().parent
-parts = sorted(d.glob("blank_variable_comments.part*.b64"))
-raw = "".join(p.read_text().strip() for p in parts)
-(d/"blank_variable_comments.csv").write_bytes(gzip.decompress(base64.b64decode(raw)))
-print("wrote blank", (d/"blank_variable_comments.csv").stat().st_size)
+out = d / "blank_variable_comments.csv"
+b64 = sorted(d.glob("blank_variable_comments.part*.b64"))
+csvp = sorted(d.glob("blank_variable_comments.part*.csv"))
+if b64:
+    raw = "".join(p.read_text().strip() for p in b64)
+    out.write_bytes(gzip.decompress(base64.b64decode(raw)))
+    print("wrote blank", out.stat().st_size, "from", len(b64), "b64 parts")
+elif csvp:
+    with out.open("wb") as w:
+        for p in csvp:
+            w.write(p.read_bytes())
+    print("wrote blank", out.stat().st_size, "from", len(csvp), "csv parts")
+else:
+    raise SystemExit("no blank_variable_comments.part*.b64 or .csv found")
