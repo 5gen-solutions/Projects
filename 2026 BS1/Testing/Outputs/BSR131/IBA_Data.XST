@@ -1,4 +1,10 @@
-(*IBA Trending  
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<STExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V16.2 - 250430" dateTime="date_and_time#2026-9-10-1:8:35" content="Structured source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="BSR131" version="0.0.202" dateTime="date_and_time#2026-7-1-10:24:18"></contentHeader>
+	<program>
+		<identProgram name="IBA_Data" type="section" task="MAST" SectionOrder="59"></identProgram>
+		<STSource>(*IBA Trending  
 IBA_Analogs - %MW17000 to %MW17199
 IBA_Digitals - %M17000 to %M17099
 
@@ -334,3 +340,14 @@ IBA_Analogs[196]:= 0.0;
 IBA_Analogs[197]:= 0.0;
 IBA_Analogs[198]:= 0.0;
 IBA_Analogs[199]:= 0.0;
+</STSource>
+	</program>
+	<dataBlock>
+		<variables name="IBA_Analogs" typeName="ARRAY[0..200] OF REAL">
+			<comment>IBA Trending Tool Real Data Array</comment>
+		</variables>
+		<variables name="IBA_Digitals" typeName="ARRAY[0..100] OF EBOOL" topologicalAddress="%M17000">
+			<comment>IBA Trending Tool Boolean Data Array</comment>
+		</variables>
+	</dataBlock>
+</STExchangeFile>
