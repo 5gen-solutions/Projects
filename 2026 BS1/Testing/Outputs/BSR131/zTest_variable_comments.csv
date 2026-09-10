@@ -1,1 +1,77 @@
-file:///workspace/testing/Outputs/BSR131/zTest_variable_comments.csv
+name,type,comment
+BBD131FT03_PV,REAL,BBD131FT03 Process Value
+BMC131INC01PR1DAT1,MasterPactMTZStsDDT,BMC131 Process Bus A Incomer INC01PR1 Status Data
+BMC131INC02PR1DAT1,MasterPactMTZStsDDT,BMC131 Process Bus A Incomer INC02PR1 Status Data
+BMC131INC03PR1DAT1,MasterPactMTZStsDDT,BMC131 Process Bus A Incomer INC03PR1 Status Data
+BMC131VAMPPR1DAT1,VAMP321ActDat,BMC131 Process Bus A Incomer VAMPPR1 Status Data
+BPL130_LocTm,ClockDDT,BPL130 LocTm Clock
+BPL131PLM0STS2,BMEP586x4xRIOStsDDT,NPI PLC CPU RIO Network RIO Status
+BPL131PLM3STS1,BMENOC0301StsDDT,NPI PLC Ethernet Module Slot 3 Status
+BPL131PLM3_Adr,IPAddDDT,NPI PLC Ethernet Module Slot 3 IP Address
+BPL131PLM4STS1,BMENOC0301StsDDT,NPI PLC Ethernet Module Slot 4 Status
+BPL131PLM4_Adr,IPAddDDT,NPI PLC Ethernet Module Slot 4 IP Address
+BPL131PLM5STS1,BMENOC0301StsDDT,NPI PLC Ethernet Module Slot 5 Status
+BPL131PLM5_Adr,IPAddDDT,NPI PLC Ethernet Module Slot 5 IP Address
+BPL131STS1,BMEP586x4xStsDDT,NPI Hub BPL131 Control System Status
+BPL131_Adr,IPAddDDT,NPI Hub BPL131 Control System IP Address
+BPL131_CfgTm,ClockDDT,NPI PLC Ethernet Module Slot CfgTm Clock
+BPL131_FltAck_CmdHMI,EBOOL,NPI PLC Ethernet Module Slot FltAck HMI Command
+BPL131_LocTm,ClockDDT,NPI PLC Ethernet Module Slot LocTm Clock
+BPL131_StatPls,TotaliserStatPlsDDT,NPI PLC Ethernet Module Slot StatPls Totaliser Status
+BPP1101FQ03_I,EBOOL,HME Standpipe Pump 1 FQ03 Input
+BPP1101FS09_FailStp_A,EBOOL,HME Standpipe Pump 1 FS09 FailStp Alarm
+BPP1101FS09_FailStp_Hty,EBOOL,HME Standpipe Pump 1 FS09 FailStp Healthy
+BPP1101FT01_Tot,TotaliserPulseStatDDT,HME Standpipe Pump 1 FT01 Totaliser
+BPP1101FT03_Hi_A,EBOOL,HME Standpipe Pump 1 FT03 Hi Alarm
+BPP1101FT03_Hi_Hty,EBOOL,HME Standpipe Pump 1 FT03 Hi Healthy
+BPP1101FT03_Hi_K,REAL,HME Standpipe Pump 1 FT03 Hi Constant
+BPP1101FT03_Lo_A,EBOOL,HME Standpipe Pump 1 FT03 Lo Alarm
+BPP1101FT03_Lo_Hty,EBOOL,HME Standpipe Pump 1 FT03 Lo Healthy
+BPP1101FT03_Lo_K,REAL,HME Standpipe Pump 1 FT03 Lo Constant
+BPP1101FT03_Tot,TotaliserPulseStatDDT,HME Standpipe Pump 1 FT03 Totaliser
+BPP1101PIC01_Aut,EBOOL,HME Standpipe Pump 1 PIC01 Mode Auto
+BPP1101PIC01_AutEn,EBOOL,HME Standpipe Pump 1 PIC01 AutEn
+BPP1101PIC01_Aut_CmdHMI,EBOOL,HME Standpipe Pump 1 PIC01 Mode Auto HMI Command
+BPP1101PIC01_Cmd,WORD,HME Standpipe Pump 1 PIC01 Command
+BPP1101PIC01_EnAut,EBOOL,HME Standpipe Pump 1 PIC01 EnAut
+BPP1101PIC01_KD,REAL,HME Standpipe Pump 1 PIC01 KD
+BPP1101PIC01_KI,REAL,HME Standpipe Pump 1 PIC01 KI
+BPP1101PIC01_KP,REAL,HME Standpipe Pump 1 PIC01 KP
+BPP1101PIC01_Man,EBOOL,HME Standpipe Pump 1 PIC01 Mode Manual
+BPP1101PIC01_Man_CmdHMI,EBOOL,HME Standpipe Pump 1 PIC01 Mode Manual HMI Command
+BPP1101PIC01_OP,REAL,HME Standpipe Pump 1 PIC01 OP
+BPP1101PIC01_OPMan,REAL,HME Standpipe Pump 1 PIC01 OPMan
+BPP1101PIC01_PV,REAL,HME Standpipe Pump 1 PIC01 Process Value
+BPP1101PIC01_RunAct,EBOOL,HME Standpipe Pump 1 PIC01 RunAct
+BPP1101PIC01_SP,REAL,HME Standpipe Pump 1 PIC01 Setpoint
+BPP1101PIC01_Stt,EBOOL,HME Standpipe Pump 1 PIC01 Start
+BPP1101PIC01_SttSP,REAL,HME Standpipe Pump 1 PIC01 SttSP
+BPP1101PT03_LoLo_K,REAL,BPP1101 Pressure Transmitter LoLo Constant
+BPP1101PT10_Diff_A,EBOOL,HME Standpipe Pump 1 PT10 Diff Alarm
+BPP1101PT10_Diff_Hty,EBOOL,HME Standpipe Pump 1 PT10 Diff Healthy
+BPP1101PT10_Diff_K,REAL,HME Standpipe Pump 1 PT10 Diff Constant
+BPP1101PT10_Frz,EBOOL,BPP1101PT10 Flow Switch Value Frozen Freeze
+BPP1101PT10_FrzArr,ARRAY[1..2] OF REAL,BPP1101PT10 Flow Switch Value Frozen Freeze Array
+BPP1101PT10_Frz_A,EBOOL,BPP1101PT10 Flow Switch Value Frozen Freeze Alarm
+BPP1101PT10_Hi,EBOOL,BPP1101PT10 Flow Switch Value Frozen Hi
+BPP1101PT10_Hi_A,EBOOL,BPP1101PT10 Flow Switch Value Frozen Hi Alarm
+BPP1101PT10_Hi_Hty,EBOOL,BPP1101PT10 Flow Switch Value Frozen Hi Healthy
+BPP1101PT10_Hi_K,REAL,BPP1101PT10 Flow Switch Value Frozen Hi Constant
+BPP1101PT10_Lo,EBOOL,BPP1101PT10 Flow Switch Value Frozen Lo
+BPP1101PT10_Lo_A,EBOOL,BPP1101PT10 Flow Switch Value Frozen Lo Alarm
+BPP1101PT10_Lo_Hty,EBOOL,BPP1101PT10 Flow Switch Value Frozen Lo Healthy
+BPP1101PT10_Lo_K,REAL,BPP1101PT10 Flow Switch Value Frozen Lo Constant
+BPP1101PT10_Sel_CmdHMI,EBOOL,BPP1101PT10 Flow Switch Value Frozen HMI Select Command
+BPP1101PT11_Frz,EBOOL,HME Standpipe Pump 1 PT11 Freeze
+BPP1101PT11_FrzArr,ARRAY[1..2] OF REAL,HME Standpipe Pump 1 PT11 Freeze Array
+BPP1101PT11_Frz_A,EBOOL,HME Standpipe Pump 1 PT11 Freeze Alarm
+BPP1101PT11_Hi,EBOOL,HME Standpipe Pump 1 PT11 Hi
+BPP1101PT11_Hi_A,EBOOL,HME Standpipe Pump 1 PT11 Hi Alarm
+BPP1101PT11_Hi_Hty,EBOOL,HME Standpipe Pump 1 PT11 Hi Healthy
+BPP1101PT11_Hi_K,REAL,HME Standpipe Pump 1 PT11 Hi Constant
+BPP1101PT11_Lo,EBOOL,HME Standpipe Pump 1 PT11 Lo
+BPP1101PT11_Lo_A,EBOOL,HME Standpipe Pump 1 PT11 Lo Alarm
+BPP1101PT11_Lo_Hty,EBOOL,HME Standpipe Pump 1 PT11 Lo Healthy
+BPP1101PT11_Lo_K,REAL,HME Standpipe Pump 1 PT11 Lo Constant
+BPP1101PT11_Sel_CmdHMI,EBOOL,HME Standpipe Pump 1 PT11 HMI Select Command
+BPP1101PT11_Sel_S,EBOOL,HME Standpipe Pump 1 PT11 Sel S
