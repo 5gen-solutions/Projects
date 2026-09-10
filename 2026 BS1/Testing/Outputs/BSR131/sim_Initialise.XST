@@ -133,6 +133,7 @@ sim_BSR131DB01XS01_I :=1;
 sim_BSR131UP01DB01XS01_I :=1;
 sim_BSR131PN01XS05_I :=0;
 sim_BSR131PN01XS06_I :=0;
+sim_BSR131PN01XS07_I :=0;
 
 
 (* ---- BTY1502DX02 ----------------------- *)
@@ -260,6 +261,7 @@ END_IF;
 		<variables name="sim_BSR131DX01XS02_I" typeName="EBOOL"></variables>
 		<variables name="sim_BMC131INC01CB06_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131PN01XS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131PN01XS07_I" typeName="EBOOL"></variables>
 		<variables name="sim_BTK2101DX04VDC01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131PN01XS04_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131DB02TRP01_SetOK" typeName="EBOOL"></variables>

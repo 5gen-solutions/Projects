@@ -131,8 +131,8 @@ sim_BSR131DX01DIO1PLM3_Grp2DDI := BIT_TO_WORD(
 		BIT11 := sim_BSR131PN01XS04_I, 
 		BIT12 := sim_BSR131DB01XS01_I, 
 		BIT13 := sim_BSR131UP01DB01XS01_I, 
-		BIT14 := sim_BSR131PN01XS05_I, 
-		BIT15 := sim_BSR131PN01XS06_I);
+		BIT14 := sim_BSR131PN01XS06_I, 
+		BIT15 := sim_BSR131PN01XS07_I);
 	(* Simulation 32 Channel DDI*)
 sim_X80DDI3202K_2 (
 	   iModFlt  	:= sim_BSR131DX01DIO1PLM3_ModFlt,
@@ -210,7 +210,7 @@ sim_BSR131DX01DIO1PLM5_Grp2DDI := BIT_TO_WORD(
 		BIT2  := sim_BSR131DB02VDC01_I, 
 		BIT3  := sim_BSR131DB02CB01_I, 
 		BIT4  := sim_BSR131DB02TRP01_I, 
-		BIT5  := sim_BSR131DB02TRP01_I, 
+		BIT5  := sim_BSR131DB03VDC01_I, 
 		BIT6  := sim_BSR131DB03CB01_I, 
 		BIT7  := sim_BSR131DB03TRP01_I, 
 		BIT8  := sim_BPQE2115MC01VDC01_I, 
@@ -277,12 +277,12 @@ sim_X80DDI3202K_5 (
 (* BMXDDI3202K - BSR131DX01DIO1PLM7 *)
 sim_BSR131DX01DIO1PLM7_Grp1DDI := BIT_TO_WORD(
 		BIT0  := sim_BPP1101VS01VDC01_I, 
-		BIT1  := sim_BPP1101VS01VDC02_I, 
-		BIT2  := sim_BPP1101VS01VDC03_I, 
-		BIT3  := sim_BPP1101VS01VDC04_I, 
-		BIT4  := sim_BPP1101VS01VDC05_I, 
-		BIT5  := sim_BPP1101VS01VDC06_I, 
-		BIT6  := sim_BPP1101VS01VDC07_I, 
+		BIT1  := sim_BPP1102VS01VDC01_I, 
+		BIT2  := sim_BPP1103VS01VDC01_I, 
+		BIT3  := sim_BPP1104VS01VDC01_I, 
+		BIT4  := sim_BPP1105VS01VDC01_I, 
+		BIT5  := sim_BPP1106VS01VDC01_I, 
+		BIT6  := sim_BPP1107VS01VDC01_I, 
 		BIT7  := FALSE, 
 		BIT8  := FALSE, 
 		BIT9  := FALSE, 
@@ -393,7 +393,7 @@ sim_BTY1502DX02DIO1PLM2_Grp1DDI := BIT_TO_WORD(
 		BIT12 := FALSE, 
 		BIT13 := sim_BPP1101FS09_I, 
 		BIT14 := sim_BPP1102FS10_I, 
-		BIT15 := sim_BTK2101FQ03_I);
+		BIT15 := sim_BPP1101FQ03_I);
 sim_BTY1502DX02DIO1PLM2_Grp2DDI := BIT_TO_WORD(
 		BIT0  := sim_BTY1502FQ02_I, 
 		BIT1  := FALSE, 
@@ -573,8 +573,8 @@ sim_BTY1502DX03DIO1PLM1_Grp2DDI := BIT_TO_WORD(
 		BIT8  := sim_BPP1105THR01_I, 
 		BIT9  := sim_BPP1103FQ03_I, 
 		BIT10 := sim_BPP1104FQ04_I, 
-		BIT11 := sim_BPP1104FQ05_I, 
-		BIT12 := sim_BPP1104FQ06_I, 
+		BIT11 := sim_BPP1105FQ05_I, 
+		BIT12 := sim_BPP1103FQ06_I, 
 		BIT13 := FALSE, 
 		BIT14 := FALSE, 
 		BIT15 := FALSE);
@@ -701,6 +701,7 @@ END_IF;
 		<variables name="sim_BMC131INC01CB06_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131DX01DIO1PLM6_ModFlt" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131PN01XS06_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131PN01XS07_I" typeName="EBOOL"></variables>
 		<variables name="sim_BTK2101DX04VDC01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131PN01XS04_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131BC01TRP01_I" typeName="EBOOL"></variables>
@@ -1236,7 +1237,7 @@ END_IF;
 		<variables name="sim_BSR131DX01DIO1PLM2_ModFlt" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131DX02DIO1PLM1_Grp1flt" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131PN01XS03_I" typeName="EBOOL"></variables>
-		<variables name="sim_BPP1101VS01VDC07_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1107VS01VDC01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSTD1106LCS01STT01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BPP1101VS01VDC01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BTY1502DX02DIO1PLM3_ModFlt" typeName="EBOOL"></variables>
@@ -1858,7 +1859,7 @@ END_IF;
 		<variables name="sim_BTY1502DX03VDC03_I" typeName="BOOL"></variables>
 		<variables name="sim_BSTD1107LCS01STT01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131UP01DB01W7_I" typeName="EBOOL"></variables>
-		<variables name="sim_BTK2101FQ03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1101FQ03_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSTD1107FV02XS01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BPP1103LCS03STT01_I" typeName="BOOL"></variables>
 		<variables name="SIM_X80DDO1602K_0" typeName="SIM_X80DDO1602K"></variables>
@@ -1871,7 +1872,7 @@ END_IF;
 		<variables name="sim_BPP1106LCS06STP01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131UP01DB01W1_I" typeName="EBOOL"></variables>
 		<variables name="sim_BPQE2101PN01TRP01_I" typeName="EBOOL"></variables>
-		<variables name="sim_BPP1104FQ05_I" typeName="BOOL"></variables>
+		<variables name="sim_BPP1105FQ05_I" typeName="BOOL"></variables>
 		<variables name="D01R00S03" typeName="T_U_DIS_STD_IN_32">
 			<attribute name="ManagedKey" value="AA830B2C-E0C8-4F4C-A110-9F7980D78EFA"></attribute>
 			<attribute name="Owner" value="\2.1\0.3"></attribute>
@@ -2103,7 +2104,7 @@ END_IF;
 			</instanceElementDesc>
 		</variables>
 		<variables name="sim_BMC131INC03CB06_I" typeName="EBOOL"></variables>
-		<variables name="sim_BPP1101VS01VDC02_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1102VS01VDC01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131PN01TS01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131DX01DIO1PLM7_Grp2DDI" typeName="WORD"></variables>
 		<variables name="Sim_BTY1502DX03DIO1PLM3_Ch01Flt" typeName="INT"></variables>
@@ -2190,6 +2191,7 @@ END_IF;
 		<variables name="sim_BTK2101DX04VDC08_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131DX01DIO1PLM7_Grp1flt" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131UP01DB01R7_I" typeName="EBOOL"></variables>
+		<variables name="sim_BSR131DB03VDC01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131DB03CB01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BTY1502DX02VDC07_I" typeName="EBOOL"></variables>
 		<variables name="sim_BTY1502FV01SW01_I" typeName="EBOOL"></variables>
@@ -2500,8 +2502,8 @@ END_IF;
 		<variables name="sim_BTY1502DX02DIO1PLM5_ModFlt" typeName="EBOOL"></variables>
 		<variables name="Sim_BTY1502DX03DIO1PLM3_Ch03PV" typeName="REAL"></variables>
 		<variables name="sim_X80DDI3202K_5" typeName="SIM_X80DDI3202K"></variables>
-		<variables name="sim_BPP1101VS01VDC05_I" typeName="EBOOL"></variables>
-		<variables name="sim_BPP1101VS01VDC03_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1105VS01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1103VS01VDC01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131UP01CB01_I" typeName="EBOOL"></variables>
 		<variables name="Sim_BTY1502DX03DIO1PLM4_Ch01PV" typeName="REAL"></variables>
 		<variables name="sim_BTY1502DX02VDC09_I" typeName="EBOOL"></variables>
@@ -2575,7 +2577,7 @@ END_IF;
 		<variables name="sim_BSR131UP01TRP01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BTK2101DX04DIO1PLM1_Grp2DDI" typeName="WORD"></variables>
 		<variables name="Sim_BTY1502DX03DIO1PLM3_Ch01PV" typeName="REAL"></variables>
-		<variables name="sim_BPP1104FQ06_I" typeName="BOOL"></variables>
+		<variables name="sim_BPP1103FQ06_I" typeName="BOOL"></variables>
 		<variables name="sim_BTY1502FQ01_I" typeName="EBOOL"></variables>
 		<variables name="SIM_X80_AHI0812_4" typeName="sim_X80AHI0812"></variables>
 		<variables name="sim_BSR131AC01VDC01_I" typeName="EBOOL"></variables>
@@ -2772,8 +2774,8 @@ END_IF;
 		<variables name="sim_BPP1102THR01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131DB02CB01_I" typeName="EBOOL"></variables>
 		<variables name="Sim_BTY1502DX02DIO1PLM5_Ch00Flt" typeName="INT"></variables>
-		<variables name="sim_BPP1101VS01VDC06_I" typeName="EBOOL"></variables>
-		<variables name="sim_BPP1101VS01VDC04_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1106VS01VDC01_I" typeName="EBOOL"></variables>
+		<variables name="sim_BPP1104VS01VDC01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131DB01CB01_I" typeName="EBOOL"></variables>
 		<variables name="sim_BSR131FIP01XS03_I" typeName="EBOOL"></variables>
 		<variables name="Sim_BTY1502DX03DIO1PLM3_Ch05Flt" typeName="INT"></variables>
