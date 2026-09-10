@@ -1,31 +1,20 @@
-XSY: BSR131_20260910.XSY
-Total variables: 7753
-zTest variables: 1111
-IO list matches: 335
-Needs review (name-derived): 89
-CSV rows: 1111
-Missing type: 0
-Still zTest comment: 0
-Columns: name,type,comment
+BSR131 proposed comments
+Source XSY: Inputs/BSR131_20260910.XSY
+IO list: Inputs/BSR131_IO_List.xlsx
+L (max existing non-empty non-zTest comment length): 132
 
-Sample rows:
-  BBD131FT03_PV | REAL | BBD131FT03 Process Value
-  BMC131INC01PR1DAT1 | MasterPactMTZStsDDT | BMC131 Process Bus A Incomer INC01PR1 Status Data
-  BMC131INC02PR1DAT1 | MasterPactMTZStsDDT | BMC131 Process Bus A Incomer INC02PR1 Status Data
-  BMC131INC03PR1DAT1 | MasterPactMTZStsDDT | BMC131 Process Bus A Incomer INC03PR1 Status Data
-  BMC131VAMPPR1DAT1 | VAMP321ActDat | BMC131 Process Bus A Incomer VAMPPR1 Status Data
-  BPL130_LocTm | ClockDDT | BPL130 LocTm Clock
-  BPL131PLM0STS2 | BMEP586x4xRIOStsDDT | NPI PLC CPU RIO Network RIO Status
-  BPL131PLM3STS1 | BMENOC0301StsDDT | NPI PLC Ethernet Module Slot 3 Status
-  BPL131PLM3_Adr | IPAddDDT | NPI PLC Ethernet Module Slot 3 IP Address
-  BPL131PLM4STS1 | BMENOC0301StsDDT | NPI PLC Ethernet Module Slot 4 Status
+zTest_variable_comments.csv
+  rows: 1111 (variables with comment zTest / Ztest)
+  columns: name,type,comment (comment = proposed, never zTest)
+  max proposed len: 101
+  IO exact matches: ~335
 
-Diverse samples:
-  BPP1101PT10_Diff_K | REAL | HME Standpipe Pump 1 PT10 Diff Constant  [prefix:BPP1101]
-  BPP1101_2_Pri_CMD | WORD | HME Standpipe Pump 1 2 Pri CMD  [prefix:BPP1101]
-  BPP1103_Aut_CmdHMI | EBOOL | HME Standpipe Pump 1 Mode Auto HMI Command  [sibling:BPP1103_Stt]
-  BSTD1106_CshStp_CmdHMI | EBOOL | East Turkeys Nest Raw Water Remote Mode CshStp HMI Command  [prefix:BSTD1106]
-  Sim_BPL131PLM5_Flt | EBOOL | Sim NPI PLC Ethernet Module Slot 5 Fault  [sibling:BPL131PLM5_Flt;sim]
-  sim_BPP1101CB01_I | EBOOL | Sim HME Standpipe Pump 1 Drive Circuit Breaker (Q103) Input  [sibling:BPP1101CB01_Msk;IO-available;sim]
-  sim_BSR131PN01XS05_I | EBOOL | Sim BSR131 Battery Charger PN01XS05 Input  [prefix:BSR131;sim]
-  sim_init | EBOOL | Sim init  [name-derived;sim]
+blank_variable_comments.csv
+  rows: 3431 (variables with empty/missing comment)
+  columns: name,type,comment (comment = proposed)
+  max proposed len: 102
+  IO exact matches: ~518
+
+Disjoint: no name overlap between the two CSVs.
+All rows have typeName populated.
+XSY not modified.
