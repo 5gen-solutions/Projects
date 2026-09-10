@@ -8,13 +8,20 @@ zTest_variable_comments.csv
   columns: name,type,comment (comment = proposed, never zTest)
   max proposed len: 101
   IO exact matches: ~335
+  Also: assemble_ztest_csv.py + zTest_variable_comments.part00-03.b64
 
 blank_variable_comments.csv
   rows: 3431 (variables with empty/missing comment)
   columns: name,type,comment (comment = proposed)
   max proposed len: 102
   IO exact matches: ~518
+  Also: assemble_blank_csv.py + blank_variable_comments.part00-08.b64
 
 Disjoint: no name overlap between the two CSVs.
 All rows have typeName populated.
 XSY not modified.
+
+Authoritative local copies:
+  /workspace/testing/Outputs/BSR131/zTest_variable_comments.csv
+  /workspace/testing/Outputs/BSR131/blank_variable_comments.csv
+  Also copied to TimBee Downloads/.
