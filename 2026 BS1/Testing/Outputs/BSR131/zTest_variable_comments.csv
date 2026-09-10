@@ -1,6 +1,1 @@
-name,type,comment
-BBD131FT03_PV,REAL,BBD131FT03 Process Value
-BMC131INC01PR1DAT1,MasterPactMTZStsDDT,BMC131 Process Bus A Incomer INC01PR1 Status Data
-BMC131INC02PR1DAT1,MasterPactMTZStsDDT,BMC131 Process Bus A Incomer INC02PR1 Status Data
-BMC131INC03PR1DAT1,MasterPactMTZStsDDT,BMC131 Process Bus A Incomer INC03PR1 Status Data
-BPP1101FQ03_I,EBOOL,HME Standpipe Pump 1 FQ03 Input
+file:///workspace/testing/Outputs/BSR131/zTest_variable_comments.csv
