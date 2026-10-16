@@ -1,0 +1,2309 @@
+# BS1_Citect_v6 – SCADA Alarms + SCADA Trends (built on v5)
+
+Only SCADA Alarms / SCADA Trends sheet XML and styles.xml differ from v5. All added/filled cells red. Existing values never overwritten; hidden rows/filters untouched (SCADA Alarms autoFilter range extended to the new last row 4812).
+
+## SCADA Alarms – new rows: 2207 (rows 2606–4812)
+- `_A` alarm tags added: 1221 (of 3078 `_A` tags; 1852 already present, 5 skipped – no Equipment)
+  - no Equipment: BCV210PUY01_LoLo_A, BCV210TRK01_HiHi_A, BCV210WM01_Flt_A, BCV210WM01_HiHi_A, BS1OLC_CshStp_A
+- Runtime-params interlocks added: 986 (of 1558 unique Interlock:/Not_Interlock: tags parsed from column C “Runtime Parameter”)
+  - skipped, already in SCADA Alarms: 542 
+  - skipped, placeholder/expression: 1 ['XXX']
+  - skipped, tag not in SCADA Tags: 24 ['BCV130_StpReq', 'CV701TM1_AvlFlt_Hty', 'BBD130SV13_ExcRun_Hty', 'BVG130DS1_Req', 'BDU130RV01THR01_Hi_Hty', 'BCV130MA01FN03_SeqReq', 'BCV130MA01FN04_SeqReq', 'BJC130_ADV_CrsStpReq_S', 'BJC130_ADV_Adjustment_S', 'BS1OLC2_CshStp_Hty', 'BCV210_AutRun_C', 'BCV130_Off_C', 'BCV131FN01_AutRun', 'BBD131SM01LT01_LoLo_Hty', 'BBD131SM01LT01_Frz_Hty', 'BAF131CH02BCS01_Hty', 'BVC210_StpReq_C', 'BAF131LUY01_RunEmpFlt_Hty', 'BCV210_NCILOK_C', 'BCV210_AutRun', 'BAF131PP01STS1_RunFBFlt_Hty', 'BAF131PP01STS1_StpFBFlt_Hty', 'BAF131HP01FS04_Hty', 'CV701SPY1FIT01_Dsc_Hty']
+  - skipped, no Equipment on tag: 5 ['BCV210WM01_Flt_Hty', 'BCV210WM01_HiHi_Hty', 'BCV210TRK01_HiHi_Hty', 'BCV210PUY01_LoLo_Hty', 'BS1_FdEn']
+- Columns filled on new rows:
+  - Equipment: 2207
+  - Alarm Tag: 2207
+  - Alarm Name: 2207
+  - Cluster: 2207
+  - Cat: 2207
+  - Alarm Desc: 2207
+  - Help: 26
+  - Comment: 2207
+  - Var A: 2207
+  - Custom 1: 2207
+  - Custom 4: 2207
+  - Custom 6: 2207
+  - Custom 7: 1221
+  - Custom 8: 2207
+  - Area: 2207
+  - Privil: 2207
+  - Project: 2207
+  - Found in SCADA Equip / Tags formulas: 2207 each
+- Cat on new rows: {'CAT_P3': 742, 'CAT_P2': 466, 'CAT_P1': 13, 'IL_Critical': 919, 'IL_LocalStart': 42, 'IL_SeqStart': 23, 'IL_SeqRun': 2}
+- Left blank by design (blank on comparable rows): Item Name, Delay, Var B, Custom 2/3/5, Paging, Paging Grp, Histor; Custom 7 on interlocks; Help except equipment whose rows always carry it.
+
+## SCADA Alarms – blanks completed on existing rows
+- Area: 79
+- Comment: 2
+- Custom 1: 10
+- Custom 4: 79
+- Custom 6: 79
+- Custom 8: 79
+- Found in SCADA Equip: 566
+- Found in SCADA Tags: 566
+- Privil: 79
+- Left blank:
+
+## SCADA Trends – new rows: 523 (rows 4418–4940)
+- Included categories:
+  - instrument PV: 84
+  - REAL _Frq (same category ≥50% trended already): 36
+  - REAL _IAvg (same category ≥50% trended already): 25
+  - UINT _PF (same category ≥50% trended already): 25
+  - LONG _TmpCap (same category ≥50% trended already): 22
+  - LONG _Tmp (same category ≥50% trended already): 22
+  - LONG _CtlTmp (same category ≥50% trended already): 22
+  - REAL _LstIAvg (same category ≥50% trended already): 22
+  - REAL _LstIa (same category ≥50% trended already): 22
+  - REAL _LstIb (same category ≥50% trended already): 22
+  - REAL _LstIc (same category ≥50% trended already): 22
+  - LONG _LstTmpCap (same category ≥50% trended already): 22
+  - REAL _LstFrq (same category ≥50% trended already): 22
+  - LONG _LstTmp (same category ≥50% trended already): 22
+  - UINT _Vavg (same category ≥50% trended already): 22
+  - UINT _VPhaseImb (same category ≥50% trended already): 22
+  - UINT _PAct (same category ≥50% trended already): 22
+  - UINT _PReact (same category ≥50% trended already): 22
+  - REAL PV: 5
+  - REAL _Ia (same category ≥50% trended already): 4
+  - REAL _Ib (same category ≥50% trended already): 4
+  - REAL _Ic (same category ≥50% trended already): 4
+  - REAL _PwrRct (same category ≥50% trended already): 4
+  - REAL _PwrApr (same category ≥50% trended already): 4
+  - REAL _PF (same category ≥50% trended already): 4
+  - REAL _FltIa (same category ≥50% trended already): 3
+  - REAL _FltIb (same category ≥50% trended already): 3
+  - REAL _FltIc (same category ≥50% trended already): 3
+  - REAL _FltIn (same category ≥50% trended already): 3
+  - REAL _FltMnt (same category ≥50% trended already): 3
+  - INT _ScnVal (same category ≥50% trended already): 1
+- Excluded (non-trended categories):
+  - REAL category not normally trended: 317
+  - REAL setpoint/parameter: 135
+- Columns filled:
+  - Equipment: 523
+  - Item Name: 520
+  - Tag: 523
+  - Cluster: 523
+  - Type: 523
+  - Expression: 523
+  - Sample Period: 523
+  - Eng Units: 523
+  - Format: 523
+  - Comment: 523
+  - File Name: 523
+  - No. Files: 523
+  - Period: 523
+  - Time: 523
+  - Storage Method: 523
+  - Project: 523
+- Left blank like existing rows: Trigger, Deadband, Zero/Full Scale, Area, Priv, Histor, Found-in columns.
+
+## New alarm rows
+- `BAF131CH01BCS01_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P3 | Discharge Chute Blocked Chute Switch 1
+- `BAF131FN01CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01.Sub.CAX01 | BAF131FN01 Main Contactor | CAT_P2 | Surge Bin Apron Feeder Oil Cooler 1 Fail To Close
+- `BAF131FN01CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01.Sub.CAX01 | BAF131FN01 Main Contactor | CAT_P2 | Surge Bin Apron Feeder Oil Cooler 1 Fail To Open
+- `BAF131FN01CB01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01.Sub.CB01 | BAF131FN01 Drive Circuit Breaker | CAT_P3 | Surge Bin Apron Feeder Oil Cooler 1 Drive Circuit Breaker (Q103) Open
+- `BAF131FN01PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | CAT_P2 | Surge Bin Apron Feeder Oil Cooler 1 Protection Relay Communications Fault
+- `BAF131FN01PR1_Flt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | CAT_P2 | Surge Bin Apron Feeder Oil Cooler 1 Protection Relay Fault
+- `BAF131FN01STS1_ReqFlt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | CAT_P3 | Surge Bin Apron Feeder Oil Cooler 1 Required And Not Running
+- `BAF131FN01SY01_FTC_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | CAT_P2 | Surge Bin Apron Feeder Oil Cooler 1 Fail To Close
+- `BAF131FN01SY01_FTO_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | CAT_P2 | Surge Bin Apron Feeder Oil Cooler 1 Fail To Open
+- `BAF131FN01TRP02_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | CAT_P3 | Surge Bin Apron Feeder Oil Cooler 1 Drive Circuit Breaker Tripped
+- `BAF131FN01VDC01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | CAT_P2 | Surge Bin Apron Feeder Oil Cooler 1 24vdc Control Supply (Q155) Failure
+- `BAF131HP01FS01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Hydraulic Power Pack Flow Switch
+- `BAF131HP01LCS01SY01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P1 | Safety Relay
+- `BAF131HP01PN01_AuxBstFilt100_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Auxiliary Boost / Charge Filter 100% (fully) Clogged Warning
+- `BAF131HP01PN01_AuxBstFilt75_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Auxiliary Boost / Charge Filter 75% Clogged Warning
+- `BAF131HP01PN01_AuxPmpLoBstPrs_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Auxiliary Pump Low Boost Pressure
+- `BAF131HP01PN01_AuxPmpSctnLnCls_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Auxiliary Pump Suction Line Closed
+- `BAF131HP01PN01_BusFail_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Bus Failure
+- `BAF131HP01PN01_ComFlt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Hydraulic Power Pack Spider Unit Communications
+- `BAF131HP01PN01_CommLIU_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Communications Fault To LIU
+- `BAF131HP01PN01_Drv1BusMode_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Drive 1 Not In Bus Mode Warning
+- `BAF131HP01PN01_Drv1HiHiWrkPrs_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Hydraulic Motor High High System Pressure
+- `BAF131HP01PN01_Drv1RegMode_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Drive 1 Not In Regulated Mode Warning
+- `BAF131HP01PN01_Drv1RemMode_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Drive 1 Not In Remote Mode Warning
+- `BAF131HP01PN01_EStp_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Emergency Stop Activated
+- `BAF131HP01PN01_Flt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Hydraulic Power Pack Spider Unit
+- `BAF131HP01PN01_HiHiOilTmp_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Oil Tank Temperature High High
+- `BAF131HP01PN01_HiOilLvl_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Oil Tank Level High (overfill) Warning
+- `BAF131HP01PN01_HiOilTmpIL_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Oil Tank Temperature High Interlock
+- `BAF131HP01PN01_HwFail_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Hardware Failure
+- `BAF131HP01PN01_HydMtDrnHiFlw_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Hydraulic Motor Drain Flow High Warning
+- `BAF131HP01PN01_HydMtr1HiTmp_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Hydraulic Motor 1 High Temperature Warning
+- `BAF131HP01PN01_HydMtr1MaxTmp_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Hydraulic Motor 1 Max Temperature
+- `BAF131HP01PN01_LoLoOilLvl_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Oil Tank Level Low Low
+- `BAF131HP01PN01_LoLoOilTmp_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Oil Tank Temperature Low Low
+- `BAF131HP01PN01_LoOilLvl_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Oil Tank Level Low Warning
+- `BAF131HP01PN01_LoOilTmp_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Hydraulic Power Pack Low Oil Temp
+- `BAF131HP01PN01_OPMHi_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Oil Particle Monitor High (>80%) Warning
+- `BAF131HP01PN01_Pmp1ABstFilt100_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Pump 1A Boost / Charge Filter 100% (fully) Clogged Warning
+- `BAF131HP01PN01_Pmp1ABstFilt75_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Pump 1A Boost / Charge Filter 75% Clogged Warning
+- `BAF131HP01PN01_Pmp1ALoBstPrs_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Pump 1A Low Boost / Charge Pressure
+- `BAF131HP01PN01_Pmp1ARtnFilt100_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Pump 1A Flushing / Return Filter 100% (fully) Clogged Warning
+- `BAF131HP01PN01_Pmp1ARtnFilt75_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Pump 1A Flushing / Return Filter 75% Clogged Warning
+- `BAF131HP01PN01_Pmp1ASnLnClsRng_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Pump 1A Suction Line Closed (if E-Motor Is Running)
+- `BAF131HP01PN01_Pmp1ASnLnClsStp_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Pump 1A Suction Line Closed (if E-Motor Is Stopped) Warning
+- `BAF131HP01PN01_Pmp1AStrkCrOpEr_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Pump 1A Stroker Current Output Error
+- `BAF131HP01PN01_Pmp1CsDnFilt100_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Pump 1 Case Drain Filter 100% Clogged Warning
+- `BAF131HP01PN01_Pmp1CsDnFilt75_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Pump 1 Case Drain Filter 75% Clogged Warning
+- `BAF131HP01PN01_SpdErrLrg_A` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | CAT_P2 | Spider Unit Speed Feedback Error Too Large Warning
+- `BAF131HT01CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01.Sub.CAX01 | BAF131HT01 Main Contactor | CAT_P2 | Surge Bin Apron Feeder HPU Oil Heater Auxilary Contactor (K148) Fail To Close
+- `BAF131HT01CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01.Sub.CAX01 | BAF131HT01 Main Contactor | CAT_P2 | Surge Bin Apron Feeder HPU Oil Heater Auxilary Contactor (K148) Fail To Open
+- `BAF131HT01CB01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01.Sub.CB01 | BAF131HT01 Drive Circuit Breaker | CAT_P3 | Surge Bin Apron Feeder HPU Oil Heater Main Circuit Breaker (Q103) Open
+- `BAF131HT01STS1_ReqFlt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01 | BAF131HT01 Heater | CAT_P3 | Surge Bin Apron Feeder HPU Oil Heater Required And Not Running
+- `BAF131HT01TRP01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01 | BAF131HT01 Heater | CAT_P3 | Surge Bin Apron Feeder HPU Oil Heater Trip
+- `BAF131LCS01SY01_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P1 | Safety Relay
+- `BAF131LU01LS01_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Oil Tank Level Switch
+- `BAF131LU01LT01_LoLo_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.FieldIO.LT01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Level Low Low
+- `BAF131LU01LT01_Lo_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.FieldIO.LT01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Level Low
+- `BAF131LU01PS01_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Grease Inlet Filter Blocked
+- `BAF131LU01PS02_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Grease Outlet Filter Blocked
+- `BAF131LU01PT03_LoLo_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.FieldIO.PT03 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Pressure Low Low
+- `BAF131LU01PT03_Lo_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.FieldIO.PT03 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Pressure Low
+- `BAF131LU01PT04_PrsFlt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.FieldIO.PT04 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit EOL 1 Pressure Transmitter Vent Fault
+- `BAF131LU01PT05_PrsFlt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.FieldIO.PT05 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit EOL 2 Transmitter Vent Fault
+- `BAF131LU01STS1_CycFlt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit No Cycle Fault
+- `BAF131LU01STS1_FdStp1Flt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Feed Stop Imminent
+- `BAF131LU01STS1_FdStp2Flt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Feed Stopped
+- `BAF131LU01STS1_Lne1StpFlt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Line 1 Cycle Fault
+- `BAF131LU01STS1_Lne1SttFlt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Line 1 Solenoid Fault
+- `BAF131LU01STS1_Lne2StpFlt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Line 2 Cycle Fault
+- `BAF131LU01STS1_Lne2SttFlt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit Line 2 Solenoid Fault
+- `BAF131LU01ZS01_PrsFlt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit EOL 1 Position Switch Switch Vent Fault
+- `BAF131LU01ZS02_PrsFlt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | CAT_P3 | Surge Bin Apron Feeder Lube Unit EOL 2 Position Switch Switch Vent Fault
+- `BAF131PP01CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01.Sub.CAX01 | BAF131PP01 Main Contactor | CAT_P2 | Surge Bin Apron Feeder Hydraulic Pump Fail To Close
+- `BAF131PP01CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01.Sub.CAX01 | BAF131PP01 Main Contactor | CAT_P2 | Surge Bin Apron Feeder Hydraulic Pump Fail To Open
+- `BAF131PP01CB01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01.Sub.CB01 | BAF131PP01 Drive Circuit Breaker | CAT_P3 | Surge Bin Apron Feeder Hydraulic Pump Drive Circuit Breaker (Q103) Open
+- `BAF131PP01PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | CAT_P2 | Surge Bin Apron Feeder Hydraulic Pump Protection Relay Communications Fault
+- `BAF131PP01PR1_Flt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | CAT_P2 | Surge Bin Apron Feeder Hydraulic Pump Protection Relay Fault
+- `BAF131PP01SY01_FTC_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | CAT_P2 | Surge Bin Apron Feeder Hydraulic Pump Fail To Close
+- `BAF131PP01SY01_FTO_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | CAT_P2 | Surge Bin Apron Feeder Hydraulic Pump Fail To Open
+- `BAF131PP01THR01_Hi_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | CAT_P3 | Surge Bin Apron Feeder Hydraulic Pump Thermistor High Temp
+- `BAF131PP01TRP02_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | CAT_P3 | Surge Bin Apron Feeder Hydraulic Pump Drive Circuit Breaker Tripped
+- `BAF131PP01VAC01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | CAT_P3 | 1 240vac Control Supply (K146) Failure
+- `BAF131PP01VDC01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | CAT_P2 | Surge Bin Apron Feeder Hydraulic Pump 24vdc Control Supply (Q155) Failure
+- `BAF131PP01XS01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | CAT_P2 | Hydraulic Power Unit 1 Pump 1 Interlock Alarm (Spider)
+- `BAF131PP01_RunFBFlt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | CAT_P3 | Hydraulic Power Unit 1 Pump 1 Running Feedback Fault (Spider)
+- `BAF131PP01_StpFBFlt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | CAT_P3 | Hydraulic Power Unit 1 Pump 1 Stop Feedback Fault (Spider)
+- `BAF131PP02CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02.Sub.CAX01 | BAF131PP02 Main Contactor | CAT_P2 | Surge Bin Apron Fdr Lube Unit Hyd Pump Fail To Close
+- `BAF131PP02CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02.Sub.CAX01 | BAF131PP02 Main Contactor | CAT_P2 | Surge Bin Apron Fdr Lube Unit Hyd Pump Fail To Open
+- `BAF131PP02CB01_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02.Sub.CB01 | BAF131PP02 Drive Circuit Breaker | CAT_P3 | Surge Bin Apron Fdr Lube Unit Hyd Pump Drive Circuit Breaker (Q103) Open
+- `BAF131PP02PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | CAT_P2 | Surge Bin Apron Fdr Lube Unit Hyd Pump Protection Relay Communications Fault
+- `BAF131PP02PR1_Flt_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | CAT_P2 | Surge Bin Apron Fdr Lube Unit Hyd Pump Protection Relay Fault
+- `BAF131PP02SY01_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | CAT_P1 | Surge Bin Apron Fdr Lube Unit Hyd Pump Safety Relay Circuit Healthy
+- `BAF131PP02TRP02_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | CAT_P3 | Surge Bin Apron Fdr Lube Unit Hyd Pump Drive Circuit Breaker Tripped
+- `BAF131PP02VDC01_A` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | CAT_P2 | Surge Bin Apron Fdr Lube Unit Hyd Pump 24vdc Control Supply (Q155) Failure
+- `BAF131PP04CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04.Sub.CAX01 | BAF131PP04 Main Contactor | CAT_P2 | Surge Bin Apron Feeder HPU Pump 2 Fail To Close
+- `BAF131PP04CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04.Sub.CAX01 | BAF131PP04 Main Contactor | CAT_P2 | Surge Bin Apron Feeder HPU Pump 2 Fail To Open
+- `BAF131PP04CB01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04.Sub.CB01 | BAF131PP04 Drive Circuit Breaker | CAT_P3 | Surge Bin Apron Feeder HPU Pump 2 Drive Circuit Breaker (Q103) Open
+- `BAF131PP04PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | CAT_P2 | Surge Bin Apron Feeder HPU Pump 2 Protection Relay Communications Fault
+- `BAF131PP04PR1_Flt_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | CAT_P2 | Surge Bin Apron Feeder HPU Pump 2 Protection Relay Fault
+- `BAF131PP04SY01_FTC_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | CAT_P2 | Surge Bin Apron Feeder HPU Pump 2 Fail To Close
+- `BAF131PP04SY01_FTO_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | CAT_P2 | Surge Bin Apron Feeder HPU Pump 2 Fail To Open
+- `BAF131PP04TRP02_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | CAT_P3 | Surge Bin Apron Feeder HPU Pump 2 Drive Circuit Breaker Tripped
+- `BAF131PP04VDC01_A` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | CAT_P2 | Surge Bin Apron Feeder HPU Pump 2 24vdc Control Supply (Q155) Failure
+- `BAF131PWS01_A` | BR4.INLOADING.BP3OLC.BAF131.FieldIO.PWS01 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Pullwire Switch Safety Relay (K253)
+- `BAF131PWS02_A` | BR4.INLOADING.BP3OLC.BAF131.FieldIO.PWS02 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Pullwire Switch Safety Relay (K264)
+- `BAF131SUY01_OvrFlt_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Overspeed
+- `BAF131SUY01_RunFlt_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Underspeed
+- `BAF131SUY01_StpFlt_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Failed To Stop
+- `BAF131SUY01_SttFlt_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Underspeed While Starting
+- `BAF131SY01_FTC_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P2 | Surge Bin Apron Feeder Safety Interlock Relay (K355-1) (K355-1) Fail To Close
+- `BAF131SY01_FTO_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P2 | Surge Bin Apron Feeder Safety Interlock Relay (K355-1) (K355-1) Fail To Open
+- `BAF131ZS01_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Chain Locking Aft. Maintenance Proximity Switch
+- `BAF131ZS02_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Chain Locking Fwd. Maintenance Proximity Switch
+- `BAF131ZS03_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Chain Locking Aft. Maintenance Proximity Switch
+- `BAF131ZS04_A` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Chain Locking Fwd. Maintenance Proximity Switch
+- `BAF131ZS05_A` | BR4.INLOADING.BP3OLC.BAF131.FieldIO.ZS05 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Pan Deflection Switch 1
+- `BAF131ZS06_A` | BR4.INLOADING.BP3OLC.BAF131.FieldIO.ZS06 | BAF131 Apron Feeder | CAT_P3 | Surge Bin Apron Feeder Pan Deflection Switch 2
+- `BBD131DX03CB01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX03 | BBD131DX03 BBD131DX03 Surge Bin Facility - Top Floor | CAT_P3 | DIO Box 3 240vac Circuit Breaker (Q106) Open
+- `BBD131DX03VDC01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX03 | BBD131DX03 BBD131DX03 Surge Bin Facility - Top Floor | CAT_P3 | DIO Box 3 24vdc DIO1 Output Control Supply (Q143) Failure
+- `BBD131DX03VDC02_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX03 | BBD131DX03 BBD131DX03 Surge Bin Facility - Top Floor | CAT_P3 | DIO Box 3 24vdc GW1 Control Supply (Q157) Failure
+- `BBD131DX03VDC03_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX03 | BBD131DX03 BBD131DX03 Surge Bin Facility - Top Floor | CAT_P3 | DIO Box 3 24vdc Instrument Supply (Q164) Failure
+- `BBD131DX03VDC04_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX03 | BBD131DX03 BBD131DX03 Surge Bin Facility - Top Floor | CAT_P3 | DIO Box 3 24vdc Transmitter Supply (Q168) Failure
+- `BBD131DX03VDC05_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX03 | BBD131DX03 BBD131DX03 Surge Bin Facility - Top Floor | CAT_P3 | DIO Box 3 24vdc Control Supply (Q172) Failure
+- `BBD131DX04VDC01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX04 | BBD131DX04 BBD131DX04 Surge Bin Facility - Apron Feeder | CAT_P3 | DIO Box 4 24vdc DIO1 Output Control Supply (Q143) Failure
+- `BBD131DX04VDC02_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX04 | BBD131DX04 BBD131DX04 Surge Bin Facility - Apron Feeder | CAT_P3 | DIO Box 4 24vdc GW1 Control Supply (Q157) Failure
+- `BBD131DX04VDC03_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX04 | BBD131DX04 BBD131DX04 Surge Bin Facility - Apron Feeder | CAT_P3 | DIO Box 4 24vdc Instrument Supply (Q164) Failure
+- `BBD131DX04VDC04_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX04 | BBD131DX04 BBD131DX04 Surge Bin Facility - Apron Feeder | CAT_P3 | DIO Box 4 24vdc Transmitter Supply (Q168) Failure
+- `BBD131DX04VDC05_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX04 | BBD131DX04 BBD131DX04 Surge Bin Facility - Apron Feeder | CAT_P3 | DIO Box 4 24vdc Control Supply (Q172) Failure
+- `BBD131DX04VDC06_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX04 | BBD131DX04 BBD131DX04 Surge Bin Facility - Apron Feeder | CAT_P3 | DIO Box 4 24vdc BAF131 Apron Feeder Control Supply (Q176) Failure
+- `BBD131DX04VDC07_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX04 | BBD131DX04 BBD131DX04 Surge Bin Facility - Apron Feeder | CAT_P3 | DIO Box 4 24vdc BAF131LU01 Apron Feeder Lube Control Supply (Q180) Failure
+- `BBD131DX04VDC08_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX04 | BBD131DX04 BBD131DX04 Surge Bin Facility - Apron Feeder | CAT_P3 | DIO Box 4 24vdc BAF131HP01PN01 Spider Control Panel (Q184) Failure
+- `BBD131DX04VDC09_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX04 | BBD131DX04 BBD131DX04 Surge Bin Facility - Apron Feeder | CAT_P3 | DIO Box 4 24vdc BCV210WM01PN01 Control Panel (Q188) Failure
+- `BBD131DX04VDC10_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX04 | BBD131DX04 BBD131DX04 Surge Bin Facility - Apron Feeder | CAT_P3 | DIO Box 4 24vdc BCV210AIT01 Control Supply (Q192) Failure
+- `BBD131DX04VDC11_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX04 | BBD131DX04 BBD131DX04 Surge Bin Facility - Apron Feeder | CAT_P3 | DIO Box 4 24vdc BDU131DY01PN01 Control Supply (Q196) Failure
+- `BBD131DX05CB01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX05 | BBD131DX05 BBD131DX05 Surge Bin Facility - Pump Station | CAT_P3 | DIO Box 5 240vac Circuit Breaker (Q106) Open
+- `BBD131DX05VDC01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX05 | BBD131DX05 BBD131DX05 Surge Bin Facility - Pump Station | CAT_P3 | DIO Box 5 24vdc DIO1 Output Control Supply (Q143) Failure
+- `BBD131DX05VDC02_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX05 | BBD131DX05 BBD131DX05 Surge Bin Facility - Pump Station | CAT_P3 | DIO Box 5 24vdc GW1 Control Supply (Q157) Failure
+- `BBD131DX05VDC03_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX05 | BBD131DX05 BBD131DX05 Surge Bin Facility - Pump Station | CAT_P3 | DIO Box 5 24vdc Instrument Supply (Q164) Failure
+- `BBD131DX05VDC04_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX05 | BBD131DX05 BBD131DX05 Surge Bin Facility - Pump Station | CAT_P3 | DIO Box 5 24vdc Transmitter Supply (Q168) Failure
+- `BBD131DX05VDC05_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BBD131DX05 | BBD131DX05 BBD131DX05 Surge Bin Facility - Pump Station | CAT_P3 | DIO Box 5 24vdc Control Supply (Q172) Failure
+- `BBD131PP01CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01.Sub.CAX01 | BBD131PP01 Main Contactor | CAT_P2 | Surge Bin Sump 1 Pump Fail To Close
+- `BBD131PP01CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01.Sub.CAX01 | BBD131PP01 Main Contactor | CAT_P2 | Surge Bin Sump 1 Pump Fail To Open
+- `BBD131PP01CB01_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01.Sub.CB01 | BBD131PP01 Drive Circuit Breaker | CAT_P3 | Surge Bin Sump 1 Pump Drive Circuit Breaker (Q103) Open
+- `BBD131PP01LCS01IS01_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01.FieldIO.IS01 | BBD131PP01 Sump Pump | CAT_P3 | Isolator
+- `BBD131PP01PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | CAT_P2 | Surge Bin Sump 1 Pump Protection Relay Communications Fault
+- `BBD131PP01PR1_Flt_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | CAT_P2 | Surge Bin Sump 1 Pump Protection Relay Fault
+- `BBD131PP01STS1_LocFlt_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | CAT_P3 | Surge Bin Sump 1 Pump Left In Local
+- `BBD131PP01STS1_RunTmFlt_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | CAT_P3 | Surge Bin Sump 1 Pump Excessive Operating Time
+- `BBD131PP01SV01_RunFlt_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01.FieldIO.SV01 | BBD131PP01 Sump Pump | CAT_P3 | Sump Unit Make-Up Water Excessive Operating Fault
+- `BBD131PP01SY01_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | CAT_P1 | Surge Bin Sump 1 Pump Safety Relay Circuit Healthy
+- `BBD131PP01TRP02_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | CAT_P3 | Surge Bin Sump 1 Pump Drive Circuit Breaker Tripped
+- `BBD131PP01VDC01_A` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | CAT_P2 | Surge Bin Sump 1 Pump 24vdc Control Supply (Q155) Failure
+- `BBD131SM01LIT01_Frz_A` | BR4.INLOADING.BP3OLC.BBD131.SM01 | BBD131SM01 Surge Bin Facility Sump | CAT_P3 | Surge Bin Sump Unit 1 Level Frozen Value
+- `BBD131SM01LIT01_HiHi_A` | BR4.INLOADING.BP3OLC.BBD131.SM01 | BBD131SM01 Surge Bin Facility Sump | CAT_P3 | Surge Bin Sump Unit 1 Level High High
+- `BBD131SM01LIT01_LoLo_A` | BR4.INLOADING.BP3OLC.BBD131.SM01 | BBD131SM01 Surge Bin Facility Sump | CAT_P3 | Surge Bin Sump Unit 1 Level Low Low
+- `BBN131LUY01_ChFlt_A` | BR4.INLOADING.BP3OLC.BBN131.LUY01 | BBN131LUY01 Active Level | CAT_P2 | Bin Average Level Channel Fault
+- `BCV131AFN01CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01.Sub.CAX01 | BCV131AFN01 Main Contactor | CAT_P2 | Conveyor Drive No.1 Reducer Cooling Fan Fail To Close
+- `BCV131AFN01CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01.Sub.CAX01 | BCV131AFN01 Main Contactor | CAT_P2 | Conveyor Drive No.1 Reducer Cooling Fan Fail To Open
+- `BCV131AFN01CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01.Sub.CB01 | BCV131AFN01 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No.1 Reducer Cooling Fan Drive Circuit Breaker (Q103) Open
+- `BCV131AFN01PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.1 Reducer Cooling Fan Protection Relay Communications Fault
+- `BCV131AFN01PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.1 Reducer Cooling Fan Protection Relay Fault
+- `BCV131AFN01STS1_ExcRun_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | CAT_P3 | Cooler Fan Running But Not Cooling
+- `BCV131AFN01SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.1 Reducer Cooling Fan Fail To Close
+- `BCV131AFN01SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.1 Reducer Cooling Fan Fail To Open
+- `BCV131AFN01TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | CAT_P3 | Conveyor Drive No.1 Reducer Cooling Fan Drive Circuit Breaker Tripped
+- `BCV131AFN01VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.1 Reducer Cooling Fan 24vdc Control Supply (Q155) Failure
+- `BCV131AFN01_ReqFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | CAT_P3 | Conveyor Drive No.1 Reducer Cooling Fan Required And Not Running
+- `BCV131AFN02CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02.Sub.CAX01 | BCV131AFN02 Main Contactor | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 1 Fail To Close
+- `BCV131AFN02CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02.Sub.CAX01 | BCV131AFN02 Main Contactor | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 1 Fail To Open
+- `BCV131AFN02CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02.Sub.CB01 | BCV131AFN02 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No. 1 Motor Cooling Fan 1 Drive Circuit Breaker (Q103) Open
+- `BCV131AFN02LCS01SY01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | CAT_P1 | Conveyor Drive No. 1 Motor Cooling Fan 1 Safety Relay
+- `BCV131AFN02PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 1 Protection Relay Communications Fault
+- `BCV131AFN02PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 1 Protection Relay Fault
+- `BCV131AFN02SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 1 Fail To Close
+- `BCV131AFN02SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 1 Fail To Open
+- `BCV131AFN02TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | CAT_P3 | Conveyor Drive No. 1 Motor Cooling Fan 1 Drive Circuit Breaker Tripped
+- `BCV131AFN02VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 1 24vdc Control Supply (Q155) Failure
+- `BCV131AFN02_ReqFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | CAT_P3 | Conveyor Drive No. 1 Motor Cooling Fan 1 Required And Not Running
+- `BCV131AFN03CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03.Sub.CAX01 | BCV131AFN03 Main Contactor | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 2 Fail To Close
+- `BCV131AFN03CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03.Sub.CAX01 | BCV131AFN03 Main Contactor | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 2 Fail To Open
+- `BCV131AFN03CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03.Sub.CB01 | BCV131AFN03 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No. 1 Motor Cooling Fan 2 Drive Circuit Breaker (Q103) Open
+- `BCV131AFN03PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 2 Protection Relay Communications Fault
+- `BCV131AFN03PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 2 Protection Relay Fault
+- `BCV131AFN03SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 2 Fail To Close
+- `BCV131AFN03SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 2 Fail To Open
+- `BCV131AFN03TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | CAT_P3 | Conveyor Drive No. 1 Motor Cooling Fan 2 Drive Circuit Breaker Tripped
+- `BCV131AFN03VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 1 Motor Cooling Fan 2 24vdc Control Supply (Q155) Failure
+- `BCV131AFN03_ReqFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | CAT_P3 | Conveyor Drive No. 1 Motor Cooling Fan 2 Required And Not Running
+- `BCV131AGB01LCS01SY01_A` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | CAT_P1 | Gearbox 1 Safety Relay
+- `BCV131AGB01RTD01_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.GB01RTD01 | BCV131A Drive A | CAT_P3 | Gearbox 1 Gearbox 1 Drive End Bearing Temperature (C) High High
+- `BCV131AGB01RTD01_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.GB01RTD01 | BCV131A Drive A | CAT_P3 | Gearbox 1 Gearbox 1 Drive End Bearing Temperature (C) High
+- `BCV131AGB01RTD02_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.GB01RTD02 | BCV131A Drive A | CAT_P3 | Gearbox 1 Gearbox 1 Oil Temperature (C) High High
+- `BCV131AGB01RTD02_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.GB01RTD02 | BCV131A Drive A | CAT_P3 | Gearbox 1 Gearbox 1 Oil Temperature (C) High
+- `BCV131APP02CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02.Sub.CAX01 | BCV131APP02 Main Contactor | CAT_P2 | Conveyor Drive No. 1 Oil Pump Fail To Close
+- `BCV131APP02CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02.Sub.CAX01 | BCV131APP02 Main Contactor | CAT_P2 | Conveyor Drive No. 1 Oil Pump Fail To Open
+- `BCV131APP02CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02.Sub.CB01 | BCV131APP02 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No. 1 Oil Pump Drive Circuit Breaker (Q103) Open
+- `BCV131APP02FT01_Lo_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02.FieldIO.FT01 | BCV131APP02 Cooling Pump | CAT_P3 | Conveyor Drive No. 1 Oil Pump Oil Flow Low Healthy
+- `BCV131APP02FT01_Rtn_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02.FieldIO.FT01 | BCV131APP02 Cooling Pump | CAT_P3 | Conveyor Drive No. 1 Oil Pump Oil Flow Sensor Fault
+- `BCV131APP02PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 1 Oil Pump Protection Relay Communications Fault
+- `BCV131APP02PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 1 Oil Pump Protection Relay Fault
+- `BCV131APP02SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 1 Oil Pump Fail To Close
+- `BCV131APP02SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 1 Oil Pump Fail To Open
+- `BCV131APP02TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | CAT_P3 | Conveyor Drive No. 1 Oil Pump Drive Circuit Breaker Tripped
+- `BCV131APP02VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 1 Oil Pump 24vdc Control Supply (Q155) Failure
+- `BCV131ARTD01_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD01 | BCV131A Drive A | CAT_P3 | Motor 1 Red Winding 1 Temperature (C) High High
+- `BCV131ARTD01_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD01 | BCV131A Drive A | CAT_P3 | Motor 1 Red Winding 1 Temperature (C) High
+- `BCV131ARTD02_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD02 | BCV131A Drive A | CAT_P3 | Motor 1 White Winding 1 Temperature (C) High High
+- `BCV131ARTD02_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD02 | BCV131A Drive A | CAT_P3 | Motor 1 White Winding 1 Temperature (C) High
+- `BCV131ARTD03_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD03 | BCV131A Drive A | CAT_P3 | Motor 1 Blue Winding 1 Temperature (C) High High
+- `BCV131ARTD03_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD03 | BCV131A Drive A | CAT_P3 | Motor 1 Blue Winding 1 Temperature (C) High
+- `BCV131ARTD04_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD04 | BCV131A Drive A | CAT_P3 | Motor 1 Red Winding 2 Temperature (C) High High
+- `BCV131ARTD04_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD04 | BCV131A Drive A | CAT_P3 | Motor 1 Red Winding 2 Temperature (C) High
+- `BCV131ARTD05_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD05 | BCV131A Drive A | CAT_P3 | Motor 1 White Winding 2 Temperature (C) High High
+- `BCV131ARTD05_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD05 | BCV131A Drive A | CAT_P3 | Motor 1 White Winding 2 Temperature (C) High
+- `BCV131ARTD06_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD06 | BCV131A Drive A | CAT_P3 | Motor 1 Blue Winding 2 Temperature (C) High High
+- `BCV131ARTD06_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD06 | BCV131A Drive A | CAT_P3 | Motor 1 Blue Winding 2 Temperature (C) High
+- `BCV131ARTD07_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD07 | BCV131A Drive A | CAT_P3 | Motor 1 Non Drive End Bearing Temperature (C) High High
+- `BCV131ARTD07_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD07 | BCV131A Drive A | CAT_P3 | Motor 1 Non Drive End Bearing Temperature (C) High
+- `BCV131ARTD08_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD08 | BCV131A Drive A | CAT_P3 | Motor 1 Drive End Bearing Temperature (C) High High
+- `BCV131ARTD08_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD08 | BCV131A Drive A | CAT_P3 | Motor 1 Drive End Bearing Temperature (C) High
+- `BCV131AVS01CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01.Sub.CB01 | BCV131AVS01 Drive Circuit Breaker | CAT_P3 | VSD1 Main Circuit Breaker (Q103) Open
+- `BCV131AVS01PN01VAC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P3 | VSD1 Panel 240vac Control Supply (F5) Failure
+- `BCV131AVS01PN01VAC02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P3 | VSD1 Panel 240vac Supply Three Posn Switch Motor Isolator (-IS1) Failure
+- `BCV131AVS01PN01VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P2 | VSD1 Panel 24vdc Control Supply (Q284) Failure
+- `BCV131AVS01SW04_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P2 | VSD1 SEL SW-Remote
+- `BCV131AVS01SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P2 | VSD1 Safety Relay Fail To Close
+- `BCV131AVS01SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P2 | VSD1 Safety Relay Fail To Open
+- `BCV131AVS01TRP01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P3 | VSD1 Main Circuit Breaker Tripped
+- `BCV131AVS01TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P3 | VSD1 Blower 1
+- `BCV131AVS01TRP03_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P3 | VSD1 Blower 2
+- `BCV131AVS01TRP04_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P3 | VSD1 Blower 3
+- `BCV131AVS01TRP05_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P3 | VSD1 Arc Flash Tripped
+- `BCV131AVS01TRP06_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P3 | VSD1 Latch Fault Relay (LFR)
+- `BCV131AVS01TS01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P3 | VSD1 Transformer Cabinet Thermal Over Temp Alarm Healthy
+- `BCV131AVS01TS02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P3 | VSD1 Transformer Cabinet Thermal Over Temp Trip Healthy
+- `BCV131AVS01VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P2 | VSD1 24vdc Control Supply (Q155) Failure
+- `BCV131AVS01XS01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P2 | VSD1 Output Earth Switch Closed
+- `BCV131AVS01XS02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P2 | VSD1 Arc Flash Sensor Fault
+- `BCV131AVS01XS03_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P2 | VSD1 Output Disconnector Open
+- `BCV131AVS01_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | CAT_P2 | VSD1 Communications Fault
+- `BCV131AVS01_EqpMonAbnSpkFlt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | VSD1 Abnormal Spike Fault
+- `BCV131AVS01_EqpMonOC_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | VSD1 Equipment Monitor PV High
+- `BCV131AVS01_Flt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | VSD1 Fault
+- `BCV131BDS01_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS01 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 1
+- `BCV131BDS02_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS02 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 2
+- `BCV131BDS03_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS03 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 3
+- `BCV131BDS04_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS04 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 4
+- `BCV131BDS05_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS05 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 5
+- `BCV131BDS06_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS06 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 6
+- `BCV131BDS07_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS07 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 7
+- `BCV131BDS08_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS08 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 8
+- `BCV131BDS09_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS09 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 9
+- `BCV131BDS10_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS10 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 10
+- `BCV131BDS11_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS11 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 11
+- `BCV131BDS12_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS12 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 12
+- `BCV131BDS13_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS13 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 13
+- `BCV131BDS14_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS14 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 14
+- `BCV131BDS15_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS15 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 15
+- `BCV131BDS16_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS16 | BCV131BDS01_16 Belt Drift Switches 1-16 | CAT_P3 | Overland Conveyor Belt Drift Switch 16
+- `BCV131BDS17_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS17 | BCV131BDS17_22 Belt Drift Switches 17-22 | CAT_P3 | Overland Conveyor Belt Drift Switch 17
+- `BCV131BDS18_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS18 | BCV131BDS17_22 Belt Drift Switches 17-22 | CAT_P3 | Overland Conveyor Belt Drift Switch 18
+- `BCV131BDS19_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS19 | BCV131BDS17_22 Belt Drift Switches 17-22 | CAT_P3 | Overland Conveyor Belt Drift Switch 19
+- `BCV131BDS20_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS20 | BCV131BDS17_22 Belt Drift Switches 17-22 | CAT_P3 | Overland Conveyor Belt Drift Switch 20
+- `BCV131BDS21_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS21 | BCV131BDS17_22 Belt Drift Switches 17-22 | CAT_P3 | Overland Conveyor Belt Drift Switch 21
+- `BCV131BDS22_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS22 | BCV131BDS17_22 Belt Drift Switches 17-22 | CAT_P3 | Overland Conveyor Belt Drift Switch 22
+- `BCV131BFN01CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01.Sub.CAX01 | BCV131BFN01 Main Contactor | CAT_P2 | Conveyor Drive No.2 Reducer Cooling Fan Fail To Close
+- `BCV131BFN01CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01.Sub.CAX01 | BCV131BFN01 Main Contactor | CAT_P2 | Conveyor Drive No.2 Reducer Cooling Fan Fail To Open
+- `BCV131BFN01CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01.Sub.CB01 | BCV131BFN01 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No.2 Reducer Cooling Fan Drive Circuit Breaker (Q103) Open
+- `BCV131BFN01PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.2 Reducer Cooling Fan Protection Relay Communications Fault
+- `BCV131BFN01PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.2 Reducer Cooling Fan Protection Relay Fault
+- `BCV131BFN01STS1_ExcRun_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | CAT_P3 | Conveyor Drive No.2 Reducer Cooling Fan Excessive Run Time
+- `BCV131BFN01SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.2 Reducer Cooling Fan Fail To Close
+- `BCV131BFN01SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.2 Reducer Cooling Fan Fail To Open
+- `BCV131BFN01TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | CAT_P3 | Conveyor Drive No.2 Reducer Cooling Fan Drive Circuit Breaker Tripped
+- `BCV131BFN01VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.2 Reducer Cooling Fan 24vdc Control Supply (Q155) Failure
+- `BCV131BFN01_ReqFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | CAT_P3 | Conveyor Drive No.2 Reducer Cooling Fan Required And Not Running
+- `BCV131BFN02CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02.Sub.CAX01 | BCV131BFN02 Main Contactor | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 1 Fail To Close
+- `BCV131BFN02CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02.Sub.CAX01 | BCV131BFN02 Main Contactor | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 1 Fail To Open
+- `BCV131BFN02CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02.Sub.CB01 | BCV131BFN02 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No. 2 Motor Cooling Fan 1 Drive Circuit Breaker (Q103) Open
+- `BCV131BFN02LCS01SY01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | CAT_P1 | Conveyor Drive No. 2 Motor Cooling Fan 1 Safety Relay
+- `BCV131BFN02PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 1 Protection Relay Communications Fault
+- `BCV131BFN02PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 1 Protection Relay Fault
+- `BCV131BFN02SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 1 Fail To Close
+- `BCV131BFN02SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 1 Fail To Open
+- `BCV131BFN02TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | CAT_P3 | Conveyor Drive No. 2 Motor Cooling Fan 1 Drive Circuit Breaker Tripped
+- `BCV131BFN02VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 1 24vdc Control Supply (Q155) Failure
+- `BCV131BFN02_ReqFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | CAT_P3 | Drive No. 2 Motor Cooling Fan 1 Required And Not Running
+- `BCV131BFN03CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03.Sub.CAX01 | BCV131BFN03 Main Contactor | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 2 Fail To Close
+- `BCV131BFN03CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03.Sub.CAX01 | BCV131BFN03 Main Contactor | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 2 Fail To Open
+- `BCV131BFN03CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03.Sub.CB01 | BCV131BFN03 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No. 2 Motor Cooling Fan 2 Drive Circuit Breaker (Q103) Open
+- `BCV131BFN03PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 2 Protection Relay Communications Fault
+- `BCV131BFN03PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 2 Protection Relay Fault
+- `BCV131BFN03SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 2 Fail To Close
+- `BCV131BFN03SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 2 Fail To Open
+- `BCV131BFN03TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | CAT_P3 | Conveyor Drive No. 2 Motor Cooling Fan 2 Drive Circuit Breaker Tripped
+- `BCV131BFN03VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 2 Motor Cooling Fan 2 24vdc Control Supply (Q155) Failure
+- `BCV131BFN03_ReqFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | CAT_P3 | Drive No. 2 Motor Cooling Fan 2 Required And Not Running
+- `BCV131BGB01LCS01SY01_A` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | CAT_P1 | Gearbox 2 Safety Relay
+- `BCV131BGB01RTD01_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.GB01RTD01 | BCV131B Drive B | CAT_P3 | Gearbox 2 Gearbox 2 Drive End Bearing Temperature (C) High High
+- `BCV131BGB01RTD01_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.GB01RTD01 | BCV131B Drive B | CAT_P3 | Gearbox 2 Gearbox 2 Drive End Bearing Temperature (C) High
+- `BCV131BGB01RTD02_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.GB01RTD02 | BCV131B Drive B | CAT_P3 | Gearbox 2 Gearbox 2 Oil Temperature (C) High High
+- `BCV131BGB01RTD02_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.GB01RTD02 | BCV131B Drive B | CAT_P3 | Gearbox 2 Gearbox 2 Oil Temperature (C) High
+- `BCV131BK01LOS01_A` | BR4.INLOADING.BP3OLC.BCV131.BK01.FieldIO.LOS01 | BCV131BK01 Brake 1 | CAT_P2 | Tail End Brake 1 Lock Off Stop 1
+- `BCV131BK01UI01LS01_A` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | CAT_P3 | TAIL Brake 1 BCV131 Tail Brake 1 Oil Level
+- `BCV131BK01UI01TS01_A` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | CAT_P3 | TAIL Brake 1 BCV131 Tail Brake 1 Temperature Switch
+- `BCV131BK01_AppFlt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | Tail End Brake 1 Failed To Apply
+- `BCV131BK01_ExcStt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | Tail End Brake 1 Excessive Number Of Starts
+- `BCV131BK01_LftFlt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | Tail End Brake 1 Failed To Lift
+- `BCV131BK01_PrsFlt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P3 | Tail End Brake 1 Failed To Pressurise
+- `BCV131BK02LOS01_A` | BR4.INLOADING.BP3OLC.BCV131.BK02.FieldIO.LOS01 | BCV131BK02 Brake 2 | CAT_P2 | Tail End Brake 2 Lock Off Stop 2
+- `BCV131BK02UI01LS01_A` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | CAT_P3 | TAIL Brake 2 Oil Level
+- `BCV131BK02UI01TS01_A` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | CAT_P3 | TAIL Brake 2 Temperature Switch
+- `BCV131BK02_AppFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | CAT_P2 | TAIL Brake 2 Failed To Apply
+- `BCV131BK02_ExcStt_A` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | CAT_P2 | TAIL Brake 2 Excessive Number Of Starts
+- `BCV131BK02_LftFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | CAT_P2 | TAIL Brake 2 Failed To Lift
+- `BCV131BK02_PrsFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | CAT_P3 | TAIL Brake 2 Failed To Pressurise
+- `BCV131BPP02CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02.Sub.CAX01 | BCV131BPP02 Main Contactor | CAT_P2 | Conveyor Drive No. 2 Oil Pump Fail To Close
+- `BCV131BPP02CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02.Sub.CAX01 | BCV131BPP02 Main Contactor | CAT_P2 | Conveyor Drive No. 2 Oil Pump Fail To Open
+- `BCV131BPP02CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02.Sub.CB01 | BCV131BPP02 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No. 2 Oil Pump Drive Circuit Breaker (Q103) Open
+- `BCV131BPP02FT01_Lo_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02.FieldIO.FT01 | BCV131BPP02 Cooling Pump | CAT_P3 | Conveyor Drive No. 2 Oil Pump Oil Flow Low Healthy
+- `BCV131BPP02FT01_Rtn_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02.FieldIO.FT01 | BCV131BPP02 Cooling Pump | CAT_P3 | Conveyor Drive No. 2 Oil Pump Oil Flow Sensor Fault
+- `BCV131BPP02PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 2 Oil Pump Protection Relay Communications Fault
+- `BCV131BPP02PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 2 Oil Pump Protection Relay Fault
+- `BCV131BPP02SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 2 Oil Pump Fail To Close
+- `BCV131BPP02SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 2 Oil Pump Fail To Open
+- `BCV131BPP02TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | CAT_P3 | Conveyor Drive No. 2 Oil Pump Drive Circuit Breaker Tripped
+- `BCV131BPP02VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 2 Oil Pump 24vdc Control Supply (Q155) Failure
+- `BCV131BRS01_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BRS01 | BCV131 Overland Conveyor | CAT_P3 | Rip Detector Switch 1
+- `BCV131BRS02_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BRS02 | BCV131 Overland Conveyor | CAT_P3 | Rip Detector Switch 2
+- `BCV131BRS03_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BRS03 | BCV131 Overland Conveyor | CAT_P3 | Rip Detector Switch 3
+- `BCV131BRTD01_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD01 | BCV131B Drive B | CAT_P3 | Motor 2 Red Winding 1 Temperature (C) High High
+- `BCV131BRTD01_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD01 | BCV131B Drive B | CAT_P3 | Motor 2 Red Winding 1 Temperature (C) High
+- `BCV131BRTD02_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD02 | BCV131B Drive B | CAT_P3 | Motor 2 White Winding 1 Temperature (C) High High
+- `BCV131BRTD02_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD02 | BCV131B Drive B | CAT_P3 | Motor 2 White Winding 1 Temperature (C) High
+- `BCV131BRTD03_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD03 | BCV131B Drive B | CAT_P3 | Motor 2 Blue Winding 1 Temperature (C) High High
+- `BCV131BRTD03_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD03 | BCV131B Drive B | CAT_P3 | Motor 2 Blue Winding 1 Temperature (C) High
+- `BCV131BRTD04_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD04 | BCV131B Drive B | CAT_P3 | Motor 2 Red Winding 2 Temperature (C) High High
+- `BCV131BRTD04_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD04 | BCV131B Drive B | CAT_P3 | Motor 2 Red Winding 2 Temperature (C) High
+- `BCV131BRTD05_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD05 | BCV131B Drive B | CAT_P3 | Motor 2 White Winding 2 Temperature (C) High High
+- `BCV131BRTD05_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD05 | BCV131B Drive B | CAT_P3 | Motor 2 White Winding 2 Temperature (C) High
+- `BCV131BRTD06_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD06 | BCV131B Drive B | CAT_P3 | Motor 2 Blue Winding 2 Temperature (C) High High
+- `BCV131BRTD06_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD06 | BCV131B Drive B | CAT_P3 | Motor 2 Blue Winding 2 Temperature (C) High
+- `BCV131BRTD07_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD07 | BCV131B Drive B | CAT_P3 | Motor 2 Non Drive End Bearing Temperature (C) High High
+- `BCV131BRTD07_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD07 | BCV131B Drive B | CAT_P3 | Motor 2 Non Drive End Bearing Temperature (C) High
+- `BCV131BRTD08_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD08 | BCV131B Drive B | CAT_P3 | Motor 2 Drive End Bearing Temperature (C) High High
+- `BCV131BRTD08_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD08 | BCV131B Drive B | CAT_P3 | Motor 2 Drive End Bearing Temperature (C) High
+- `BCV131BVS01CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01.Sub.CB01 | BCV131BVS01 Drive Circuit Breaker | CAT_P3 | VSD2 Main Circuit Breaker (Q103) Open
+- `BCV131BVS01PN01VAC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P3 | VSD2 Panel 240vac Control Supply (F5) Failure
+- `BCV131BVS01PN01VAC02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P3 | VSD2 Panel 240vac Supply Three Posn Switch Motor Isolator (-IS1) Failure
+- `BCV131BVS01PN01VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P2 | VSD2 Panel 24vdc Control Supply (Q287) Failure
+- `BCV131BVS01SW04_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P2 | VSD2 SEL SW-Remote
+- `BCV131BVS01SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P2 | VSD2 Safety Relay Fail To Close
+- `BCV131BVS01SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P2 | VSD2 Safety Relay Fail To Open
+- `BCV131BVS01TRP01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P3 | VSD2 Main Circuit Breaker Tripped
+- `BCV131BVS01TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P3 | VSD2 Blower 1
+- `BCV131BVS01TRP03_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P3 | VSD2 Blower 2
+- `BCV131BVS01TRP04_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P3 | VSD2 Blower 3
+- `BCV131BVS01TRP05_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P3 | VSD2 Arc Flash Tripped
+- `BCV131BVS01TRP06_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P3 | VSD2 Latch Fault Relay (LFR)
+- `BCV131BVS01TS01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P3 | VSD2 Transformer Cabinet Thermal Over Temp Alarm Healthy
+- `BCV131BVS01TS02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P3 | VSD2 Transformer Cabinet Thermal Over Temp Trip Healthy
+- `BCV131BVS01VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P2 | VSD2 24vdc Control Supply (Q155) Failure
+- `BCV131BVS01XS01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P2 | VSD2 Output Earth Switch Closed
+- `BCV131BVS01XS02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P2 | VSD2 Arc Flash Sensor Fault
+- `BCV131BVS01XS03_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P2 | VSD2 Output Disconnector Open
+- `BCV131BVS01_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P2 | VSD2 Communications Fault
+- `BCV131BVS01_EqpMonAbnSpkFlt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | VSD2 Abnormal Spike Fault
+- `BCV131BVS01_EqpMonOC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | CAT_P2 | VSD2 Equipment Monitor PV High
+- `BCV131BVS01_Flt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | VSD2 Fault
+- `BCV131CFN01CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01.Sub.CAX01 | BCV131CFN01 Main Contactor | CAT_P2 | Conveyor Drive No.3 Reducer Cooling Fan Fail To Close
+- `BCV131CFN01CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01.Sub.CAX01 | BCV131CFN01 Main Contactor | CAT_P2 | Conveyor Drive No.3 Reducer Cooling Fan Fail To Open
+- `BCV131CFN01CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01.Sub.CB01 | BCV131CFN01 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No.3 Reducer Cooling Fan Drive Circuit Breaker (Q103) Open
+- `BCV131CFN01PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.3 Reducer Cooling Fan Protection Relay Communications Fault
+- `BCV131CFN01PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.3 Reducer Cooling Fan Protection Relay Fault
+- `BCV131CFN01STS1_ExcRun_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | CAT_P3 | Conveyor Drive No.3 Reducer Cooling Fan Excessive Run Time
+- `BCV131CFN01SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.3 Reducer Cooling Fan Fail To Close
+- `BCV131CFN01SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.3 Reducer Cooling Fan Fail To Open
+- `BCV131CFN01TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | CAT_P3 | Conveyor Drive No.3 Reducer Cooling Fan Drive Circuit Breaker Tripped
+- `BCV131CFN01VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | CAT_P2 | Conveyor Drive No.3 Reducer Cooling Fan 24vdc Control Supply (Q155) Failure
+- `BCV131CFN01_ReqFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | CAT_P3 | Conveyor Drive No.3 Reducer Cooling Fan Required And Not Running
+- `BCV131CFN02CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02.Sub.CAX01 | BCV131CFN02 Main Contactor | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 1 Fail To Close
+- `BCV131CFN02CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02.Sub.CAX01 | BCV131CFN02 Main Contactor | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 1 Fail To Open
+- `BCV131CFN02CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02.Sub.CB01 | BCV131CFN02 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No. 3 Motor Cooling Fan 1 Drive Circuit Breaker (Q103) Open
+- `BCV131CFN02LCS01SY01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | CAT_P1 | Conveyor Drive No. 3 Motor Cooling Fan 1 Safety Relay
+- `BCV131CFN02PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 1 Protection Relay Communications Fault
+- `BCV131CFN02PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 1 Protection Relay Fault
+- `BCV131CFN02SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 1 Fail To Close
+- `BCV131CFN02SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 1 Fail To Open
+- `BCV131CFN02TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | CAT_P3 | Conveyor Drive No. 3 Motor Cooling Fan 1 Drive Circuit Breaker Tripped
+- `BCV131CFN02VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 1 24vdc Control Supply (Q155) Failure
+- `BCV131CFN02_ReqFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | CAT_P3 | Conveyor Drive No. 3 Motor Cooling Fan 1 Required And Not Running
+- `BCV131CFN03CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03.Sub.CAX01 | BCV131CFN03 Main Contactor | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 2 Fail To Close
+- `BCV131CFN03CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03.Sub.CAX01 | BCV131CFN03 Main Contactor | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 2 Fail To Open
+- `BCV131CFN03CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03.Sub.CB01 | BCV131CFN03 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No. 3 Motor Cooling Fan 2 Drive Circuit Breaker (Q103) Open
+- `BCV131CFN03PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 2 Protection Relay Communications Fault
+- `BCV131CFN03PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 2 Protection Relay Fault
+- `BCV131CFN03SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 2 Fail To Close
+- `BCV131CFN03SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 2 Fail To Open
+- `BCV131CFN03TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | CAT_P3 | Conveyor Drive No. 3 Motor Cooling Fan 2 Drive Circuit Breaker Tripped
+- `BCV131CFN03VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | CAT_P2 | Conveyor Drive No. 3 Motor Cooling Fan 2 24vdc Control Supply (Q155) Failure
+- `BCV131CFN03_ReqFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | CAT_P3 | Conveyor Drive No. 3 Motor Cooling Fan 2 Required And Not Running
+- `BCV131CGB01LCS01SY01_A` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | CAT_P1 | Gearbox 3 Safety Relay
+- `BCV131CGB01RTD01_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.GB01RTD01 | BCV131C Drive C | CAT_P3 | Overland Conveyor Gearbox Drive End Bearing Temperature (C) High High
+- `BCV131CGB01RTD01_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.GB01RTD01 | BCV131C Drive C | CAT_P3 | Overland Conveyor Gearbox Drive End Bearing Temperature (C) High
+- `BCV131CGB01RTD02_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.GB01RTD02 | BCV131C Drive C | CAT_P3 | Overland Conveyor Gearbox Oil Temperature (C) High High
+- `BCV131CGB01RTD02_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.GB01RTD02 | BCV131C Drive C | CAT_P3 | Overland Conveyor Gearbox Oil Temperature (C) High
+- `BCV131CH01BCS01_A` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | CAT_P3 | HEAD Chute Blocked Chute Switch
+- `BCV131CPP02CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02.Sub.CAX01 | BCV131CPP02 Main Contactor | CAT_P2 | Conveyor Drive No. 3 Oil Pump Fail To Close
+- `BCV131CPP02CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02.Sub.CAX01 | BCV131CPP02 Main Contactor | CAT_P2 | Conveyor Drive No. 3 Oil Pump Fail To Open
+- `BCV131CPP02CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02.Sub.CB01 | BCV131CPP02 Drive Circuit Breaker | CAT_P3 | Conveyor Drive No. 3 Oil Pump Drive Circuit Breaker (Q103) Open
+- `BCV131CPP02FT01_Lo_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02.FieldIO.FT01 | BCV131CPP02 Cooling Pump | CAT_P3 | Conveyor Drive No. 3 Oil Pump Oil Flow Low Healthy
+- `BCV131CPP02FT01_Rtn_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02.FieldIO.FT01 | BCV131CPP02 Cooling Pump | CAT_P3 | Conveyor Drive No. 3 Oil Pump Oil Flow Sensor Fault
+- `BCV131CPP02PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 3 Oil Pump Protection Relay Communications Fault
+- `BCV131CPP02PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 3 Oil Pump Protection Relay Fault
+- `BCV131CPP02SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 3 Oil Pump Fail To Close
+- `BCV131CPP02SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 3 Oil Pump Fail To Open
+- `BCV131CPP02TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | CAT_P3 | Conveyor Drive No. 3 Oil Pump Drive Circuit Breaker Tripped
+- `BCV131CPP02VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | CAT_P2 | Conveyor Drive No. 3 Oil Pump 24vdc Control Supply (Q155) Failure
+- `BCV131CRTD01_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD01 | BCV131C Drive C | CAT_P3 | Motor 3 Red Winding 1 Temperature (C) High High
+- `BCV131CRTD01_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD01 | BCV131C Drive C | CAT_P3 | Motor 3 Red Winding 1 Temperature (C) High
+- `BCV131CRTD02_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD02 | BCV131C Drive C | CAT_P3 | Motor 3 White Winding 1 Temperature (C) High High
+- `BCV131CRTD02_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD02 | BCV131C Drive C | CAT_P3 | Motor 3 White Winding 1 Temperature (C) High
+- `BCV131CRTD03_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD03 | BCV131C Drive C | CAT_P3 | Motor 3 Blue Winding 1 Temperature (C) High High
+- `BCV131CRTD03_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD03 | BCV131C Drive C | CAT_P3 | Motor 3 Blue Winding 1 Temperature (C) High
+- `BCV131CRTD04_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD04 | BCV131C Drive C | CAT_P3 | Motor 3 Red Winding 2 Temperature (C) High High
+- `BCV131CRTD04_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD04 | BCV131C Drive C | CAT_P3 | Motor 3 Red Winding 2 Temperature (C) High
+- `BCV131CRTD05_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD05 | BCV131C Drive C | CAT_P3 | Motor 3 White Winding 2 Temperature (C) High High
+- `BCV131CRTD05_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD05 | BCV131C Drive C | CAT_P3 | Motor 3 White Winding 2 Temperature (C) High
+- `BCV131CRTD06_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD06 | BCV131C Drive C | CAT_P3 | Motor 3 Blue Winding 2 Temperature (C) High High
+- `BCV131CRTD06_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD06 | BCV131C Drive C | CAT_P3 | Motor 3 Blue Winding 2 Temperature (C) High
+- `BCV131CRTD07_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD07 | BCV131C Drive C | CAT_P3 | Motor 3 Non Drive End Bearing Temperature (C) High High
+- `BCV131CRTD07_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD07 | BCV131C Drive C | CAT_P3 | Motor 3 Non Drive End Bearing Temperature (C) High
+- `BCV131CRTD08_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD08 | BCV131C Drive C | CAT_P3 | Motor 3 Drive End Bearing Temperature (C) High High
+- `BCV131CRTD08_Hi_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD08 | BCV131C Drive C | CAT_P3 | Motor 3 Drive End Bearing Temperature (C) High
+- `BCV131CVS01CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01.Sub.CB01 | BCV131CVS01 Drive Circuit Breaker | CAT_P3 | VSD3 Main Circuit Breaker (Q103) Open
+- `BCV131CVS01PN01VAC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P3 | VSD3 240vac Control Supply (F5) Failure
+- `BCV131CVS01PN01VAC02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P3 | VSD3 240vac Supply Three Posn Switch Motor Isolator (-IS1) Failure
+- `BCV131CVS01PN01VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P2 | VSD3 24vdc Control Supply (Q290) Failure
+- `BCV131CVS01SW04_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P2 | VSD3 SEL SW-Remote
+- `BCV131CVS01SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P2 | VSD3 Safety Relay Fail To Close
+- `BCV131CVS01SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P2 | VSD3 Safety Relay Fail To Open
+- `BCV131CVS01TRP01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P3 | VSD3 Main Circuit Breaker Tripped
+- `BCV131CVS01TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P3 | VSD3 Blower 1
+- `BCV131CVS01TRP03_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P3 | VSD3 Blower 2
+- `BCV131CVS01TRP04_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P3 | VSD3 Blower 3
+- `BCV131CVS01TRP05_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P3 | VSD3 Arc Flash Tripped
+- `BCV131CVS01TRP06_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P3 | VSD3 Latch Fault Relay (LFR)
+- `BCV131CVS01TS01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P3 | VSD3 Transformer Cabinet Thermal Over Temp Alarm Healthy
+- `BCV131CVS01TS02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P3 | VSD3 Transformer Cabinet Thermal Over Temp Trip Healthy
+- `BCV131CVS01VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P2 | VSD3 24vdc Control Supply (Q155) Failure
+- `BCV131CVS01XS01_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P2 | VSD3 Output Earth Switch Closed
+- `BCV131CVS01XS02_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P2 | VSD3 Arc Flash Sensor Fault
+- `BCV131CVS01XS03_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P2 | VSD3 Output Disconnector Open
+- `BCV131CVS01_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P2 | VSD3 Communications Fault
+- `BCV131CVS01_EqpMonAbnSpkFlt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | VSD3 Abnormal Spike Fault
+- `BCV131CVS01_EqpMonOC_A` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | CAT_P2 | VSD3 Equipment Monitor PV High
+- `BCV131CVS01_Flt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | VSD3 Fault
+- `BCV131DX06VDC01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX06 | BCV131DX06 BCV131DX06 BCV131 Head End Drive Station A&B | CAT_P3 | DIO Box 6 24vdc DIO1 Output Control Supply (Q143) Failure
+- `BCV131DX06VDC02_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX06 | BCV131DX06 BCV131DX06 BCV131 Head End Drive Station A&B | CAT_P3 | DIO Box 6 24vdc GW1 Control Supply (Q157) Failure
+- `BCV131DX06VDC03_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX06 | BCV131DX06 BCV131DX06 BCV131 Head End Drive Station A&B | CAT_P3 | DIO Box 6 24vdc Instrument Supply (Q164) Failure
+- `BCV131DX06VDC04_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX06 | BCV131DX06 BCV131DX06 BCV131 Head End Drive Station A&B | CAT_P3 | DIO Box 6 24vdc Transmitter Supply (Q168) Failure
+- `BCV131DX06VDC05_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX06 | BCV131DX06 BCV131DX06 BCV131 Head End Drive Station A&B | CAT_P3 | DIO Box 6 24vdc Control Supply (Q172) Failure
+- `BCV131DX06VDC06_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX06 | BCV131DX06 BCV131DX06 BCV131 Head End Drive Station A&B | CAT_P3 | DIO Box 6 24vdc Control Supply (Q176) Failure
+- `BCV131DX07VDC01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX07 | BCV131DX07 BCV131DX07 BCV131 Head End Drive Station C | CAT_P3 | DIO Box 7 24vdc DIO1 Output Control Supply (Q143) Failure
+- `BCV131DX07VDC02_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX07 | BCV131DX07 BCV131DX07 BCV131 Head End Drive Station C | CAT_P3 | DIO Box 7 24vdc GW1 Control Supply (Q157) Failure
+- `BCV131DX07VDC03_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX07 | BCV131DX07 BCV131DX07 BCV131 Head End Drive Station C | CAT_P3 | DIO Box 7 24vdc Instrument Supply (Q164) Failure
+- `BCV131DX07VDC04_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX07 | BCV131DX07 BCV131DX07 BCV131 Head End Drive Station C | CAT_P3 | DIO Box 7 24vdc Transmitter Supply (Q168) Failure
+- `BCV131DX07VDC05_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX07 | BCV131DX07 BCV131DX07 BCV131 Head End Drive Station C | CAT_P3 | DIO Box 7 24vdc Control Supply (Q172) Failure
+- `BCV131DX07VDC06_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX07 | BCV131DX07 BCV131DX07 BCV131 Head End Drive Station C | CAT_P3 | DIO Box 7 24vdc BCV131C Control Supply (Q176) Failure
+- `BCV131DX08VDC01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX08 | BCV131DX08 BCV131DX08 BCV131 Ore Conditioning | CAT_P3 | DIO Box 8 24vdc DIO1 Output Control Supply (Q143) Failure
+- `BCV131DX08VDC02_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX08 | BCV131DX08 BCV131DX08 BCV131 Ore Conditioning | CAT_P3 | DIO Box 8 24vdc GW1 Control Supply (Q157) Failure
+- `BCV131DX08VDC03_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX08 | BCV131DX08 BCV131DX08 BCV131 Ore Conditioning | CAT_P3 | DIO Box 8 24vdc Instrument Supply (Q164) Failure
+- `BCV131DX08VDC04_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX08 | BCV131DX08 BCV131DX08 BCV131 Ore Conditioning | CAT_P3 | DIO Box 8 24vdc Transmitter Supply (Q168) Failure
+- `BCV131DX08VDC05_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX08 | BCV131DX08 BCV131DX08 BCV131 Ore Conditioning | CAT_P3 | DIO Box 8 24vdc Control Supply (Q172) Failure
+- `BCV131DX08VDC06_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX08 | BCV131DX08 BCV131DX08 BCV131 Ore Conditioning | CAT_P3 | DIO Box 8 24vdc FT01 Control Supply (Q176) Failure
+- `BCV131DX09VDC01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX09 | BCV131DX09 BCV131DX09 BCV131 After Horizontal Curve | CAT_P3 | DIO Box 9 24vdc PLC Inputs Control Supply (Q172) Failure
+- `BCV131DX10VDC01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX10 | BCV131DX10 BCV131DX10 BCV131 Along Horizontal Curve | CAT_P3 | DIO Box 10 24vdc PLC Control Supply Failure
+- `BCV131DX11VDC01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX11 | BCV131DX11 BCV131DX11 BCV131 Prior To Horizontal Curve | CAT_P3 | DIO Box 11 24vdc PLC Control Supply Failure
+- `BCV131DX12VDC01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX12 | BCV131DX12 BCV131DX12 BCV131 Tail End | CAT_P3 | DIO Box 12 24vdc DIO1 Output Control Supply (Q143) Failure
+- `BCV131DX12VDC02_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX12 | BCV131DX12 BCV131DX12 BCV131 Tail End | CAT_P3 | DIO Box 12 24vdc GW1 Control Supply (Q157) Failure
+- `BCV131DX12VDC03_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX12 | BCV131DX12 BCV131DX12 BCV131 Tail End | CAT_P3 | DIO Box 12 24vdc Instrument Supply (Q164) Failure
+- `BCV131DX12VDC04_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX12 | BCV131DX12 BCV131DX12 BCV131 Tail End | CAT_P3 | DIO Box 12 24vdc Transmitter Supply (Q168) Failure
+- `BCV131DX12VDC05_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX12 | BCV131DX12 BCV131DX12 BCV131 Tail End | CAT_P3 | DIO Box 12 24vdc Control Supply (Q172) Failure
+- `BCV131DX12VDC06_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX12 | BCV131DX12 BCV131DX12 BCV131 Tail End | CAT_P3 | DIO Box 12 24vdc BCV131BK01 Control Supply (Q176) Failure
+- `BCV131DX12VDC07_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BCV131DX12 | BCV131DX12 BCV131DX12 BCV131 Tail End | CAT_P3 | DIO Box 12 24vdc BCV131BK02 Control Supply (Q180) Failure
+- `BCV131LOS01_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.LOS01_04.LOS01 | BCV131LOS01_04 Lock Off Stops 1-4 | CAT_P2 | Overland Conveyor Lock Off Stop 1
+- `BCV131LOS02_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.LOS01_04.LOS02 | BCV131LOS01_04 Lock Off Stops 1-4 | CAT_P2 | Overland Conveyor Lock Off Stop 2
+- `BCV131LOS03_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.LOS01_04.LOS03 | BCV131LOS01_04 Lock Off Stops 1-4 | CAT_P2 | Overland Conveyor Lock Off Stop 3
+- `BCV131LOS04_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.LOS01_04.LOS04 | BCV131LOS01_04 Lock Off Stops 1-4 | CAT_P2 | Overland Conveyor Lock Off Stop 4
+- `BCV131PP02CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02.Sub.CAX01 | BCV131PP02 Main Contactor | CAT_P2 | Conveyor Drive Station Sump 1 Pump Fail To Close
+- `BCV131PP02CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02.Sub.CAX01 | BCV131PP02 Main Contactor | CAT_P2 | Conveyor Drive Station Sump 1 Pump Fail To Open
+- `BCV131PP02CB01_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02.Sub.CB01 | BCV131PP02 Drive Circuit Breaker | CAT_P3 | Conveyor Drive Station Sump 1 Pump Drive Circuit Breaker (Q103) Open
+- `BCV131PP02LCS01IS01_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02.FieldIO.IS01 | BCV131PP02 Sump Pump | CAT_P3 | Isolator
+- `BCV131PP02PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | CAT_P2 | Conveyor Drive Station Sump 1 Pump Protection Relay Communications Fault
+- `BCV131PP02PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | CAT_P2 | Conveyor Drive Station Sump 1 Pump Protection Relay Fault
+- `BCV131PP02STS1_LocFlt_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | CAT_P3 | Conveyor Drive Station Sump 1 Pump Left In Local
+- `BCV131PP02STS1_RunTmFlt_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | CAT_P3 | Conveyor Drive Station Sump 1 Pump Excessive Operating Time
+- `BCV131PP02SV01_RunFlt_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02.FieldIO.SV01 | BCV131PP02 Sump Pump | CAT_P3 | Sump Unit Make-Up Water Excessive Operating Fault
+- `BCV131PP02SY01_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | CAT_P1 | Conveyor Drive Station Sump 1 Pump Safety Relay Circuit Healthy
+- `BCV131PP02TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | CAT_P3 | Conveyor Drive Station Sump 1 Pump Drive Circuit Breaker Tripped
+- `BCV131PP02VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | CAT_P2 | Conveyor Drive Station Sump 1 Pump 24vdc Control Supply (Q155) Failure
+- `BCV131PP03CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03.Sub.CAX01 | BCV131PP03 Main Contactor | CAT_P2 | Conveyor Drive Station Sump 2 Pump Fail To Close
+- `BCV131PP03CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03.Sub.CAX01 | BCV131PP03 Main Contactor | CAT_P2 | Conveyor Drive Station Sump 2 Pump Fail To Open
+- `BCV131PP03CB01_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03.Sub.CB01 | BCV131PP03 Drive Circuit Breaker | CAT_P3 | Conveyor Drive Station Sump 2 Pump Drive Circuit Breaker (Q103) Open
+- `BCV131PP03LCS01IS01_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03.FieldIO.IS01 | BCV131PP03 Sump Pump | CAT_P3 | Isolator
+- `BCV131PP03PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | CAT_P2 | Conveyor Drive Station Sump 2 Pump Protection Relay Communications Fault
+- `BCV131PP03PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | CAT_P2 | Conveyor Drive Station Sump 2 Pump Protection Relay Fault
+- `BCV131PP03STS1_LocFlt_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | CAT_P3 | Conveyor Drive Station Sump 2 Pump Left In Local
+- `BCV131PP03STS1_RunTmFlt_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | CAT_P3 | Conveyor Drive Station Sump 2 Pump Excessive Operating Time
+- `BCV131PP03SV01_RunFlt_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03.FieldIO.SV01 | BCV131PP03 Sump Pump | CAT_P3 | Sump Unit Make-Up Water Excessive Operating Fault
+- `BCV131PP03SY01_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | CAT_P1 | Conveyor Drive Station Sump 2 Pump Safety Relay Circuit Healthy
+- `BCV131PP03TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | CAT_P3 | Conveyor Drive Station Sump 2 Pump Drive Circuit Breaker Tripped
+- `BCV131PP03VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | CAT_P2 | Conveyor Drive Station Sump 2 Pump 24vdc Control Supply (Q155) Failure
+- `BCV131PP04CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BK01.PP04.Sub.CAX01 | BCV131PP04 Main Contactor | CAT_P2 | Tail Brake 2 HPU Pump Fail To Close
+- `BCV131PP04CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BK01.PP04.Sub.CAX01 | BCV131PP04 Main Contactor | CAT_P2 | Tail Brake 2 HPU Pump Fail To Open
+- `BCV131PP04CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BK01.PP04.Sub.CB01 | BCV131PP04 Drive Circuit Breaker | CAT_P3 | Tail Brake 2 HPU Pump Drive Circuit Breaker (Q103) Open
+- `BCV131PP04PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | CAT_P2 | Tail Brake 2 HPU Pump Protection Relay Communications Fault
+- `BCV131PP04PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | CAT_P2 | Tail Brake 2 HPU Pump Protection Relay Fault
+- `BCV131PP04SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | CAT_P2 | Tail Brake 2 HPU Pump Fail To Close
+- `BCV131PP04SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | CAT_P2 | Tail Brake 2 HPU Pump Fail To Open
+- `BCV131PP04TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | CAT_P3 | Tail Brake 2 HPU Pump Drive Circuit Breaker Tripped
+- `BCV131PP04VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | CAT_P2 | Tail Brake 2 HPU Pump 24vdc Control Supply
+- `BCV131PP05CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BK02.PP05.Sub.CAX01 | BCV131PP05 Main Contactor | CAT_P2 | Tail Brake 2 HPU Pump Fail To Close
+- `BCV131PP05CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BK02.PP05.Sub.CAX01 | BCV131PP05 Main Contactor | CAT_P2 | Tail Brake 2 HPU Pump Fail To Open
+- `BCV131PP05CB01_A` | BR4.INLOADING.BP3OLC.BCV131.BK02.PP05.Sub.CB01 | BCV131PP05 Drive Circuit Breaker | CAT_P3 | Tail Brake 2 HPU Pump Drive Circuit Breaker (Q103) Open
+- `BCV131PP05PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | CAT_P2 | Tail Brake 2 HPU Pump Protection Relay Communications Fault
+- `BCV131PP05PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | CAT_P2 | Tail Brake 2 HPU Pump Protection Relay Fault
+- `BCV131PP05SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.BK02.PP05 | BCV131PP05 HPU Pump | CAT_P2 | Tail Brake 2 HPU Pump Fail To Close
+- `BCV131PP05SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.BK02.PP05 | BCV131PP05 HPU Pump | CAT_P2 | Tail Brake 2 HPU Pump Fail To Open
+- `BCV131PP05TRP02_A` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | CAT_P3 | Tail Brake 2 HPU Pump Drive Circuit Breaker Tripped
+- `BCV131PP05VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | CAT_P2 | Tail Brake 2 HPU Pump 24vdc Control Supply
+- `BCV131PWS01_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS01 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 1
+- `BCV131PWS02_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS02 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 2
+- `BCV131PWS03_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS03 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 3
+- `BCV131PWS04_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS04 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 4
+- `BCV131PWS05_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS05 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 5
+- `BCV131PWS06_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS06 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 6
+- `BCV131PWS07_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS07 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 7
+- `BCV131PWS08_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS08 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 8
+- `BCV131PWS09_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS09 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 09
+- `BCV131PWS10_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS10 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 10
+- `BCV131PWS11_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS11 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 11
+- `BCV131PWS12_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS12 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 12
+- `BCV131PWS13_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS13 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 13
+- `BCV131PWS14_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS14 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 14
+- `BCV131PWS15_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS15 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 15
+- `BCV131PWS16_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS16 | BCV131PWS01_16 Pullwire Switches 1-14 | CAT_P3 | Overland Conveyor Pullwire Switch 16
+- `BCV131PWS17_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS17 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 17
+- `BCV131PWS18_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS18 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 18
+- `BCV131PWS19_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS19 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 19
+- `BCV131PWS20_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS20 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 20
+- `BCV131PWS21_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS21 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 21
+- `BCV131PWS22_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS22 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 22
+- `BCV131PWS23_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS23 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 23
+- `BCV131PWS24_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS24 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 24
+- `BCV131PWS25_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS25 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 25
+- `BCV131PWS26_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS26 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 26
+- `BCV131PWS27_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS27 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 27
+- `BCV131PWS28_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS28 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 28
+- `BCV131PWS29_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS29 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 29
+- `BCV131PWS30_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS30 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 30
+- `BCV131PWS31_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS31 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 31
+- `BCV131PWS32_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS32 | BCV131PWS17_32 Pullwire Switches 17-32 | CAT_P3 | Overland Conveyor Pullwire Switch 32
+- `BCV131PWS33_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS33 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 33
+- `BCV131PWS34_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS34 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 34
+- `BCV131PWS35_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS35 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 35
+- `BCV131PWS36_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS36 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 36
+- `BCV131PWS37_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS37 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 37
+- `BCV131PWS38_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS38 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 38
+- `BCV131PWS39_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS39 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 39
+- `BCV131PWS40_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS40 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 40
+- `BCV131PWS41_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS41 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 41
+- `BCV131PWS42_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS42 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 42
+- `BCV131PWS43_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS43 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 43
+- `BCV131PWS44_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS44 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 44
+- `BCV131PWS45_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS45 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 45
+- `BCV131PWS46_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS46 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 46
+- `BCV131PWS47_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS47 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 47
+- `BCV131PWS48_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS48 | BCV131PWS33_48 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 48
+- `BCV131PWS49_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS49 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 49
+- `BCV131PWS50_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS50 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 50
+- `BCV131PWS51_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS51 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 51
+- `BCV131PWS52_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS52 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 52
+- `BCV131PWS53_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS53 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 53
+- `BCV131PWS54_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS54 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 54
+- `BCV131PWS55_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS55 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 55
+- `BCV131PWS56_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS56 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 56
+- `BCV131PWS57_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS57 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 57
+- `BCV131PWS58_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS58 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 58
+- `BCV131PWS59_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS59 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 59
+- `BCV131PWS60_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS60 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 60
+- `BCV131PWS61_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS61 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 61
+- `BCV131PWS62_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS62 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 62
+- `BCV131PWS63_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS63 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 63
+- `BCV131PWS64_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS64 | BCV131PWS49_64 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 64
+- `BCV131PWS65_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS65 | BCV131PWS65_74 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 65
+- `BCV131PWS66_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS66 | BCV131PWS65_74 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 66
+- `BCV131PWS67_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS67 | BCV131PWS65_74 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 67
+- `BCV131PWS68_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS68 | BCV131PWS65_74 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 68
+- `BCV131PWS69_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS69 | BCV131PWS65_74 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 69
+- `BCV131PWS70_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS70 | BCV131PWS65_74 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 70
+- `BCV131PWS71_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS71 | BCV131PWS65_74 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 71
+- `BCV131PWS72_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS72 | BCV131PWS65_74 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 72
+- `BCV131PWS73_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS73 | BCV131PWS65_74 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 73
+- `BCV131PWS74_A` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS74 | BCV131PWS65_74 Pullwire Switches 33-48 | CAT_P3 | Overland Conveyor Pullwire Switch 74
+- `BCV131SLC01SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.SLC01 | BCV131SLC01 Flexi Soft 1 (Odd AX) | CAT_P2 | Overland Conveyor Safety SLC01 Circuit (K132) Fail To Close
+- `BCV131SLC01SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.SLC01 | BCV131SLC01 Flexi Soft 1 (Odd AX) | CAT_P2 | Overland Conveyor Safety SLC01 Circuit (K132) Fail To Open
+- `BCV131SLC01_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.SLC01 | BCV131SLC01 Flexi Soft 1 (Odd AX) | CAT_P2 | Safety Logic Controller 1 Communications Fault
+- `BCV131SLC01_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.SLC01 | BCV131SLC01 Flexi Soft 1 (Odd AX) | CAT_P2 | Safety Logic Controller 1 Fault
+- `BCV131SLC02SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131.SLC02 | BCV131SLC02 Flexi Soft 2 (Even AX) | CAT_P2 | Overland Conveyor Safety SLC02 Circuit (K232) Fail To Close
+- `BCV131SLC02SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131.SLC02 | BCV131SLC02 Flexi Soft 2 (Even AX) | CAT_P2 | Overland Conveyor Safety SLC02 Circuit (K232) Fail To Open
+- `BCV131SLC02_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131.SLC02 | BCV131SLC02 Flexi Soft 2 (Even AX) | CAT_P2 | Safety Logic Controller 2 Communications Fault
+- `BCV131SLC02_Flt_A` | BR4.INLOADING.BP3OLC.BCV131.SLC02 | BCV131SLC02 Flexi Soft 2 (Even AX) | CAT_P2 | Safety Logic Controller 2 Fault
+- `BCV131SM01LIT01_Frz_A` | BR4.INLOADING.BP3OLC.BCV131.SM01 | BCV131SM01 Drive Station 1 Sump | CAT_P3 | Conveyor Drive Station Sump 1 Level Frozen Value
+- `BCV131SM01LIT01_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.SM01 | BCV131SM01 Drive Station 1 Sump | CAT_P3 | Conveyor Drive Station Sump 1 Level High High
+- `BCV131SM01LIT01_LoLo_A` | BR4.INLOADING.BP3OLC.BCV131.SM01 | BCV131SM01 Drive Station 1 Sump | CAT_P3 | Conveyor Drive Station Sump 1 Level Low Low
+- `BCV131SM02LIT02_Frz_A` | BR4.INLOADING.BP3OLC.BCV131.SM02 | BCV131SM02 Drive Station 2 Sump | CAT_P3 | Conveyor Drive Station Sump 2 Level Frozen Value
+- `BCV131SM02LIT02_HiHi_A` | BR4.INLOADING.BP3OLC.BCV131.SM02 | BCV131SM02 Drive Station 2 Sump | CAT_P3 | Conveyor Drive Station Sump 2 Level High High
+- `BCV131SM02LIT02_LoLo_A` | BR4.INLOADING.BP3OLC.BCV131.SM02 | BCV131SM02 Drive Station 2 Sump | CAT_P3 | Conveyor Drive Station Sump 2 Level Low Low
+- `BCV131SPY1STS1_ExcRun_A` | BR4.INLOADING.BP3OLC.SPRAYS.BCV131BULK.BCV131SPY1 | BCV131SPY1 Head End Water Addition Module | CAT_P3 | Water Addition Module 1 Excessive Run Time
+- `BCV131SUY03_DifHi_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | Differential High
+- `BCV131SUY03_OvrFlt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P3 | Overspeed
+- `BCV131SUY03_RunFlt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P3 | Underspeed
+- `BCV131SUY03_StpFlt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P3 | Failed To Stop
+- `BCV131SUY03_SttFlt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P3 | Underspeed While Starting
+- `BCV131SY01_FTC_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | Safety Interlock Relay (K155-1) Fail To Close
+- `BCV131SY01_FTO_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | Safety Interlock Relay (K155-1) Fail To Open
+- `BCV131WN01LOS01_A` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | CAT_P2 | Active Take-Up Winch Lock Off Stop 1
+- `BCV131WN01PN01CB01_A` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | CAT_P3 | Main Circuit Breaker (Q103) Open
+- `BCV131WN01PN01TRP01_A` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | CAT_P3 | Main Circuit Breaker Tripped
+- `BCV131WN01PN01VDC01_A` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | CAT_P2 | 24vdc Control Supply (Q155) Failure
+- `BCV131WN01WE01XS01_A` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | CAT_P2 | Active Take-Up Winch Load Cell 1 High
+- `BCV131WN01WE01XS02_A` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | CAT_P2 | Active Take-Up Winch Load Cell 1 Low
+- `BCV131WN01WE02XS01_A` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | CAT_P2 | Active Take-Up Winch Load Cell 2 High
+- `BCV131WN01WE02XS02_A` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | CAT_P2 | Active Take-Up Winch Load Cell 2 Low
+- `BCV131WN01XS01_A` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | CAT_P2 | Active Take-Up Winch Load Cell Overload Trip
+- `BCV131WN01_ActFlt_A` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | CAT_P2 | Failed To Reach Active State Aarm
+- `BCV131WN01_DrvPrmFlt_A` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | CAT_P2 | Active Take-Up Winch Drive Permissive Fault
+- `BCV131ZS01_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P3 | Take Up Trolley Outer Limit (K218)
+- `BCV131ZS02_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P3 | Take Up Trolley Inner Limit (K220)
+- `BCV131_StpDst_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | Stopping Distance Exceeded
+- `BDU131CP01CB01_A` | BR4.INLOADING.BP3OLC.BDU131.CP01 | BDU131CP01 Air Compressor | CAT_P3 | Surge BIN DUST Collector Main Circuit Breaker (Q103) Open
+- `BDU131CP01PT01_Hi_A` | BR4.INLOADING.BP3OLC.BDU131.CP01.FieldIO.PT01 | BDU131CP01 Air Compressor | CAT_P3 | Surge BIN DUST Collector Air Pressure High
+- `BDU131CP01PT01_Lo_A` | BR4.INLOADING.BP3OLC.BDU131.CP01.FieldIO.PT01 | BDU131CP01 Air Compressor | CAT_P3 | Surge BIN DUST Collector Air Pressure Low
+- `BDU131CP01STS1_ReqFlt_A` | BR4.INLOADING.BP3OLC.BDU131.CP01 | BDU131CP01 Air Compressor | CAT_P3 | Compressor Required And Not Running
+- `BDU131CP01TRP01_A` | BR4.INLOADING.BP3OLC.BDU131.CP01 | BDU131CP01 Air Compressor | CAT_P3 | Compressor Main Circuit Breaker Tripped
+- `BDU131CP01VDC01_A` | BR4.INLOADING.BP3OLC.BDU131.CP01 | BDU131CP01 Air Compressor | CAT_P2 | Surge BIN DUST Collector 24vdc Control Supply (Q155) Failure
+- `BDU131CP01XS01_A` | BR4.INLOADING.BP3OLC.BDU131.CP01 | BDU131CP01 Air Compressor | CAT_P2 | Surge BIN DUST Collector Fault
+- `BDU131CP01XS02_A` | BR4.INLOADING.BP3OLC.BDU131.CP01 | BDU131CP01 Air Compressor | CAT_P2 | Surge BIN DUST Collector Running Feedback Fault
+- `BDU131FN01CAX01_FTC_A` | BR4.INLOADING.BP3OLC.BDU131.FN01.Sub.CAX01 | BDU131FN01 Main Contactor | CAT_P2 | Surge Bin Dust Collector Fan Fail To Close
+- `BDU131FN01CAX01_FTO_A` | BR4.INLOADING.BP3OLC.BDU131.FN01.Sub.CAX01 | BDU131FN01 Main Contactor | CAT_P2 | Surge Bin Dust Collector Fan Fail To Open
+- `BDU131FN01CB01_A` | BR4.INLOADING.BP3OLC.BDU131.FN01.Sub.CB01 | BDU131FN01 Drive Circuit Breaker | CAT_P3 | Surge Bin Dust Collector Fan Drive Circuit Breaker (Q103) Open
+- `BDU131FN01PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | CAT_P2 | Surge Bin Dust Collector Fan Protection Relay Communications Fault
+- `BDU131FN01PR1_Flt_A` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | CAT_P2 | Surge Bin Dust Collector Fan Protection Relay Fault
+- `BDU131FN01SY01_A` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | CAT_P1 | Surge Bin Dust Collector Fan Safety Relay Circuit Healthy
+- `BDU131FN01TRP02_A` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | CAT_P3 | Surge Bin Dust Collector Fan Drive Circuit Breaker Tripped
+- `BDU131FN01VDC01_A` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | CAT_P2 | Surge Bin Dust Collector Fan 24vdc Control Supply (Q155) Failure
+- `BDU131PDT01_HiHi_A` | BR4.INLOADING.BP3OLC.BDU131 | BDU131 Dust Collector | CAT_P3 | Differential Pressure High High
+- `BDU131PDT01_Hi_A` | BR4.INLOADING.BP3OLC.BDU131 | BDU131 Dust Collector | CAT_P3 | Differential Pressure High
+- `BDU131PDT01_Lo_A` | BR4.INLOADING.BP3OLC.BDU131 | BDU131 Dust Collector | CAT_P3 | Differential Pressure Low
+- `BDU131_ComFlt_A` | BR4.INLOADING.BP3OLC.BDU131 | BDU131 Dust Collector | CAT_P2 | Communications Fault
+- `BDU131_FdSdn_A` | BR4.INLOADING.BP3OLC.BDU131 | BDU131 Dust Collector | CAT_P2 | Primary Crushing No Dust Collection Shutdown
+- `BDU131_Flt_A` | BR4.INLOADING.BP3OLC.BDU131 | BDU131 Dust Collector | CAT_P2 | Flt
+- `BDU131_ReqFlt_A` | BR4.INLOADING.BP3OLC.BDU131 | BDU131 Dust Collector | CAT_P3 | Required And Not Running
+- `BMC1311CB01_A` | BR4.SRV.PWR.BSR131.BMC1311.Sub.CB01 | BMC1311 Main Circuit Breaker | CAT_P3 | HME Refuelling MCC Main Circuit Breaker (Q103) Open
+- `BMC1311TRP01_A` | BR4.SRV.PWR.BSR131.BMC1311.Sub.CB01 | BMC1311 Main Circuit Breaker | CAT_P3 | HME Refuelling MCC Main Circuit Breaker Tripped
+- `BMC1311VDC01_A` | BR4.SRV.PWR.BSR131.BMC1311 | BMC1311 415V HME Refuelling MCC | CAT_P2 | HME Refuelling MCC 24vdc Control Supply (Q155) Failure
+- `BMC131INC01CB02_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer Arc Flash Supply (Q204) Open
+- `BMC131INC01CB03_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer Circuit Breaker Spring Charge Supply (Q212) Open
+- `BMC131INC01CB04_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer Circuit Breaker Trip Supply (Q220) Open
+- `BMC131INC01CB05_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer Circuit Breaker 24vdc Cubicle Bus Supply (Q256) Open
+- `BMC131INC01CB06_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer 110vdc/24vdc Power Supply (Q215) Open
+- `BMC131INC01PR1_CBCls_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer Protection Relay Circuit Breaker
+- `BMC131INC01PR1_CBFlt_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer Protection Relay Fault
+- `BMC131INC01PR1_ComFlt_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P2 | Process Bus Incomer Protection Relay Communications Fault
+- `BMC131INC01PR1_Flt_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P2 | Process Bus Incomer Protection Relay Fault
+- `BMC131INC01PR1_MntRqd_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer Protection Relay Contactor Replacement Required
+- `BMC131INC01TRP02_A` | BR4.SRV.PWR.BSR131.BMC131.INC01.VAMP | BMC131VAMP1PR1 VAMP Arc Flash Relay | CAT_P3 | Process Bus Incomer Arc Flash Tripped
+- `BMC131INC01VDC01_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P2 | Process Bus Incomer 24vdc Control Supply (Q267) Failure
+- `BMC131INC01XS02_A` | BR4.SRV.PWR.BSR131.BMC131.INC01.VAMP | BMC131VAMP1PR1 VAMP Arc Flash Relay | CAT_P2 | Process Bus Incomer Vamp Self Supervision
+- `BMC131INC01XS03_A` | BR4.SRV.PWR.BSR131.BMC131.INC01 | BMC131INC01 Process Bus Incomer | CAT_P2 | Process Bus Incomer Surge Protection Unhealthy
+- `BMC131INC02CB03_A` | BR4.SRV.PWR.BSR131.BMC131.INC02 | BMC131INC02 Essential Bus Incomer | CAT_P3 | Essential Bus Incomer Circuit Breaker Spring Charge Supply (Q212) Open
+- `BMC131INC02CB04_A` | BR4.SRV.PWR.BSR131.BMC131.INC02 | BMC131INC02 Essential Bus Incomer | CAT_P3 | Essential Bus Incomer Circuit Breaker Trip Supply (Q220) Open
+- `BMC131INC02CB05_A` | BR4.SRV.PWR.BSR131.BMC131.INC02 | BMC131INC02 Essential Bus Incomer | CAT_P3 | Essential Bus Incomer Circuit Breaker 24vdc Cubicle Bus Supply (Q256) Open
+- `BMC131INC02CB06_A` | BR4.SRV.PWR.BSR131.BMC131.INC02 | BMC131INC02 Essential Bus Incomer | CAT_P3 | Essential Bus Incomer 110vdc/24vdc Power Supply (Q215) Open
+- `BMC131INC02PR1_CBCls_A` | BR4.SRV.PWR.BSR131.BMC131.INC02 | BMC131INC02 Essential Bus Incomer | CAT_P3 | Essential Bus Incomer Protection Relay Circuit Breaker
+- `BMC131INC02PR1_CBFlt_A` | BR4.SRV.PWR.BSR131.BMC131.INC02 | BMC131INC02 Essential Bus Incomer | CAT_P3 | Essential Bus Incomer Protection Relay Fault
+- `BMC131INC02PR1_ComFlt_A` | BR4.SRV.PWR.BSR131.BMC131.INC02 | BMC131INC02 Essential Bus Incomer | CAT_P2 | Essential Bus Incomer Protection Relay Communications Fault
+- `BMC131INC02PR1_Flt_A` | BR4.SRV.PWR.BSR131.BMC131.INC02 | BMC131INC02 Essential Bus Incomer | CAT_P2 | Essential Bus Incomer Protection Relay Fault
+- `BMC131INC02PR1_MntRqd_A` | BR4.SRV.PWR.BSR131.BMC131.INC02 | BMC131INC02 Essential Bus Incomer | CAT_P3 | Essential Bus Incomer Protection Relay Contactor Replacement Required
+- `BMC131INC02VDC01_A` | BR4.SRV.PWR.BSR131.BMC131.INC02 | BMC131INC02 Essential Bus Incomer | CAT_P2 | Essential Bus Incomer 24vdc Control Supply (Q267) Failure
+- `BMC131INC02XS03_A` | BR4.SRV.PWR.BSR131.BMC131.INC02 | BMC131INC02 Essential Bus Incomer | CAT_P2 | Essential Bus Incomer Surge Protection Unhealthy
+- `BMC131INC03PR1_CBCls_A` | BR4.SRV.PWR.BSR131.BMC131.INC03 | BMC131INC03 Generator Bus Incomer | CAT_P3 | Generator Bus Incomer Protection Relay Circuit Breaker
+- `BMC131INC03PR1_CBFlt_A` | BR4.SRV.PWR.BSR131.BMC131.INC03 | BMC131INC03 Generator Bus Incomer | CAT_P3 | Generator Bus Incomer Protection Relay Fault
+- `BMC131INC03PR1_ComFlt_A` | BR4.SRV.PWR.BSR131.BMC131.INC03 | BMC131INC03 Generator Bus Incomer | CAT_P2 | Generator Bus Incomer Protection Relay Communications Fault
+- `BMC131INC03PR1_Flt_A` | BR4.SRV.PWR.BSR131.BMC131.INC03 | BMC131INC03 Generator Bus Incomer | CAT_P2 | Generator Bus Incomer Protection Relay Fault
+- `BMC131INC03PR1_MntRqd_A` | BR4.SRV.PWR.BSR131.BMC131.INC03 | BMC131INC03 Generator Bus Incomer | CAT_P3 | Generator Bus Incomer Protection Relay Contactor Replacement Required
+- `BMC131INC03VDC01_A` | BR4.SRV.PWR.BSR131.BMC131.INC03 | BMC131INC03 Generator Bus Incomer | CAT_P2 | Generator Bus Incomer 24vdc Control Supply (Q267) Failure
+- `BMC131VAMPPR1_ComFlt_A` | BR4.SRV.PWR.BSR131.BMC131.INC03 | BMC131INC03 Generator Bus Incomer | CAT_P2 | Incomer Vamp Relay Communications Fault
+- `BMC131VAMPPR1_ProFlt_A` | BR4.SRV.PWR.BSR131.BMC131.INC03 | BMC131INC03 Generator Bus Incomer | CAT_P3 | Vamp Arc Flash Protection Fault
+- `BMC131VAMPPR1_SysFlt_A` | BR4.SRV.PWR.BSR131.BMC131.INC03 | BMC131INC03 Generator Bus Incomer | CAT_P3 | Vamp Arc Flash Protection Fault
+- `BMC1321FDR01CB01_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P3 | Feeder 1 BMC1321 Feeder 1 Circuit Breaker Open
+- `BMC1321FDR01CB02_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P3 | Feeder 1 Control Supply MCBs Healthy
+- `BMC1321FDR01CB03_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P3 | Feeder 1 Motor Control Supply MCBs Healthy
+- `BMC1321FDR01CB04_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P3 | Feeder 1 Voltage Transformer MCB Closed
+- `BMC1321FDR01PR1_ComFlt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | Feeder 1 Protection Relay Communications Fault
+- `BMC1321FDR01PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | Feeder 1 Protection Relay Fault
+- `BMC1321FDR01STS1_SysFlt_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P3 | Feeder 1 Tripping System Fault
+- `BMC1321FDR01TRP01_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P3 | Feeder 1 Trip Circuit Supervision Trip
+- `BMC1321FDR01TRP02_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P3 | Feeder 1 Arc Flash Fault To Upstream
+- `BMC1321FDR01TRP03_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P3 | Feeder 1 Inter Trip Signal VSD Arc Flash
+- `BMC1321FDR01TRP04_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P3 | Feeder 1 Inter Trip Signal VSD Electrical
+- `BMC1321FDR01TRP05_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P3 | Feeder 1 Inter Trip Signal From Fire Panel
+- `BMC1321FDR01XS01_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P2 | Feeder 1 Output Disconnector Open
+- `BMC1321FDR01XS02_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P2 | Feeder 1 Earth Switch Closed
+- `BMC1321FDR01XS03_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P2 | Feeder 1 Gas Pressure Faulted
+- `BMC1321FDR01XS07_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | CAT_P2 | Feeder 1 Arc Fault
+- `BMC1321FDR02CB01_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P3 | Feeder 2 BMC1321 Feeder 1 Circuit Breaker Open
+- `BMC1321FDR02CB02_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P3 | Feeder 2 Control Supply MCBs Healthy
+- `BMC1321FDR02CB03_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P3 | Feeder 2 Motor Control Supply MCBs Healthy
+- `BMC1321FDR02CB04_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P3 | Feeder 2 Voltage Transformer MCB Closed
+- `BMC1321FDR02PR1_ComFlt_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02.REX640 | REX640 | CAT_P2 | Feeder 2 Protection Relay Communications Fault
+- `BMC1321FDR02PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | Feeder 2 Protection Relay Fault
+- `BMC1321FDR02STS1_SysFlt_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P3 | Feeder 2 Tripping System Fault
+- `BMC1321FDR02TRP01_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P3 | Feeder 2 Trip Circuit Supervision Trip
+- `BMC1321FDR02TRP02_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P3 | Feeder 2 Arc Flash Fault To Upstream
+- `BMC1321FDR02TRP03_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P3 | Feeder 2 Inter Trip Signal VSD Arc Flash
+- `BMC1321FDR02TRP04_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P3 | Feeder 2 Inter Trip Signal VSD Electrical
+- `BMC1321FDR02TRP05_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P3 | Feeder 2 Inter Trip Signal From Fire Panel
+- `BMC1321FDR02XS01_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P2 | Feeder 2 Output Disconnector Open
+- `BMC1321FDR02XS02_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P2 | Feeder 2 Earth Switch Closed
+- `BMC1321FDR02XS03_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P2 | Feeder 2 Gas Pressure Faulted
+- `BMC1321FDR02XS07_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | CAT_P2 | Feeder 2 Arc Fault
+- `BMC1321FDR03CB01_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P3 | Feeder 3 BMC1321 Feeder 1 Circuit Breaker Open
+- `BMC1321FDR03CB02_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P3 | Feeder 3 Control Supply MCBs Healthy
+- `BMC1321FDR03CB03_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P3 | Feeder 3 Motor Control Supply MCBs Healthy
+- `BMC1321FDR03CB04_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P3 | Feeder 3 Voltage Transformer MCB Closed
+- `BMC1321FDR03PR1_ComFlt_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03.REX640 | REX640 | CAT_P2 | Feeder 3 Protection Relay Communications Fault
+- `BMC1321FDR03PR1_Flt_A` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | CAT_P2 | Feeder 3 Protection Relay Fault
+- `BMC1321FDR03STS1_SysFlt_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P3 | Feeder 3 Tripping System Fault
+- `BMC1321FDR03TRP01_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P3 | Feeder 3 Trip Circuit Supervision Trip
+- `BMC1321FDR03TRP02_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P3 | Feeder 3 Arc Flash Fault To Upstream
+- `BMC1321FDR03TRP03_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P3 | Feeder 3 Inter Trip Signal VSD Arc Flash
+- `BMC1321FDR03TRP04_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P3 | Feeder 3 Inter Trip Signal VSD Electrical
+- `BMC1321FDR03TRP05_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P3 | Feeder 3 Inter Trip Signal From Fire Panel
+- `BMC1321FDR03XS01_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P2 | Feeder 3 Output Disconnector Open
+- `BMC1321FDR03XS02_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P2 | Feeder 3 Earth Switch Closed
+- `BMC1321FDR03XS03_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P2 | Feeder 3 Gas Pressure Faulted
+- `BMC1321FDR03XS07_A` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | CAT_P2 | Feeder 3 Arc Fault
+- `BMC1321INC01CB01_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P3 | Incomer 1 BMC1321 Feeder 1 Circuit Breaker Open
+- `BMC1321INC01CB02_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P3 | Incomer 1 Control Supply MCBs Healthy
+- `BMC1321INC01CB03_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P3 | Incomer 1 Motor Control Supply MCBs Healthy
+- `BMC1321INC01CB04_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P3 | Incomer 1 Voltage Transformer MCB Closed
+- `BMC1321INC01PR1_ComFlt_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P2 | Incomer 1 Protection Relay Communications Fault
+- `BMC1321INC01PR1_Flt_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P2 | Incomer 1 Protection Relay Fault
+- `BMC1321INC01STS1_SysFlt_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P3 | Incomer 1 Tripping System Fault
+- `BMC1321INC01TRP01_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P3 | Incomer 1 Trip Circuit Supervision Trip
+- `BMC1321INC01TRP02_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P3 | Incomer 1 Arc Flash Fault To Upstream
+- `BMC1321INC01TRP03_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P3 | Incomer 1 Inter Trip Signal From Upstream
+- `BMC1321INC01TRP04_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P3 | Incomer 1 Inter Trip Signal Shutdown PB
+- `BMC1321INC01TRP05_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P3 | Incomer 1 Inter Trip Signal Fire Panel
+- `BMC1321INC01XS01_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P2 | Incomer 1 Output Disconnector Open
+- `BMC1321INC01XS02_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P2 | Incomer 1 Earth Switch Closed
+- `BMC1321INC01XS03_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P2 | Incomer 1 Gas Pressure Faulted
+- `BMC1321INC01XS07_A` | BR4.SRV.PWR.BSR132.BMC1321.INC01 | BMC1321INC01 Process Bus Incomer | CAT_P2 | Incomer 1 Arc Fault
+- `BMC1322INC01CB02_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01 | BMC1322INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer Arc Flash Supply (Q204) Open
+- `BMC1322INC01CB03_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01 | BMC1322INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer Spring Charge Supply (Q212) Open
+- `BMC1322INC01CB04_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01 | BMC1322INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer Trip Supply (Q220) Open
+- `BMC1322INC01CB05_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01 | BMC1322INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer 24vdc Cubicle Bus Supply (Q256) Open
+- `BMC1322INC01CB06_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01 | BMC1322INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer 110/24vdc Power Supply (Q215) Open
+- `BMC1322INC01PR1_CBCls_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01.MasterPact | BMC1322INC01PR1 MasterPact MTZ | CAT_P3 | Process Bus Incomer Protection Relay Circuit Breaker
+- `BMC1322INC01PR1_CBFlt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01.MasterPact | BMC1322INC01PR1 MasterPact MTZ | CAT_P3 | Process Bus Incomer Protection Relay Fault
+- `BMC1322INC01PR1_ComFlt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01.MasterPact | BMC1322INC01PR1 MasterPact MTZ | CAT_P2 | Process Bus Incomer Protection Relay Communications Fault
+- `BMC1322INC01PR1_Flt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01.MasterPact | BMC1322INC01PR1 MasterPact MTZ | CAT_P2 | Process Bus Incomer Protection Relay Fault
+- `BMC1322INC01PR1_MntRqd_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01.MasterPact | BMC1322INC01PR1 MasterPact MTZ | CAT_P3 | Process Bus Incomer Protection Relay Contactor Replacement Required
+- `BMC1322INC01TRP02_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01 | BMC1322INC01 Process Bus Incomer | CAT_P3 | Process Bus Incomer Arc Flash Tripped
+- `BMC1322INC01VDC01_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01 | BMC1322INC01 Process Bus Incomer | CAT_P2 | Process Bus Incomer 24vdc Control Supply (Q267) Failure
+- `BMC1322INC01XS02_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01 | BMC1322INC01 Process Bus Incomer | CAT_P2 | Process Bus Incomer Vamp Self Supervision
+- `BMC1322INC01XS03_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01 | BMC1322INC01 Process Bus Incomer | CAT_P2 | Process Bus Incomer Surge Protection Unhealthy
+- `BMC1322INC02CB03_A` | BR4.SRV.PWR.BSR132.BMC1322.INC02 | BMC1322INC02 Essential Bus Incomer | CAT_P3 | Essential Bus Incomer BMC1322 Essential Bus Spring Charge Supply (Q212) Open
+- `BMC1322INC02CB04_A` | BR4.SRV.PWR.BSR132.BMC1322.INC02 | BMC1322INC02 Essential Bus Incomer | CAT_P3 | Essential Bus Incomer BMC1322 Essential Bus Trip Supply (Q220) Open
+- `BMC1322INC02CB05_A` | BR4.SRV.PWR.BSR132.BMC1322.INC02 | BMC1322INC02 Essential Bus Incomer | CAT_P3 | Essential Bus Incomer BMC1322 Essential Bus 24vdc Cubicle Bus Supply (Q256) Open
+- `BMC1322INC02CB06_A` | BR4.SRV.PWR.BSR132.BMC1322.INC02 | BMC1322INC02 Essential Bus Incomer | CAT_P3 | Essential Bus Incomer BMC1322 Essential Bus 110/24vdc Power Supply (Q215) Open
+- `BMC1322INC02PR1_CBCls_A` | BR4.SRV.PWR.BSR132.BMC1322.INC02.MasterPact | BMC1322INC02PR1 MasterPact MTZ | CAT_P3 | Essential Bus Incomer Protection Relay Circuit Breaker
+- `BMC1322INC02PR1_CBFlt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC02.MasterPact | BMC1322INC02PR1 MasterPact MTZ | CAT_P3 | Essential Bus Incomer Protection Relay Fault
+- `BMC1322INC02PR1_ComFlt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC02.MasterPact | BMC1322INC02PR1 MasterPact MTZ | CAT_P2 | Essential Bus Incomer Protection Relay Communications Fault
+- `BMC1322INC02PR1_Flt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC02.MasterPact | BMC1322INC02PR1 MasterPact MTZ | CAT_P2 | Essential Bus Incomer Protection Relay Fault
+- `BMC1322INC02PR1_MntRqd_A` | BR4.SRV.PWR.BSR132.BMC1322.INC02.MasterPact | BMC1322INC02PR1 MasterPact MTZ | CAT_P3 | Essential Bus Incomer Protection Relay Contactor Replacement Required
+- `BMC1322INC02VDC01_A` | BR4.SRV.PWR.BSR132.BMC1322.INC02 | BMC1322INC02 Essential Bus Incomer | CAT_P2 | Essential Bus Incomer BMC1322 Essential Bus 24vdc Control Supply (Q267) Failure
+- `BMC1322INC02XS03_A` | BR4.SRV.PWR.BSR132.BMC1322.INC02 | BMC1322INC02 Essential Bus Incomer | CAT_P2 | Essential Bus Incomer Surge Protection Unhealthy
+- `BMC1322INC03CB03_A` | BR4.SRV.PWR.BSR132.BMC1322.INC03 | BMC1322INC03 Generator Bus Incomer | CAT_P3 | Generator Bus Incomer Spring Charge Supply (Q212) Open
+- `BMC1322INC03CB04_A` | BR4.SRV.PWR.BSR132.BMC1322.INC03 | BMC1322INC03 Generator Bus Incomer | CAT_P3 | Generator Bus Incomer Trip Supply (Q220) Open
+- `BMC1322INC03CB05_A` | BR4.SRV.PWR.BSR132.BMC1322.INC03 | BMC1322INC03 Generator Bus Incomer | CAT_P3 | Generator Bus Incomer 24vdc Cubicle Bus Supply (Q256) Open
+- `BMC1322INC03CB06_A` | BR4.SRV.PWR.BSR132.BMC1322.INC03 | BMC1322INC03 Generator Bus Incomer | CAT_P3 | Generator Bus Incomer Arc Flash Expansion Module 24vdc Supply (Q258) Open
+- `BMC1322INC03PR1_CBCls_A` | BR4.SRV.PWR.BSR132.BMC1322.INC03.MasterPact | BMC1322INC03PR1 MasterPact MTZ | CAT_P3 | Generator Bus Incomer Protection Relay Circuit Breaker
+- `BMC1322INC03PR1_CBFlt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC03.MasterPact | BMC1322INC03PR1 MasterPact MTZ | CAT_P3 | Generator Bus Incomer Protection Relay Fault
+- `BMC1322INC03PR1_ComFlt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC03.MasterPact | BMC1322INC03PR1 MasterPact MTZ | CAT_P2 | Generator Bus Incomer Protection Relay Communications Fault
+- `BMC1322INC03PR1_Flt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC03.MasterPact | BMC1322INC03PR1 MasterPact MTZ | CAT_P2 | Generator Bus Incomer Protection Relay Fault
+- `BMC1322INC03PR1_MntRqd_A` | BR4.SRV.PWR.BSR132.BMC1322.INC03.MasterPact | BMC1322INC03PR1 MasterPact MTZ | CAT_P3 | Generator Bus Incomer Protection Relay Contactor Replacement Required
+- `BMC1322INC03TRP02_A` | BR4.SRV.PWR.BSR132.BMC1322.INC03 | BMC1322INC03 Generator Bus Incomer | CAT_P3 | Generator Bus Incomer Arc Flash Tripped
+- `BMC1322INC03VDC01_A` | BR4.SRV.PWR.BSR132.BMC1322.INC03 | BMC1322INC03 Generator Bus Incomer | CAT_P2 | Generator Bus Incomer 24vdc Control Supply (Q267) Failure
+- `BMC1322VAMP1PR1_ComFlt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01.VAMP | BMC1322VAMP1PR1 VAMP Arc Flash Relay | CAT_P2 | Vamp Communications Fault
+- `BMC1322VAMP1PR1_ProFlt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01.VAMP | BMC1322VAMP1PR1 VAMP Arc Flash Relay | CAT_P3 | Vamp Arc Flash Protection Fault
+- `BMC1322VAMP1PR1_SysFlt_A` | BR4.SRV.PWR.BSR132.BMC1322.INC01.VAMP | BMC1322VAMP1PR1 VAMP Arc Flash Relay | CAT_P3 | Vamp Sys Fault
+- `BPL132IPC4_Flt_A` | BR4.SRV.CTRLSYS.PLC.BPL132 | Overland Conveying PLC 132 | CAT_P3 | Communications From BCV131RIS01PLC01 Fault
+- `BPL132IPC4_PriFlt_A` | BR4.SRV.CTRLSYS.PLC.BPL132 | Overland Conveying PLC 132 | CAT_P2 | Communications From BCV131RIS01PLC01 Primary Path Fault
+- `BPL132IPC4_SecFlt_A` | BR4.SRV.CTRLSYS.PLC.BPL132 | Overland Conveying PLC 132 | CAT_P2 | Communications From BCV131RIS01PLC01 Secondary Path Fault
+- `BPL132IPC5_Flt_A` | BR4.SRV.CTRLSYS.PLC.BPL132 | Overland Conveying PLC 132 | CAT_P3 | Communications From BPL131 Fault
+- `BPL132IPC5_PriFlt_A` | BR4.SRV.CTRLSYS.PLC.BPL132 | Overland Conveying PLC 132 | CAT_P2 | Communications From BPL131 Primary Path Fault
+- `BPL132IPC5_SecFlt_A` | BR4.SRV.CTRLSYS.PLC.BPL132 | Overland Conveying PLC 132 | CAT_P2 | Communications From BPL131 Secondary Path Fault
+- `BPL132IPC6_Flt_A` | BR4.SRV.CTRLSYS.PLC.BPL132 | Overland Conveying PLC 132 | CAT_P3 | Communications From BPL131 Fault
+- `BPL132IPC6_PriFlt_A` | BR4.SRV.CTRLSYS.PLC.BPL132 | Overland Conveying PLC 132 | CAT_P2 | Communications From BPL131 Primary Path Fault
+- `BPL132IPC6_SecFlt_A` | BR4.SRV.CTRLSYS.PLC.BPL132 | Overland Conveying PLC 132 | CAT_P2 | Communications From BPL131 Secondary Path Fault
+- `BPP1101CB01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.Sub.CB01 | Production Plant & NPI Water Supply Pump 1 Main Circuit Breaker | CAT_P3 | Production Plant And NPI Water Supply Pump 1 Main Circuit Breaker (Q103) Open
+- `BPP1101FS09_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101 | Production Plant & NPI Water Supply Pump 1 | CAT_P2 | Pump Flow Switch Low
+- `BPP1101FS09_FailStp_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101 | Production Plant & NPI Water Supply Pump 1 | CAT_P2 | Fail To Stop
+- `BPP1101FT03_Frz_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.FT03 | Production Plant & NPI Water Supply Pump 1 Common Discharge Header Flow | CAT_P3 | Flow Transmitter Frozen
+- `BPP1101FT03_HiHi_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.FT03 | Production Plant & NPI Water Supply Pump 1 Common Discharge Header Flow | CAT_P3 | NPI And Process Water Supply Flow High High Healthy
+- `BPP1101FT03_Hi_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.FT03 | Production Plant & NPI Water Supply Pump 1 Common Discharge Header Flow | CAT_P3 | Pump Flow High
+- `BPP1101FT03_Lo_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.FT03 | Production Plant & NPI Water Supply Pump 1 Common Discharge Header Flow | CAT_P3 | Flow Low
+- `BPP1101IS01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101 | Production Plant & NPI Water Supply Pump 1 | CAT_P3 | Isolator Open
+- `BPP1101PT03_Frz_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.PT03 | Production Plant & NPI Water Supply Pump 1 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Transmitter Frozen
+- `BPP1101PT03_HiHi_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.PT03 | Production Plant & NPI Water Supply Pump 1 Discharge Pressure | CAT_P3 | System Pressure High High
+- `BPP1101PT03_LoLo_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.PT03 | Production Plant & NPI Water Supply Pump 1 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Low Low
+- `BPP1101PT10_Diff_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.PT10 | Production Plant & NPI Water Supply Pump 1 Common Discharge Header Discharge Pressure 1 | CAT_P2 | NPI And Process Water Network Pressure Variance (PT10/PT11)
+- `BPP1101PT10_Frz_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.PT10 | Production Plant & NPI Water Supply Pump 1 Common Discharge Header Discharge Pressure 1 | CAT_P3 | System Pressure Frozen
+- `BPP1101PT10_Hi_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.PT10 | Production Plant & NPI Water Supply Pump 1 Common Discharge Header Discharge Pressure 1 | CAT_P3 | Discharge Header Pressure High
+- `BPP1101PT10_Lo_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.PT10 | Production Plant & NPI Water Supply Pump 1 Common Discharge Header Discharge Pressure 1 | CAT_P3 | Discharge Header Pressure Low
+- `BPP1101PT11_Frz_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.PT11 | BPP1101 Production Plant & NPI Water Supply Pump 1 | CAT_P3 | Discharge Header Pressure Transmitter Frozen
+- `BPP1101PT11_Hi_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.PT11 | BPP1101 Production Plant & NPI Water Supply Pump 1 | CAT_P3 | System Pressure High
+- `BPP1101PT11_Lo_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO.PT11 | BPP1101 Production Plant & NPI Water Supply Pump 1 | CAT_P3 | Discharge Header Pressure Low
+- `BPP1101THR01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101 | Production Plant & NPI Water Supply Pump 1 | CAT_P2 | Production Plant And NPI Water Supply Pump 1 (Duty) (K190)
+- `BPP1101TRP01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.Sub.CB01 | Production Plant & NPI Water Supply Pump 1 Main Circuit Breaker | CAT_P3 | Main Circuit Breaker Tripped
+- `BPP1101VDC01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101 | Production Plant & NPI Water Supply Pump 1 | CAT_P2 | Production Plant And NPI Water Supply Pump 1 24vdc Control Supply (Q155) Failure
+- `BPP1101VS01SY01_Flt_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.VS01 | Production Plant & NPI Water Supply Pump 1 ACS880 | CAT_P2 | Safety Relay Fault Healthy
+- `BPP1101VS01VDC01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.VS01 | Production Plant & NPI Water Supply Pump 1 ACS880 | CAT_P2 | VVVF Drive BPP1101VS01 Control Supply (Q204) Failure
+- `BPP1101VS01_ComFlt_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.VS01 | Production Plant & NPI Water Supply Pump 1 ACS880 | CAT_P2 | VSD Communications Fault
+- `BPP1101VS01_Flt_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.VS01 | Production Plant & NPI Water Supply Pump 1 ACS880 | CAT_P2 | VSD Fault
+- `BPP1101_2_EqpAvlFlt_A` | BR4.UTILITIES.WATER.BS1.RWD1 | RWD1 Plant 3 PC & NPI Raw/Fire Water Distribution | CAT_P2 | No NPI And Process Water Pumps Available Fault
+- `BPP1102CB01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102.Sub.CB01 | Production Plant & NPI Water Supply Pump 2 Main Circuit Breaker | CAT_P3 | Production Plant And NPI Water Supply Pump 2 Main Circuit Breaker (Q103) Open
+- `BPP1102FS10_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102 | Production Plant & NPI Water Supply Pump 2 | CAT_P2 | Pump Flow Switch Low
+- `BPP1102FS10_FailStp_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102 | Production Plant & NPI Water Supply Pump 2 | CAT_P2 | Pump Fail To Stop
+- `BPP1102IS01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102 | Production Plant & NPI Water Supply Pump 2 | CAT_P3 | Isolator Open
+- `BPP1102PT04_Frz_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102.FieldIO.PT04 | Production Plant & NPI Water Supply Pump 2 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Transmitter Frozen
+- `BPP1102PT04_HiHi_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102.FieldIO.PT04 | Production Plant & NPI Water Supply Pump 2 Discharge Pressure | CAT_P3 | Pump Discharge Pressure High High
+- `BPP1102PT04_LoLo_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102.FieldIO.PT04 | Production Plant & NPI Water Supply Pump 2 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Low Low
+- `BPP1102THR01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102 | Production Plant & NPI Water Supply Pump 2 | CAT_P2 | Production Plant And NPI Water Supply Pump 2 (Standby) (K190)
+- `BPP1102TRP01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102.Sub.CB01 | Production Plant & NPI Water Supply Pump 2 Main Circuit Breaker | CAT_P3 | Main Circuit Breaker Tripped
+- `BPP1102VDC01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102 | Production Plant & NPI Water Supply Pump 2 | CAT_P2 | Production Plant And NPI Water Supply Pump 2 24vdc Control Supply (Q155) Failure
+- `BPP1102VS01SY01_Flt_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102.VS01 | Production Plant & NPI Water Supply Pump 2 ACS880 | CAT_P2 | Safety Relay Fault Healthy
+- `BPP1102VS01VDC01_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102.VS01 | Production Plant & NPI Water Supply Pump 2 ACS880 | CAT_P2 | VVVF Drive BPP1102VS01 Control Supply (Q207) Failure
+- `BPP1102VS01_ComFlt_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102.VS01 | Production Plant & NPI Water Supply Pump 2 ACS880 | CAT_P2 | VSD Communications Fault
+- `BPP1102VS01_Flt_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102.VS01 | Production Plant & NPI Water Supply Pump 2 ACS880 | CAT_P2 | VSD Fault
+- `BPP1103CB01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.Sub.CB01 | BPP1103 Main Circuit Breaker | CAT_P3 | Water Transfer Pump 1 Main Circuit Breaker (Q103) Open
+- `BPP1103FT03_Frz_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.FT03 | Water Transfer Pump 1 Discharge Flow | CAT_P3 | Pump Flow Transmitter Frozen
+- `BPP1103FT03_LoLo_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.FT03 | Water Transfer Pump 1 Discharge Flow | CAT_P3 | Pump Flow Low Low
+- `BPP1103FT06_Frz_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.FT06 | BPP1103 Water Transfer Pump 1 | CAT_P3 | Transfer Flow Transmitter Frozen
+- `BPP1103FT06_HiHi_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.FT06 | BPP1103 Water Transfer Pump 1 | CAT_P3 | Transfer Flow High High
+- `BPP1103FT06_LkFlt_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.FT06 | BPP1103 Water Transfer Pump 1 | CAT_P2 | Water Transfer Pipeline Leak Detected
+- `BPP1103FT06_RevFlw_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.FT06 | BPP1103 Water Transfer Pump 1 | CAT_P2 | Water Transfer Pumps Reverse Flow Detected
+- `BPP1103IS01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103 | Water Transfer Pump 1 | CAT_P3 | Isolator
+- `BPP1103PT05_Frz_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.PT05 | Water Transfer Pump 1 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Transmitter Frozen
+- `BPP1103PT05_HiHi_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.PT05 | Water Transfer Pump 1 Discharge Pressure | CAT_P3 | Pump Discharge Pressure High High
+- `BPP1103PT05_LoLo_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.PT05 | Water Transfer Pump 1 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Low Low
+- `BPP1103PT08_Frz_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.PT08 | Water Transfer Pump 1 Water Transfer Pump Discharge Header Pressure | CAT_P3 | Water Transfer System Pressure Transmitter Frozen
+- `BPP1103PT08_HiHi_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.PT08 | Water Transfer Pump 1 Water Transfer Pump Discharge Header Pressure | CAT_P3 | Water Transfer System Pressure High High
+- `BPP1103PT08_Lo_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.FieldIO.PT08 | Water Transfer Pump 1 Water Transfer Pump Discharge Header Pressure | CAT_P3 | HME Standpipe Pump 1 PT08 Lo
+- `BPP1103THR01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103 | Water Transfer Pump 1 | CAT_P2 | Thermistor Relay (K190)
+- `BPP1103TRP01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.Sub.CB01 | BPP1103 Main Circuit Breaker | CAT_P3 | Tripped
+- `BPP1103VDC01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103 | Water Transfer Pump 1 | CAT_P2 | 24vdc Control Supply (Q155) Failure
+- `BPP1103VS01SY01_Flt_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.VS01 | Water Transfer Pump 1 ACS880 | CAT_P2 | Safety Relay Fault
+- `BPP1103VS01VDC01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.VS01 | Water Transfer Pump 1 ACS880 | CAT_P2 | VVVF Drive BPP1103VS01 Control Supply (Q210) Failure
+- `BPP1103VS01_ComFlt_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.VS01 | Water Transfer Pump 1 ACS880 | CAT_P2 | VSD Communications Fault
+- `BPP1103VS01_Flt_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103.VS01 | Water Transfer Pump 1 ACS880 | CAT_P2 | VSD Fault
+- `BPP1103_4_5_EqpAvlFlt_A` | BR4.UTILITIES.WATER.BS1.RWT | RWT Plant 3 Raw/Fire Water Transfer | CAT_P2 | No Transfer Pumps Available Fault
+- `BPP1103_FailStp_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1103 | Water Transfer Pump 1 | CAT_P2 | Fail To Stop
+- `BPP1104CB01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104.Sub.CB01 | BPP1104 Main Circuit Breaker | CAT_P3 | Water Transfer Pump 2 Main Circuit Breaker (Q103) Open
+- `BPP1104FT04_Frz_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104.FieldIO.FT04 | Water Transfer Pump 2 Discharge Flow | CAT_P3 | Pump Flow Transmitter Frozen
+- `BPP1104FT04_LoLo_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104.FieldIO.FT04 | Water Transfer Pump 2 Discharge Flow | CAT_P3 | Pump Flow Low Low
+- `BPP1104IS01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104 | Water Transfer Pump 2 | CAT_P3 | Isolator Open
+- `BPP1104PT06_Frz_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104.FieldIO.PT06 | Water Transfer Pump 2 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Transmitter Frozen
+- `BPP1104PT06_HiHi_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104.FieldIO.PT06 | Water Transfer Pump 2 Discharge Pressure | CAT_P3 | Pump Discharge Pressure High High
+- `BPP1104PT06_LoLo_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104.FieldIO.PT06 | Water Transfer Pump 2 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Low Low
+- `BPP1104THR01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104 | Water Transfer Pump 2 | CAT_P2 | Thermistor Relay (K190)
+- `BPP1104TRP01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104.Sub.CB01 | BPP1104 Main Circuit Breaker | CAT_P3 | Tripped
+- `BPP1104VDC01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104 | Water Transfer Pump 2 | CAT_P2 | 24vdc Control Supply (Q155) Failure
+- `BPP1104VS01SY01_Flt_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104.VS01 | Water Transfer Pump 2 ACS880 | CAT_P2 | Safety Relay Fault
+- `BPP1104VS01VDC01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104.VS01 | Water Transfer Pump 2 ACS880 | CAT_P2 | VVVF Drive BPP1104VS01 Control Supply (Q213) Failure
+- `BPP1104VS01_ComFlt_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104.VS01 | Water Transfer Pump 2 ACS880 | CAT_P2 | VSD Communications Fault
+- `BPP1104VS01_Flt_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104.VS01 | Water Transfer Pump 2 ACS880 | CAT_P2 | VSD Fault
+- `BPP1104_FailStp_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1104 | Water Transfer Pump 2 | CAT_P2 | Fail To Stop
+- `BPP1105CB01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105 | Water Transfer Pump 3 | CAT_P3 | Main Circuit Breaker (Q103) Open
+- `BPP1105FT05_Frz_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105.FieldIO.FT05 | Water Transfer Pump 3 Discharge Flow | CAT_P3 | Pump Flow Transmitter Frozen
+- `BPP1105FT05_LoLo_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105.FieldIO.FT05 | Water Transfer Pump 3 Discharge Flow | CAT_P3 | Pump Flow Low Low
+- `BPP1105IS01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105 | Water Transfer Pump 3 | CAT_P3 | Isolator Open
+- `BPP1105PT07_Frz_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105.FieldIO.PT07 | Water Transfer Pump 3 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Transmitter Frozen
+- `BPP1105PT07_HiHi_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105.FieldIO.PT07 | Water Transfer Pump 3 Discharge Pressure | CAT_P3 | Pump Discharge Pressure High High
+- `BPP1105PT07_LoLo_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105.FieldIO.PT07 | Water Transfer Pump 3 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Low Low
+- `BPP1105THR01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105 | Water Transfer Pump 3 | CAT_P2 | Thermistor Relay (K190)
+- `BPP1105TRP01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105.Sub.CB01 | Water Transfer Pump 3 Main Circuit Breaker | CAT_P3 | Main Circuit Breaker Tripped
+- `BPP1105VDC01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105 | Water Transfer Pump 3 | CAT_P2 | 24vdc Control Supply (Q155) Failure
+- `BPP1105VS01SY01_Flt_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105.VS01 | Water Transfer Pump 3 ACS880 | CAT_P2 | Safety Relay Fault
+- `BPP1105VS01VDC01_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105.VS01 | Water Transfer Pump 3 ACS880 | CAT_P2 | VVVF Drive BPP1105VS01 Control Supply (Q216) Failure
+- `BPP1105VS01_ComFlt_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105.VS01 | Water Transfer Pump 3 ACS880 | CAT_P2 | VSD Communications Fault
+- `BPP1105VS01_Flt_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105.VS01 | Water Transfer Pump 3 ACS880 | CAT_P2 | VSD Fault
+- `BPP1105_FailStp_A` | BR4.UTILITIES.WATER.BS1.RWT.BPP1105 | Water Transfer Pump 3 | CAT_P2 | Fail To Stop
+- `BPP1106CB01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106.Sub.CB01 | HME & LME Standpipe Pump 3 Main Circuit Breaker | CAT_P3 | (Q103) Open
+- `BPP1106FS07_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106 | HME & LME Standpipe Pump 3 | CAT_P2 | Pump Flow Switch Low
+- `BPP1106FS07_FailStp_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106 | HME & LME Standpipe Pump 3 | CAT_P2 | Fail To Stop
+- `BPP1106IS01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106 | HME & LME Standpipe Pump 3 | CAT_P3 | Isolator Open
+- `BPP1106PT01_Frz_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106.FieldIO.PT01 | HME & LME Standpipe Pump 3 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Transmitter Frozen
+- `BPP1106PT01_HiHi_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106.FieldIO.PT01 | HME & LME Standpipe Pump 3 Discharge Pressure | CAT_P3 | Pump Discharge Pressure High High
+- `BPP1106PT01_LoLo_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106.FieldIO.PT01 | HME & LME Standpipe Pump 3 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Low Low
+- `BPP1106THR01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106 | HME & LME Standpipe Pump 3 | CAT_P2 | HME And LME Standpipe Pump 3 (Duty) (K190)
+- `BPP1106TRP01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106.Sub.CB01 | HME & LME Standpipe Pump 3 Main Circuit Breaker | CAT_P3 | Main Circuit Breaker Tripped
+- `BPP1106VDC01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106 | HME & LME Standpipe Pump 3 | CAT_P2 | 24vdc Control Supply (Q155) Failure
+- `BPP1106VS01SY01_Flt_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106.VS01 | HME & LME Standpipe Pump 3 ACS880 | CAT_P2 | Safety Relay Fault Healthy
+- `BPP1106VS01VDC01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106.VS01 | HME & LME Standpipe Pump 3 ACS880 | CAT_P2 | VVVF Drive BPP1106VS01 Control Supply (Q219) Failure
+- `BPP1106VS01_ComFlt_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106.VS01 | HME & LME Standpipe Pump 3 ACS880 | CAT_P2 | VSD Communications Fault
+- `BPP1106VS01_Flt_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106.VS01 | HME & LME Standpipe Pump 3 ACS880 | CAT_P2 | VSD Fault
+- `BPP1106_7_EqpAvlFlt_A` | BR4.UTILITIES.WATER.BS1.STD1 | STD1 BS1 West Turkeys Nest HME & LME Standpipes | CAT_P2 | No Standpipe Pumps Available Fault
+- `BPP1106_RunNoVlv_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106 | HME & LME Standpipe Pump 3 | CAT_P2 | Pump Running With No Valve Open
+- `BPP1107CB01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107.Sub.CB01 | HME & LME Standpipe Pump 4 Main Circuit Breaker | CAT_P3 | (Q103) Open
+- `BPP1107FS08_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107 | HME & LME Standpipe Pump 4 | CAT_P2 | Pump Flow Switch Low
+- `BPP1107FS08_FailStp_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107 | HME & LME Standpipe Pump 4 | CAT_P2 | Fail To Stop
+- `BPP1107IS01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107 | HME & LME Standpipe Pump 4 | CAT_P3 | Isolator Open
+- `BPP1107PT02_Frz_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107.FieldIO.PT02 | HME & LME Standpipe Pump 4 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Transmitter Frozen
+- `BPP1107PT02_HiHi_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107.FieldIO.PT02 | HME & LME Standpipe Pump 4 Discharge Pressure | CAT_P3 | Pump Discharge Pressure High High
+- `BPP1107PT02_LoLo_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107.FieldIO.PT02 | HME & LME Standpipe Pump 4 Discharge Pressure | CAT_P3 | Pump Discharge Pressure Low Low
+- `BPP1107THR01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107 | HME & LME Standpipe Pump 4 | CAT_P2 | HME And LME Standpipe Pump 4 (Standby) (K190)
+- `BPP1107TRP01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107.Sub.CB01 | HME & LME Standpipe Pump 4 Main Circuit Breaker | CAT_P3 | Main Circuit Breaker Tripped
+- `BPP1107VDC01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107 | HME & LME Standpipe Pump 4 | CAT_P2 | 24vdc Control Supply (Q155) Failure
+- `BPP1107VS01SY01_Flt_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107.VS01 | HME & LME Standpipe Pump 4 ACS880 | CAT_P2 | Safety Relay Fault
+- `BPP1107VS01VDC01_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107.VS01 | HME & LME Standpipe Pump 4 ACS880 | CAT_P2 | VVVF Drive BPP1107VS01 Control Supply (Q222) Failure
+- `BPP1107VS01_ComFlt_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107.VS01 | HME & LME Standpipe Pump 4 ACS880 | CAT_P2 | VSD Communications Fault
+- `BPP1107VS01_Flt_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107.VS01 | HME & LME Standpipe Pump 4 ACS880 | CAT_P2 | VSD Fault
+- `BPQE2101DB01CB01_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BPQE2101.Sub.DB01.CB01 | BPQE2101DB01CB01 Main Circuit Breaker | CAT_P3 | NPI & Primary Crusher Fire Water Pump Dist Board Main Circuit Breaker (Q103) Open
+- `BPQE2101DB01TRP01_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BPQE2101.Sub.DB01.CB01 | BPQE2101DB01CB01 Main Circuit Breaker | CAT_P3 | NPI & Primary Crusher Fire Water Pump Dist Board Main Circuit Breaker Tripped
+- `BPQE2101DB01VDC01_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BPQE2101.Sub.DB01 | BPQE2101 Distribution Board | CAT_P2 | NPI & Primary Crusher Fire Water Pump Dist Board 24vdc Control Supply (Q155) Failure
+- `BPQE2101PN01VDC01_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BPQE2101.Sub.PN01 | BPQE2101 Panel | CAT_P2 | NPI & Primary Crushing Fire Water Container Panel 24vdc Control Supply (Q155) Failure
+- `BPQE2115MC01CB01_A` | BR4.UTILITIES.WATER.BS1.P3POTWATER.BPQE2115.Sub.DB01 | BPQE2115 Distribution Board | CAT_P3 | Potable Water MCC (PWTP) Main Circuit Breaker Not Closed
+- `BPQE2115MC01TRP01_A` | BR4.UTILITIES.WATER.BS1.P3POTWATER.BPQE2115.Sub.DB01 | BPQE2115 Distribution Board | CAT_P3 | Potable Water MCC (PWTP) Main Circuit Breaker Trip
+- `BPQE2115MC01VDC01_A` | BR4.UTILITIES.WATER.BS1.P3POTWATER.BPQE2115.Sub.DB01 | BPQE2115 Distribution Board | CAT_P2 | Potable Water MCC 24vdc Control Supply (PWTP) (Q155) Failure
+- `BSR131AC01CB01_A` | BR4.SRV.PWR.BSR131.AC01.CB01 | BSR131AC01CB01 Main Circuit Breaker | CAT_P3 | Aircon 1 Main Circuit Breaker (Q103) Open
+- `BSR131AC01TRP01_A` | BR4.SRV.PWR.BSR131.AC01.CB01 | BSR131AC01CB01 Main Circuit Breaker | CAT_P3 | Aircon 1 Main Circuit Breaker Tripped
+- `BSR131AC01VDC01_A` | BR4.SRV.PWR.BSR131.AC01 | BSR131AC01 Air Conditioner 1 | CAT_P2 | Aircon 1 24vdc Control Supply (Q155) Failure
+- `BSR131AC02CB01_A` | BR4.SRV.PWR.BSR131.AC02.CB01 | BSR131AC02CB01 Main Circuit Breaker | CAT_P3 | Aircon 2 Main Circuit Breaker (Q103) Open
+- `BSR131AC02TRP01_A` | BR4.SRV.PWR.BSR131.AC02.CB01 | BSR131AC02CB01 Main Circuit Breaker | CAT_P3 | Aircon 2 Main Circuit Breaker Tripped
+- `BSR131AC02VDC01_A` | BR4.SRV.PWR.BSR131.AC02 | BSR131AC02 Air Conditioner 2 | CAT_P2 | Aircon 2 24vdc Control Supply (Q155) Failure
+- `BSR131BC01CB01_A` | BR4.SRV.PWR.BSR131.BC01.CB01 | BSR131BC01CB01 Main Circuit Breaker | CAT_P3 | Battery Charger 1 Main Circuit Breaker (Q103) Open
+- `BSR131BC01TRP01_A` | BR4.SRV.PWR.BSR131.BC01.CB01 | BSR131BC01CB01 Main Circuit Breaker | CAT_P3 | Battery Charger 1 Main Circuit Breaker Tripped
+- `BSR131BC01VDC01_A` | BR4.SRV.PWR.BSR131.BC01 | BSR131BC01 Utilities Battery Charger | CAT_P2 | Battery Charger 1 24vdc Control Supply (Q155) Failure
+- `BSR131BC02CB01_A` | BR4.SRV.PWR.BSR131.BC02.CB01 | BSR131BC02CB01 Main Circuit Breaker | CAT_P3 | Battery Charger 2 Main Circuit Breaker (Q103) Open
+- `BSR131BC02CB02_A` | BR4.SRV.PWR.BSR131.BC02 | BSR131BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BMC131INC01 110vdc INC01 Tripping Supply Circuit Breaker (Q114) Open
+- `BSR131BC02CB03_A` | BR4.SRV.PWR.BSR131.BC02 | BSR131BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BMC131INC02 110vdc INC02 Tripping Supply Circuit Breaker (Q117) Open
+- `BSR131BC02CB04_A` | BR4.SRV.PWR.BSR131.BC02 | BSR131BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BMC131INC03 110vdc INC03 Tripping Supply Circuit Breaker (Q120) Open
+- `BSR131BC02CB05_A` | BR4.SRV.PWR.BSR131.BC02 | BSR131BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 RSP01 110vdc Tripping Supply Circuit Breaker (Q123) Open
+- `BSR131BC02TRP01_A` | BR4.SRV.PWR.BSR131.BC02.CB01 | BSR131BC02CB01 Main Circuit Breaker | CAT_P3 | Battery Charger 2 Main Circuit Breaker Tripped
+- `BSR131BC02VDC01_A` | BR4.SRV.PWR.BSR131.BC02 | BSR131BC02 Fixed Plant Battery Charger | CAT_P2 | Battery Charger 2 24vdc Control Supply (Q155) Failure
+- `BSR131BC02VDC02_A` | BR4.SRV.PWR.BSR131.BC02 | BSR131BC02 Fixed Plant Battery Charger | CAT_P2 | Battery Charger 2 Battery Charger 110vdc Tripping Supply (K112) Failure
+- `BSR131BC02_BACSComFlt_A` | BR4.SRV.PWR.BSR131.BC02.BACS | BSR131BC02BACS BACS Webmanager | CAT_P2 | Battery Charger BC02 BACSComFlt
+- `BSR131BC02_BACSFlt_A` | BR4.SRV.PWR.BSR131.BC02.BACS | BSR131BC02BACS BACS Webmanager | CAT_P3 | Battery Charger BC02 BACSFlt
+- `BSR131BC02_CordexComFlt_A` | BR4.SRV.PWR.BSR131.BC02.Cordex | BSR131BC02Cordex Cordex CXC HP Controller | CAT_P2 | Battery Charger BC02 CordexComFlt
+- `BSR131BC02_CordexFlt_A` | BR4.SRV.PWR.BSR131.BC02.Cordex | BSR131BC02Cordex Cordex CXC HP Controller | CAT_P2 | Battery Charger BC02 CordexFlt
+- `BSR131DB01CB01_A` | BR4.SRV.PWR.BSR131.DB01.CB01 | BSR131DB01CB01 Main Circuit Breaker | CAT_P3 | LSP Dist Board Main Circuit Breaker (Q103) Open
+- `BSR131DB01TRP01_A` | BR4.SRV.PWR.BSR131.DB01.CB01 | BSR131DB01CB01 Main Circuit Breaker | CAT_P3 | LSP Dist Board Main Circuit Breaker Tripped
+- `BSR131DB01VDC01_A` | BR4.SRV.PWR.BSR131.DB01 | BSR131DB01 Switchroom 415V Lighting And Small Power Distribution Board | CAT_P2 | LSP Dist Board 24vdc Control Supply (Q155) Failure
+- `BSR131DB01XS01_A` | BR4.SRV.PWR.BSR131.DB01 | BSR131DB01 Switchroom 415V Lighting And Small Power Distribution Board | CAT_P2 | Surge Protection (SD107)
+- `BSR131DB02CB01_A` | BR4.SRV.PWR.BSR131.DB02.CB01 | BSR131DB02CB01 Main Circuit Breaker | CAT_P3 | 415V Dewatering Laydown Lighting Dist Board Main Circuit Breaker (Q103) Open
+- `BSR131DB02TRP01_A` | BR4.SRV.PWR.BSR131.DB02.CB01 | BSR131DB02CB01 Main Circuit Breaker | CAT_P3 | 415V Dewatering Laydown Lighting Dist Board Main Circuit Breaker Tripped
+- `BSR131DB02VDC01_A` | BR4.SRV.PWR.BSR131.DB02 | BSR131DB02 415V Dewatering Laydown Lighting Distribution Board | CAT_P2 | 415V Dewatering Laydown Lighting Dist Board 24vdc Control Supply (Q155) Failure
+- `BSR131DB03CB01_A` | BR4.SRV.PWR.BSR131.DB03.CB01 | BSR131DB03CB01 Main Circuit Breaker | CAT_P3 | 415V HME Refuel Water Recycle Dist Board Main Circuit Breaker (Q103) Open
+- `BSR131DB03TRP01_A` | BR4.SRV.PWR.BSR131.DB03.CB01 | BSR131DB03CB01 Main Circuit Breaker | CAT_P3 | 415V HME Refuel Water Recycle Dist Board Main Circuit Breaker Tripped
+- `BSR131DB03VDC01_A` | BR4.SRV.PWR.BSR131.DB03 | BSR131DB03 415V HME Refuel And Water Recycle Area Distribution Board | CAT_P2 | 415V HME Refuel Water Recycle Dist Board 24vdc Control Supply (Q155) Failure
+- `BSR131DB04CB01_A` | BR4.SRV.PWR.BSR131.DB04.CB01 | BSR131DB04CB01 Main Circuit Breaker | CAT_P3 | 415V Laydown Area Lighting DB04 Main Circuit Breaker Not Closed
+- `BSR131DB04TRP01_A` | BR4.SRV.PWR.BSR131.DB04.CB01 | BSR131DB04CB01 Main Circuit Breaker | CAT_P3 | 415V Laydown Area Lighting DB04 Main Circuit Breaker Tripped
+- `BSR131DB04VDC01_A` | BR4.SRV.PWR.BSR131.DB04 | BSR131DB04 NPI Laydown Area Lighting Distribution Board | CAT_P2 | 415V Laydown Area Lighting DB04 Main Circuit Breaker Tripped
+- `BSR131DX01VDC01_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop01 | BPL131 Drop 1 - BSR131DX01 | CAT_P3 | DIO Box 1 DX01 24vdc Control Supply Healthy (Q110) Failure
+- `BSR131DX01VDC02_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop01 | BPL131 Drop 1 - BSR131DX01 | CAT_P3 | DIO Box 1 DX01 24vdc Output Module Control Supply (Q170) Failure
+- `BSR131DX01VDC03_A` | BR4.SRV.PWR.BSR131.UP01 | BSR131UP01 Uninterruptable Power Supply | CAT_P3 | DIO Box 1 24vdc Control Supply (Q254) Failure
+- `BSR131DX01VDC04_A` | BR4.SRV.PWR.BSR131.BC01 | BSR131BC01 Utilities Battery Charger | CAT_P3 | DIO Box 1 BSR131BC01DB01 24vdc Control Supply (Q257) Failure
+- `BSR131DX01VDC05_A` | BR4.SRV.PWR.BSR131.BC02 | BSR131BC02 Fixed Plant Battery Charger | CAT_P3 | DIO Box 1 BSR131BC02DB01 24vdc Control Supply (Q260) Failure
+- `BSR131DX01VDC06_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | DIO Box 1 24vdc Control Supply (Q263) Failure
+- `BSR131DX01VDC07_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P3 | DIO Box 1 Misc Switchroom Alarms 24vdc Control Supply (Q266) Failure
+- `BSR131DX01XS01_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P3 | 24vdc Power Supply 1 Fail
+- `BSR131DX01XS02_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P3 | 24vdc Power Supply 2 Fail
+- `BSR131FIP01IS01_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P3 | Fire Panel Fire Panel Isolated Open
+- `BSR131FIP01XS01_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P2 | Fire Panel Fault
+- `BSR131FIP01XS02_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P2 | Fire Panel Unhealthy
+- `BSR131FIP01XS03_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P2 | Fire Panel Gas Discharged
+- `BSR131NEP01CB01_A` | BR4.SRV.PWR.BSR131.NEP01 | BSR131NEP01 Network Equipment Panel | CAT_P3 | Network Panel 1 NEP Primary PDU Circuit Breaker (Q130) Open
+- `BSR131NEP01CB02_A` | BR4.SRV.PWR.BSR131.NEP01 | BSR131NEP01 Network Equipment Panel | CAT_P3 | Network Panel 1 NEP Secondary PDU Circuit Breaker (Q180) Open
+- `BSR131PB01_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P2 | NPI Hub Substation Shutdown Pushbutton (SESP) Activated
+- `BSR131PN01PS01_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P3 | Switchroom Pressurisation Fan Filter Blocked
+- `BSR131PN01TS01_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P3 | Control Panel Airlock High Temperature
+- `BSR131PN01XS01_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P2 | Air Conditioner Fault
+- `BSR131PN01XS02_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P2 | Control Panel Air Conditioner Filter Blocked
+- `BSR131PN01XS03_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P2 | Air Con 1 Fault
+- `BSR131PN01XS04_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P2 | Control Panel Air Con 2 Healthy
+- `BSR131PN01XS05_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P2 | Switchroom Humidity
+- `BSR131PN01XS06_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P2 | NPI Hub Switchroom Control Panel 1 Air Conditioner 6 - Airlock Fault
+- `BSR131PN01XS07_A` | BR4.SRV.PWR.BSR131 | BSR131 Switchroom | CAT_P2 | NPI Hub Switchroom Control Panel 1 Air Conditioner 7 - Airlock Fault
+- `BSR131UP01CB01_A` | BR4.SRV.PWR.BSR131.UP01 | BSR131UP01 Uninterruptable Power Supply | CAT_P3 | UPS Main Circuit Breaker (Q103) Open
+- `BSR131UP01DB01B1_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | 240vac Primary UPS Circuit Breaker Open
+- `BSR131UP01DB01B2_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | 240vac UPS Circuit Breaker Open
+- `BSR131UP01DB01B3_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | Fire Panel 240vac UPS Circuit Breaker Open
+- `BSR131UP01DB01B4_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | Supression Control Panel Breaker Open
+- `BSR131UP01DB01R1_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | Primary 240vac UPS Circuit Breaker Open
+- `BSR131UP01DB01R2_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | 240vac Secondary UPS Circuit Breaker Open
+- `BSR131UP01DB01R3_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | 240vac UPS Circuit Breaker Open
+- `BSR131UP01DB01R4_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | Vesda Fire Detection Panel Breaker Open
+- `BSR131UP01DB01R5_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | 240vac UPS Circuit Breaker Open
+- `BSR131UP01DB01W1_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | Secondary 240vac UPS Circuit Breaker Open
+- `BSR131UP01DB01W2_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | 240vac UPS Circuit Breaker Open
+- `BSR131UP01DB01W3_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | HVAC Panel 240vac UPS Circuit Breaker Open
+- `BSR131UP01DB01W4_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | Cardax 240vac UPS Circuit Breaker Open
+- `BSR131UP01DB01W5_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | Potable Water 240vac UPS Circuit Breaker
+- `BSR131UP01DB01XS01_A` | BR4.SRV.PWR.BSR131.UP01.DB01 | BSR131UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P2 | Surge Protection (SD106)
+- `BSR131UP01TRP01_A` | BR4.SRV.PWR.BSR131.UP01 | BSR131UP01 Uninterruptable Power Supply | CAT_P3 | UPS Main Circuit Breaker Tripped
+- `BSR131UP01VDC01_A` | BR4.SRV.PWR.BSR131.UP01 | BSR131UP01 Uninterruptable Power Supply | CAT_P2 | UPS 24vdc Control Supply (Q155) Failure
+- `BSR131UP01XS01_A` | BR4.SRV.PWR.BSR131.UP01 | BSR131UP01 Uninterruptable Power Supply | CAT_P2 | UPS Surge Filter
+- `BSR131UP01ZS01_A` | BR4.SRV.PWR.BSR131.UP01 | BSR131UP01 Uninterruptable Power Supply | CAT_P3 | UPS In Normal Mode
+- `BSR131UP01_ComFlt_A` | BR4.SRV.PWR.BSR131.UP01 | BSR131UP01 Uninterruptable Power Supply | CAT_P2 | UPS Communications Fault
+- `BSR131UP01_Flt_A` | BR4.SRV.PWR.BSR131.UP01 | BSR131UP01 Uninterruptable Power Supply | CAT_P2 | UPS System Fault
+- `BSR132AC01CB01_A` | BR4.SRV.PWR.BSR132.AC01.CB01 | BSR132AC01CB01 Main Circuit Breaker | CAT_P3 | Aircon 1 Main Circuit Breaker (Q103) Open
+- `BSR132AC01TRP01_A` | BR4.SRV.PWR.BSR132.AC01 | BSR132AC01 Air Conditioner 1 | CAT_P3 | Aircon 1 Main Circuit Breaker Tripped
+- `BSR132AC01VDC01_A` | BR4.SRV.PWR.BSR132.AC01 | BSR132AC01 Air Conditioner 1 | CAT_P2 | Aircon 1 24vdc Control Supply (Q155) Failure
+- `BSR132AC02CB01_A` | BR4.SRV.PWR.BSR132.AC02.CB01 | BSR132AC02CB01 Main Circuit Breaker | CAT_P3 | Aircon 2 Main Circuit Breaker (Q103) Open
+- `BSR132AC02TRP01_A` | BR4.SRV.PWR.BSR132.AC02 | BSR132AC02 Air Conditioner 2 | CAT_P3 | Aircon 2 Main Circuit Breaker Tripped
+- `BSR132AC02VDC01_A` | BR4.SRV.PWR.BSR132.AC02 | BSR132AC02 Air Conditioner 2 | CAT_P2 | Aircon 2 24vdc Control Supply (Q155) Failure
+- `BSR132AC03CB01_A` | BR4.SRV.PWR.BSR132.AC03.CB01 | BSR132AC03CB01 Main Circuit Breaker | CAT_P3 | Aircon 3 Main Circuit Breaker (Q103) Open
+- `BSR132AC03TRP01_A` | BR4.SRV.PWR.BSR132.AC03 | BSR132AC03 Air Conditioner 3 | CAT_P3 | Aircon 3 Main Circuit Breaker Tripped
+- `BSR132AC03VDC01_A` | BR4.SRV.PWR.BSR132.AC03 | BSR132AC03 Air Conditioner 3 | CAT_P2 | Aircon 3 24vdc Control Supply (Q155) Failure
+- `BSR132AC04TRP01_A` | BR4.SRV.PWR.BSR132.AC04 | BSR132AC04 Air Conditioner 4 | CAT_P3 | Aircon 4 Main Circuit Breaker Tripped
+- `BSR132AC04VDC01_A` | BR4.SRV.PWR.BSR132.AC04 | BSR132AC04 Air Conditioner 4 | CAT_P2 | Aircon 4 24vdc Control Supply (Q185) Failure
+- `BSR132AC05TRP01_A` | BR4.SRV.PWR.BSR132.AC05 | BSR132AC05 Air Conditioner 5 | CAT_P3 | Aircon 4 Main Circuit Breaker Tripped
+- `BSR132AC05VDC01_A` | BR4.SRV.PWR.BSR132.AC05 | BSR132AC05 Air Conditioner 5 | CAT_P2 | Aircon 5 24vdc Control Supply (Q185) Failure
+- `BSR132BC01CB01_A` | BR4.SRV.PWR.BSR132.BC01.CB01 | BSR132BC01CB01 Main Circuit Breaker | CAT_P3 | Battery Charger 1 Main Circuit Breaker (Q103) Open
+- `BSR132BC01TRP01_A` | BR4.SRV.PWR.BSR132.BC01 | BSR132BC01 Utilities Battery Charger | CAT_P3 | Battery Charger 1 Main Circuit Breaker Tripped
+- `BSR132BC01VDC01_A` | BR4.SRV.PWR.BSR132.BC01 | BSR132BC01 Utilities Battery Charger | CAT_P2 | Battery Charger 1 24vdc Control Supply (Q155) Failure
+- `BSR132BC02CB01_A` | BR4.SRV.PWR.BSR132.BC02.CB01 | BSR132BC02CB01 Main Circuit Breaker | CAT_P3 | Battery Charger 2 Main Circuit Breaker (Q103) Open
+- `BSR132BC02CB02_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BMC1322INC01 110vdc INC01 Tripping Supply Circuit Breaker (Q114) Open
+- `BSR132BC02CB03_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BMC1322INC02 110vdc INC02 Tripping Supply Circuit Breaker (Q117) Open
+- `BSR132BC02CB04_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BMC1322INC03 110vdc INC03 Tripping Supply Circuit Breaker (Q120) Open
+- `BSR132BC02CB05_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BMC1321INC01 110vdc INC01 Tripping Supply Circuit Breaker (Q123) Open
+- `BSR132BC02CB06_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BMC1321FDR01 110vdc FDR01 Tripping Supply Circuit Breaker (Q126) Open
+- `BSR132BC02CB07_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BMC1321FDR02 110vdc FDR02 Tripping Supply Circuit Breaker (Q129) Open
+- `BSR132BC02CB08_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BMC1321FDR03 110vdc FDR03 Tripping Supply Circuit Breaker (Q132) Open
+- `BSR132BC02CB09_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BSR132RSP01 110vdc Supply Circuit Breaker (Q135) Open
+- `BSR132BC02CB10_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BSR132RSP03 110vdc Supply Circuit Breaker (Q138) Open
+- `BSR132BC02TRP01_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 Main Circuit Breaker Tripped
+- `BSR132BC02VDC01_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P2 | Battery Charger 2 24vdc Control Supply (Q155) Failure
+- `BSR132BC02VDC02_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P2 | Battery Charger 2 Battery Charger 110vdc Tripping Supply (K112) Failure
+- `BSR132BC02_BACSComFlt_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P2 | Battery Charger 2 BACS Comms Fault
+- `BSR132BC02_BACSFlt_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P3 | Battery Charger 2 BACS Fault
+- `BSR132BC02_CordexComFlt_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P2 | Battery Charger 2 Cordex Comms Fault
+- `BSR132BC02_CordexFlt_A` | BR4.SRV.PWR.BSR132.BC02 | BSR132BC02 Fixed Plant Battery Charger | CAT_P2 | Battery Charger 2 Codrex Fault
+- `BSR132DB01CB01_A` | BR4.SRV.PWR.BSR132.DB01.CB01 | BSR132DB01CB01 Main Circuit Breaker | CAT_P3 | LSP Dist Board 1 Main Circuit Breaker (Q103) Open
+- `BSR132DB01TRP01_A` | BR4.SRV.PWR.BSR132.DB01 | BSR132DB01 Switchroom 415V Lighting And Small Power Distribution Board | CAT_P3 | LSP Dist Board 1 Main Circuit Breaker Tripped
+- `BSR132DB01VDC01_A` | BR4.SRV.PWR.BSR132.DB01 | BSR132DB01 Switchroom 415V Lighting And Small Power Distribution Board | CAT_P2 | LSP Dist Board 1 24vdc Control Supply (Q155) Failure
+- `BSR132DB01XS01_A` | BR4.SRV.PWR.BSR132.DB01 | BSR132DB01 Switchroom 415V Lighting And Small Power Distribution Board | CAT_P2 | Surge Diverter Faulted
+- `BSR132DB02CB01_A` | BR4.SRV.PWR.BSR132.DB02.CB01 | BSR132DB02CB01 Main Circuit Breaker | CAT_P3 | LSP Dist Board 2 Main Circuit Breaker (Q103) Open
+- `BSR132DB02TRP01_A` | BR4.SRV.PWR.BSR132.DB02 | BSR132DB02 Overland Conveyor Head End 415V L&SP Distribution Board | CAT_P3 | LSP Dist Board 2 Main Circuit Breaker Tripped
+- `BSR132DB02VDC01_A` | BR4.SRV.PWR.BSR132.DB02 | BSR132DB02 Overland Conveyor Head End 415V L&SP Distribution Board | CAT_P2 | LSP Dist Board 2 24vdc Control Supply (Q155) Failure
+- `BSR132DB03CB01_A` | BR4.SRV.PWR.BSR132.DB03.CB01 | BSR132DB03CB01 Main Circuit Breaker | CAT_P3 | LSP Dist Board 3 Main Circuit Breaker (Q103) Open
+- `BSR132DB03TRP01_A` | BR4.SRV.PWR.BSR132.DB03 | BSR132DB03 Surge Bin 415V L&SP Distribution Board | CAT_P3 | LSP Dist Board 3 Main Circuit Breaker Tripped
+- `BSR132DB03VDC01_A` | BR4.SRV.PWR.BSR132.DB03 | BSR132DB03 Surge Bin 415V L&SP Distribution Board | CAT_P2 | LSP Dist Board 3 24vdc Control Supply (Q155) Failure
+- `BSR132DB04CB01_A` | BR4.SRV.PWR.BSR132.DB04.CB01 | BSR132DB04CB01 Main Circuit Breaker | CAT_P3 | LSP Dist Board Main Circuit Breaker (Q103) Open
+- `BSR132DB04TRP01_A` | BR4.SRV.PWR.BSR132.DB04 | BSR132DB04 Surge Bin Pump Station 415V L&SP Distribution Board | CAT_P3 | LSP Dist Board Main Circuit Breaker Tripped
+- `BSR132DB04VDC01_A` | BR4.SRV.PWR.BSR132.DB04 | BSR132DB04 Surge Bin Pump Station 415V L&SP Distribution Board | CAT_P2 | LSP Dist Board 24vdc Control Supply (Q155) Failure
+- `BSR132DX01VDC01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 DX01 24vdc Control Supply Healthy (Q110) Failure
+- `BSR132DX01VDC02_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 DX01 24vdc DIO1 Output Module Control Supply (Q181) Failure
+- `BSR132DX01VDC03_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 BSR132UP01 24vdc Control Supply (Q254) Failure
+- `BSR132DX01VDC04_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 BSR132BC01 24vdc Control Supply (Q257) Failure
+- `BSR132DX01VDC05_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 BSR132BC02 24vdc Control Supply (Q260) Failure
+- `BSR132DX01VDC06_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 BSR132UP01DB01 24vdc Control Supply (Q263) Failure
+- `BSR132DX01VDC07_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 Misc Substation Alarms 24vdc Control Supply (Q266) Failure
+- `BSR132DX01VDC08_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 Safety PLC Circuit 1 (Q269) Failure
+- `BSR132DX01VDC09_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 Safety PLC Circuit 2 (Q272) Failure
+- `BSR132DX01VDC10_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 BPP2104VS01 24vdc Control Supply (Q275) Failure
+- `BSR132DX01VDC11_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 BPP2105VS01 24vdc Control Supply (Q278) Failure
+- `BSR132DX01XS01_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 24vdc Transformer Supply 1 (U103A) Fault
+- `BSR132DX01XS02_A` | BR4.SRV.PWR.BSR132.RemoteDrops.BSR132DX01 | BSR132DX01 BSR132DX01 | CAT_P3 | DIO Box 1 24vdc Transformer Supply 2 (U103B) Fault
+- `BSR132FIP01IS01_A` | BR4.UTILITIES.FIREPANELS.BSR132FIP01 | BSR132 Fire Panel | CAT_P3 | Isolator Open
+- `BSR132FIP01XS01_A` | BR4.UTILITIES.FIREPANELS.BSR132FIP01 | BSR132 Fire Panel | CAT_P2 | A
+- `BSR132FIP01XS02_A` | BR4.UTILITIES.FIREPANELS.BSR132FIP01 | BSR132 Fire Panel | CAT_P2 | Unhealthy
+- `BSR132FIP01XS03_A` | BR4.UTILITIES.FIREPANELS.BSR132FIP01 | BSR132 Fire Panel | CAT_P2 | Gas Discharged
+- `BSR132NEP01CB01_A` | BR4.SRV.PWR.BSR132.NEP01 | BSR132NEP01 Network Equipment Panel | CAT_P3 | Network Panel 1 Primary PDU Circuit Breaker (Q130) Open
+- `BSR132NEP01CB02_A` | BR4.SRV.PWR.BSR132.NEP01 | BSR132NEP01 Network Equipment Panel | CAT_P3 | Network Panel 1 Secondary PDU Circuit Breaker (Q180) Open
+- `BSR132PB01_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | PC Substation 132 Shutdown Pushbutton (SESP) Activated
+- `BSR132PN01PS01_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P3 | Pressurisation Fan Filter Fault
+- `BSR132PN01TS01_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P3 | HVAC Panel Airlock Temperature
+- `BSR132PN01TS02_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P3 | HVAC Panel Fixed Plant Room Temperature
+- `BSR132PN01TS03_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P3 | HVAC Panel HV VSD Room Temperature
+- `BSR132PN01XS01_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | Air Conditioner Healthy Fault
+- `BSR132PN01XS02_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | HVAC Panel Air Conditioner Filter Blocked
+- `BSR132PN01XS03_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | Air Conditioner 1 Fault
+- `BSR132PN01XS04_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | Air Conditioner 2 Fault
+- `BSR132PN01XS05_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | Air Conditioner 3 Fault
+- `BSR132PN01XS06_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | HVAC Panel Air Conditioner 7 - Airlock Fault
+- `BSR132PN01XS07_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | HVAC Panel Air Conditioner 8 - Airlock Fault
+- `BSR132PN01XS09_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | HVAC Panel Air Conditioner 9 - Fixed Plant Room Fault
+- `BSR132PN01XS10_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | HVAC Panel Air Conditioner 10 - Fixed Plant Room Fault
+- `BSR132PN01XS11_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | HVAC Panel Air Conditioner 11 - Fixed Plant Room Fault
+- `BSR132PN01XS12_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | HVAC Panel Air Conditioner 12 - Fixed Plant Room Fault
+- `BSR132PN01XS13_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | HVAC Panel Air Conditioner 13 - Fixed Plant Room Fault
+- `BSR132PN01XS14_A` | BR4.SRV.PWR.BSR132 | BSR132 Switchroom | CAT_P2 | HVAC Panel Air Conditioner 14 - Fixed Plant Room Fault
+- `BSR132UP01CB01_A` | BR4.SRV.PWR.BSR132.UP01.UPScale | BSR132UP01UPScale UPScale | CAT_P3 | UPS Main Circuit Breaker (Q103) Open
+- `BSR132UP01DB01B1_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac NEP1 UPS Primary Circuit Breaker Open
+- `BSR132UP01DB01B2_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV702FIC1 RIS UPS Circuit Breaker Open
+- `BSR132UP01DB01B3_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac HVAC Panel UPS Circuit Breaker Open
+- `BSR132UP01DB01B4_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV703FIS2 RIS UPS Circuit Breaker Open
+- `BSR132UP01DB01B5_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV702AX1-27 (Odd) UPS Circuit Breaker Open
+- `BSR132UP01DB01B6_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV702VSD1 UPS Circuit Breaker Open
+- `BSR132UP01DB01B9_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV703DX010_AX10-17 UPS Circuit Breaker Open
+- `BSR132UP01DB01R1_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac BSR132DX01 UPS Primary Circuit Breaker Open
+- `BSR132UP01DB01R2_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac NEP1 UPS Secondary Circuit Breaker Open
+- `BSR132UP01DB01R3_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CCTV UPS Circuit Breaker Open
+- `BSR132UP01DB01R4_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV703FIC2 RIS UPS Circuit Breaker Open
+- `BSR132UP01DB01R5_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV702DX2 Panel UPS Circuit Breaker Open
+- `BSR132UP01DB01R6_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV702WN1 Panel UPS Circuit Breaker Open
+- `BSR132UP01DB01R7_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac BPS702DX01 Panel UPS Circuit Breaker Open
+- `BSR132UP01DB01R8_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV702VSD2 UPS Circuit Breaker Open
+- `BSR132UP01DB01R9_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 BCV131AVS01 240vac UPS Circuit Breaker Closed
+- `BSR132UP01DB01W1_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac BSR132DX01 UPS Secondary Circuit Breaker Open
+- `BSR132UP01DB01W3_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV702FIS1 RIS UPS Circuit Breaker Open
+- `BSR132UP01DB01W4_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV702DX01 Panel UPS Circuit Breaker Open
+- `BSR132UP01DB01W5_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac Security Panel UPS Circuit Breaker Open
+- `BSR132UP01DB01W6_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV702AX2-28 (Even) UPS Circuit Breaker Open
+- `BSR132UP01DB01W7_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 BCV131FIS02 240vac UPS Circuit Breaker Closed
+- `BSR132UP01DB01W8_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 240vac CV703BR1ECP1 UPS Circuit Breaker Open
+- `BSR132UP01DB01W9_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P3 | UPS Dist Board 1 BCV131BVS01 240vac UPS Circuit Breaker Closed
+- `BSR132UP01DB01XS01_A` | BR4.SRV.PWR.BSR132.UP01.DB01 | BSR132UP01DB01 Uninterruptible Power Supply Distribution Board | CAT_P2 | Surge Diverter Faulted
+- `BSR132UP01TRP01_A` | BR4.SRV.PWR.BSR132.UP01.UPScale | BSR132UP01UPScale UPScale | CAT_P3 | UPS Main Circuit Breaker Tripped
+- `BSR132UP01VDC01_A` | BR4.SRV.PWR.BSR132.UP01.UPScale | BSR132UP01UPScale UPScale | CAT_P2 | UPS 24vdc Control Supply (Q155) Failure
+- `BSR132UP01XS01_A` | BR4.SRV.PWR.BSR132.UP01.UPScale | BSR132UP01UPScale UPScale | CAT_P2 | UPS Surge Filter
+- `BSR132UP01ZS01_A` | BR4.SRV.PWR.BSR132.UP01.UPScale | BSR132UP01UPScale UPScale | CAT_P3 | UPS UPS In Normal Mode
+- `BSR132UP01_BACSComFlt_A` | BR4.SRV.PWR.BSR132.UP01.UPScale | BSR132UP01UPScale UPScale | CAT_P2 | UPS BACS Comms Fault
+- `BSR132UP01_BACSFlt_A` | BR4.SRV.PWR.BSR132.UP01.UPScale | BSR132UP01UPScale UPScale | CAT_P3 | UPS BACS Fault
+- `BSR132UP01_ComFlt_A` | BR4.SRV.PWR.BSR132.UP01.UPScale | BSR132UP01UPScale UPScale | CAT_P2 | UPS Communications Fault
+- `BSR132UP01_UPSComFlt_A` | BR4.SRV.PWR.BSR132.UP01.UPScale | BSR132UP01UPScale UPScale | CAT_P2 | UPS Comms Fault
+- `BSR132UP01_UPSFlt_A` | BR4.SRV.PWR.BSR132.UP01.UPScale | BSR132UP01UPScale UPScale | CAT_P2 | UPS System Fault
+- `BSTD1106FT03_Frz_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1106.FieldIO.FT03 | LME West Standpipe Discharge Flow | CAT_P3 | Flow Transmitter Frozen
+- `BSTD1106FT03_Hi_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1106.FieldIO.FT03 | LME West Standpipe Discharge Flow | CAT_P3 | Flow High
+- `BSTD1106FT03_Rtn_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1106.FieldIO.FT03 | LME West Standpipe Discharge Flow | CAT_P3 | Pump Flow Detected With Valve Closed
+- `BSTD1106FV03CB01_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1106.FV03.FieldIO.CB01 | BSTD1106 LME West Standpipe Flow Valve 240VAC Circuit Breaker | CAT_P3 | West Turkeys Nest LME Standpipe 240vac Flow Valve Power Circuit Breaker Open
+- `BSTD1106FV03XS01_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1106.FV03 | BSTD1106 LME West Standpipe Flow Valve | CAT_P2 | West Turkeys Nest LME Standpipe Valve Unhealthy
+- `BSTD1106FV03_ExcRun_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1106.FV03 | BSTD1106 LME West Standpipe Flow Valve | CAT_P3 | West Turkeys Nest LME Standpipe Valve Excessive Open
+- `BSTD1106FV03_FTC_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1106.FV03 | BSTD1106 LME West Standpipe Flow Valve | CAT_P2 | West Turkeys Nest LME Standpipe Valve Fail To Close
+- `BSTD1106FV03_FTO_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1106.FV03 | BSTD1106 LME West Standpipe Flow Valve | CAT_P2 | West Turkeys Nest LME Standpipe Valve Fail To Open
+- `BSTD1106FV03_LmtFlt_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1106.FV03 | BSTD1106 LME West Standpipe Flow Valve | CAT_P2 | West Turkeys Nest LME Standpipe Valve Dual Limit
+- `BSTD1106FV03_LocFlt_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1106.FV03 | BSTD1106 LME West Standpipe Flow Valve | CAT_P3 | West Turkeys Nest LME Standpipe Valve Left In Local
+- `BSTD1107FT02_Frz_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1107 | BSTD1107 HME West Standpipe | CAT_P3 | Flow Transmitter Frozen
+- `BSTD1107FT02_Hi_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1107 | BSTD1107 HME West Standpipe | CAT_P3 | Flow High
+- `BSTD1107FT02_Rtn_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1107 | BSTD1107 HME West Standpipe | CAT_P3 | Flow Detected With Valve Closed
+- `BSTD1107FV02CB01_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1107.FV02.FieldIO.CB01 | BSTD1107 HME West Standpipe Flow Valve 240VAC Circuit Breaker | CAT_P3 | West Turkeys Nest HME Standpipe 240vac Flow Valve Power Circuit Breaker Open
+- `BSTD1107FV02XS01_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1107.FV02 | BSTD1107 HME West Standpipe Flow Valve | CAT_P2 | West Turkeys Nest HME Standpipe Valve Unhealthy
+- `BSTD1107FV02_ExcRun_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1107.FV02 | BSTD1107 HME West Standpipe Flow Valve | CAT_P3 | West Turkeys Nest HME Standpipe Valve Excessive Open
+- `BSTD1107FV02_FTC_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1107.FV02 | BSTD1107 HME West Standpipe Flow Valve | CAT_P2 | West Turkeys Nest HME Standpipe Valve Fail To Close
+- `BSTD1107FV02_FTO_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1107.FV02 | BSTD1107 HME West Standpipe Flow Valve | CAT_P2 | West Turkeys Nest HME Standpipe Valve Fail To Open
+- `BSTD1107FV02_LmtFlt_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1107.FV02 | BSTD1107 HME West Standpipe Flow Valve | CAT_P2 | West Turkeys Nest HME Standpipe Valve Dual Limit
+- `BSTD1107FV02_LocFlt_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1107.FV02 | BSTD1107 HME West Standpipe Flow Valve | CAT_P3 | West Turkeys Nest HME Standpipe Valve Left In Local
+- `BTK2101DX04VDC01_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop04 | BPL131 Drop 4 - BTK2101DX04 | CAT_P3 | NPI Fire Water Tank DIO Box 1 24vdc Output Control Supply (Q143) Failure
+- `BTK2101DX04VDC02_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop04 | BPL131 Drop 4 - BTK2101DX04 | CAT_P3 | NPI Fire Water Tank DIO Box 1 24vdc GW1 Control Supply (Q157) Failure
+- `BTK2101DX04VDC03_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop04 | BPL131 Drop 4 - BTK2101DX04 | CAT_P3 | NPI Fire Water Tank DIO Box 1 24vdc Instrument Control Supply (Q164) Failure
+- `BTK2101DX04VDC04_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop04 | BPL131 Drop 4 - BTK2101DX04 | CAT_P3 | NPI Fire Water Tank DIO Box 1 24vdc Transmitter Control Supply (Q168) Failure
+- `BTK2101DX04VDC05_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop04 | BPL131 Drop 4 - BTK2101DX04 | CAT_P3 | NPI Fire Water Tank DIO Box 1 24vdc Control Supply (Q172) Failure
+- `BTK2101LT01_HiHi_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BTK2101.FieldIO.LT01 | BTK2101 Fire Water Tank 1 | CAT_P3 | NPI Fire Water Tank Level High High
+- `BTK2101LT01_Hi_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BTK2101.FieldIO.LT01 | BTK2101 Fire Water Tank 1 | CAT_P3 | Hi
+- `BTK2101LT01_LoLo_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BTK2101.FieldIO.LT01 | BTK2101 Fire Water Tank 1 | CAT_P3 | Level Low Low
+- `BTK2101LT01_Lo_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BTK2101.FieldIO.LT01 | BTK2101 Fire Water Tank 1 | CAT_P3 | NPI Fire Water Tank 1 LT01 Level Low
+- `BTK2102LT01_HiHi_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BTK2102.FieldIO.LT01 | BTK2102 Fire Water Tank 2 | CAT_P3 | NPI Fire Water Tank LT01 Level High High
+- `BTK2102LT01_Hi_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BTK2102.FieldIO.LT01 | BTK2102 Fire Water Tank 2 | CAT_P3 | Hi
+- `BTK2102LT01_LoLo_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BTK2102.FieldIO.LT01 | BTK2102 Fire Water Tank 2 | CAT_P3 | Tank Level Low Low
+- `BTK2102LT01_Lo_A` | BR4.UTILITIES.WATER.BS1.P3FIREWATER.BTK2102.FieldIO.LT01 | BTK2102 Fire Water Tank 2 | CAT_P3 | Tank Level Low Healthy
+- `BTY1502DX02VDC01_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO | BTY1502 West Turkeys Nest | CAT_P3 | DIO Box 2 24vdc Output Control Supply (Q143) Failure
+- `BTY1502DX02VDC02_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO | BTY1502 West Turkeys Nest | CAT_P3 | DIO Box 2 24vdc GW1 Control Supply (Q157) Failure
+- `BTY1502DX02VDC03_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO | BTY1502 West Turkeys Nest | CAT_P3 | DIO Box 2 24vdc Instrument Control Supply (Q164) Failure
+- `BTY1502DX02VDC04_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO | BTY1502 West Turkeys Nest | CAT_P3 | DIO Box 2 24vdc Transmitter Control Supply (Q168) Failure
+- `BTY1502DX02VDC05_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO | BTY1502 West Turkeys Nest | CAT_P3 | DIO Box 2 24vdc Process Water Control Supply (Q172) Failure
+- `BTY1502DX02VDC06_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1101.FieldIO | Production Plant & NPI Water Supply Pump 1 Field IO | CAT_P3 | West Turkeys Nest DIO Box 2 24vdc BPP1101 Control Supply (Q176) Failure
+- `BTY1502DX02VDC07_A` | BR4.UTILITIES.WATER.BS1.RWD1.BPP1102.FieldIO | Production Plant & NPI Water Supply Pump 2 Field IO | CAT_P3 | West Turkeys Nest DIO Box 2 24vdc BPP1102 Control Supply (Q180) Failure
+- `BTY1502DX02VDC08_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1106.FieldIO | HME & LME Standpipe Pump 3 Field IO | CAT_P3 | West Turkeys Nest DIO Box 2 24vdc BPP1106 Control Supply (Q184) Failure
+- `BTY1502DX02VDC09_A` | BR4.UTILITIES.WATER.BS1.STD1.BPP1107.FieldIO | HME & LME Standpipe Pump 4 Field IO | CAT_P3 | West Turkeys Nest DIO Box 2 24vdc BPP1107 Control Supply (Q188) Failure
+- `BTY1502DX02VDC10_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1106.FieldIO | BSTD1106 LME West Standpipe | CAT_P3 | West Turkeys Nest DIO Box 2 24vdc Control Supply (Q192) Failure
+- `BTY1502DX02VDC11_A` | BR4.UTILITIES.WATER.BS1.STD1.BSTD1107.FieldIO | BSTD1107 HME West Standpipe | CAT_P3 | West Turkeys Nest DIO Box 2 24vdc Control Supply (Q196) Failure
+- `BTY1502DX03VDC01_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop03 | BPL131 Drop 3 - BTY1502DX03 | CAT_P3 | West Turkeys Nest DIO Box 3 24vdc Output Control Supply (Q143) Failure
+- `BTY1502DX03VDC02_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop03 | BPL131 Drop 3 - BTY1502DX03 | CAT_P3 | West Turkeys Nest DIO Box 3 24vdc GW1 Control Supply (Q157) Failure
+- `BTY1502DX03VDC03_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop03 | BPL131 Drop 3 - BTY1502DX03 | CAT_P3 | West Turkeys Nest DIO Box 3 24vdc Instrument Control Supply (Q164) Failure
+- `BTY1502DX03VDC04_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop03 | BPL131 Drop 3 - BTY1502DX03 | CAT_P3 | West Turkeys Nest DIO Box 3 24vdc Transmitter Control Supply (Q168) Failure
+- `BTY1502DX03VDC05_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop03 | BPL131 Drop 3 - BTY1502DX03 | CAT_P3 | West Turkeys Nest DIO Box 3 24vdc Field Control Supply (Q172) Failure
+- `BTY1502DX03VDC06_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop03 | BPL131 Drop 3 - BTY1502DX03 | CAT_P3 | West Turkeys Nest DIO Box 3 24vdc BPP1103 Field Control Supply (Q176) Failure
+- `BTY1502DX03VDC07_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop03 | BPL131 Drop 3 - BTY1502DX03 | CAT_P3 | West Turkeys Nest DIO Box 3 24vdc BPP1104 Field Control Supply (Q180) Failure
+- `BTY1502DX03VDC08_A` | BR4.SRV.CTRLSYS.PLC.BPL131.Drop03 | BPL131 Drop 3 - BTY1502DX03 | CAT_P3 | West Turkeys Nest DIO Box 3 24vdc BPP1105 Field Control Supply (Q184) Failure
+- `BTY1502FT02_Flt_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.FT02 | BTY1502 West Turkeys Nest Recirculation Line Flow | CAT_P2 | West Turkeys Nest Recirculation Flow Fault
+- `BTY1502FT02_Frz_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.FT02 | BTY1502 West Turkeys Nest Recirculation Line Flow | CAT_P3 | Recirculation FlowTransmitter Frozen
+- `BTY1502FT02_Hi_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.FT02 | BTY1502 West Turkeys Nest Recirculation Line Flow | CAT_P3 | Recirculation Flow High
+- `BTY1502FT02_Lo_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.FT02 | BTY1502 West Turkeys Nest Recirculation Line Flow | CAT_P3 | Recirculation Flow Low
+- `BTY1502FV01CB01_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FV01.FieldIO.CB01 | BTY1502FV01 Process Water Recirculation Flow Valve | CAT_P3 | West Turkeys Nest 240vac Flow Valve Power Circuit Breaker Open
+- `BTY1502FV01XS01_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FV01 | BTY1502 West Turkeys Nest Process Water Recirculation Flow Valve | CAT_P2 | West Turkeys Nest Valve Unhealthy
+- `BTY1502FV01_FTC_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FV01 | BTY1502 West Turkeys Nest Process Water Recirculation Flow Valve | CAT_P2 | West Turkeys Nest Valve Fail To Close
+- `BTY1502FV01_FTO_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FV01 | BTY1502 West Turkeys Nest Process Water Recirculation Flow Valve | CAT_P2 | West Turkeys Nest Valve Fail To Open
+- `BTY1502FV01_LmtFlt_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FV01 | BTY1502 West Turkeys Nest Process Water Recirculation Flow Valve | CAT_P2 | West Turkeys Nest Valve Dual Limit
+- `BTY1502FV01_LocFlt_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FV01 | BTY1502 West Turkeys Nest Process Water Recirculation Flow Valve | CAT_P3 | Left In Local
+- `BTY1502LS01_A` | BR4.UTILITIES.WATER.BS1.BTY1502 | BTY1502 West Turkeys Nest | CAT_P3 | West Turkeys Nest
+- `BTY1502LT01_Frz_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT01 | BTY1502 West Turkeys Nest Level Transmitter 1 | CAT_P3 | Level Transmitter Freeze
+- `BTY1502LT01_HiHi_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT01 | BTY1502 West Turkeys Nest Level Transmitter 1 | CAT_P3 | West Turkeys Nest Level High High
+- `BTY1502LT01_Hi_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT01 | BTY1502 West Turkeys Nest Level Transmitter 1 | CAT_P3 | West Turkeys Nest Level High
+- `BTY1502LT01_LoLo_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT01 | BTY1502 West Turkeys Nest Level Transmitter 1 | CAT_P3 | Turkeys Nest Low Low
+- `BTY1502LT01_Lo_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT01 | BTY1502 West Turkeys Nest Level Transmitter 1 | CAT_P3 | West Turkeys Nest Level Low
+- `BTY1502LT01_SigFlt_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT01 | BTY1502 West Turkeys Nest Level Transmitter 1 | CAT_P2 | Level Discrepancy Fault
+- `BTY1502LT02_Frz_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT02 | BTY1502 West Turkeys Nest Level Transmitter 2 | CAT_P3 | East Turkeys Nest Raw Water Remote Mode LT02 Freeze
+- `BTY1502LT02_HiHi_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT02 | BTY1502 West Turkeys Nest Level Transmitter 2 | CAT_P3 | West Turkeys Nest High High
+- `BTY1502LT02_Hi_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT02 | BTY1502 West Turkeys Nest Level Transmitter 2 | CAT_P3 | West Turkeys Nest Level High
+- `BTY1502LT02_LoLo_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT02 | BTY1502 West Turkeys Nest Level Transmitter 2 | CAT_P3 | NPI Fire Water Tank Level Low Low
+- `BTY1502LT02_Lo_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT02 | BTY1502 West Turkeys Nest Level Transmitter 2 | CAT_P3 | West Turkeys Nest Low
+- `BTY1502LT02_SigFlt_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.LT02 | BTY1502 West Turkeys Nest Level Transmitter 2 | CAT_P2 | West Turkeys Nest Signal Fault
+- `BTY1502PT01_Hi_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.PT01 | BTY1502 West Turkeys Nest | CAT_P3 | WTN East Collection Header In Flow Pressure High
+- `BTY1502PT01_Lo_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.PT01 | BTY1502 West Turkeys Nest | CAT_P3 | WTN East Collection Header In Flow Pressure Low
+- `BTY1502PT03_Hi_A` | BR4.UTILITIES.WATER.BS1.BTY1502.FieldIO.PT03 | BTY1502 West Turkeys Nest | CAT_P3 | WTN West Collection Header In Flow Pressure High
+- `NOT_BPL132WN_En` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Enabled From BPL132 Interlock
+- `NOT_BCV131WN1_Aut` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Auto Mode Status
+- `NOT_BCV131WN1_AutMinLd_OK` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Auto Mode Load OK, Above Minimum Start
+- `NOT_BCV131WN1AUTSTP01_SL` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Auto Stop Started Seal
+- `NOT_BCV131WN1DM01ACT_I` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Drum Limit Switch 1 Activated, Forward Or Pay-Out End
+- `NOT_BCV131WN1DM04ACT_I` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Drum Limit Switch 4 Activated, Reverse Or Haul-In End
+- `NOT_BCV131WN1VSD1_Rn0FB` | BR4.INLOADING.BP3OLC.BCV131.WN01.VSD1 | BCV131WN1 VSD | IL_Critical | Running 0 Rpm Feedback
+- `NOT_BCV131WN1VSD1_FwdFB` | BR4.INLOADING.BP3OLC.BCV131.WN01.VSD1 | BCV131WN1 VSD | IL_Critical | Running Forward Feedback
+- `NOT_BCV131WN1VSD1_RevFB` | BR4.INLOADING.BP3OLC.BCV131.WN01.VSD1 | BCV131WN1 VSD | IL_Critical | Running Reverse Feedback
+- `NOT_BCV131WN1DR1_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Active Winch Sequence Stop Interlock
+- `NOT_BCV131WN1DIR1_I` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Motor Manual Direction Fwd
+- `NOT_BCV131WN1_MntLpRnBypassCmd` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Maintenance Locking Pin Bypassed
+- `NOT_BCV131WN1STP01_I` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Local Stop Push Button
+- `NOT_BCV131WN1STP01_HMI_I` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | HMI Stop Drive Command
+- `NOT_BCV131WN1MNLSTP01_SL` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Manual Stop Started Seal
+- `NOT_BPL132WN_EnOK_SL` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Enable OK Seal
+- `NOT_BCV131WN1AutBrk_Stt` | BR4.INLOADING.BP3OLC.BCV131.WN01.BR1 | BCV131WN1 Brake | IL_Critical | Auto Mode Brake Start
+- `NOT_BCV131WN1BR1_ILEn` | BR4.INLOADING.BP3OLC.BCV131.WN01.BR1 | BCV131WN1 Brake | IL_Critical | Winch Brake Interlock Enabled On Low Speed
+- `NOT_BCV131WN1BR1_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.WN01.BR1 | BCV131WN1 Brake | IL_Critical | Sequence Stop Interlock
+- `NOT_BCV131WN1FN1_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.WN01.FN1 | BCV131WN1 Fan | IL_Critical | Sequence Stop Interlock
+- `NOT_BCV131WN1FN1_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.WN01.FN1 | BCV131WN1 Fan | IL_Critical | Local Start Interlock
+- `NOT_BCV131WN1LP1_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.WN01.LP1 | BCV131WN1 Locking Pin | IL_Critical | Lock Pin Sequence Stop Interlock
+- `NOT_BRB132_En` | BR4.INLOADING.BP3PRCR.BRB13x.BRB132 | BRB132 Rockbreaker | IL_Critical | ROM Rock Breaker Enabled
+- `NOT_BBN130LUY01_CtlHi` | BR4.INLOADING.BP3PRCR.BBN130.LUY01 | BBN130LUY01 Active Level | IL_Critical | Level Control High
+- `NOT_BBN130LUY01_BypAct` | BR4.INLOADING.BP3PRCR.BBN130.LUY01 | BBN130LUY01 Active Level | IL_Critical | Low Level Bypass Active
+- `NOT_BJC130_AutRun` | BR4.INLOADING.BP3PRCR.BJC130 | BJC130 Jaw Crusher | IL_Critical | Primary Crusher Auto Running
+- `NOT_BCV130_AutRun` | BR4.INLOADING.BP3PRCR.BAF130 | BAF130 Apron Feeder | IL_Critical | Discharge Conveyor Auto Running
+- `NOT_BVG130_AutRun` | BR4.INLOADING.BP3PRCR.BAF130 | BAF130 Apron Feeder | IL_Critical | Grizzly Screen Auto Running
+- `NOT_BCV130_SpnHi` | BR4.INLOADING.BP3PRCR.BAF130 | BAF130 Apron Feeder | IL_Critical | Volumetric Surge Controller Active
+- `NOT_BS1PC3_FdEn` | BR4.INLOADING.BP3PRCR.BAF130 | BAF130 Apron Feeder | IL_Critical | Feed Enabled
+- `NOT_BJC130_Gap_Adj` | BR4.INLOADING.BP3PRCR.BJC130 | BJC130 Jaw Crusher | IL_Critical | Gap Adjustment
+- `NOT_BJC130LT01_HiHi_Hty` | BR4.INLOADING.BP3PRCR.BJC130.FieldIO.LT01 | BJC130 Jaw Crusher | IL_Critical | High High Interlock
+- `NOT_BBN130LUY01_CtlLo` | BR4.INLOADING.BP3PRCR.BBN130.LUY01 | BBN130LUY01 Active Level | IL_Critical | Level Control Low
+- `NOT_BAF130_SeqStpIL` | BR4.INLOADING.BP3PRCR.BAF130 | BAF130 Apron Feeder | IL_Critical | Sequence Stop Interlock
+- `NOT_BAF130_LocSttIL` | BR4.INLOADING.BP3PRCR.BAF130 | BAF130 Apron Feeder | IL_Critical | Local Start Interlock
+- `NOT_BAF130_LocFwdRunIL` | BR4.INLOADING.BP3PRCR.BAF130 | BAF130 Apron Feeder | IL_LocalStart | Local Forward Run Interlock
+- `NOT_BAF130LCS01REV01_I` | BR4.INLOADING.BP3PRCR.BAF130 | BAF130 Apron Feeder | IL_Critical | Job Reverse Pushbutton
+- `NOT_BAF130_Prg` | BR4.INLOADING.BP3PRCR.BAF130 | BAF130 Apron Feeder | IL_Critical | Purged Interlock
+- `NOT_BAF130FN01_SeqSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN01 | BAF130FN01 Cooling Fan 1 | IL_SeqStart | HPU Oil Cooling Fan 1 Sequence Start Interlock
+- `NOT_BAF130FN01STS1_SeqReq` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN01 | BAF130FN01 Cooling Fan 1 | IL_Critical | HPU Oil Cooling Fan 1 Sequence Requested
+- `NOT_BAF130FN01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN01 | BAF130FN01 Cooling Fan 1 | IL_Critical | HPU Oil Cooling Fan 1 Sequence Stop Interlock
+- `NOT_BAF130FN01_LocSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN01 | BAF130FN01 Cooling Fan 1 | IL_Critical | HPU Oil Cooling Fan 1 Local Start Interlock
+- `NOT_BAF130FN01_LocRunIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN01 | BAF130FN01 Cooling Fan 1 | IL_LocalStart | HPU Oil Cooling Fan 1 Local Run Interlock
+- `NOT_BAF130FN02_SeqSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN02 | BAF130FN02 Cooling Fan 2 | IL_SeqStart | HPU Oil Cooling Fan 2 Sequence Start Interlock
+- `NOT_BAF130FN02STS1_SeqReq` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN02 | BAF130FN02 Cooling Fan 2 | IL_Critical | HPU Oil Cooling Fan 2 Sequence Requested
+- `NOT_BAF130FN02_SeqStpIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN02 | BAF130FN02 Cooling Fan 2 | IL_Critical | HPU Oil Cooling Fan 2 Sequence Stop Interlock
+- `NOT_BAF130FN02_LocSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN02 | BAF130FN02 Cooling Fan 2 | IL_Critical | HPU Oil Cooling Fan 2 Local Start Interlock
+- `NOT_BAF130FN02_LocRunIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN02 | BAF130FN02 Cooling Fan 2 | IL_LocalStart | HPU Oil Cooling Fan 2 Local Run Interlock
+- `NOT_BAF130FN03_SeqSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN03 | BAF130FN03 Cooling Fan 3 | IL_SeqStart | HPU Oil Cooling Fan 3 Sequence Start Interlock
+- `NOT_BAF130FN03STS1_SeqReq` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN03 | BAF130FN03 Cooling Fan 3 | IL_Critical | HPU Oil Cooling Fan 3 Sequence Requested
+- `NOT_BAF130FN03_SeqStpIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN03 | BAF130FN03 Cooling Fan 3 | IL_Critical | HPU Oil Cooling Fan 3 Sequence Stop Interlock
+- `NOT_BAF130FN03_LocSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN03 | BAF130FN03 Cooling Fan 3 | IL_Critical | HPU Oil Cooling Fan 3 Local Start Interlock
+- `NOT_BAF130FN03_LocRunIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.FN03 | BAF130FN03 Cooling Fan 3 | IL_LocalStart | HPU Oil Cooling Fan 3 Local Run Interlock
+- `NOT_BAF130HT01_SeqSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.HT01 | BAF130HT01 Heater 1 | IL_SeqStart | HPU Oil Heater 1 Sequence Start Interlock
+- `NOT_BAF130HT01STS1_SeqReq` | BR4.INLOADING.BP3PRCR.BAF130.HP01.HT01 | BAF130HT01 Heater 1 | IL_Critical | HPU Oil Heater 1 Sequence Requested
+- `NOT_BAF130HT01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.HT01 | BAF130HT01 Heater 1 | IL_Critical | HPU Oil Heater 1 Sequence Stop Interlock
+- `NOT_BAF130HT01_LocSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.HT01 | BAF130HT01 Heater 1 | IL_Critical | HPU Oil Heater 1 Local Start Interlock
+- `NOT_BAF130HT01_LocRunIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.HT01 | BAF130HT01 Heater 1 | IL_LocalStart | HPU Oil Heater 1 Local Run Interlock
+- `NOT_BAF130HT02_SeqSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.HT02 | BAF130HT02 Heater 2 | IL_SeqStart | HPU Oil Heater 2 Sequence Start Interlock
+- `NOT_BAF130HT02STS1_SeqReq` | BR4.INLOADING.BP3PRCR.BAF130.HP01.HT02 | BAF130HT02 Heater 2 | IL_Critical | HPU Oil Heater 2 Sequence Requested
+- `NOT_BAF130HT02_SeqStpIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.HT02 | BAF130HT02 Heater 2 | IL_Critical | HPU Oil Heater 2 Sequence Stop Interlock
+- `NOT_BAF130HT02_LocSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.HT02 | BAF130HT02 Heater 2 | IL_Critical | HPU Oil Heater 2 Local Start Interlock
+- `NOT_BAF130HT02_LocRunIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.HT02 | BAF130HT02 Heater 2 | IL_LocalStart | HPU Oil Heater 2 Local Run Interlock
+- `NOT_BAF130PP01_BmpTstAct` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP01 | BAF130PP01 Pump/Motor Group 1 | IL_Critical | Pump 1 Bump Test Active
+- `NOT_BAF130_AuxReq` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP01 | BAF130PP01 Pump/Motor Group 1 | IL_Critical | Apron Feeder Start Requested
+- `NOT_BAF130PP01_RunOnFin` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP01 | BAF130PP01 Pump/Motor Group 1 | IL_Critical | Run On Finished
+- `NOT_BAF130PP01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP01 | BAF130PP01 Pump/Motor Group 1 | IL_Critical | Sequence Stop Interlock
+- `NOT_BAF130PP01_LocSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP01 | BAF130PP01 Pump/Motor Group 1 | IL_Critical | Local Start Interlock
+- `NOT_BAF130PP01_BmpTstFin` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP01 | BAF130PP01 Pump/Motor Group 1 | IL_Critical | Pump 1 Bump Test Complete
+- `NOT_BAF130PP02_BmpTstAct` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP02 | BAF130PP02 Pump/Motor Group 2 | IL_Critical | Pump 1 Bump Test Active
+- `NOT_BAF130PP02_RunOnFin` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP02 | BAF130PP02 Pump/Motor Group 2 | IL_Critical | Run On Finished
+- `NOT_BAF130PP02_SeqStpIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP02 | BAF130PP02 Pump/Motor Group 2 | IL_Critical | Sequence Stop Interlock
+- `NOT_BAF130PP02_LocSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP02 | BAF130PP02 Pump/Motor Group 2 | IL_Critical | Local Start Interlock
+- `NOT_BAF130PP02_BmpTstFin` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP02 | BAF130PP02 Pump/Motor Group 2 | IL_Critical | Pump 1 Bump Test Complete
+- `NOT_BAF130PP04_SeqSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP04 | BAF130PP04 Conditioning Circulation Pump | IL_SeqStart | HPU Condition Circ Pump Sequence Start Interlock
+- `NOT_BAF130PP04_SeqReq` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP04 | BAF130PP04 Conditioning Circulation Pump | IL_Critical | Filter Pump Sequence Requested
+- `NOT_BAF130PP04_SeqStpIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP04 | BAF130PP04 Conditioning Circulation Pump | IL_Critical | HPU Condition Circ Pump Sequence Stop Interlock
+- `NOT_BAF130PP04_LocSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP04 | BAF130PP04 Conditioning Circulation Pump | IL_Critical | HPU Condition Circ Pump Local Start Interlock
+- `NOT_BAF130PP04_LocRunIL` | BR4.INLOADING.BP3PRCR.BAF130.HP01.PP04 | BAF130PP04 Conditioning Circulation Pump | IL_LocalStart | HPU Condition Circ Pump Local Run Interlock
+- `NOT_BAF130PP05_FltSL` | BR4.INLOADING.BP3PRCR.BAF130.HP02.PP05 | BAF130PP05 Pump | IL_Critical | Isolation Gate Hydraulic Power Unit Pump Fault Seal
+- `NOT_BAF130_FwdRun` | BR4.INLOADING.BP3PRCR.BAF130 | BAF130 Apron Feeder | IL_Critical | Forward Running
+- `NOT_BAF130_RevRun` | BR4.INLOADING.BP3PRCR.BAF130 | BAF130 Apron Feeder | IL_Critical | Reverse Running
+- `NOT_BAF130GA01_SeqRunIL` | BR4.INLOADING.BP3PRCR.BAF130.HP02.GA01 | BAF130GA01 Isolation Gate | IL_SeqRun | Sequence Run Interlock
+- `NOT_BAF130GA01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BAF130.HP02.GA01 | BAF130GA01 Isolation Gate | IL_Critical | Sequence Stop Interlock
+- `NOT_BAF130GA01_LocSttIL` | BR4.INLOADING.BP3PRCR.BAF130.HP02.GA01 | BAF130GA01 Isolation Gate | IL_Critical | Local Start Interlock
+- `NOT_BAF130GA01LCS01PB01_I` | BR4.INLOADING.BP3PRCR.BAF130.HP02.GA01 | BAF130GA01 Isolation Gate | IL_Critical | Open Pushbutton
+- `NOT_BAF130_Off` | BR4.INLOADING.BP3PRCR.BAF130.HP02.GA01 | BAF130GA01 Isolation Gate | IL_Critical | Stopped Interlock
+- `NOT_BAF130PP05_AutRdy` | BR4.INLOADING.BP3PRCR.BAF130.HP02.PP05 | BAF130PP05 Pump | IL_Critical | Isolation Gate Hydraulic Power Unit Pump Auto Ready
+- `NOT_BAF130PP05_Loc` | BR4.INLOADING.BP3PRCR.BAF130.HP02.PP05 | BAF130PP05 Pump | IL_Critical | Isolation Gate Hydraulic Power Unit Pump Mode Local
+- `NOT_BAF130PP05_Run` | BR4.INLOADING.BP3PRCR.BAF130.HP02.PP05 | BAF130PP05 Pump | IL_Critical | Isolation Gate Hydraulic Power Unit Pump Running
+- `NOT_BAF130GA01LCS01PB02_I` | BR4.INLOADING.BP3PRCR.BAF130.HP02.GA01 | BAF130GA01 Isolation Gate | IL_Critical | Close Pushbutton
+- `NOT_BAF130GA01STS1_Cls` | BR4.INLOADING.BP3PRCR.BAF130.HP02.GA01 | BAF130GA01 Isolation Gate | IL_Critical | Isolation Gate Closed
+- `NOT_BBN130LUY01_Prg` | BR4.INLOADING.BP3PRCR.BBN130.LUY01 | BBN130LUY01 Active Level | IL_Critical | Level Purged
+- `NOT_BAF130HP02FS01_Hty` | BR4.INLOADING.BP3PRCR.BAF130.HP02.PP05 | BAF130PP05 Pump | IL_Critical | Isolation Gate Hydraulic Power Unit Hydraulic Pack Flow Interlock
+- `NOT_BAF130HP02PS01_Hty` | BR4.INLOADING.BP3PRCR.BAF130.HP02.PP05 | BAF130PP05 Pump | IL_Critical | Isolation Gate Hydraulic Power Unit Return Filter Blocked Interlock
+- `NOT_BAF130HP02LS01_Hty` | BR4.INLOADING.BP3PRCR.BAF130.HP02.PP05 | BAF130PP05 Pump | IL_Critical | Isolation Gate Hydraulic Power Unit Oil Level Low Interlock
+- `NOT_BAF130GA01_AuxStt` | BR4.INLOADING.BP3PRCR.BAF130.HP02.GA01 | BAF130GA01 Isolation Gate | IL_Critical | Auxiliary Drive Run Request
+- `NOT_BAF130PP05_SeqStpIL` | BR4.INLOADING.BP3PRCR.BAF130.HP02.PP05 | BAF130PP05 Pump | IL_Critical | Isolation Gate Hydraulic Power Unit Pump Sequence Stop Interlock
+- `NOT_BAF130PP05LCS01STP01_I` | BR4.INLOADING.BP3PRCR.BAF130.HP02.PP05 | BAF130PP05 Pump | IL_Critical | Isolation Gate HPU Pump Stop Pushbutton
+- `NOT_BAF130PP07_SeqSttIL` | BR4.INLOADING.BP3PRCR.BAF130.LU01.PP07 | BAF130PP07 Lube Pump | IL_SeqStart | Lubrication Unit Pump Sequence Start Interlock
+- `NOT_BAF130PP07STS1_SeqReq` | BR4.INLOADING.BP3PRCR.BAF130.LU01.PP07 | BAF130PP07 Lube Pump | IL_Critical | Lube Unit Pump Sequence Required
+- `NOT_BAF130LU01_CycFin` | BR4.INLOADING.BP3PRCR.BAF130.LU01.PP07 | BAF130PP07 Lube Pump | IL_Critical | Lubrication Unit Cycle Completed
+- `NOT_BAF130PP07_LocSttIL` | BR4.INLOADING.BP3PRCR.BAF130.LU01.PP07 | BAF130PP07 Lube Pump | IL_Critical | Lubrication Unit Pump Local Start Interlock
+- `NOT_BBN130LUY01_CtlHiHi` | BR4.INLOADING.BP3PRCR.BBN130.LUY01 | BBN130LUY01 Active Level | IL_Critical | Level Control High High
+- `NOT_BBN130LS01_Hty` | BR4.INLOADING.BP3PRCR.BBN130.LIGHTS | BBN130SR Traffic Lights | IL_Critical | Level Switch High-High Interlock
+- `NOT_BRB131XS02_Hty` | BR4.INLOADING.BP3PRCR.BBN130.LIGHTS | BBN130SR Traffic Lights | IL_Critical | Rockbreaker Not Running
+- `NOT_BRB131XS06_Hty` | BR4.INLOADING.BP3PRCR.BBN130.LIGHTS | BBN130SR Traffic Lights | IL_Critical | Rockbreaker In Parked Positon
+- `NOT_BRB131_En` | BR4.INLOADING.BP3PRCR.BRB13x.BRB131 | BRB131 Rockbreaker | IL_Critical | ROM Rock Breaker Enabled
+- `NOT_BBN130LUY01_DifHi_Hty` | BR4.INLOADING.BP3PRCR.BBN130.LUY01 | BBN130LUY01 Active Level | IL_Critical | Level Differential High Interlock
+- `NOT_BBN130LUY01_SigFlt_Hty` | BR4.INLOADING.BP3PRCR.BBN130.LUY01 | BBN130LUY01 Active Level | IL_Critical | Level Signal Fault Interlock
+- `NOT_BBN130IL1_Aut` | BR4.INLOADING.BP3PRCR.BBN130.LIGHTS | BBN130SR Traffic Lights | IL_Critical | Traffic Lights In Auto Mode
+- `NOT_BBN130IL1_ManOn` | BR4.INLOADING.BP3PRCR.BBN130.LIGHTS | BBN130SR Traffic Lights | IL_Critical | Traffic Lights Manual On
+- `NOT_BBN130IL1_Man1Shot` | BR4.INLOADING.BP3PRCR.BBN130.LIGHTS | BBN130SR Traffic Lights | IL_Critical | Traffic Lights Manual One Shot
+- `NOT_BBN130IL1_GrnLgtReq` | BR4.INLOADING.BP3PRCR.BBN130.LIGHTS | BBN130SR Traffic Lights | IL_Critical | Traffic Lights Green Light Required
+- `NOT_BBN130SV01_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV01 | BBN130SV01 Water Addition Spray Valve 1 | IL_Critical | Water Addition Solenoid 1 Sequence Enable
+- `NOT_BBN130STS1_WatAddReq` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK | BBN130 Water Addition Sprays | IL_Critical | Water Addition Required
+- `NOT_BBN130SPY1SV01_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV01 | BBN130SV01 Water Addition Spray Valve 1 | IL_Critical | Water Addition Solenoid 1 Open Request
+- `NOT_BBN130SV02_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV02 | BBN130SV02 Water Addition Spray Valve 2 | IL_Critical | Water Addition Solenoid 2 Sequence Enable
+- `NOT_BBN130SPY1SV02_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV02 | BBN130SV02 Water Addition Spray Valve 2 | IL_Critical | Water Addition Solenoid 2 Open Request
+- `NOT_BBN130SV03_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV03 | BBN130SV03 Water Addition Spray Valve 3 | IL_Critical | Water Addition Solenoid 3 Sequence Enable
+- `NOT_BBN130SPY1SV03_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV03 | BBN130SV03 Water Addition Spray Valve 3 | IL_Critical | Water Addition Solenoid 3 Open Request
+- `NOT_BBN130SV04_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV04 | BBN130SV04 Water Addition Spray Valve 4 | IL_Critical | Water Addition Solenoid 4 Sequence Enable
+- `NOT_BBN130SPY1SV04_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV04 | BBN130SV04 Water Addition Spray Valve 4 | IL_Critical | Water Addition Solenoid 4 Open Request
+- `NOT_BBN130SV05_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV05 | BBN130SV05 Water Addition Spray Valve 5 | IL_Critical | Water Addition Solenoid 5 Sequence Enable
+- `NOT_BBN130SPY1SV05_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV05 | BBN130SV05 Water Addition Spray Valve 5 | IL_Critical | Water Addition Solenoid 5 Open Request
+- `NOT_BBN130SV06_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV06 | BBN130SV06 Water Addition Spray Valve 6 | IL_Critical | Water Addition Solenoid 6 Sequence Enable
+- `NOT_BBN130SPY1SV06_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV06 | BBN130SV06 Water Addition Spray Valve 6 | IL_Critical | Water Addition Solenoid 6 Open Request
+- `NOT_BBN130SV07_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV07 | BBN130SV07 Water Addition Spray Valve 7 | IL_Critical | Water Addition Solenoid 7 Sequence Enable
+- `NOT_BBN130SPY1SV07_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV07 | BBN130SV07 Water Addition Spray Valve 7 | IL_Critical | Water Addition Solenoid 7 Open Request
+- `NOT_BBN130SV08_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV08 | BBN130SV08 Water Addition Spray Valve 8 | IL_Critical | Water Addition Solenoid 8 Sequence Enable
+- `NOT_BBN130SPY1SV08_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV08 | BBN130SV08 Water Addition Spray Valve 8 | IL_Critical | Water Addition Solenoid 8 Open Request
+- `NOT_BBN130SV09_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV09 | BBN130SV09 Water Addition Spray Valve 9 | IL_Critical | Water Addition Solenoid 9 Sequence Enable
+- `NOT_BBN130SPY1SV09_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV09 | BBN130SV09 Water Addition Spray Valve 9 | IL_Critical | Water Addition Solenoid 9 Open Request
+- `NOT_BBN130SV10_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV10 | BBN130SV10 Water Addition Spray Valve 10 | IL_Critical | Water Addition Solenoid 10 Sequence Enable
+- `NOT_BBN130SPY1SV10_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV10 | BBN130SV10 Water Addition Spray Valve 10 | IL_Critical | Water Addition Solenoid 10 Open Request
+- `NOT_BBN130SV11_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV11 | BBN130SV11 Water Addition Spray Valve 11 | IL_Critical | Water Addition Solenoid 11 Sequence Enable
+- `NOT_BBN130SPY1SV11_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV11 | BBN130SV11 Water Addition Spray Valve 11 | IL_Critical | Water Addition Solenoid 11 Open Request
+- `NOT_BBN130SV12_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV12 | BBN130SV12 Water Addition Spray Valve 12 | IL_Critical | Water Addition Solenoid 12 Sequence Enable
+- `NOT_BBN130SPY1SV12_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130BULK.BBN130SV12 | BBN130SV12 Water Addition Spray Valve 12 | IL_Critical | Water Addition Solenoid 12 Open Request
+- `NOT_BBN130SV14_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130DUST.BBN130SV14 | BBN130SV14 Dust Suppression Spray Valve | IL_Critical | Dust Suppression Solenoid Sequence Enable
+- `NOT_BBN130DS1_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BBN130DUST | BBN130 Dust Suppression Sprays | IL_Critical | Dust Curtain Sprays Required
+- `NOT_BVG130STS1_ReSttAvl` | BR4.INLOADING.BP3PRCR.BVG130 | BVG130 Grizzly Feeder | IL_Critical | Vibrating Grizzly Restart Available
+- `NOT_BJC130_ADV_FdrStpReq` | BR4.INLOADING.BP3PRCR.BJC130.BJC130_ADV.AutAdj | BJC130_ADV_Aut_Adj BJC130_ADV Auto Adjust | IL_Critical | Feeder Stop Request
+- `NOT_BVG130_RunOff` | BR4.INLOADING.BP3PRCR.BVG130 | BVG130 Grizzly Feeder | IL_Critical | Grizzly Screen Run Off
+- `NOT_BVG130LCS01STP01_I` | BR4.INLOADING.BP3PRCR.BVG130 | BVG130 Grizzly Feeder | IL_Critical | Vibrating Grizzly Stop Pushbutton
+- `NOT_BBD130SV13_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BVG130DUST.BBD130SV13 | BBD130SV13 Dust Suppression Spray Valve | IL_Critical | Vibrating Grizzly Dust Suppression Solenoid Valve Sequence Enable
+- `NOT_BDU130_Req` | BR4.INLOADING.BP3PRCR.BDU130.FN01 | BDU130FN01 Fan | IL_Critical | Dust Collector Baghouse - Reverse Pulse Feed Facility Running
+- `NOT_BDU130CP01_Run` | BR4.INLOADING.BP3PRCR.BDU130.CP01 | BDU130CP01 Air Compressor | IL_Critical | Dust Collector Air Compressor Running
+- `NOT_BDU130FN01_Req` | BR4.INLOADING.BP3PRCR.BDU130.FN01 | BDU130FN01 Fan | IL_Critical | Dust Collector Fan Extraction Fan Required From Dust Collector Sequence
+- `NOT_BDU130FN01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BDU130.FN01 | BDU130FN01 Fan | IL_Critical | Dust Collector Fan Sequence Stop Interlock
+- `NOT_BDU130FN01_LocSttIL` | BR4.INLOADING.BP3PRCR.BDU130.FN01 | BDU130FN01 Fan | IL_Critical | Dust Collector Fan Local Start Interlock
+- `NOT_BDU130FN01_LocRunIL` | BR4.INLOADING.BP3PRCR.BDU130.FN01 | BDU130FN01 Fan | IL_LocalStart | Dust Collector Fan Local Run Interlock
+- `NOT_BDU130HOP01LS02_I` | BR4.INLOADING.BP3PRCR.BDU130 | BDU130 Dust Collector | IL_Critical | Hopper Hopper Level Low
+- `NOT_BDU130HOP01LS01_I` | BR4.INLOADING.BP3PRCR.BDU130 | BDU130 Dust Collector | IL_Critical | Hopper Hopper Level High
+- `NOT_BDU130RV01_SeqReq` | BR4.INLOADING.BP3PRCR.BDU130.RV01 | BDU130RV01 Rotary Valve | IL_Critical | Dust Collector Rotary Valve Rotary Valve Required By Dust Collector Sequence
+- `NOT_BCV130STS1_OreAtBDU130` | BR4.INLOADING.BP3PRCR.BDU130.RV01 | BDU130RV01 Rotary Valve | IL_Critical | Ore At Dust Collector Discharge Segment
+- `NOT_BDU130RV01_LocSttIL` | BR4.INLOADING.BP3PRCR.BDU130.RV01 | BDU130RV01 Rotary Valve | IL_Critical | Dust Collector Rotary Valve Local Start Interlock
+- `NOT_BDU130RV01_LocRunIL` | BR4.INLOADING.BP3PRCR.BDU130.RV01 | BDU130RV01 Rotary Valve | IL_LocalStart | Dust Collector Rotary Valve Local Run Interlock
+- `NOT_BCV130TM1_AutRdy` | BR4.INLOADING.BP3PRCR.BCV130 | BCV130 Conveyor | IL_Critical | Tramp Magnet Auto Ready
+- `NOT_BCV130MT01STS1_PosRdy` | BR4.INLOADING.BP3PRCR.BCV130.MA01.MT01 | BCV130MT01 Magnet Trolley | IL_Critical | Tramp Metal Magnet Trolley Position Ready
+- `NOT_BCV130MD01_BypOn` | BR4.INLOADING.BP3PRCR.BCV130.MD01 | BCV130MD01 Metal Detector 1 | IL_Critical | Metal Detector Unit Bypassed
+- `NOT_BCV131_AutRun_C` | BR4.INLOADING.BP3PRCR.BCV130 | BCV130 Conveyor | IL_Critical | Overland Conveyor Auto Run
+- `NOT_BCV130_RunOff` | BR4.INLOADING.BP3PRCR.BCV130 | BCV130 Conveyor | IL_Critical | Discharge Conveyor Run Off
+- `NOT_BJC130_Off` | BR4.INLOADING.BP3PRCR.BJC130 | BJC130 Jaw Crusher | IL_Critical | Primary Crusher Stopped
+- `NOT_BVG130_Off` | BR4.INLOADING.BP3PRCR.BCV130 | BCV130 Conveyor | IL_Critical | Grizzly Screen Stopped
+- `NOT_BCV130LCS01STP01_I` | BR4.INLOADING.BP3PRCR.BCV130 | BCV130 Conveyor | IL_Critical | Primary Crushing Discharge Conveyor Stop Pushbutton
+- `NOT_BCV130LCS02STP01_I` | BR4.INLOADING.BP3PRCR.BCV130 | BCV130 Conveyor | IL_Critical | Primary Crushing Discharge Conveyor Stop Pushbutton
+- `NOT_BCV130_AuxStt` | BR4.INLOADING.BP3PRCR.BCV130.FN01 | BCV130FN01 Motor Cooling Fan | IL_Critical | Discharge Conveyor Auxiliary Drive Run Request
+- `NOT_BCV130_Off` | BR4.INLOADING.BP3PRCR.BCV130.FN01 | BCV130FN01 Motor Cooling Fan | IL_Critical | Discharge Conveyor Stopped
+- `NOT_BCV130FN01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BCV130.FN01 | BCV130FN01 Motor Cooling Fan | IL_Critical | Discharge Conveyor Motor Cooling Fan Sequence Stop Interlock
+- `NOT_BCV130FN01_LocSttIL` | BR4.INLOADING.BP3PRCR.BCV130.FN01 | BCV130FN01 Motor Cooling Fan | IL_Critical | Discharge Conveyor Motor Cooling Fan Local Start Interlock
+- `NOT_BCV130FN01_LocRunIL` | BR4.INLOADING.BP3PRCR.BCV130.FN01 | BCV130FN01 Motor Cooling Fan | IL_LocalStart | Discharge Conveyor Motor Cooling Fan Local Run Interlock
+- `NOT_BCV130FN02_CtlHi` | BR4.INLOADING.BP3PRCR.BCV130.FN02 | BCV130FN02 Reducer Cooling Fan | IL_Critical | Discharge Conveyor Reducer Fan Fan Start Control Point
+- `NOT_BCV130FN02_RunOnFin` | BR4.INLOADING.BP3PRCR.BCV130.FN02 | BCV130FN02 Reducer Cooling Fan | IL_Critical | Discharge Conveyor Reducer Fan Run On Finished
+- `NOT_BCV130FN02_CtlHiHi` | BR4.INLOADING.BP3PRCR.BCV130.FN02 | BCV130FN02 Reducer Cooling Fan | IL_Critical | Discharge Conveyor Reducer Fan Fan Run On Stop Control Point
+- `NOT_BCV130PP04_AutRun` | BR4.INLOADING.BP3PRCR.BCV130.PP04 | BCV130PP04 Drive Gearbox Auxillary Lubrication Pump | IL_Critical | Auto Running
+- `NOT_BCV130FN02_CtlLo` | BR4.INLOADING.BP3PRCR.BCV130.FN02 | BCV130FN02 Reducer Cooling Fan | IL_Critical | Discharge Conveyor Reducer Fan Fan Stop Control Point
+- `NOT_BCV130FN02_SeqStpIL` | BR4.INLOADING.BP3PRCR.BCV130.FN02 | BCV130FN02 Reducer Cooling Fan | IL_Critical | Discharge Conveyor Reducer Fan Sequence Stop Interlock
+- `NOT_BCV130FN02_LocSttIL` | BR4.INLOADING.BP3PRCR.BCV130.FN02 | BCV130FN02 Reducer Cooling Fan | IL_Critical | Discharge Conveyor Reducer Fan Local Start Interlock
+- `NOT_BCV130FN02_LocRunIL` | BR4.INLOADING.BP3PRCR.BCV130.FN02 | BCV130FN02 Reducer Cooling Fan | IL_LocalStart | Discharge Conveyor Reducer Fan Local Run Interlock
+- `NOT_BCV130SUY01_CtlLo` | BR4.INLOADING.BP3PRCR.BCV130.BK01 | BCV130BK01 Brake | IL_Critical | Primary Crusher Discharge Conveyor Brake Activation Speed
+- `NOT_BCV130_RpdStpReq` | BR4.INLOADING.BP3PRCR.BCV130.BK01 | BCV130BK01 Brake | IL_Critical | Primary Crusher Discharge Conveyor Fast Stop Required
+- `NOT_BCV130BK01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BCV130.BK01 | BCV130BK01 Brake | IL_Critical | Primary Crusher Discharge Conveyor Drive Brake Sequence Stop Interlock
+- `NOT_BCV130BK01_LocSttIL` | BR4.INLOADING.BP3PRCR.BCV130.BK01 | BCV130BK01 Brake | IL_Critical | Primary Crusher Discharge Conveyor Drive Brake Local Start Interlock
+- `NOT_BCV130BK01_LocRunIL` | BR4.INLOADING.BP3PRCR.BCV130.BK01 | BCV130BK01 Brake | IL_LocalStart | Primary Crusher Discharge Conveyor Drive Brake Local Run Interlock
+- `NOT_BCV130PP04_CtlHi` | BR4.INLOADING.BP3PRCR.BCV130.PP04 | BCV130PP04 Drive Gearbox Auxillary Lubrication Pump | IL_Critical | Pump Start Control Point
+- `NOT_BCV130PP04_RunOnFin` | BR4.INLOADING.BP3PRCR.BCV130.PP04 | BCV130PP04 Drive Gearbox Auxillary Lubrication Pump | IL_Critical | Run On Finished
+- `NOT_BCV130FN01_AutRun` | BR4.INLOADING.BP3PRCR.BCV130.FN01 | BCV130FN01 Motor Cooling Fan | IL_Critical | Discharge Conveyor Motor Cooling Fan Auto Running
+- `NOT_BCV130PP04_CtlLo` | BR4.INLOADING.BP3PRCR.BCV130.PP04 | BCV130PP04 Drive Gearbox Auxillary Lubrication Pump | IL_Critical | Pump Stop Control Point
+- `NOT_BCV130PP04_SeqStpIL` | BR4.INLOADING.BP3PRCR.BCV130.PP04 | BCV130PP04 Drive Gearbox Auxillary Lubrication Pump | IL_Critical | Sequence Stop Interlock
+- `NOT_BCV130PP04_LocSttIL` | BR4.INLOADING.BP3PRCR.BCV130.PP04 | BCV130PP04 Drive Gearbox Auxillary Lubrication Pump | IL_Critical | Local Start Interlock
+- `NOT_BCV130PP04_LocRunIL` | BR4.INLOADING.BP3PRCR.BCV130.PP04 | BCV130PP04 Drive Gearbox Auxillary Lubrication Pump | IL_LocalStart | Local Run Interlock
+- `NOT_BCV130MA01_Req` | BR4.INLOADING.BP3PRCR.BCV130.MA01 | BCV130MA01 Magnet | IL_Critical | Tramp Metal Magnet Required
+- `NOT_BCV130MA01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01 | BCV130MA01 Magnet | IL_Critical | Tramp Metal Magnet Sequence Stop Interlock
+- `NOT_BCV130MA01_LocSttIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01 | BCV130MA01 Magnet | IL_Critical | Tramp Metal Magnet Local Start Interlock
+- `NOT_BCV130MT01PB05_I` | BR4.INLOADING.BP3PRCR.BCV130.MA01.MT01 | BCV130MT01 Magnet Trolley | IL_Critical | Tramp Metal Magnet Trolley Trolley Stop (PB05) Activated
+- `NOT_BCV130MT01_SeqSttIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.MT01 | BCV130MT01 Magnet Trolley | IL_SeqStart | Tramp Metal Magnet Trolley Sequence Start Interlock
+- `NOT_BCV130MT01_SeqFwdReq` | BR4.INLOADING.BP3PRCR.BCV130.MA01.MT01 | BCV130MT01 Magnet Trolley | IL_SeqStart | Tramp Metal Magnet Trolley Sequence Run Trolley Forward Request
+- `NOT_BCV130MT01_SeqRevReq` | BR4.INLOADING.BP3PRCR.BCV130.MA01.MT01 | BCV130MT01 Magnet Trolley | IL_SeqStart | Tramp Metal Magnet Trolley Sequence Run Trolley Reverse Request
+- `NOT_BCV130MT01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.MT01 | BCV130MT01 Magnet Trolley | IL_Critical | Tramp Metal Magnet Trolley Sequence Stop Interlock
+- `NOT_BCV130MT01_LocSttIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.MT01 | BCV130MT01 Magnet Trolley | IL_Critical | Tramp Metal Magnet Trolley Local Start Interlock
+- `NOT_BCV130MA01ZS04_I` | BR4.INLOADING.BP3PRCR.BCV130.MA01 | BCV130MA01 Magnet | IL_Critical | Tramp Metal Magnet Maintenance Position Activated
+- `NOT_BCV130MT01PB04_I` | BR4.INLOADING.BP3PRCR.BCV130.MA01.MT01 | BCV130MT01 Magnet Trolley | IL_Critical | Tramp Metal Magnet Trolley Trolley Forward North (Maintenance) (PB04) Activated
+- `NOT_BCV130MA01ZS02_I` | BR4.INLOADING.BP3PRCR.BCV130.MA01 | BCV130MA01 Magnet | IL_Critical | Tramp Metal Magnet Cleaning Position Activated
+- `NOT_BCV130MT01PB06_I` | BR4.INLOADING.BP3PRCR.BCV130.MA01.MT01 | BCV130MT01 Magnet Trolley | IL_Critical | Tramp Metal Magnet Trolley Trolley Reverse South (Cleaning) (PB06) Activated
+- `NOT_BCV130MA01PP02_SeqReq` | BR4.INLOADING.BP3PRCR.BCV130.MA01.PP02 | BCV130PP02 Oil Pump | IL_Critical | Tramp Metal Magnet PP02 Sequence Required
+- `NOT_BCV130MA01TS01_I` | BR4.INLOADING.BP3PRCR.BCV130.MA01 | BCV130MA01 Magnet | IL_Critical | Tramp Metal Magnet Oil Temperature Interlock
+- `NOT_BCV130MA01AUX_RunOnFin` | BR4.INLOADING.BP3PRCR.BCV130.MA01.PP02 | BCV130PP02 Oil Pump | IL_Critical | Tramp Magnet Heat Exchanger Run Off Delay Finished
+- `NOT_BCV130PP02_SeqStpIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.PP02 | BCV130PP02 Oil Pump | IL_Critical | Tramp Metal Magnet Oil Pump Sequence Stop Interlock
+- `NOT_BCV130PP02_LocSttIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.PP02 | BCV130PP02 Oil Pump | IL_Critical | Tramp Metal Magnet Oil Pump Local Start Interlock
+- `NOT_BCV130PP02_LocRunIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.PP02 | BCV130PP02 Oil Pump | IL_LocalStart | Tramp Metal Magnet Oil Pump Local Run Interlock
+- `NOT_BCV130FN03_SeqStpIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.FN03 | BCV130FN03 Cooling Fan 1 | IL_Critical | Tramp Metal Magnet Cooling Fan 1 Sequence Stop Interlock
+- `NOT_BCV130FN03_LocSttIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.FN03 | BCV130FN03 Cooling Fan 1 | IL_Critical | Tramp Metal Magnet Cooling Fan 1 Local Start Interlock
+- `NOT_BCV130FN03_LocRunIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.FN03 | BCV130FN03 Cooling Fan 1 | IL_LocalStart | Tramp Metal Magnet Cooling Fan 1 Local Run Interlock
+- `NOT_BCV130FN04_SeqStpIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.FN04 | BCV130FN04 Cooling Fan 2 | IL_Critical | Tramp Metal Magnet Cooling Fan 2 Sequence Stop Interlock
+- `NOT_BCV130FN04_LocSttIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.FN04 | BCV130FN04 Cooling Fan 2 | IL_Critical | Tramp Metal Magnet Cooling Fan 2 Local Start Interlock
+- `NOT_BCV130FN04_LocRunIL` | BR4.INLOADING.BP3PRCR.BCV130.MA01.FN04 | BCV130FN04 Cooling Fan 2 | IL_LocalStart | Tramp Metal Magnet Cooling Fan 2 Local Run Interlock
+- `NOT_BJC130_NoFeed` | BR4.INLOADING.BP3PRCR.BJC130 | BJC130 Jaw Crusher | IL_Critical | Clear Of Feed
+- `NOT_BJC130_RunOff` | BR4.INLOADING.BP3PRCR.BJC130 | BJC130 Jaw Crusher | IL_Critical | Primary Crusher Run Off
+- `NOT_BJC130STS1_ReSttAvl` | BR4.INLOADING.BP3PRCR.BJC130 | BJC130 Jaw Crusher | IL_Critical | Primary Crusher Restart Available
+- `NOT_BJC130_ADV_CrsSttReq` | BR4.INLOADING.BP3PRCR.BJC130.BJC130_ADV.AutAdj | BJC130_ADV_Aut_Adj BJC130_ADV Auto Adjust | IL_Critical | Crusher Start Request
+- `NOT_BJC130LCS01STP01_I` | BR4.INLOADING.BP3PRCR.BJC130 | BJC130 Jaw Crusher | IL_Critical | Primary Jaw Crusher Stop Pushbutton
+- `NOT_BJC130LCS02STP01_I` | BR4.INLOADING.BP3PRCR.BJC130 | BJC130 Jaw Crusher | IL_Critical | Primary Jaw Crusher Stop Pushbutton
+- `NOT_BJC130HP01_SeqSttIL` | BR4.INLOADING.BP3PRCR.BJC130.HP01 | BJC130HP01 Hydraulic Pack | IL_SeqStart | Primary Jaw Crusher Hydraulic Pwr Unit Sequence Start Interlock
+- `NOT_BJC130HP01_SeqRunIL` | BR4.INLOADING.BP3PRCR.BJC130.HP01 | BJC130HP01 Hydraulic Pack | IL_SeqRun | Primary Jaw Crusher Hydraulic Pwr Unit Sequence Run Interlock
+- `NOT_BJC130HP01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BJC130.HP01 | BJC130HP01 Hydraulic Pack | IL_Critical | Primary Jaw Crusher Hydraulic Pwr Unit Sequence Stop Interlock
+- `NOT_BJC130HP01_LocSttIL` | BR4.INLOADING.BP3PRCR.BJC130.HP01 | BJC130HP01 Hydraulic Pack | IL_Critical | Primary Jaw Crusher Hydraulic Pwr Unit Local Start Interlock
+- `NOT_BJC130HP01_LocRunIL` | BR4.INLOADING.BP3PRCR.BJC130.HP01 | BJC130HP01 Hydraulic Pack | IL_LocalStart | Primary Jaw Crusher Hydraulic Pwr Unit Local Run Interlock
+- `NOT_BJC130PP01_SeqSttIL` | BR4.INLOADING.BP3PRCR.BJC130.LU01.PP01 | BJC130PP01 Lube Pump | IL_SeqStart | Primary Jaw Crusher Lubrication Unit Pump Sequence Start Interlock
+- `NOT_BJC130PP01STS1_SeqReq` | BR4.INLOADING.BP3PRCR.BJC130.LU01.PP01 | BJC130PP01 Lube Pump | IL_Critical | Lube Unit Pump Sequence Required
+- `NOT_BJC130LU01_CycFin` | BR4.INLOADING.BP3PRCR.BJC130.LU01.PP01 | BJC130PP01 Lube Pump | IL_Critical | Primary Jaw Crusher Lubrication Unit Cycle Completed
+- `NOT_BJC130PP01_LocSttIL` | BR4.INLOADING.BP3PRCR.BJC130.LU01.PP01 | BJC130PP01 Lube Pump | IL_Critical | Primary Jaw Crusher Lubrication Unit Pump Local Start Interlock
+- `NOT_BBD130PP01_SeqSttIL` | BR4.INLOADING.BP3PRCR.BBD130.SM01.PP01 | BBD130PP01 Sump Pump | IL_SeqStart | Primary Crusher Area Sump Pump Sequence Start Interlock
+- `NOT_BBD130PP01_SeqReq` | BR4.INLOADING.BP3PRCR.BBD130.SM01.PP01 | BBD130PP01 Sump Pump | IL_Critical | Primary Crusher Area Sump Pump Sequence Required
+- `NOT_BBD130PP01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BBD130.SM01.PP01 | BBD130PP01 Sump Pump | IL_Critical | Primary Crusher Area Sump Pump Sequence Stop Interlock
+- `NOT_BBD130PP01_LocSttIL` | BR4.INLOADING.BP3PRCR.BBD130.SM01.PP01 | BBD130PP01 Sump Pump | IL_Critical | Primary Crusher Area Sump Pump Local Start Interlock
+- `NOT_BBD130PP01_LocRunIL` | BR4.INLOADING.BP3PRCR.BBD130.SM01.PP01 | BBD130PP01 Sump Pump | IL_LocalStart | Primary Crusher Area Sump Pump Local Run Interlock
+- `NOT_BCV130PP03_SeqSttIL` | BR4.INLOADING.BP3PRCR.BCV130.SM01.PP03 | BCV130PP03 De-Watering Plough Sump Pump | IL_SeqStart | Sequence Start Interlock
+- `NOT_BCV130PP03_SeqReq` | BR4.INLOADING.BP3PRCR.BCV130.SM01.PP03 | BCV130PP03 De-Watering Plough Sump Pump | IL_Critical | Sequence Required
+- `NOT_BCV130PP03_SeqStpIL` | BR4.INLOADING.BP3PRCR.BCV130.SM01.PP03 | BCV130PP03 De-Watering Plough Sump Pump | IL_Critical | Sequence Stop Interlock
+- `NOT_BCV130PP03_LocSttIL` | BR4.INLOADING.BP3PRCR.BCV130.SM01.PP03 | BCV130PP03 De-Watering Plough Sump Pump | IL_Critical | Local Start Interlock
+- `NOT_BCV130PP03_LocRunIL` | BR4.INLOADING.BP3PRCR.BCV130.SM01.PP03 | BCV130PP03 De-Watering Plough Sump Pump | IL_LocalStart | Local Run Interlock
+- `NOT_BTN130PP01_SeqSttIL` | BR4.INLOADING.BP3PRCR.BTN130.SM01.PP01 | BTN130PP01 Sump Pump | IL_SeqStart | Transfer Tower Sump Pump Sequence Start Interlock
+- `NOT_BTN130PP01_SeqReq` | BR4.INLOADING.BP3PRCR.BTN130.SM01.PP01 | BTN130PP01 Sump Pump | IL_Critical | Transfer Tower Sump Pump Sequence Required
+- `NOT_BTN130PP01_SeqStpIL` | BR4.INLOADING.BP3PRCR.BTN130.SM01.PP01 | BTN130PP01 Sump Pump | IL_Critical | Transfer Tower Sump Pump Sequence Stop Interlock
+- `NOT_BTN130PP01_LocSttIL` | BR4.INLOADING.BP3PRCR.BTN130.SM01.PP01 | BTN130PP01 Sump Pump | IL_Critical | Transfer Tower Sump Pump Local Start Interlock
+- `NOT_BTN130PP01_LocRunIL` | BR4.INLOADING.BP3PRCR.BTN130.SM01.PP01 | BTN130PP01 Sump Pump | IL_LocalStart | Transfer Tower Sump Pump Local Run Interlock
+- `NOT_BCV131STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Overall Control System Interlock
+- `NOT_BCV131LOS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.LOS01_04.LOS01 | BCV131LOS01_04 Lock Off Stops 1-4 | IL_Critical | Overland Conveyor Lock Off Stop 1 Interlock
+- `NOT_BCV131LOS02_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.LOS01_04.LOS02 | BCV131LOS01_04 Lock Off Stops 1-4 | IL_Critical | Overland Conveyor Lock Off Stop 2 Interlock
+- `NOT_BCV131LOS03_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.LOS01_04.LOS03 | BCV131LOS01_04 Lock Off Stops 1-4 | IL_Critical | Overland Conveyor Lock Off Stop 3 Interlock
+- `NOT_BCV131LOS04_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.LOS01_04.LOS04 | BCV131LOS01_04 Lock Off Stops 1-4 | IL_Critical | Overland Conveyor Lock Off Stop 4 Interlock
+- `NOT_BCV131BK01LOS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK01.FieldIO.LOS01 | BCV131BK01 Brake 1 | IL_Critical | Tail End Brake 1 Lock Off Stop 1 Interlock
+- `NOT_BCV131BK02LOS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02.FieldIO.LOS01 | BCV131BK02 Brake 2 | IL_Critical | TAIL Brake 2 Lock Off Stop 2 Interlock
+- `NOT_BCV131WN01LOS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Active Take-Up Winch Lock Off Stop 1 Interlock
+- `NOT_BCV131PWS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS01 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 1 Interlock
+- `NOT_BCV131PWS02_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS02 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 2 Interlock
+- `NOT_BCV131PWS03_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS03 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 3 Interlock
+- `NOT_BCV131PWS04_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS04 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 4 Interlock
+- `NOT_BCV131PWS05_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS05 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 5 Interlock
+- `NOT_BCV131PWS06_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS06 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 6 Interlock
+- `NOT_BCV131PWS07_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS07 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 7 Interlock
+- `NOT_BCV131PWS08_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS08 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 8 Interlock
+- `NOT_BCV131PWS09_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS09 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 09 Interlock
+- `NOT_BCV131PWS10_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS10 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 10 Interlock
+- `NOT_BCV131PWS11_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS11 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 11 Interlock
+- `NOT_BCV131PWS12_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS12 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 12 Interlock
+- `NOT_BCV131PWS13_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS13 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 13 Interlock
+- `NOT_BCV131PWS14_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS14 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 14 Interlock
+- `NOT_BCV131PWS15_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS15 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 15 Interlock
+- `NOT_BCV131PWS16_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS01_16.PWS16 | BCV131PWS01_16 Pullwire Switches 1-14 | IL_Critical | Overland Conveyor Pullwire Switch 16 Interlock
+- `NOT_BCV131PWS17_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS17 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 17 Interlock
+- `NOT_BCV131PWS18_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS18 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 18 Interlock
+- `NOT_BCV131PWS19_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS19 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 19 Interlock
+- `NOT_BCV131PWS20_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS20 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 20 Interlock
+- `NOT_BCV131PWS21_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS21 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 21 Interlock
+- `NOT_BCV131PWS22_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS22 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 22 Interlock
+- `NOT_BCV131PWS23_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS23 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 23 Interlock
+- `NOT_BCV131PWS24_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS24 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 24 Interlock
+- `NOT_BCV131PWS25_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS25 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 25 Interlock
+- `NOT_BCV131PWS26_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS26 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 26 Interlock
+- `NOT_BCV131PWS27_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS27 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 27 Interlock
+- `NOT_BCV131PWS28_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS28 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 28 Interlock
+- `NOT_BCV131PWS29_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS29 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 29 Interlock
+- `NOT_BCV131PWS30_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS30 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 30 Interlock
+- `NOT_BCV131PWS31_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS31 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 31 Interlock
+- `NOT_BCV131PWS32_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS17_32.PWS32 | BCV131PWS17_32 Pullwire Switches 17-32 | IL_Critical | Overland Conveyor Pullwire Switch 32 Interlock
+- `NOT_BCV131PWS33_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS33 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 33 Interlock
+- `NOT_BCV131PWS34_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS34 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 34 Interlock
+- `NOT_BCV131PWS35_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS35 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 35 Interlock
+- `NOT_BCV131PWS36_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS36 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 36 Interlock
+- `NOT_BCV131PWS37_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS37 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 37 Interlock
+- `NOT_BCV131PWS38_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS38 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 38 Interlock
+- `NOT_BCV131PWS39_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS39 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 39 Interlock
+- `NOT_BCV131PWS40_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS40 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 40 Interlock
+- `NOT_BCV131PWS41_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS41 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 41 Interlock
+- `NOT_BCV131PWS42_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS42 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 42 Interlock
+- `NOT_BCV131PWS43_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS43 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 43 Interlock
+- `NOT_BCV131PWS44_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS44 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 44 Interlock
+- `NOT_BCV131PWS45_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS45 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 45 Interlock
+- `NOT_BCV131PWS46_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS46 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 46 Interlock
+- `NOT_BCV131PWS47_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS47 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 47 Interlock
+- `NOT_BCV131PWS48_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS33_48.PWS48 | BCV131PWS33_48 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 48 Interlock
+- `NOT_BCV131PWS49_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS49 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 49 Interlock
+- `NOT_BCV131PWS50_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS50 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 50 Interlock
+- `NOT_BCV131PWS51_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS51 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 51 Interlock
+- `NOT_BCV131PWS52_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS52 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 52 Interlock
+- `NOT_BCV131PWS53_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS53 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 53 Interlock
+- `NOT_BCV131PWS54_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS54 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 54 Interlock
+- `NOT_BCV131PWS55_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS55 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 55 Interlock
+- `NOT_BCV131PWS56_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS56 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 56 Interlock
+- `NOT_BCV131PWS57_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS57 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 57 Interlock
+- `NOT_BCV131PWS58_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS58 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 58 Interlock
+- `NOT_BCV131PWS59_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS59 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 59 Interlock
+- `NOT_BCV131PWS60_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS60 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 60 Interlock
+- `NOT_BCV131PWS61_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS61 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 61 Interlock
+- `NOT_BCV131PWS62_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS62 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 62 Interlock
+- `NOT_BCV131PWS63_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS63 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 63 Interlock
+- `NOT_BCV131PWS64_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS49_64.PWS64 | BCV131PWS49_64 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 64 Interlock
+- `NOT_BCV131PWS65_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS65 | BCV131PWS65_74 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 65 Interlock
+- `NOT_BCV131PWS66_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS66 | BCV131PWS65_74 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 66 Interlock
+- `NOT_BCV131PWS67_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS67 | BCV131PWS65_74 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 67 Interlock
+- `NOT_BCV131PWS68_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS68 | BCV131PWS65_74 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 68 Interlock
+- `NOT_BCV131PWS69_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS69 | BCV131PWS65_74 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 69 Interlock
+- `NOT_BCV131PWS70_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS70 | BCV131PWS65_74 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 70 Interlock
+- `NOT_BCV131PWS71_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS71 | BCV131PWS65_74 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 71 Interlock
+- `NOT_BCV131PWS72_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS72 | BCV131PWS65_74 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 72 Interlock
+- `NOT_BCV131PWS73_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS73 | BCV131PWS65_74 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 73 Interlock
+- `NOT_BCV131PWS74_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.PWS65_74.PWS74 | BCV131PWS65_74 Pullwire Switches 33-48 | IL_Critical | Overland Conveyor Pullwire Switch 74 Interlock
+- `NOT_BCV131SLC01_DatOK` | BR4.INLOADING.BP3OLC.BCV131.SLC01 | BCV131SLC01 Flexi Soft 1 (Odd AX) | IL_Critical | Safety Logic Controller 1 Interlock
+- `NOT_BCV131SLC01_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.SLC01 | BCV131SLC01 Flexi Soft 1 (Odd AX) | IL_Critical | Safety Logic Controller 1 Communications Fault Interlock
+- `NOT_BCV131SLC01_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.SLC01 | BCV131SLC01 Flexi Soft 1 (Odd AX) | IL_Critical | Safety Logic Controller 1 Fault Interlock
+- `NOT_BCV131SLC02_DatOK` | BR4.INLOADING.BP3OLC.BCV131.SLC02 | BCV131SLC02 Flexi Soft 2 (Even AX) | IL_Critical | Safety Logic Controller 2 Interlock
+- `NOT_BCV131SLC02_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.SLC02 | BCV131SLC02 Flexi Soft 2 (Even AX) | IL_Critical | Safety Logic Controller 2 Communications Fault Interlock
+- `NOT_BCV131SLC02_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.SLC02 | BCV131SLC02 Flexi Soft 2 (Even AX) | IL_Critical | Safety Logic Controller 2 Fault Interlock
+- `NOT_BCV131SLC01SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.SLC01 | BCV131SLC01 Flexi Soft 1 (Odd AX) | IL_Critical | Overland Conveyor Safety SLC01 Circuit (K132) Fail To Open Interlock
+- `NOT_BCV131SLC01SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.SLC01 | BCV131SLC01 Flexi Soft 1 (Odd AX) | IL_Critical | Overland Conveyor Safety SLC01 Circuit (K132) Fail To Close Interlock
+- `NOT_BCV131SLC02SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.SLC02 | BCV131SLC02 Flexi Soft 2 (Even AX) | IL_Critical | Overland Conveyor Safety SLC02 Circuit (K232) Fail To Open Interlock
+- `NOT_BCV131SLC02SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.SLC02 | BCV131SLC02 Flexi Soft 2 (Even AX) | IL_Critical | Overland Conveyor Safety SLC02 Circuit (K232) Fail To Close Interlock
+- `NOT_BCV131SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Safety Interlock Relay (K155-1) Fail To Open
+- `NOT_BCV131SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Safety Interlock Relay (K155-1) Fail To Close
+- `NOT_BCV131CH01BCS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | IL_Critical | HEAD Chute Blocked Chute Switch Interlock
+- `NOT_BCV131BRS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BRS01 | BCV131 Overland Conveyor | IL_Critical | Rip Detector Switch 1 Interlock
+- `NOT_BCV131BRS02_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BRS02 | BCV131 Overland Conveyor | IL_Critical | Rip Detector Switch 2 Interlock
+- `NOT_BCV131BRS03_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BRS03 | BCV131 Overland Conveyor | IL_Critical | Rip Detector Switch 3 Interlock
+- `NOT_BCV131ZS01_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Take Up Trolley Outer Limit (K218) Interlock
+- `NOT_BCV131ZS02_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Take Up Trolley Inner Limit (K220) Interlock
+- `NOT_BCV131BK01_AutRdy` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Brake Auto Ready
+- `NOT_BCV131BK02_AutRdy` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Brake Auto Ready
+- `NOT_BCV131WN01_DrvPrmFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Active Take-Up Winch Drive Permissive Interlock
+- `NOT_BCV131WN01_ActFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Failed To Reach Active State Interlock
+- `NOT_BCV131SUY03_SttFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Underspeed While Starting Interlock
+- `NOT_BPL132IPC5_Flt_Hty` | BR4.SRV.CTRLSYS.PLC.BPL132 | Overland Conveying PLC 132 | IL_Critical | Communications From BPL131 Fault Interlock
+- `NOT_BPL132IPC3_Flt_Hty` | BR4.SRV.CTRLSYS.PLC.BPL132 | Overland Conveying PLC 132 | IL_Critical | Communications From BCV131WN01PLC01 Fault Interlock
+- `NOT_BMC1321FDR01PR1_Flt_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR01.REX640 | REX640 | IL_Critical | Feeder 1 Protection Relay Fault Interlock
+- `NOT_BMC1321FDR01STS1_SysFlt_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | IL_Critical | Feeder 1 Tripping System Interlock
+- `NOT_BMC1321FDR01CB01_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | IL_Critical | Feeder 1 BMC1321 Feeder 1 Circuit Breaker Open Interlock
+- `NOT_BMC1321FDR01CB04_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | IL_Critical | Feeder 1 Voltage Transformer MCB Closed
+- `NOT_BMC1321FDR01XS01_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | IL_Critical | Feeder 1 Output Disconnector Closed Interlock
+- `NOT_BMC1321FDR01XS02_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | IL_Critical | Feeder 1 Earth Switch Open Interlock
+- `NOT_BMC1321FDR01XS03_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | IL_Critical | Feeder 1 Gas Pressure Interlock
+- `NOT_BMC1321FDR01XS07_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | IL_Critical | Feeder 1 Arc Fault Input Interlock
+- `NOT_BMC1321FDR01TRP03_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | IL_Critical | Feeder 1 Inter Trip Signal VSD Arc Flash Interlock
+- `NOT_BMC1321FDR01TRP04_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR01 | BMC1321FDR01 BCV131AVS01 Feeder | IL_Critical | Feeder 1 Inter Trip Signal VSD Electrical Interlock
+- `NOT_BCV131AVS01CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01.Sub.CB01 | BCV131AVS01 Drive Circuit Breaker | IL_Critical | Main Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131AVS01TRP01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Main Circuit Breaker Trip Interlock
+- `NOT_BCV131AVS01VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131AVS01PN01VAC02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Panel 240vac Supply Three Posn Switch Motor Isolator (-IS1) Failure Interlock
+- `NOT_BCV131AVS01PN01VAC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Panel 240vac Control Supply (F5) Failure Interlock
+- `NOT_BCV131AVS01PN01VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Panel 24vdc Control Supply (Q284) Failure Interlock
+- `NOT_BCV131AVS01XS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Output Earth Switch Closed Interlock
+- `NOT_BCV131AVS01XS03_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Output Disconnector Open Interlock
+- `NOT_BCV131AVS01SW04_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | SEL SW-Remote
+- `NOT_BCV131AVS01TS02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Transformer Cabinet Thermal Over Temp Trip Interlock
+- `NOT_BCV131AVS01XS02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Arc Flash Sensor Fault Interlock
+- `NOT_BCV131AVS01TRP05_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Arc Flash Trip Interlock
+- `NOT_BCV131AVS01TRP06_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Latch Fault Relay (LFR) Interlock
+- `NOT_BCV131AVS01TRP0x_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Blowers Interlock
+- `NOT_BCV131AVS01SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Safety Relay Fail To Open
+- `NOT_BCV131AVS01SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Safety Relay Fail To Close
+- `NOT_BCV131AVS01_DatOK` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | VSD1 Interlock
+- `NOT_BCV131AVS01_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Communications Fault Interlock
+- `NOT_BCV131AVS01_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | VSD Fault Interlock
+- `NOT_BCV131AVS01_EqpMonOC_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Equipment Monitor PV High Interlock
+- `NOT_BCV131AVS01_EqpMonAbnSpkFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Abnormal Spike Fault Interlock
+- `NOT_BCV131ARTD01_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD01 | BCV131A Drive A | IL_Critical | Motor 1 Red Winding 1 Temperature (C) High High Interlock
+- `NOT_BCV131ARTD02_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD02 | BCV131A Drive A | IL_Critical | Motor 1 White Winding 1 Temperature (C) High High Interlock
+- `NOT_BCV131ARTD03_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD03 | BCV131A Drive A | IL_Critical | Motor 1 Blue Winding 1 Temperature (C) High High Interlock
+- `NOT_BCV131ARTD04_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD04 | BCV131A Drive A | IL_Critical | Motor 1 Red Winding 2 Temperature (C) High High Interlock
+- `NOT_BCV131ARTD05_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD05 | BCV131A Drive A | IL_Critical | Motor 1 White Winding 2 Temperature (C) High High Interlock
+- `NOT_BCV131ARTD06_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD06 | BCV131A Drive A | IL_Critical | Motor 1 Blue Winding 2 Temperature (C) High High Interlock
+- `NOT_BCV131ARTD07_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD07 | BCV131A Drive A | IL_Critical | Motor 1 Non Drive End Bearing Temperature (C) High High Interlock
+- `NOT_BCV131ARTD08_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.RTD08 | BCV131A Drive A | IL_Critical | Motor 1 Drive End Bearing Temperature (C) High High Interlock
+- `NOT_BCV131AGB01RTD01_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.GB01RTD01 | BCV131A Drive A | IL_Critical | Gearbox 1 Gearbox 1 Drive End Bearing Temperature (C) High High Interlock
+- `NOT_BCV131AGB01RTD02_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FieldIO.GB01RTD02 | BCV131A Drive A | IL_Critical | Gearbox 1 Gearbox 1 Oil Temperature (C) High High Interlock
+- `NOT_BMC1321FDR02PR1_Flt_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR02.REX640 | REX640 | IL_Critical | Feeder 2 Protection Relay Fault Interlock
+- `NOT_BMC1321FDR02STS1_SysFlt_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | IL_Critical | Feeder 2 Tripping System Interlock
+- `NOT_BMC1321FDR02CB01_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | IL_Critical | Feeder 2 BMC1321 Feeder 1 Circuit Breaker Open Interlock
+- `NOT_BMC1321FDR02CB04_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | IL_Critical | Feeder 2 Voltage Transformer MCB Closed
+- `NOT_BMC1321FDR02XS01_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | IL_Critical | Feeder 2 Output Disconnector Closed Interlock
+- `NOT_BMC1321FDR02XS02_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | IL_Critical | Feeder 2 Earth Switch Open Interlock
+- `NOT_BMC1321FDR02XS03_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | IL_Critical | Feeder 2 Gas Pressure Interlock
+- `NOT_BMC1321FDR02XS07_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | IL_Critical | Feeder 2 Arc Fault Input Interlock
+- `NOT_BMC1321FDR02TRP03_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | IL_Critical | Feeder 2 Inter Trip Signal VSD Arc Flash Interlock
+- `NOT_BMC1321FDR02TRP04_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR02 | BMC1321FDR02 BCV131BVS01 Feeder | IL_Critical | Feeder 2 Inter Trip Signal VSD Electrical Interlock
+- `NOT_BCV131BVS01CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01.Sub.CB01 | BCV131BVS01 Drive Circuit Breaker | IL_Critical | Main Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131BVS01TRP01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Main Circuit Breaker Trip Interlock
+- `NOT_BCV131BVS01VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131BVS01PN01VAC02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Panel 240vac Supply Three Posn Switch Motor Isolator (-IS1) Failure Interlock
+- `NOT_BCV131BVS01PN01VAC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Panel 240vac Control Supply (F5) Failure Interlock
+- `NOT_BCV131BVS01PN01VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Panel 24vdc Control Supply (Q287) Failure Interlock
+- `NOT_BCV131BVS01XS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Output Earth Switch Closed Interlock
+- `NOT_BCV131BVS01XS03_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Output Disconnector Open Interlock
+- `NOT_BCV131BVS01SW04_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | SEL SW-Remote
+- `NOT_BCV131BVS01TS02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Transformer Cabinet Thermal Over Temp Trip Interlock
+- `NOT_BCV131BVS01XS02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Arc Flash Sensor Fault Interlock
+- `NOT_BCV131BVS01TRP05_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Arc Flash Trip Interlock
+- `NOT_BCV131BVS01TRP06_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Latch Fault Relay (LFR) Interlock
+- `NOT_BCV131BVS01TRP0x_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Blowers Interlock
+- `NOT_BCV131BVS01SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Safety Relay Fail To Open
+- `NOT_BCV131BVS01SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Safety Relay Fail To Close
+- `NOT_BCV131BVS01_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | VSD2 Interlock
+- `NOT_BCV131BVS01_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Communications Fault Interlock
+- `NOT_BCV131BVS01_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | VSD Fault Interlock
+- `NOT_BCV131BVS01_EqpMonOC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Equipment Monitor PV High Interlock
+- `NOT_BCV131BVS01_EqpMonAbnSpkFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Abnormal Spike Fault Interlock
+- `NOT_BCV131BRTD01_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD01 | BCV131B Drive B | IL_Critical | Motor 2 Red Winding 1 Temperature (C) High High Interlock
+- `NOT_BCV131BRTD02_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD02 | BCV131B Drive B | IL_Critical | Motor 2 White Winding 1 Temperature (C) High High Interlock
+- `NOT_BCV131BRTD03_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD03 | BCV131B Drive B | IL_Critical | Motor 2 Blue Winding 1 Temperature (C) High High Interlock
+- `NOT_BCV131BRTD04_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD04 | BCV131B Drive B | IL_Critical | Motor 2 Red Winding 2 Temperature (C) High High Interlock
+- `NOT_BCV131BRTD05_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD05 | BCV131B Drive B | IL_Critical | Motor 2 White Winding 2 Temperature (C) High High Interlock
+- `NOT_BCV131BRTD06_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD06 | BCV131B Drive B | IL_Critical | Motor 2 Blue Winding 2 Temperature (C) High High Interlock
+- `NOT_BCV131BRTD07_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD07 | BCV131B Drive B | IL_Critical | Motor 2 Non Drive End Bearing Temperature (C) High High Interlock
+- `NOT_BCV131BRTD08_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.RTD08 | BCV131B Drive B | IL_Critical | Motor 2 Drive End Bearing Temperature (C) High High Interlock
+- `NOT_BCV131BGB01RTD01_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.GB01RTD01 | BCV131B Drive B | IL_Critical | Gearbox 2 Gearbox 2 Drive End Bearing Temperature (C) High High Interlock
+- `NOT_BCV131BGB01RTD02_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FieldIO.GB01RTD02 | BCV131B Drive B | IL_Critical | Gearbox 2 Gearbox 2 Oil Temperature (C) High High Interlock
+- `NOT_BMC1321FDR03PR1_Flt_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR03.REX640 | REX640 | IL_Critical | Feeder 3 Protection Relay Fault Interlock
+- `NOT_BMC1321FDR03STS1_SysFlt_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | IL_Critical | Feeder 3 Tripping System Interlock
+- `NOT_BMC1321FDR03CB01_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | IL_Critical | Feeder 3 BMC1321 Feeder 1 Circuit Breaker Open Interlock
+- `NOT_BMC1321FDR03CB04_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | IL_Critical | Feeder 3 Voltage Transformer MCB Closed
+- `NOT_BMC1321FDR03XS01_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | IL_Critical | Feeder 3 Output Disconnector Closed Interlock
+- `NOT_BMC1321FDR03XS02_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | IL_Critical | Feeder 3 Earth Switch Open Interlock
+- `NOT_BMC1321FDR03XS03_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | IL_Critical | Feeder 3 Gas Pressure Interlock
+- `NOT_BMC1321FDR03XS07_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | IL_Critical | Feeder 3 Arc Fault Input Interlock
+- `NOT_BMC1321FDR03TRP03_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | IL_Critical | Feeder 3 Inter Trip Signal VSD Arc Flash Interlock
+- `NOT_BMC1321FDR03TRP04_Hty` | BR4.SRV.PWR.BSR132.BMC1321.FDR03 | BMC1321FDR03 BCV131CVS01 Feeder | IL_Critical | Feeder 3 Inter Trip Signal VSD Electrical Interlock
+- `NOT_BCV131CVS01CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01.Sub.CB01 | BCV131CVS01 Drive Circuit Breaker | IL_Critical | Main Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131CVS01TRP01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Main Circuit Breaker Trip Interlock
+- `NOT_BCV131CVS01VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131CVS01PN01VAC02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | 240vac Supply Three Posn Switch Motor Isolator (-IS1) Failure Interlock
+- `NOT_BCV131CVS01PN01VAC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | 240vac Control Supply (F5) Failure Interlock
+- `NOT_BCV131CVS01PN01VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | 24vdc Control Supply (Q290) Failure Interlock
+- `NOT_BCV131CVS01XS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Output Earth Switch Closed Interlock
+- `NOT_BCV131CVS01XS03_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Output Disconnector Open Interlock
+- `NOT_BCV131CVS01SW04_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | SEL SW-Remote
+- `NOT_BCV131CVS01TS02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Transformer Cabinet Thermal Over Temp Trip Interlock
+- `NOT_BCV131CVS01XS02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Arc Flash Sensor Fault Interlock
+- `NOT_BCV131CVS01TRP05_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Arc Flash Trip Interlock
+- `NOT_BCV131CVS01TRP06_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Latch Fault Relay (LFR) Interlock
+- `NOT_BCV131CVS01TRP0x_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Blowers Interlock
+- `NOT_BCV131CVS01SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Safety Relay Fail To Open
+- `NOT_BCV131CVS01SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Safety Relay Fail To Close
+- `NOT_BCV131CVS01_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | VSD3 Interlock
+- `NOT_BCV131CVS01_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Communications Fault Interlock
+- `NOT_BCV131CVS01_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | VSD Fault Interlock
+- `NOT_BCV131CVS01_EqpMonOC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Equipment Monitor PV High Interlock
+- `NOT_BCV131CVS01_EqpMonAbnSpkFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Abnormal Spike Fault Interlock
+- `NOT_BCV131CRTD01_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD01 | BCV131C Drive C | IL_Critical | Motor 3 Red Winding 1 Temperature (C) High High Interlock
+- `NOT_BCV131CRTD02_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD02 | BCV131C Drive C | IL_Critical | Motor 3 White Winding 1 Temperature (C) High High Interlock
+- `NOT_BCV131CRTD03_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD03 | BCV131C Drive C | IL_Critical | Motor 3 Blue Winding 1 Temperature (C) High High Interlock
+- `NOT_BCV131CRTD04_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD04 | BCV131C Drive C | IL_Critical | Motor 3 Red Winding 2 Temperature (C) High High Interlock
+- `NOT_BCV131CRTD05_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD05 | BCV131C Drive C | IL_Critical | Motor 3 White Winding 2 Temperature (C) High High Interlock
+- `NOT_BCV131CRTD06_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD06 | BCV131C Drive C | IL_Critical | Motor 3 Blue Winding 2 Temperature (C) High High Interlock
+- `NOT_BCV131CRTD07_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD07 | BCV131C Drive C | IL_Critical | Motor 3 Non Drive End Bearing Temperature (C) High High Interlock
+- `NOT_BCV131CRTD08_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.RTD08 | BCV131C Drive C | IL_Critical | Motor 3 Drive End Bearing Temperature (C) High High Interlock
+- `NOT_BCV131CGB01RTD01_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.GB01RTD01 | BCV131C Drive C | IL_Critical | Overland Conveyor Gearbox Drive End Bearing Temperature (C) High High Interlock
+- `NOT_BCV131CGB01RTD02_HiHi_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FieldIO.GB01RTD02 | BCV131C Drive C | IL_Critical | Overland Conveyor Gearbox Oil Temperature (C) High High Interlock
+- `NOT_BCV131SUY03_RunFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Underspeed Interlock
+- `NOT_BCV131SUY03_OvrFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Overspeed Interlock
+- `NOT_BCV131SUY03_StpFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Failed To Stop Interlock
+- `NOT_BCV131SUY03_DifHi_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Differential Interlock
+- `NOT_BCV131BDS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS01 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 1 Interlock
+- `NOT_BCV131BDS02_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS02 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 2 Interlock
+- `NOT_BCV131BDS03_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS03 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 3 Interlock
+- `NOT_BCV131BDS04_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS04 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 4 Interlock
+- `NOT_BCV131BDS05_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS05 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 5 Interlock
+- `NOT_BCV131BDS06_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS06 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 6 Interlock
+- `NOT_BCV131BDS07_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS07 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 7 Interlock
+- `NOT_BCV131BDS08_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS08 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 8 Interlock
+- `NOT_BCV131BDS09_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS09 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 9 Interlock
+- `NOT_BCV131BDS10_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS10 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 10 Interlock
+- `NOT_BCV131BDS11_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS11 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 11 Interlock
+- `NOT_BCV131BDS12_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS12 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 12 Interlock
+- `NOT_BCV131BDS13_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS13 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 13 Interlock
+- `NOT_BCV131BDS14_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS14 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 14 Interlock
+- `NOT_BCV131BDS15_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS15 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 15 Interlock
+- `NOT_BCV131BDS16_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS01_16.BDS16 | BCV131BDS01_16 Belt Drift Switches 1-16 | IL_Critical | Overland Conveyor Belt Drift Switch 16 Interlock
+- `NOT_BCV131BDS17_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS17 | BCV131BDS17_22 Belt Drift Switches 17-22 | IL_Critical | Overland Conveyor Belt Drift Switch 17 Interlock
+- `NOT_BCV131BDS18_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS18 | BCV131BDS17_22 Belt Drift Switches 17-22 | IL_Critical | Overland Conveyor Belt Drift Switch 18 Interlock
+- `NOT_BCV131BDS19_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS19 | BCV131BDS17_22 Belt Drift Switches 17-22 | IL_Critical | Overland Conveyor Belt Drift Switch 19 Interlock
+- `NOT_BCV131BDS20_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS20 | BCV131BDS17_22 Belt Drift Switches 17-22 | IL_Critical | Overland Conveyor Belt Drift Switch 20 Interlock
+- `NOT_BCV131BDS21_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS21 | BCV131BDS17_22 Belt Drift Switches 17-22 | IL_Critical | Overland Conveyor Belt Drift Switch 21 Interlock
+- `NOT_BCV131BDS22_Hty` | BR4.INLOADING.BP3OLC.BCV131.FieldIO.BDS17_22.BDS22 | BCV131BDS17_22 Belt Drift Switches 17-22 | IL_Critical | Overland Conveyor Belt Drift Switch 22 Interlock
+- `NOT_BCV131AVS01XS05_I` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.VS01 | BCV131AVS01 Perfect Harmony GH180 | IL_Critical | Drive Ready To Run
+- `NOT_BCV131AFN02_AutRdy` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Auto Ready
+- `NOT_BCV131AFN03_AutRdy` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Auto Ready
+- `NOT_BCV131BVS01XS05_I` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.VS01 | BCV131BVS01 Perfect Harmony GH180 | IL_Critical | Drive Ready To Run
+- `NOT_BCV131BFN02_AutRdy` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Auto Ready
+- `NOT_BCV131BFN03_AutRdy` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Auto Ready
+- `NOT_BCV131CVS01XS05_I` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.VS01 | BCV131CVS01 Perfect Harmony GH180 | IL_Critical | Drive Ready To Run
+- `NOT_BCV131CFN02_AutRdy` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Auto Ready
+- `NOT_BCV131CFN03_AutRdy` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Auto Ready
+- `NOT_BBN131LUY01_LoILOK` | BR4.INLOADING.BP3OLC.BBN131.LUY01 | BBN131LUY01 Active Level | IL_Critical | Surge Bin BBN131 Average Level Low Interlock
+- `NOT_BBN131LUY01_HiILOK` | BR4.INLOADING.BP3OLC.BBN131.LUY01 | BBN131LUY01 Active Level | IL_Critical | Surge Bin BBN131 Average Level High Interlock
+- `NOT_BCV131_EmpStpEn` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Empty Belt Stop Command Enabled
+- `NOT_BCV131TRK1_RunOff` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Ore Tracking Run Off
+- `NOT_BCV131_BmpTstFin` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Bump Test Complete
+- `NOT_BCV131AFN01STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Overall Control System Interlock
+- `NOT_BCV131AFN01CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01.Sub.CB01 | BCV131AFN01 Drive Circuit Breaker | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131AFN01TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131AFN01VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131AGB01LCS01SY01_Hty` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | IL_Critical | Gearbox 1 Safety Relay Interlock
+- `NOT_BCV131AFN01SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Fail To Open Interlock
+- `NOT_BCV131AFN01SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Fail To Close Interlock
+- `NOT_BCV131AFN01CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01.Sub.CAX01 | BCV131AFN01 Main Contactor | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Fail To Open Interlock
+- `NOT_BCV131AFN01CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01.Sub.CAX01 | BCV131AFN01 Main Contactor | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Fail To Close Interlock
+- `NOT_BCV131AFN01PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Protection Relay Interlock
+- `NOT_BCV131AFN01PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Protection Relay Communications Fault Interlock
+- `NOT_BCV131AFN01PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Protection Relay Fault Interlock
+- `NOT_BCV131AFN01_CtlHi` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Fan Start Control Point
+- `NOT_BCV131AFN01_RunOnFin` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Run On Finished
+- `NOT_BCV131_Off` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Conveyor Not Stopped Interlock
+- `NOT_BCV131AFN01_CtlHiHi` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Fan Run On Stop Control Point
+- `NOT_BCV131APP02_AutRun` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Auto Running
+- `NOT_BCV131AFN01_CtlLo` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Fan Stop Control Point
+- `NOT_BCV131AFN01_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Sequence Stop Interlock
+- `NOT_BCV131AFN01_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.1 Reducer Cooling Fan Local Start Interlock
+- `NOT_BCV131AFN01_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01 | BCV131AFN01 Reducer Cooling Fan | IL_LocalStart | Conveyor Drive No.1 Reducer Cooling Fan Local Run Interlock
+- `NOT_BCV131APP02STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Overall Control System Interlock
+- `NOT_BCV131APP02CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02.Sub.CB01 | BCV131APP02 Drive Circuit Breaker | IL_Critical | Conveyor Drive No. 1 Oil Pump Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131APP02TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131APP02VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131APP02SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Fail To Open Interlock
+- `NOT_BCV131APP02SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Fail To Close Interlock
+- `NOT_BCV131APP02CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02.Sub.CAX01 | BCV131APP02 Main Contactor | IL_Critical | Conveyor Drive No. 1 Oil Pump Fail To Open Interlock
+- `NOT_BCV131APP02CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02.Sub.CAX01 | BCV131APP02 Main Contactor | IL_Critical | Conveyor Drive No. 1 Oil Pump Fail To Close Interlock
+- `NOT_BCV131APP02PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Protection Relay Interlock
+- `NOT_BCV131APP02PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Protection Relay Communications Fault Interlock
+- `NOT_BCV131APP02PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Protection Relay Fault Interlock
+- `NOT_BCV131APP02FT01_Lo_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02.FieldIO.FT01 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Oil Flow Low Interlock
+- `NOT_BCV131APP02FT01_Rtn_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02.FieldIO.FT01 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Oil Flow Sensor Fault Interlock
+- `NOT_BCV131_AuxStt` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Auxiliary Drive Run Request
+- `NOT_BCV131APP02_CtlHi` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Pump Start Control Point
+- `NOT_BCV131APP02_RunOnFin` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Run On Finished
+- `NOT_BCV131APP02_CtlLo` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Pump Stop Control Point
+- `NOT_BCV131APP02_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Sequence Stop Interlock
+- `NOT_BCV131APP02_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_Critical | Conveyor Drive No. 1 Oil Pump Local Start Interlock
+- `NOT_BCV131APP02_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02 | BCV131APP02 Cooling Pump | IL_LocalStart | Conveyor Drive No. 1 Oil Pump Local Run Interlock
+- `NOT_BCV131AFN02STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Overall Control System Interlock
+- `NOT_BCV131AFN02CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02.Sub.CB01 | BCV131AFN02 Drive Circuit Breaker | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131AFN02TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131AFN02VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131AFN02LCS01SY01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Safety Relay Interlock
+- `NOT_BCV131AFN02SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Fail To Open Interlock
+- `NOT_BCV131AFN02SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Fail To Close Interlock
+- `NOT_BCV131AFN02CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02.Sub.CAX01 | BCV131AFN02 Main Contactor | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Fail To Open Interlock
+- `NOT_BCV131AFN02CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02.Sub.CAX01 | BCV131AFN02 Main Contactor | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Fail To Close Interlock
+- `NOT_BCV131AFN02PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Protection Relay Interlock
+- `NOT_BCV131AFN02PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Protection Relay Communications Fault Interlock
+- `NOT_BCV131AFN02PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Protection Relay Fault Interlock
+- `NOT_BCV131AFN02_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Sequence Stop Interlock
+- `NOT_BCV131AFN02_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 1 Local Start Interlock
+- `NOT_BCV131AFN02_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN02 | BCV131AFN02 Motor Cooling Fan 1 | IL_LocalStart | Conveyor Drive No. 1 Motor Cooling Fan 1 Local Run Interlock
+- `NOT_BCV131AFN03STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Overall Control System Interlock
+- `NOT_BCV131AFN03CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03.Sub.CB01 | BCV131AFN03 Drive Circuit Breaker | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131AFN03TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131AFN03VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131AFN03SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Fail To Open Interlock
+- `NOT_BCV131AFN03SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Fail To Close Interlock
+- `NOT_BCV131AFN03CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03.Sub.CAX01 | BCV131AFN03 Main Contactor | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Fail To Open Interlock
+- `NOT_BCV131AFN03CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03.Sub.CAX01 | BCV131AFN03 Main Contactor | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Fail To Close Interlock
+- `NOT_BCV131AFN03PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Protection Relay Interlock
+- `NOT_BCV131AFN03PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Protection Relay Communications Fault Interlock
+- `NOT_BCV131AFN03PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Protection Relay Fault Interlock
+- `NOT_BCV131AFN03_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Sequence Stop Interlock
+- `NOT_BCV131AFN03_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 1 Motor Cooling Fan 2 Local Start Interlock
+- `NOT_BCV131AFN03_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN03 | BCV131AFN03 Motor Cooling Fan 2 | IL_LocalStart | Conveyor Drive No. 1 Motor Cooling Fan 2 Local Run Interlock
+- `NOT_BCV131BFN01STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Overall Control System Interlock
+- `NOT_BCV131BFN01CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01.Sub.CB01 | BCV131BFN01 Drive Circuit Breaker | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131BFN01TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131BFN01VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131BGB01LCS01SY01_Hty` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | IL_Critical | Gearbox 2 Safety Relay Interlock
+- `NOT_BCV131BFN01SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Fail To Open Interlock
+- `NOT_BCV131BFN01SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Fail To Close Interlock
+- `NOT_BCV131BFN01CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01.Sub.CAX01 | BCV131BFN01 Main Contactor | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Fail To Open Interlock
+- `NOT_BCV131BFN01CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01.Sub.CAX01 | BCV131BFN01 Main Contactor | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Fail To Close Interlock
+- `NOT_BCV131BFN01PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Protection Relay Interlock
+- `NOT_BCV131BFN01PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Protection Relay Communications Fault Interlock
+- `NOT_BCV131BFN01PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Protection Relay Fault Interlock
+- `NOT_BCV131BFN01_CtlHi` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Fan Start Control Point
+- `NOT_BCV131BFN01_RunOnFin` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Run On Finished
+- `NOT_BCV131BFN01_CtlHiHi` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Fan Run On Stop Control Point
+- `NOT_BCV131BPP02_AutRun` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Auto Running
+- `NOT_BCV131BFN01_CtlLo` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Fan Stop Control Point
+- `NOT_BCV131BFN01_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Sequence Stop Interlock
+- `NOT_BCV131BFN01_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.2 Reducer Cooling Fan Local Start Interlock
+- `NOT_BCV131BFN01_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01 | BCV131BFN01 Reducer Cooling Fan | IL_LocalStart | Conveyor Drive No.2 Reducer Cooling Fan Local Run Interlock
+- `NOT_BCV131BPP02STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Overall Control System Interlock
+- `NOT_BCV131BPP02CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02.Sub.CB01 | BCV131BPP02 Drive Circuit Breaker | IL_Critical | Conveyor Drive No. 2 Oil Pump Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131BPP02TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131BPP02VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131BPP02SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Fail To Open Interlock
+- `NOT_BCV131BPP02SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Fail To Close Interlock
+- `NOT_BCV131BPP02CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02.Sub.CAX01 | BCV131BPP02 Main Contactor | IL_Critical | Conveyor Drive No. 2 Oil Pump Fail To Open Interlock
+- `NOT_BCV131BPP02CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02.Sub.CAX01 | BCV131BPP02 Main Contactor | IL_Critical | Conveyor Drive No. 2 Oil Pump Fail To Close Interlock
+- `NOT_BCV131BPP02PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Protection Relay Interlock
+- `NOT_BCV131BPP02PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Protection Relay Communications Fault Interlock
+- `NOT_BCV131BPP02PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Protection Relay Fault Interlock
+- `NOT_BCV131BPP02FT01_Lo_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02.FieldIO.FT01 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Oil Flow Low Interlock
+- `NOT_BCV131BPP02FT01_Rtn_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02.FieldIO.FT01 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Oil Flow Sensor Fault Interlock
+- `NOT_BCV131BPP02_CtlHi` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Pump Start Control Point
+- `NOT_BCV131BPP02_RunOnFin` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Run On Finished
+- `NOT_BCV131BPP02_CtlLo` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Pump Stop Control Point
+- `NOT_BCV131BPP02_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Sequence Stop Interlock
+- `NOT_BCV131BPP02_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 2 Oil Pump Local Start Interlock
+- `NOT_BCV131BPP02_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02 | BCV131BPP02 Cooling Pump | IL_LocalStart | Conveyor Drive No. 2 Oil Pump Local Run Interlock
+- `NOT_BCV131BFN02STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Overall Control System Interlock
+- `NOT_BCV131BFN02CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02.Sub.CB01 | BCV131BFN02 Drive Circuit Breaker | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131BFN02TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131BFN02VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131BFN02LCS01SY01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Safety Relay Interlock
+- `NOT_BCV131BFN02SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Fail To Open Interlock
+- `NOT_BCV131BFN02SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Fail To Close Interlock
+- `NOT_BCV131BFN02CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02.Sub.CAX01 | BCV131BFN02 Main Contactor | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Fail To Open Interlock
+- `NOT_BCV131BFN02CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02.Sub.CAX01 | BCV131BFN02 Main Contactor | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Fail To Close Interlock
+- `NOT_BCV131BFN02PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Protection Relay Interlock
+- `NOT_BCV131BFN02PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Protection Relay Communications Fault Interlock
+- `NOT_BCV131BFN02PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Protection Relay Fault Interlock
+- `NOT_BCV131BFN02_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Sequence Stop Interlock
+- `NOT_BCV131BFN02_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 1 Local Start Interlock
+- `NOT_BCV131BFN02_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN02 | BCV131BFN02 Motor Cooling Fan 1 | IL_LocalStart | Conveyor Drive No. 2 Motor Cooling Fan 1 Local Run Interlock
+- `NOT_BCV131BFN03STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Overall Control System Interlock
+- `NOT_BCV131BFN03CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03.Sub.CB01 | BCV131BFN03 Drive Circuit Breaker | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131BFN03TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131BFN03VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131BFN03SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Fail To Open Interlock
+- `NOT_BCV131BFN03SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Fail To Close Interlock
+- `NOT_BCV131BFN03CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03.Sub.CAX01 | BCV131BFN03 Main Contactor | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Fail To Open Interlock
+- `NOT_BCV131BFN03CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03.Sub.CAX01 | BCV131BFN03 Main Contactor | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Fail To Close Interlock
+- `NOT_BCV131BFN03PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Protection Relay Interlock
+- `NOT_BCV131BFN03PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Protection Relay Communications Fault Interlock
+- `NOT_BCV131BFN03PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Protection Relay Fault Interlock
+- `NOT_BCV131BFN03_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Sequence Stop Interlock
+- `NOT_BCV131BFN03_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 2 Motor Cooling Fan 2 Local Start Interlock
+- `NOT_BCV131BFN03_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN03 | BCV131BFN03 Motor Cooling Fan 2 | IL_LocalStart | Conveyor Drive No. 2 Motor Cooling Fan 2 Local Run Interlock
+- `NOT_BCV131CFN01STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Overall Control System Interlock
+- `NOT_BCV131CFN01CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01.Sub.CB01 | BCV131CFN01 Drive Circuit Breaker | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131CFN01TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131CFN01VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131CGB01LCS01SY01_Hty` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | IL_Critical | Gearbox 3 Safety Relay Interlock
+- `NOT_BCV131CFN01SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Fail To Open Interlock
+- `NOT_BCV131CFN01SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Fail To Close Interlock
+- `NOT_BCV131CFN01CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01.Sub.CAX01 | BCV131CFN01 Main Contactor | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Fail To Open Interlock
+- `NOT_BCV131CFN01CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01.Sub.CAX01 | BCV131CFN01 Main Contactor | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Fail To Close Interlock
+- `NOT_BCV131CFN01PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Protection Relay Interlock
+- `NOT_BCV131CFN01PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Protection Relay Communications Fault Interlock
+- `NOT_BCV131CFN01PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Protection Relay Fault Interlock
+- `NOT_BCV131CFN01_CtlHi` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Fan Start Control Point
+- `NOT_BCV131CFN01_RunOnFin` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Run On Finished
+- `NOT_BCV131CFN01_CtlHiHi` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Fan Run On Stop Control Point
+- `NOT_BCV131CPP02_AutRun` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Auto Running
+- `NOT_BCV131CFN01_CtlLo` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Fan Stop Control Point
+- `NOT_BCV131CFN01_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Sequence Stop Interlock
+- `NOT_BCV131CFN01_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_Critical | Conveyor Drive No.3 Reducer Cooling Fan Local Start Interlock
+- `NOT_BCV131CFN01_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01 | BCV131CFN01 Reducer Cooling Fan | IL_LocalStart | Conveyor Drive No.3 Reducer Cooling Fan Local Run Interlock
+- `NOT_BCV131CPP02STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Overall Control System Interlock
+- `NOT_BCV131CPP02CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02.Sub.CB01 | BCV131CPP02 Drive Circuit Breaker | IL_Critical | Conveyor Drive No. 3 Oil Pump Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131CPP02TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131CPP02VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131CPP02SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Fail To Open Interlock
+- `NOT_BCV131CPP02SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Fail To Close Interlock
+- `NOT_BCV131CPP02CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02.Sub.CAX01 | BCV131CPP02 Main Contactor | IL_Critical | Conveyor Drive No. 3 Oil Pump Fail To Open Interlock
+- `NOT_BCV131CPP02CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02.Sub.CAX01 | BCV131CPP02 Main Contactor | IL_Critical | Conveyor Drive No. 3 Oil Pump Fail To Close Interlock
+- `NOT_BCV131CPP02PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Protection Relay Interlock
+- `NOT_BCV131CPP02PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Protection Relay Communications Fault Interlock
+- `NOT_BCV131CPP02PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Protection Relay Fault Interlock
+- `NOT_BCV131CPP02FT01_Lo_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02.FieldIO.FT01 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Oil Flow Low Interlock
+- `NOT_BCV131CPP02FT01_Rtn_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02.FieldIO.FT01 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Oil Flow Sensor Fault Interlock
+- `NOT_BCV131CPP02_CtlHi` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Pump Start Control Point
+- `NOT_BCV131CPP02_RunOnFin` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Run On Finished
+- `NOT_BCV131CPP02_CtlLo` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Pump Stop Control Point
+- `NOT_BCV131CPP02_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Sequence Stop Interlock
+- `NOT_BCV131CPP02_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_Critical | Conveyor Drive No. 3 Oil Pump Local Start Interlock
+- `NOT_BCV131CPP02_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02 | BCV131CPP02 Cooling Pump | IL_LocalStart | Conveyor Drive No. 3 Oil Pump Local Run Interlock
+- `NOT_BCV131CFN02STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Overall Control System Interlock
+- `NOT_BCV131CFN02CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02.Sub.CB01 | BCV131CFN02 Drive Circuit Breaker | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131CFN02TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131CFN02VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131CFN02LCS01SY01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Safety Relay Interlock
+- `NOT_BCV131CFN02SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Fail To Open Interlock
+- `NOT_BCV131CFN02SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Fail To Close Interlock
+- `NOT_BCV131CFN02CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02.Sub.CAX01 | BCV131CFN02 Main Contactor | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Fail To Open Interlock
+- `NOT_BCV131CFN02CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02.Sub.CAX01 | BCV131CFN02 Main Contactor | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Fail To Close Interlock
+- `NOT_BCV131CFN02PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Protection Relay Interlock
+- `NOT_BCV131CFN02PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Protection Relay Communications Fault Interlock
+- `NOT_BCV131CFN02PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Protection Relay Fault Interlock
+- `NOT_BCV131CFN02_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Sequence Stop Interlock
+- `NOT_BCV131CFN02_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 1 Local Start Interlock
+- `NOT_BCV131CFN02_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN02 | BCV131CFN02 Motor Cooling Fan 1 | IL_LocalStart | Conveyor Drive No. 3 Motor Cooling Fan 1 Local Run Interlock
+- `NOT_BCV131CFN03STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Overall Control System Interlock
+- `NOT_BCV131CFN03CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03.Sub.CB01 | BCV131CFN03 Drive Circuit Breaker | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131CFN03TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131CFN03VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131CFN03SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Fail To Open Interlock
+- `NOT_BCV131CFN03SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Fail To Close Interlock
+- `NOT_BCV131CFN03CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03.Sub.CAX01 | BCV131CFN03 Main Contactor | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Fail To Open Interlock
+- `NOT_BCV131CFN03CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03.Sub.CAX01 | BCV131CFN03 Main Contactor | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Fail To Close Interlock
+- `NOT_BCV131CFN03PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Protection Relay Interlock
+- `NOT_BCV131CFN03PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Protection Relay Communications Fault Interlock
+- `NOT_BCV131CFN03PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Protection Relay Fault Interlock
+- `NOT_BCV131CFN03_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Sequence Stop Interlock
+- `NOT_BCV131CFN03_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_Critical | Conveyor Drive No. 3 Motor Cooling Fan 2 Local Start Interlock
+- `NOT_BCV131CFN03_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN03 | BCV131CFN03 Motor Cooling Fan 2 | IL_LocalStart | Conveyor Drive No. 3 Motor Cooling Fan 2 Local Run Interlock
+- `NOT_BCV131BK01STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | IL_Critical | Tail End Brake 1 Overall Control System Interlock
+- `NOT_BCV131PP04CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK01.PP04.Sub.CB01 | BCV131PP04 Drive Circuit Breaker | IL_Critical | Tail Brake 2 HPU Pump Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131PP04TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | IL_Critical | Tail Brake 2 HPU Pump Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131PP04SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | IL_Critical | Tail Brake 2 HPU Pump Fail To Open Interlock
+- `NOT_BCV131PP04SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | IL_Critical | Tail Brake 2 HPU Pump Fail To Close Interlock
+- `NOT_BCV131PP04CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK01.PP04.Sub.CAX01 | BCV131PP04 Main Contactor | IL_Critical | Tail Brake 2 HPU Pump Fail To Open Interlock
+- `NOT_BCV131PP04CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK01.PP04.Sub.CAX01 | BCV131PP04 Main Contactor | IL_Critical | Tail Brake 2 HPU Pump Fail To Close Interlock
+- `NOT_BCV131PP04PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | IL_Critical | Tail Brake 2 HPU Pump Protection Relay Interlock
+- `NOT_BCV131PP04PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | IL_Critical | Tail Brake 2 HPU Pump Protection Relay Communications Fault Interlock
+- `NOT_BCV131PP04PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | IL_Critical | Tail Brake 2 HPU Pump Protection Relay Fault Interlock
+- `NOT_BCV131BK01UI01LS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | IL_Critical | TAIL Brake 1 BCV131 Tail Brake 1 Oil Level Interlock
+- `NOT_BCV131BK01UI01TS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | IL_Critical | TAIL Brake 1 BCV131 Tail Brake 1 Temperature Switch Interlock
+- `NOT_BCV131BK01_AppFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Tail End Brake 1 Failed To Apply Interlock
+- `NOT_BCV131BK01_LftFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Tail End Brake 1 Failed To Lift Interlock
+- `NOT_BCV131BK01_PrsFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Tail End Brake 1 Failed To Pressurise Interlock
+- `NOT_BCV131WN01_DrvPrm_C` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Active Take-Up Winch Drive Permissive
+- `NOT_BCV131SUY03_CtlLo` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Brake Activation Speed
+- `NOT_BCV131_SttReq` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Start Required
+- `NOT_BCV131AVS01_FwdFB` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Running Forward
+- `NOT_BCV131BVS01_FwdFB` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Running Forward
+- `NOT_BCV131CVS01_FwdFB` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Running Forward
+- `NOT_BCV131_RpdStpReq` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Fast Stop Required
+- `NOT_BCV131BK01_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | IL_Critical | Brake Sequence Stop Interlock
+- `NOT_BCV131BK01_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | IL_Critical | Brake Local Start Interlock
+- `NOT_BCV131BK01_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BK01 | BCV131BK01 Brake 1 | IL_LocalStart | Brake Local Run Interlock
+- `NOT_BCV131BK02STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | Tail End Brake 1 Overall Control System Interlock
+- `NOT_BCV131PP05CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02.PP05.Sub.CB01 | BCV131PP05 Drive Circuit Breaker | IL_Critical | Tail Brake 2 HPU Pump Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131PP05TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.RIS01 | BCV131 Remote Isolation System | IL_Critical | Tail Brake 2 HPU Pump Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131PP05SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02.PP05 | BCV131PP05 HPU Pump | IL_Critical | Tail Brake 2 HPU Pump Fail To Open Interlock
+- `NOT_BCV131PP05SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02.PP05 | BCV131PP05 HPU Pump | IL_Critical | Tail Brake 2 HPU Pump Fail To Close Interlock
+- `NOT_BCV131PP05CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02.PP05.Sub.CAX01 | BCV131PP05 Main Contactor | IL_Critical | Tail Brake 2 HPU Pump Fail To Open Interlock
+- `NOT_BCV131PP05CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02.PP05.Sub.CAX01 | BCV131PP05 Main Contactor | IL_Critical | Tail Brake 2 HPU Pump Fail To Close Interlock
+- `NOT_BCV131PP05PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | Tail Brake 2 HPU Pump Protection Relay Interlock
+- `NOT_BCV131PP05PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | Tail Brake 2 HPU Pump Protection Relay Communications Fault Interlock
+- `NOT_BCV131PP05PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | Tail Brake 2 HPU Pump Protection Relay Fault Interlock
+- `NOT_BCV131BK02UI01LS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | TAIL Brake 2 Oil Level Interlock
+- `NOT_BCV131BK02UI01TS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | TAIL Brake 2 Temperature Switch Interlock
+- `NOT_BCV131BK02_AppFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | TAIL Brake 2 Failed To Apply Interlock
+- `NOT_BCV131BK02_LftFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | TAIL Brake 2 Failed To Lift Interlock
+- `NOT_BCV131BK02_PrsFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | TAIL Brake 2 Failed To Pressurise Interlock
+- `NOT_BCV131BK02_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | Brake Sequence Stop Interlock
+- `NOT_BCV131BK02_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | Brake Local Start Interlock
+- `NOT_BCV131BK02_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_LocalStart | Brake Local Run Interlock
+- `NOT_BDU131FN01STS1_SysOK` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | IL_Critical | Surge Bin Dust Collector Fan Overall Control System Interlock
+- `NOT_BDU131FN01CB01_Hty` | BR4.INLOADING.BP3OLC.BDU131.FN01.Sub.CB01 | BDU131FN01 Drive Circuit Breaker | IL_Critical | Surge Bin Dust Collector Fan Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BDU131FN01TRP02_Hty` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | IL_Critical | Surge Bin Dust Collector Fan Drive Circuit Breaker Tripped Interlock
+- `NOT_BDU131FN01VDC01_Hty` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | IL_Critical | Surge Bin Dust Collector Fan 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BDU131FN01SY01_Hty` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | IL_Critical | Surge Bin Dust Collector Fan Safety Relay Circuit Interlock
+- `NOT_BDU131FN01CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BDU131.FN01.Sub.CAX01 | BDU131FN01 Main Contactor | IL_Critical | Surge Bin Dust Collector Fan Fail To Open Interlock
+- `NOT_BDU131FN01CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BDU131.FN01.Sub.CAX01 | BDU131FN01 Main Contactor | IL_Critical | Surge Bin Dust Collector Fan Fail To Close Interlock
+- `NOT_BDU131FN01PR1_DatOK` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | IL_Critical | Surge Bin Dust Collector Fan Protection Relay Interlock
+- `NOT_BDU131FN01PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | IL_Critical | Surge Bin Dust Collector Fan Protection Relay Communications Fault Interlock
+- `NOT_BDU131FN01PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | IL_Critical | Surge Bin Dust Collector Fan Protection Relay Fault Interlock
+- `NOT_BDU131_Req` | BR4.INLOADING.BP3OLC.BDU131 | BDU131 Dust Collector | IL_Critical | Feed Facility Running
+- `NOT_BDU131CP01_Run` | BR4.INLOADING.BP3OLC.BDU131.CP01 | BDU131CP01 Air Compressor | IL_Critical | Surge BIN DUST Collector Running
+- `NOT_BDU131FN01_Req` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | IL_Critical | Extraction Fan Extraction Fan Required From Dust Collector Sequence
+- `NOT_BDU131FN01_SeqStpIL` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | IL_Critical | Surge Bin Dust Collector Fan Sequence Stop Interlock
+- `NOT_BDU131FN01_LocSttIL` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | IL_Critical | Surge Bin Dust Collector Fan Local Start Interlock
+- `NOT_BDU131FN01_LocRunIL` | BR4.INLOADING.BP3OLC.BDU131.FN01 | BDU131FN01 Fan | IL_LocalStart | Surge Bin Dust Collector Fan Local Run Interlock
+- `NOT_BDU131CP01CB01_Hty` | BR4.INLOADING.BP3OLC.BDU131.CP01 | BDU131CP01 Air Compressor | IL_Critical | Surge BIN DUST Collector Main Circuit Breaker (Q103) Open Interlock
+- `NOT_BDU131CP01TRP01_Hty` | BR4.INLOADING.BP3OLC.BDU131.CP01 | BDU131CP01 Air Compressor | IL_Critical | Compressor Main Circuit Breaker Trip Interlock
+- `NOT_BDU131CP01VDC01_Hty` | BR4.INLOADING.BP3OLC.BDU131.CP01 | BDU131CP01 Air Compressor | IL_Critical | Surge BIN DUST Collector 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BDU131CP01XS01_Hty` | BR4.INLOADING.BP3OLC.BDU131.CP01 | BDU131CP01 Air Compressor | IL_Critical | Surge BIN DUST Collector Fault Interlock
+- `NOT_BCV131PP02STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_Critical | Conveyor Drive Station Sump 1 Pump Overall Control System Interlock
+- `NOT_BCV131PP02LCS01IS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02.FieldIO.IS01 | BCV131PP02 Sump Pump | IL_Critical | Isolator Interlock
+- `NOT_BCV131PP02CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02.Sub.CB01 | BCV131PP02 Drive Circuit Breaker | IL_Critical | Conveyor Drive Station Sump 1 Pump Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131PP02TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_Critical | Conveyor Drive Station Sump 1 Pump Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131PP02VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_Critical | Conveyor Drive Station Sump 1 Pump 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131PP02SY01_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_Critical | Conveyor Drive Station Sump 1 Pump Safety Relay Circuit Interlock
+- `NOT_BCV131PP02CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02.Sub.CAX01 | BCV131PP02 Main Contactor | IL_Critical | Conveyor Drive Station Sump 1 Pump Fail To Open Interlock
+- `NOT_BCV131PP02CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02.Sub.CAX01 | BCV131PP02 Main Contactor | IL_Critical | Conveyor Drive Station Sump 1 Pump Fail To Close Interlock
+- `NOT_BCV131PP02PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_Critical | Conveyor Drive Station Sump 1 Pump Protection Relay Interlock
+- `NOT_BCV131PP02PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_Critical | Conveyor Drive Station Sump 1 Pump Protection Relay Communications Fault Interlock
+- `NOT_BCV131PP02PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_Critical | Conveyor Drive Station Sump 1 Pump Protection Relay Fault Interlock
+- `NOT_BCV131SM01LIT01_LoLo_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01 | BCV131SM01 Drive Station 1 Sump | IL_Critical | Conveyor Drive Station Sump 1 Level Low Low Interlock
+- `NOT_BCV131SM01LIT01_Frz_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01 | BCV131SM01 Drive Station 1 Sump | IL_Critical | Conveyor Drive Station Sump 1 Level Frozen Value Interlock
+- `NOT_BCV131PP02SV01_RunFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02.FieldIO.SV01 | BCV131PP02 Sump Pump | IL_Critical | Sump Unit Make-Up Water Excessive Operating Interlock
+- `NOT_BCV131PP02_SeqSttIL` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_SeqStart | Conveyor Drive Station Sump 1 Pump Sequence Start Interlock
+- `NOT_BCV131PP02_SeqReq` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_Critical | Conveyor Drive Station Sump 1 Pump Sequence Required
+- `NOT_BCV131PP02_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_Critical | Conveyor Drive Station Sump 1 Pump Sequence Stop Interlock
+- `NOT_BCV131PP02_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_Critical | Conveyor Drive Station Sump 1 Pump Local Start Interlock
+- `NOT_BCV131PP02_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.SM01.PP02 | BCV131PP02 Sump Pump | IL_LocalStart | Conveyor Drive Station Sump 1 Pump Local Run Interlock
+- `NOT_BCV131PP03STS1_SysOK` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_Critical | Conveyor Drive Station Sump 2 Pump Overall Control System Interlock
+- `NOT_BCV131PP03LCS01IS01_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03.FieldIO.IS01 | BCV131PP03 Sump Pump | IL_Critical | Isolator Interlock
+- `NOT_BCV131PP03CB01_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03.Sub.CB01 | BCV131PP03 Drive Circuit Breaker | IL_Critical | Conveyor Drive Station Sump 2 Pump Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BCV131PP03TRP02_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_Critical | Conveyor Drive Station Sump 2 Pump Drive Circuit Breaker Tripped Interlock
+- `NOT_BCV131PP03VDC01_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_Critical | Conveyor Drive Station Sump 2 Pump 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BCV131PP03SY01_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_Critical | Conveyor Drive Station Sump 2 Pump Safety Relay Circuit Interlock
+- `NOT_BCV131PP03CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03.Sub.CAX01 | BCV131PP03 Main Contactor | IL_Critical | Conveyor Drive Station Sump 2 Pump Fail To Open Interlock
+- `NOT_BCV131PP03CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03.Sub.CAX01 | BCV131PP03 Main Contactor | IL_Critical | Conveyor Drive Station Sump 2 Pump Fail To Close Interlock
+- `NOT_BCV131PP03PR1_DatOK` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_Critical | Conveyor Drive Station Sump 2 Pump Protection Relay Interlock
+- `NOT_BCV131PP03PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_Critical | Conveyor Drive Station Sump 2 Pump Protection Relay Communications Fault Interlock
+- `NOT_BCV131PP03PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_Critical | Conveyor Drive Station Sump 2 Pump Protection Relay Fault Interlock
+- `NOT_BCV131SM02LIT02_LoLo_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02 | BCV131SM02 Drive Station 2 Sump | IL_Critical | Conveyor Drive Station Sump 2 Level Low Low Interlock
+- `NOT_BCV131SM02LIT02_Frz_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02 | BCV131SM02 Drive Station 2 Sump | IL_Critical | Conveyor Drive Station Sump 2 Level Frozen Value Interlock
+- `NOT_BCV131PP03SV01_RunFlt_Hty` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03.FieldIO.SV01 | BCV131PP03 Sump Pump | IL_Critical | Sump Unit Make-Up Water Excessive Operating Interlock
+- `NOT_BCV131PP03_SeqSttIL` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_SeqStart | Conveyor Drive Station Sump 2 Pump Sequence Start Interlock
+- `NOT_BCV131PP03_SeqReq` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_Critical | Conveyor Drive Station Sump 2 Pump Sequence Required
+- `NOT_BCV131PP03_SeqStpIL` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_Critical | Conveyor Drive Station Sump 2 Pump Sequence Stop Interlock
+- `NOT_BCV131PP03_LocSttIL` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_Critical | Conveyor Drive Station Sump 2 Pump Local Start Interlock
+- `NOT_BCV131PP03_LocRunIL` | BR4.INLOADING.BP3OLC.BCV131.SM02.PP03 | BCV131PP03 Sump Pump | IL_LocalStart | Conveyor Drive Station Sump 2 Pump Local Run Interlock
+- `NOT_BBD131PP01STS1_SysOK` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_Critical | Surge Bin Sump 1 Pump Overall Control System Interlock
+- `NOT_BBD131PP01LCS01IS01_Hty` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01.FieldIO.IS01 | BBD131PP01 Sump Pump | IL_Critical | Isolator Interlock
+- `NOT_BBD131PP01CB01_Hty` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01.Sub.CB01 | BBD131PP01 Drive Circuit Breaker | IL_Critical | Surge Bin Sump 1 Pump Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BBD131PP01TRP02_Hty` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_Critical | Surge Bin Sump 1 Pump Drive Circuit Breaker Tripped Interlock
+- `NOT_BBD131PP01VDC01_Hty` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_Critical | Surge Bin Sump 1 Pump 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BBD131PP01SY01_Hty` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_Critical | Surge Bin Sump 1 Pump Safety Relay Circuit Interlock
+- `NOT_BBD131PP01CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01.Sub.CAX01 | BBD131PP01 Main Contactor | IL_Critical | Surge Bin Sump 1 Pump Fail To Open Interlock
+- `NOT_BBD131PP01CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01.Sub.CAX01 | BBD131PP01 Main Contactor | IL_Critical | Surge Bin Sump 1 Pump Fail To Close Interlock
+- `NOT_BBD131PP01PR1_DatOK` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_Critical | Surge Bin Sump 1 Pump Protection Relay Interlock
+- `NOT_BBD131PP01PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_Critical | Surge Bin Sump 1 Pump Protection Relay Communications Fault Interlock
+- `NOT_BBD131PP01PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_Critical | Surge Bin Sump 1 Pump Protection Relay Fault Interlock
+- `NOT_BBD131PP01SV01_RunFlt_Hty` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01.FieldIO.SV01 | BBD131PP01 Sump Pump | IL_Critical | Sump Unit Make-Up Water Excessive Operating Interlock
+- `NOT_BBD131PP01_SeqSttIL` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_SeqStart | Surge Bin Sump 1 Pump Sequence Start Interlock
+- `NOT_BBD131PP01_SeqReq` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_Critical | Surge Bin Sump 1 Pump Sequence Required
+- `NOT_BBD131PP01_SeqStpIL` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_Critical | Surge Bin Sump 1 Pump Sequence Stop Interlock
+- `NOT_BBD131PP01_LocSttIL` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_Critical | Surge Bin Sump 1 Pump Local Start Interlock
+- `NOT_BBD131PP01_LocRunIL` | BR4.INLOADING.BP3OLC.BBD131.SM01.PP01 | BBD131PP01 Sump Pump | IL_LocalStart | Surge Bin Sump 1 Pump Local Run Interlock
+- `NOT_BAF131STS1_SysOK` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Overall Control System Interlock
+- `NOT_BAF131PWS01_Hty` | BR4.INLOADING.BP3OLC.BAF131.FieldIO.PWS01 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Pullwire Switch Safety Relay (K253) Interlock
+- `NOT_BAF131PWS02_Hty` | BR4.INLOADING.BP3OLC.BAF131.FieldIO.PWS02 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Pullwire Switch Safety Relay (K264) Interlock
+- `NOT_BAF131LCS01SY01_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Safety Relay Interlock
+- `NOT_BAF131HP01LCS01SY01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | IL_Critical | Safety Relay Interlock
+- `NOT_BAF131SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Safety Interlock Relay (K355-1) (K355-1) Fail To Open
+- `NOT_BAF131SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Safety Interlock Relay (K355-1) (K355-1) Fail To Close
+- `NOT_BAF131CH01BCS01_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Discharge Chute Blocked Chute Switch 1 Interlock
+- `NOT_BAF131ZS05_Hty` | BR4.INLOADING.BP3OLC.BAF131.FieldIO.ZS05 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Pan Deflection Switch 1 Interlock
+- `NOT_BAF131ZS06_Hty` | BR4.INLOADING.BP3OLC.BAF131.FieldIO.ZS06 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Pan Deflection Switch 2 Interlock
+- `NOT_BAF131ZS01_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Chain Locking Aft. Maintenance Proximity Switch Interlock
+- `NOT_BAF131ZS02_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Chain Locking Fwd. Maintenance Proximity Switch Interlock
+- `NOT_BAF131ZS03_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Chain Locking Aft. Maintenance Proximity Switch Interlock
+- `NOT_BAF131ZS04_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Chain Locking Fwd. Maintenance Proximity Switch Interlock
+- `NOT_BAF131HP01PN01_DatOK` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | IL_Critical | Hydraulic Power Pack Spider Unit Interlock
+- `NOT_BAF131HP01PN01_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | IL_Critical | Hydraulic Power Pack Spider Unit Communications Fault Interlock
+- `NOT_BAF131HP01PN01_Flt_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | IL_Critical | Hydraulic Power Pack Spider Unit Fault Interlock
+- `NOT_BAF131HP01FS01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01 | BPL131HP01 Hydraulic Pack | IL_Critical | Hydraulic Power Pack Fire Suppression Flow Switch Interlock
+- `NOT_BAF131LU01STS1_FdStp2Flt_Hty` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | IL_Critical | Surge Bin Apron Feeder Lube Unit Feed Stopped Fault Interlock
+- `NOT_BAF131SUY01_SttFlt_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Underspeed While Starting Interlock
+- `NOT_BAF131SUY01_RunFlt_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Underspeed Interlock
+- `NOT_BAF131SUY01_OvrFlt_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Overspeed Interlock
+- `NOT_BAF131SUY01_StpFlt_Hty` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Failed To Stop Interlock
+- `NOT_BBN131LUY01_ChFlt_Hty` | BR4.INLOADING.BP3OLC.BBN131.LUY01 | BBN131LUY01 Active Level | IL_Critical | WR Level Channel Fault Interlock
+- `NOT_BDU131_FdSdn_Hty` | BR4.INLOADING.BP3OLC.BDU131 | BDU131 Dust Collector | IL_Critical | Primary Crushing No Dust Collection Shutdown Interlock
+- `NOT_BBN131LUY01_CtlHi` | BR4.INLOADING.BP3OLC.BBN131.LUY01 | BBN131LUY01 Active Level | IL_Critical | WR Level Control High
+- `NOT_BBN131LUY01_BypAct` | BR4.INLOADING.BP3OLC.BBN131.LUY01 | BBN131LUY01 Active Level | IL_Critical | WR Low Level Bypass Active
+- `NOT_BBN131LUY01_CtlLo` | BR4.INLOADING.BP3OLC.BBN131.LUY01 | BBN131LUY01 Active Level | IL_Critical | WR Level Control Low
+- `NOT_BAF131_SeqStpIL` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Sequence Stop Interlock
+- `NOT_BAF131_LocSttIL` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Local Start Interlock
+- `NOT_BAF131_LocFwdRunIL` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_LocalStart | Surge Bin Apron Feeder Local Forward Run Interlock
+- `NOT_BAF131LCS01REV01_I` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Jog Reverse Pushbutton
+- `NOT_BAF131_Prg` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Purged Interlock
+- `NOT_BAF131FN01STS1_SysOK` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Overall Control System Interlock
+- `NOT_BAF131FN01CB01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01.Sub.CB01 | BAF131FN01 Drive Circuit Breaker | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BAF131FN01TRP02_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Drive Circuit Breaker Tripped Interlock
+- `NOT_BAF131FN01VDC01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BAF131FN01SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Valve Fail To Open Fault Interlock
+- `NOT_BAF131FN01SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Fail To Open Interlock
+- `NOT_BAF131FN01CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01.Sub.CAX01 | BAF131FN01 Main Contactor | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Fail To Open Interlock
+- `NOT_BAF131FN01CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01.Sub.CAX01 | BAF131FN01 Main Contactor | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Fail To Close Interlock
+- `NOT_BAF131FN01PR1_DatOK` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Protection Relay Interlock
+- `NOT_BAF131FN01PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Protection Relay Communications Fault Interlock
+- `NOT_BAF131FN01PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Protection Relay Fault Interlock
+- `NOT_BAF131FN01_SeqSttIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_SeqStart | Surge Bin Apron Feeder Oil Cooler 1 Sequence Start Interlock
+- `NOT_BAF131FN01STS1_SeqReq` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Sequence Requested
+- `NOT_BAF131FN01_SeqStpIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Sequence Stop Interlock
+- `NOT_BAF131FN01_LocSttIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_Critical | Surge Bin Apron Feeder Oil Cooler 1 Local Start Interlock
+- `NOT_BAF131FN01_LocRunIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.FN01 | BAF131FN01 Oil Cooler Fan | IL_LocalStart | Surge Bin Apron Feeder Oil Cooler 1 Local Run Interlock
+- `NOT_BAF131HT01STS1_SysOK` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01 | BAF131HT01 Heater | IL_Critical | Surge Bin Apron Feeder HPU Oil Heater Overall Control System Interlock
+- `NOT_BAF131HT01CB01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01.Sub.CB01 | BAF131HT01 Drive Circuit Breaker | IL_Critical | Surge Bin Apron Feeder HPU Oil Heater Main Circuit Breaker (Q103) Open Interlock
+- `NOT_BAF131HT01TRP01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01 | BAF131HT01 Heater | IL_Critical | Oil Heater Drive Circuit Breaker Tripped Interlock
+- `NOT_BAF131HT01CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01.Sub.CAX01 | BAF131HT01 Main Contactor | IL_Critical | Surge Bin Apron Feeder HPU Oil Heater Auxilary Contactor (K148) Fail To Open Interlock
+- `NOT_BAF131HT01CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01.Sub.CAX01 | BAF131HT01 Main Contactor | IL_Critical | Surge Bin Apron Feeder HPU Oil Heater Auxilary Contactor (K148) Fail To Close Interlock
+- `NOT_BAF131HT01_SeqSttIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01 | BAF131HT01 Heater | IL_SeqStart | Surge Bin Apron Feeder HPU Oil Heater Sequence Start Interlock
+- `NOT_BAF131HT01STS1_SeqReq` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01 | BAF131HT01 Heater | IL_Critical | Surge Bin Apron Feeder HPU Oil Heater Sequence Requested
+- `NOT_BAF131HT01_SeqStpIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01 | BAF131HT01 Heater | IL_Critical | Surge Bin Apron Feeder HPU Oil Heater Sequence Stop Interlock
+- `NOT_BAF131HT01_LocSttIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01 | BAF131HT01 Heater | IL_Critical | Surge Bin Apron Feeder HPU Oil Heater Local Start Interlock
+- `NOT_BAF131HT01_LocRunIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.HT01 | BAF131HT01 Heater | IL_LocalStart | Surge Bin Apron Feeder HPU Oil Heater Local Run Interlock
+- `NOT_BAF131PP01STS1_SysOK` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Overall Control System Interlock
+- `NOT_BAF131PP01CB01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01.Sub.CB01 | BAF131PP01 Drive Circuit Breaker | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BAF131PP01TRP02_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Drive Circuit Breaker Tripped Interlock
+- `NOT_BAF131PP01VAC01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | 1 240vac Control Supply (K146) Failure Interlock
+- `NOT_BAF131PP01VDC01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BAF131PP01SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Fail To Open Interlock
+- `NOT_BAF131PP01SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Fail To Close Interlock
+- `NOT_BAF131PP01CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01.Sub.CAX01 | BAF131PP01 Main Contactor | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Fail To Open Interlock
+- `NOT_BAF131PP01CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01.Sub.CAX01 | BAF131PP01 Main Contactor | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Fail To Close Interlock
+- `NOT_BAF131PP01PR1_DatOK` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Protection Relay Interlock
+- `NOT_BAF131PP01PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Protection Relay Communications Fault Interlock
+- `NOT_BAF131PP01PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Protection Relay Fault Interlock
+- `NOT_BAF131PP01THR01_Hi_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Thermistor High Interlock
+- `NOT_BAF131PP01XS01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Hydraulic Power Unit 1 Pump 1 Interlock (Spider)
+- `NOT_BAF131PP04_SeqOK` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_SeqStart | Pump Sequence Interlock
+- `NOT_BAF131PP01_BmpTstAct` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | 1 Bump Test Active
+- `NOT_BAF131_AuxReq` | BR4.INLOADING.BP3OLC.BAF131 | BAF131 Apron Feeder | IL_Critical | Surge Bin Apron Feeder Apron Feeder Start Requested
+- `NOT_BAF131PP01_RunOnFin` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Run On Finished
+- `NOT_BAF131PP01_SeqStpIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Sequence Stop Interlock
+- `NOT_BAF131PP01_LocSttIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Local Start Interlock
+- `NOT_BAF131PP01_BmpTstFin` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | 1 Bump Test Complete
+- `NOT_BAF131PP04STS1_SysOK` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Overall Control System Interlock
+- `NOT_BAF131PP04CB01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04.Sub.CB01 | BAF131PP04 Drive Circuit Breaker | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BAF131PP04TRP02_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Drive Circuit Breaker Tripped Interlock
+- `NOT_BAF131PP04VDC01_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BAF131PP04SY01_FTO_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Fail To Open Interlock
+- `NOT_BAF131PP04SY01_FTC_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Fail To Close Interlock
+- `NOT_BAF131PP04CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04.Sub.CAX01 | BAF131PP04 Main Contactor | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Fail To Open Interlock
+- `NOT_BAF131PP04CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04.Sub.CAX01 | BAF131PP04 Main Contactor | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Fail To Close Interlock
+- `NOT_BAF131PP04PR1_DatOK` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Protection Relay Interlock
+- `NOT_BAF131PP04PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Protection Relay Communications Fault Interlock
+- `NOT_BAF131PP04PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Protection Relay Fault Interlock
+- `NOT_BAF131PP04_SeqSttIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_SeqStart | Surge Bin Apron Feeder HPU Pump 2 Sequence Start Interlock
+- `NOT_BAF131PP01_AuxStt` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP01 | BAF131PP01 Pump | IL_Critical | Surge Bin Apron Feeder Hydraulic Pump Auxiliary Drive Run Request
+- `NOT_BAF131PP04_SeqStpIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Sequence Stop Interlock
+- `NOT_BAF131PP04_LocSttIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_Critical | Surge Bin Apron Feeder HPU Pump 2 Local Start Interlock
+- `NOT_BAF131PP04_LocRunIL` | BR4.INLOADING.BP3OLC.BAF131.HP01.PP04 | BAF131PP04 Oil Auxiliary Hydraulic Pump | IL_LocalStart | Surge Bin Apron Feeder HPU Pump 2 Local Run Interlock
+- `NOT_BAF131PP02STS1_SysOK` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | IL_Critical | Surge Bin Apron Fdr Lube Unit Hyd Pump Overall Control System Interlock
+- `NOT_BAF131PP02CB01_Hty` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02.Sub.CB01 | BAF131PP02 Drive Circuit Breaker | IL_Critical | Surge Bin Apron Fdr Lube Unit Hyd Pump Drive Circuit Breaker (Q103) Open Interlock
+- `NOT_BAF131PP02TRP02_Hty` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | IL_Critical | Surge Bin Apron Fdr Lube Unit Hyd Pump Drive Circuit Breaker Tripped Interlock
+- `NOT_BAF131PP02VDC01_Hty` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | IL_Critical | Surge Bin Apron Fdr Lube Unit Hyd Pump 24vdc Control Supply (Q155) Failure Interlock
+- `NOT_BAF131PP02SY01_Hty` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | IL_Critical | Surge Bin Apron Fdr Lube Unit Hyd Pump Safety Relay Circuit Interlock
+- `NOT_BAF131PP02CAX01_FTO_Hty` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02.Sub.CAX01 | BAF131PP02 Main Contactor | IL_Critical | Surge Bin Apron Fdr Lube Unit Hyd Pump Fail To Open Interlock
+- `NOT_BAF131PP02CAX01_FTC_Hty` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02.Sub.CAX01 | BAF131PP02 Main Contactor | IL_Critical | Surge Bin Apron Fdr Lube Unit Hyd Pump Fail To Close Interlock
+- `NOT_BAF131PP02PR1_DatOK` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | IL_Critical | Surge Bin Apron Fdr Lube Unit Hyd Pump Protection Relay Interlock
+- `NOT_BAF131PP02PR1_ComFlt_Hty` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | IL_Critical | Surge Bin Apron Fdr Lube Unit Hyd Pump Protection Relay Communications Fault Interlock
+- `NOT_BAF131PP02PR1_Flt_Hty` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | IL_Critical | Surge Bin Apron Fdr Lube Unit Hyd Pump Protection Relay Fault Interlock
+- `NOT_BAF131PP02_SeqSttIL` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | IL_SeqStart | Surge Bin Apron Fdr Lube Unit Hyd Pump Sequence Start Interlock
+- `NOT_BAF131PP02STS1_SeqReq` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | IL_Critical | Lube Unit Pump Sequence Required
+- `NOT_BAF131LU01_CycFin` | BR4.INLOADING.BP3OLC.BAF131.LU01 | BAF131LU01 Lubrication System | IL_Critical | Surge Bin Apron Feeder Lube Unit Cycle Completed
+- `NOT_BAF131PP02_LocSttIL` | BR4.INLOADING.BP3OLC.BAF131.LU01.PP02 | BAF131PP02 Lube Pump | IL_Critical | Surge Bin Apron Fdr Lube Unit Hyd Pump Local Start Interlock
+- `NOT_BCV131SUY03_MovDet` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Movement Detected
+- `NOT_BPL132IPC4_Flt_Hty` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Communications From BCV131RIS01PLC01 Fault Interlock
+- `NOT_BCV131_Loc` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Mode Local
+- `NOT_BCV131BK01_Run` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Brake Running
+- `NOT_BCV131BK02_Run` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | Brake Running
+- `NOT_BCV131BK01_Aut` | BR4.INLOADING.BP3OLC.BCV131 | BCV131 Overland Conveyor | IL_Critical | Brake Mode Auto
+- `NOT_BCV131BK02_Aut` | BR4.INLOADING.BP3OLC.BCV131.BK02 | BCV131BK02 Brake 2 | IL_Critical | Brake Mode Auto
+- `NOT_BCV131WN01_RunOK` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Active Take-Up Winch Run Interlock
+- `NOT_BCV131WN1_Off` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Stopped Interlock
+- `NOT_BCV131WN1_Actv` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Active: Fwd, Rev, 0 Speed
+- `NOT_BCV131WN1_Loc` | BR4.INLOADING.BP3OLC.BCV131.WN01 | BCV131 Winch | IL_Critical | Local Mode Status
+- `NOT_BCV131_WN01_PINPRX1_I` | BR4.INLOADING.BP3OLC.BCV131.WN01.LP1 | BCV131WN1 Locking Pin | IL_Critical | Drum Lock Pin Proximity Sensor (-ZS03) On Winch Drum (WN1)
+- `NOT_BCV131WN1BR1_Off` | BR4.INLOADING.BP3OLC.BCV131.WN01.BR1 | BCV131WN1 Brake | IL_Critical | Stopped Interlock
+- `NOT_BCV131WN1LP1_FltSL` | BR4.INLOADING.BP3OLC.BCV131.WN01.LP1 | BCV131WN1 Locking Pin | IL_Critical | Lock Pin Drive Block Fault Seal
+- `NOT_BCV130SPY1STS1_ExcRun_Hty` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY1 | BCV130SPY1 Loading Point Water Addition Module | IL_Critical | Water Addition Module 1 Excessive Run LONG Interlock
+- `NOT_BCV130SV04_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY1.BCV130SV04 | BCV130SV04 Solenoid 4 | IL_Critical | Bulk Ore Conditioning Solenoid 4 Sequence Enable
+- `NOT_BCV130SV04_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY1.BCV130SV04 | BCV130SV04 Solenoid 4 | IL_Critical | Bulk Ore Conditioning Solenoid 4 Open Request
+- `NOT_BCV130SV05_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY1.BCV130SV05 | BCV130SV05 Solenoid 5 | IL_Critical | Bulk Ore Conditioning Solenoid 5 Sequence Enable
+- `NOT_BCV130SV05_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY1.BCV130SV05 | BCV130SV05 Solenoid 5 | IL_Critical | Bulk Ore Conditioning Solenoid 5 Open Request
+- `NOT_BCV130SV06_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY1.BCV130SV06 | BCV130SV06 Solenoid 6 | IL_Critical | Bulk Ore Conditioning Solenoid 6 Sequence Enable
+- `NOT_BCV130SV06_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY1.BCV130SV06 | BCV130SV06 Solenoid 6 | IL_Critical | Bulk Ore Conditioning Solenoid 6 Open Request
+- `NOT_BCV130SPY2STS1_ExcRun_Hty` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY2 | BCV130SPY2 Head End Water Addition Module | IL_Critical | Water Addition Module 2 Excessive Run LONG Interlock
+- `NOT_BCV130SV07_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY2.BCV130SV07 | BCV130SV07 Ore Conditioning Spray Bar (4 Sprays) | IL_Critical | Ore Conditioning Spray Bar (4 Sprays) Sequence Enable
+- `NOT_BCV130SV07_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY2.BCV130SV07 | BCV130SV07 Ore Conditioning Spray Bar (4 Sprays) | IL_Critical | Ore Conditioning Spray Bar (4 Sprays) Open Request
+- `NOT_BCV130SV08_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY2.BCV130SV08 | BCV130SV08 Ore Conditioning Spray Bar (2 Sprays) | IL_Critical | Ore Conditioning Spray Bar (2 Sprays) Sequence Enable
+- `NOT_BCV130SV08_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY2.BCV130SV08 | BCV130SV08 Ore Conditioning Spray Bar (2 Sprays) | IL_Critical | Ore Conditioning Spray Bar (2 Sprays) Open Request
+- `NOT_BCV130SV09_SeqEn` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY2.BCV130SV09 | BCV130SV09 Ore Conditioning Spray Bar (1 Sprays) | IL_Critical | Ore Conditioning Spray Bar (1 Sprays) Sequence Enable
+- `NOT_BCV130SV09_Req` | BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY2.BCV130SV09 | BCV130SV09 Ore Conditioning Spray Bar (1 Sprays) | IL_Critical | Ore Conditioning Spray Bar (1 Sprays) Open Request
+- `NOT_BCV131SPY1STS1_ExcRun_Hty` | BR4.INLOADING.BP3OLC.SPRAYS.BCV131BULK.BCV131SPY1 | BCV131SPY1 Head End Water Addition Module | IL_Critical | Water Addition Module 1 Excessive Run Time Interlock
+- `NOT_BCV131SV02_SeqEn` | BR4.INLOADING.BP3OLC.SPRAYS.BCV131BULK.BCV131SPY1.BCV131SV02 | BCV131SV02 Ore Conditioning Spray Bar (2 Sprays) | IL_Critical | BOC Spray Bar (2 Nozzles) Sequence Enable
+- `NOT_BCV131SV02_Req` | BR4.INLOADING.BP3OLC.SPRAYS.BCV131BULK.BCV131SPY1.BCV131SV02 | BCV131SV02 Ore Conditioning Spray Bar (2 Sprays) | IL_Critical | BOC Spray Bar (2 Nozzles) Open Request
+- `NOT_BCV131SV03_SeqEn` | BR4.INLOADING.BP3OLC.SPRAYS.BCV131BULK.BCV131SPY1.BCV131SV03 | BCV131SV03 Ore Conditioning Spray Bar (1 Sprays) | IL_Critical | BOC Spray Bar (1 Nozzles) Sequence Enable
+- `NOT_BCV131SV03_Req` | BR4.INLOADING.BP3OLC.SPRAYS.BCV131BULK.BCV131SPY1.BCV131SV03 | BCV131SV03 Ore Conditioning Spray Bar (1 Sprays) | IL_Critical | BOC Spray Bar (1 Nozzles) Open Request
+- `NOT_BCV131SV04_SeqEn` | BR4.INLOADING.BP3OLC.SPRAYS.BCV131BULK.BCV131SPY1.BCV131SV04 | BCV131SV04 Ore Conditioning Spray Bar (4 Sprays) | IL_Critical | BOC Spray Bar (4 Nozzles) Sequence Enable
+- `NOT_BCV131SV04_Req` | BR4.INLOADING.BP3OLC.SPRAYS.BCV131BULK.BCV131SPY1.BCV131SV04 | BCV131SV04 Ore Conditioning Spray Bar (4 Sprays) | IL_Critical | BOC Spray Bar (4 Nozzles) Open Request
