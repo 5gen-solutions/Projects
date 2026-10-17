@@ -1,0 +1,119 @@
+# BS1_Citect_v9 – summary
+
+Base: Tim's `BS1_Citect_v7_TJS.xlsm` (17/10/2026 9:41 AM). Same rules as v8, plus the fixes below. Added/changed cells red; calcChain removed; full recalc on open; vbaProject byte-identical to Tim's file.
+
+## 1. BPL130 permissives kept (138)
+
+## 2. Old SCADA References rows deleted: 582 of the original rows 2–587; 4 kept
+- 561: same Equipment + Referenced Item + Category as one of Tim's newer rows (588–1463) or one of our additions
+- 3: NOT_XXX placeholders (rows 24, 25, 49)
+- 18: the Referenced Item had the rest of the tile line pasted in (e.g. `NOT_BCV130RTD01_HiHi_Hty,Value:BCV130RTD01_HiHi_SP,ValueIsSP:1,Nav:…`). Each is replaced by a clean row with the same order (part of the BPL130 trips we added):
+  - row 323 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130RTD01_HiHi_Hty` #52
+  - row 324 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130RTD02_HiHi_Hty` #53
+  - row 325 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130RTD03_HiHi_Hty` #54
+  - row 326 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130RTD04_HiHi_Hty` #55
+  - row 327 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130RTD05_HiHi_Hty` #56
+  - row 328 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130RTD06_HiHi_Hty` #57
+  - row 329 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130RTD07_HiHi_Hty` #58
+  - row 330 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130RTD08_HiHi_Hty` #59
+  - row 331 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130RTD09_HiHi_Hty` #60
+  - row 332 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130GB01RTD01_HiHi_Hty` #61
+  - row 333 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130GB01RTD02_HiHi_Hty` #62
+  - row 346 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130_EqpMonOC_Hty` #75
+  - row 347 BR4.INLOADING.BP3PRCR.BCV130 → `NOT_BCV130_EqpMonAbnSpk_Hty` #76
+  - row 516 BR4.INLOADING.BP3PRCR.BJC130 → `NOT_BJC130TT01_HiHi_Hty` #17
+  - row 517 BR4.INLOADING.BP3PRCR.BJC130 → `NOT_BJC130TT02_HiHi_Hty` #18
+  - row 518 BR4.INLOADING.BP3PRCR.BJC130 → `NOT_BJC130TT03_HiHi_Hty` #19
+  - row 519 BR4.INLOADING.BP3PRCR.BJC130 → `NOT_BJC130TT04_HiHi_Hty` #20
+  - row 557 BR4.INLOADING.BP3PRCR.BBD130.SM01.PP01 → `NOT_BBD130SM01LT01_LoLo_Hty` #1
+- Kept, because nothing newer covers them (their Equipment was corrected in v8):
+  - old row 221: BR4.INLOADING.BP3PRCR.SPRAYS.BBN130DUST.BBN130SV14 | NOT_BBN130STS1_SysOK | IL_Critical #1
+  - old row 222: BR4.INLOADING.BP3PRCR.SPRAYS.BBN130DUST.BBN130SV14 | NOT_BBN130SV14_ExcRun_Hty | IL_Critical #2
+  - old row 241: BR4.INLOADING.BP3PRCR.SPRAYS.BVG130DUST.BBD130SV13 | NOT_BVG130STS1_SysOK | IL_Critical #1
+  - old row 242: BR4.INLOADING.BP3PRCR.SPRAYS.BVG130DUST.BBD130SV13 | NOT_BBD130SV13_ExcRun_Hty | IL_Critical #2
+- Rows removed properly: <row> elements deleted, later rows and their cell refs renumbered, dimension, autoFilter and the _FilterDatabase defined name set to A1:T1758. No other sheet, table or defined name refers to SCADA References rows. The only formulas on the sheet (the "Found in" pair on row 2) moved to the new row 2.
+- Final sheet: 1757 data rows, no duplicate Equipment+Item+Category keys, no NOT_XXX.
+
+## 3. Lookup re-check
+- **Referenced Equipment blanks: not a lookup bug.** Exact, case-insensitive, whitespace-trimmed, NOT_-stripped and _A/_Hty variants all miss, because these interlock names in the runtime params tab don't exist in SCADA Tags (or Alarms) under that spelling. Every tag that does exist has equipment.
+- Causes: legacy name (CV701 = BCV130), names that differ (BAF131PP01**STS1**_RunFBFlt_Hty vs BAF131PP01_RunFBFlt_Hty; BCV130**MA01**FN03_SeqReq vs BCV130FN03_*; BCV131FN01_AutRun with no drive letter; BS1OLC**2** vs BS1OLC; BVC210 typo), tags not created yet on BPL132 (BAF131CH02BCS01, BAF131HP01FS04, BAF131LUY01_RunEmpFlt, BBD131SM01LT01_*), and BCV210 tags/equipment that aren't in this workbook.
+- Filled (red) by resolving each to the real equipment:
+  - BCV130MA01FN03_SeqReq (under BR4.INLOADING.BP3PRCR.BCV130.MA01.FN03): None → **BR4.INLOADING.BP3PRCR.BCV130.MA01.FN03**
+  - BCV130MA01FN03_SeqReq (under BR4.INLOADING.BP3PRCR.BCV130.MA01.FN03): None → **BR4.INLOADING.BP3PRCR.BCV130.MA01.FN03**
+  - BCV130MA01FN04_SeqReq (under BR4.INLOADING.BP3PRCR.BCV130.MA01.FN04): None → **BR4.INLOADING.BP3PRCR.BCV130.MA01.FN04**
+  - BCV130MA01FN04_SeqReq (under BR4.INLOADING.BP3PRCR.BCV130.MA01.FN04): None → **BR4.INLOADING.BP3PRCR.BCV130.MA01.FN04**
+  - BJC130_ADV_CrsStpReq_S (under BR4.INLOADING.BP3PRCR.BJC130): BR4.INLOADING.BP3PRCR.BJC130.BJC130_ADV → **BR4.INLOADING.BP3PRCR.BJC130**
+  - BJC130_ADV_Adjustment_S (under BR4.INLOADING.BP3PRCR.BJC130): BR4.INLOADING.BP3PRCR.BJC130.BJC130_ADV → **BR4.INLOADING.BP3PRCR.BJC130**
+  - NOT_BS1OLC2_CshStp_Hty (under BR4.INLOADING.BP3OLC.BCV131): None → **BR4.SRV.CTRLSYS.PLC.BPL132**
+  - BCV131FN01_AutRun (under BR4.INLOADING.BP3OLC.BCV131.BCV131A.PP02): None → **BR4.INLOADING.BP3OLC.BCV131.BCV131A.FN01**
+  - BCV131FN01_AutRun (under BR4.INLOADING.BP3OLC.BCV131.BCV131B.PP02): None → **BR4.INLOADING.BP3OLC.BCV131.BCV131B.FN01**
+  - BCV131FN01_AutRun (under BR4.INLOADING.BP3OLC.BCV131.BCV131C.PP02): None → **BR4.INLOADING.BP3OLC.BCV131.BCV131C.FN01**
+  - NOT_BS1OLC2_CshStp_Hty (under BR4.INLOADING.BP3OLC.BAF131): None → **BR4.SRV.CTRLSYS.PLC.BPL132**
+  - NOT_BAF131CH02BCS01_Hty (under BR4.INLOADING.BP3OLC.BAF131): None → **BR4.INLOADING.BP3OLC.BAF131**
+  - NOT_BAF131LUY01_RunEmpFlt_Hty (under BR4.INLOADING.BP3OLC.BAF131): None → **BR4.INLOADING.BP3OLC.BAF131**
+  - NOT_BAF131PP01STS1_RunFBFlt_Hty (under BR4.INLOADING.BP3OLC.BAF131.HP01.PP01): None → **BR4.INLOADING.BP3OLC.BAF131.HP01.PP01**
+  - NOT_BAF131PP01STS1_StpFBFlt_Hty (under BR4.INLOADING.BP3OLC.BAF131.HP01.PP01): None → **BR4.INLOADING.BP3OLC.BAF131.HP01.PP01**
+  - NOT_BAF131HP01FS04_Hty (under BR4.INLOADING.BP3OLC.BAF131.HP01.PP01): None → **BR4.INLOADING.BP3OLC.BAF131.HP01**
+  - NOT_BAF131HP01FS04_Hty (under BR4.INLOADING.BP3OLC.BAF131.HP01.PP04): None → **BR4.INLOADING.BP3OLC.BAF131.HP01**
+  - NOT_BS1OLC2_CshStp_Hty (under BR4.INLOADING.BP3OLC.BAF131.LU01.PP02): None → **BR4.SRV.CTRLSYS.PLC.BPL132**
+  - NOT_CV701SPY1FIT01_Dsc_Hty (under BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY1): None → **BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY1**
+  - NOT_CV701SPY1FIT01_Dsc_Hty (under BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY2): None → **BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY1**
+  - NOT_CV701SPY1FIT01_Dsc_Hty (under BR4.INLOADING.BP3OLC.SPRAYS.BCV131BULK.BCV131SPY1): None → **BR4.INLOADING.BP3PRCR.SPRAYS.BCV130BULK.BCV130SPY1**
+  - How each was resolved:
+    - tags with code BCV130FN03 (MA01 dropped): 2
+    - tags with code BCV130FN04 (MA01 dropped): 2
+    - tags with code BJC130: 2
+    - tags with code BS1OLC (BS1OLC2=BS1OLC): 3
+    - tags with code BCV131AFN01 (drive letter from equipment BCV131A): 1
+    - tags with code BCV131BFN01 (drive letter from equipment BCV131B): 1
+    - tags with code BCV131CFN01 (drive letter from equipment BCV131C): 1
+    - twin BBD130SM01LT01_LoLo_Hty is under BR4.INLOADING.BP3PRCR.BBD130.SM01.FieldIO.LT01: 1
+    - twin BBD130SM01LT01_Frz_Hty is under BR4.INLOADING.BP3PRCR.BBD130.SM01.FieldIO.LT01: 1
+    - twin BAF130CH02BCS01_Hty is under BR4.INLOADING.BP3PRCR.BAF130: 1
+    - twin BAF130LUY01_RunEmpFlt_Hty is under BR4.INLOADING.BP3PRCR.BAF130: 1
+    - alias tag BAF131PP01_RunFBFlt_Hty (STS1 dropped): 1
+    - alias tag BAF131PP01_StpFBFlt_Hty (STS1 dropped): 1
+    - twin BAF130HP01FS04_Hty is under BR4.INLOADING.BP3PRCR.BAF130.HP01: 2
+    - tags with code BCV130SPY1 (CV701=BCV130 (legacy name)): 3
+- **Still blank (4):** BCV210 interlocks. No BCV210 tag of that name exists and there is no `…BCV210` parent equipment in SCADA Equip (only `BR4.INLOADING.BP2OLC.BCV210.WM01/.OT` and `BR4.OUTLOADING.BCV210.OT`):
+  - BR4.INLOADING.BP3OLC.BCV131 | BCV210_AutRun_C
+  - BR4.INLOADING.BP3OLC.BAF131 | BVC210_StpReq_C
+  - BR4.INLOADING.BP3OLC.BAF131 | NOT_BCV210_NCILOK_C
+  - BR4.INLOADING.BP3OLC.BAF131 | BCV210_AutRun
+- **"Nor" permissives: this was a lookup bug.** I only looked for NOT_ tags in SCADA Tags, but Tim's NOT_ interlocks live in SCADA Alarms. Fixed: 132 Referenced Items changed to the NOT_ form (e.g. `BJC130_AutRun` → `NOT_BJC130_AutRun`). 8 remain without a NOT_ alarm:
+  - BR4.INLOADING.BP3PRCR.BCV130.MA01.FN03 | BCV130MA01FN03_SeqReq
+  - BR4.INLOADING.BP3PRCR.BCV130.MA01.FN03 | BCV130MA01FN03_SeqReq
+  - BR4.INLOADING.BP3PRCR.BCV130.MA01.FN04 | BCV130MA01FN04_SeqReq
+  - BR4.INLOADING.BP3PRCR.BCV130.MA01.FN04 | BCV130MA01FN04_SeqReq
+  - BR4.INLOADING.BP3OLC.BCV131 | BCV210_AutRun_C
+  - BR4.INLOADING.BP3OLC.BAF131 | BS1_FdEn
+  - BR4.INLOADING.BP3OLC.BAF131 | BCV210_AutRun
+  - BR4.INLOADING.BP3OLC.BAF131 | BCV210WM01_HiHi_Hty
+- Items not in Alarms or Tags: 31 (the name problems above). Not a lookup bug.
+- BPL131 – Tim's 21 items not in Alarms or Tags: not a lookup bug. Most are NOT_ alarms that don't exist yet although the base tag does (e.g. NOT_BPP1103CB01_Hty, NOT_BPP1104TRP01_Hty), plus BPP1104/1105 PT08/FT06 alarms that don't exist and `BPP1101FT03_HiH_A`. Left unchanged:
+  - row 721 BR4.UTILITIES.WATER.BS1.RWD1.BPP1101 BPP1101FT03_HiH_A
+  - row 744 BR4.UTILITIES.WATER.BS1.RWD1.BPP1102 BPP1102FT03_Frz_A
+  - row 747 BR4.UTILITIES.WATER.BS1.RWT.BPP1103 NOT_BPP1103CB01_Hty
+  - row 748 BR4.UTILITIES.WATER.BS1.RWT.BPP1103 NOT_BPP1103TRP01_Hty
+  - row 768 BR4.UTILITIES.WATER.BS1.RWT.BPP1103 NOT_BPP1103FT06_HiHi_Hty
+  - row 769 BR4.UTILITIES.WATER.BS1.RWT.BPP1103 NOT_BPP1103FT06_Frz_Hty
+  - row 770 BR4.UTILITIES.WATER.BS1.RWT.BPP1103 NOT_BPP1103FT06_LkFlt_Hty
+  - row 771 BR4.UTILITIES.WATER.BS1.RWT.BPP1104 NOT_BPP1104CB01_Hty
+  - row 772 BR4.UTILITIES.WATER.BS1.RWT.BPP1104 NOT_BPP1104TRP01_Hty
+  - row 790 BR4.UTILITIES.WATER.BS1.RWT.BPP1104 NOT_BPP1104PT08_HiHi_Hty
+  - row 791 BR4.UTILITIES.WATER.BS1.RWT.BPP1104 NOT_BPP1104PT08_Frz_Hty
+  - row 792 BR4.UTILITIES.WATER.BS1.RWT.BPP1104 NOT_BPP1104FT06_HiHi_Hty
+  - row 793 BR4.UTILITIES.WATER.BS1.RWT.BPP1104 BPP1104FT06_Frz_A
+  - row 794 BR4.UTILITIES.WATER.BS1.RWT.BPP1104 BPP1104FT06_LkFlt_A
+  - row 814 BR4.UTILITIES.WATER.BS1.RWT.BPP1105 BPP1105PT08_HiHi_A
+  - row 815 BR4.UTILITIES.WATER.BS1.RWT.BPP1105 BPP1105PT08_Frz_A
+  - row 816 BR4.UTILITIES.WATER.BS1.RWT.BPP1105 BPP1105FT06_HiHi_A
+  - row 817 BR4.UTILITIES.WATER.BS1.RWT.BPP1105 BPP1105FT06_Frz_A
+  - row 818 BR4.UTILITIES.WATER.BS1.RWT.BPP1105 BPP1105FT06_LkFlt_A
+  - row 858 BR4.UTILITIES.WATER.BS1.BTY1502.FV01 NOT_BTY1502FV01CB01_Hty
+  - row 881 BR4.UTILITIES.WATER.BS1.STD1.BSTD1107.FV02 NOT_BSTD1107FV02_LmtFlt_Hty
+
+## Unchanged from v8
+- BPL132: 704 references created (30 equipment). BPL130: 35 trips (18 of them replace the malformed rows above, so 17 were truly missing) and 138 permissives.
+- Alarms "Found in" now point at this workbook (2850 cells). External link to copy_of_bs1_citect… removed. Variable_ReMapper is untouched, but its link number changed from [2] to [1] in 3043 SCADA Tags formulas.
+- Flagged, not changed: 16 Auto Trips that Tim filed as Critical, 2 orders, row-1102 Referenced Equipment, 47 BPL131 Referenced Equipment that differ from the tag's equipment, and repeated orders on BPP1106. Skipped: 79 interlocks under headings with no category, 18 Stop permissives, 12 XXX.
